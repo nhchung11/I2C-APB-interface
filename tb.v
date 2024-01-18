@@ -1,41 +1,49 @@
-`include "controller.v"
+`include "i2c_core.v"
 
 module tb;
 
-  reg clk, rst;
+  reg clk, rst_n, enable, sda_i, scl_i;
   reg [6:0] slave_address;
   reg [7:0] data_in;
   reg rw;
-  wire sda, scl;
+  wire sda_o, scl_o;
 
-  // Instantiate the i2c_controller module
-  i2c_controller uut (
+  // Instantiate the i2c_core module
+  i2c_core uut (
     .clk(clk),
-    .rst(rst),
+    .rst_n(rst_n),
+    .enable(enable),
     .slave_address(slave_address),
     .data_in(data_in),
     .rw(rw),
-    .sda(sda),
-    .scl(scl)
+    .sda_i(sda_i),
+    .scl_i(scl_i),
+    .sda_o(sda_o),
+    .scl_o(scl_o)
   );
 
   // Clock generation
   initial begin
-    clk = 0;
+    clk = 1;
     forever #5 clk = ~clk;
   end
 
-  // Test scenario
   initial begin
+    // Initialize signals
     $dumpfile("tb.vcd");
     $dumpvars(0, tb);
-    // Apply reset
-    rst           = 1;
-    #10 rst       = 0;
-    slave_address = 7'b1010101;
-    data_in       = 8'b11001100;
-    rw            = 0; 
-    #10; 
+    rst_n = 0;
+    enable = 0;
+    slave_address = 7'b0000001;
+    data_in = 8'b11011010;
+    rw = 1;
+    sda_i = 1;
+    scl_i = 1;
+
+    #10 rst_n = 1;
+    enable = 1;
+    data_in = 8'b00110011;
+    #100;                          
     $finish;
   end
 
