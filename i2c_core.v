@@ -23,15 +23,15 @@ parameter STOP =           3'b110;
 
 reg         sda_out;
 reg         scl_out;
-reg [2:0]   counter;
-reg [6:0]   saved_addr;
+reg [2:0]   counter = 0;
+reg [7:0]   saved_addr;
 reg [7:0]   saved_data;
 reg         write;
 
 reg [2:0]   current_state;
 reg [2:0]   next_state;
 
-assign sda_o = (enable == 1) ? sda_out : 1;
+assign sda_o = (write == 1) ? sda_out : 1;
 assign scl_o = (write == 1) ? clk : 1;
 
 // State register logic
@@ -42,8 +42,18 @@ always @(posedge clk, negedge rst_n) begin
         current_state <= next_state;
 end
 
+// Counter logic
+always @(posedge clk, negedge rst_n) begin
+    if (current_state == WRITE_ADDRESS) begin
+        counter <= counter - 1;
+    end
+    else if (current_state == WRITE_DATA) begin
+        counter <= counter - 1;
+    end 
+end
+
 // Next state combinational logic
-always @(current_state, enable, counter) begin
+always @* begin
     case (current_state)
         IDLE: begin
             if (enable) next_state = START;
@@ -67,26 +77,26 @@ always @(current_state, enable, counter) begin
 end
 
 // Output logic
-always @(current_state) begin
+always @(current_state, counter) begin
     case (current_state)
         IDLE: begin
             write       = 0;
             sda_out     = 1;
             scl_out     = 1;
+            saved_addr  = {slave_address, rw};  // 1101.011.1
+            saved_data  = {data_in};            // 1010.1010
         end
         START: begin
-            counter     = 7;
             sda_out     = 0;
-            saved_addr  = {slave_address, rw};
+            counter     = 7;
         end
         WRITE_ADDRESS: begin
-            write       = 1;
             sda_out     = saved_addr[counter];
+            write       = 1;
         end
         ADDRESS_ACK: begin
             write       = 0;
             sda_out     = 1;
-            saved_data  = data_in;
             counter     = 7;
         end
         WRITE_DATA: begin
@@ -101,11 +111,5 @@ always @(current_state) begin
             sda_out     = 1;
         end
     endcase
-end
-
-// Counter logic
-always @(posedge clk) begin
-    if (write)
-        counter <= counter - 1;
 end
 endmodule
