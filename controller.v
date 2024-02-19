@@ -11,15 +11,15 @@ module i2c_controller
         inout               scl         // tristate
     );
 
-    parameter IDLE          = 0;
-    parameter START         = 1;
-    parameter WRITE_ADDRESS = 2; 
-    parameter ADDRESS_ACK   = 3;
-    parameter WRITE_DATA    = 4;
-    parameter WRITE_ACK     = 5;
-    parameter READ_DATA     = 6;
-    parameter READ_ACK      = 7;
-    parameter STOP          = 8;
+    localparam IDLE          = 0;
+    localparam START         = 1;
+    localparam WRITE_ADDRESS = 2; 
+    localparam ADDRESS_ACK   = 3;
+    localparam WRITE_DATA    = 4;
+    localparam WRITE_ACK     = 5;
+    localparam READ_DATA     = 6;
+    localparam READ_ACK      = 7;
+    localparam STOP          = 8;
 
     reg [2:0]   counter = 0;
     reg [7:0]   saved_addr;
