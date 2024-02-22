@@ -53,20 +53,36 @@ module apb_tb;
         APB_RX = 0;             // Not receive from FIFO
         WRITE_FULL = 0;
         READ_EMPTY = 0;
+
         #10;
         PADDR = 8'd0;
         PWRITE = 1;
         PSELx = 1;
         PENABLE = 0;
         PWDATA = 8'b01010101;
+
         #10;
         PENABLE = 1;
+
         #10;
         PENABLE = 0;
         PSELx = 0;
         PWRITE = 0;
         PWDATA = 00000000;
 
+        #20;
+        PADDR = 8'd4;
+        PWRITE = 0;
+        PSELx = 1;
+        APB_RX = 8'b01010101;        // Receive from FIFO      
+
+        #10;
+        PENABLE = 1;
+
+        #10;
+        PENABLE = 0;
+        PSELx = 0;
+        
         #20;
         $finish;
     end
