@@ -68,7 +68,6 @@ module apb_tb;
         PENABLE = 0;
         PSELx = 0;
         PWRITE = 0;
-        PWDATA = 00000000;
 
         #20;
         PADDR = 8'd4;

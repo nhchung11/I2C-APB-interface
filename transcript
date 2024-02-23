@@ -12,21 +12,44 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# Loading project apb_intereface
-# Compile of apb_slave.v was successful.
+# Loading project controller
+# Compile of controller.v was successful.
 # Compile of tb.v was successful.
-# 2 compiles, 0 failed with no errors.
-vsim work.apb_tb -voptargs=+acc
-# vsim work.apb_tb -voptargs="+acc" 
-# Start time: 18:04:16 on Feb 22,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.apb_tb(fast)
-# Loading work.apb(fast)
-add wave -position insertpoint sim:/apb_tb/apb_dut/*
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/tb.v(87)
-#    Time: 90 ns  Iteration: 0  Instance: /apb_tb
-# 1
-# Break in Module apb_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/tb.v line 87
-# End time: 18:07:58 on Feb 22,2024, Elapsed time: 0:03:42
+# Compile of top_level.v was successful.
+# Compile of fifo.v was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of controller.v was successful.
+# Compile of tb.v was successful.
+# Compile of top_level.v was successful.
+# Compile of fifo.v was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of controller.v was successful.
+# Compile of tb.v was successful.
+# Compile of top_level.v was successful.
+# Compile of fifo.v was successful.
+# 4 compiles, 0 failed with no errors.
+vsim work.tb
+# vsim work.tb 
+# Start time: 14:26:09 on Feb 23,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.tb(fast)
+quit -sim
+# End time: 14:26:17 on Feb 23,2024, Elapsed time: 0:00:08
 # Errors: 0, Warnings: 0
+vsim work.tb -voptargs=+acc
+# vsim work.tb -voptargs="+acc" 
+# Start time: 14:26:26 on Feb 23,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.tb(fast)
+# Loading work.i2c_controller(fast)
+add wave -position insertpoint sim:/tb/uut/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 8020
+#           Attempting to use alternate WLF file "./wlftnw3nqb".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftnw3nqb
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(49)
+#    Time: 2790 ns  Iteration: 0  Instance: /tb
+# 1
+# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 49

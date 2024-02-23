@@ -32,8 +32,8 @@ module tb;
     enable = 0;
     slave_address = 7'b1101011;     //1101011.1
     data_in = 8'b10101010;
-    repeated_start_cond = 0;
-    rw = 1;
+    repeated_start_cond = 1;
+    rw = 0;
     enable = 1;
     scl_in = 1;
     sda_in = 1;
