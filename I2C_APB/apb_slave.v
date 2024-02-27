@@ -15,10 +15,6 @@ module apb
 		output              PREADY,         // Ready
                                             // Slave can complete the transfer at next PCLK posedge
         output      [7:0]   PRDATA,
-        output              R_ENA,          // Read enable FIFO
-        output              W_ENA,          // Write enable FIFO
-                                                // 1 -> Write
-                                                // 0 -> Read
         output reg  [7:0]   transmit_reg, 
         output reg  [7:0]   command_reg,
         output reg  [7:0]   prescale_reg,
@@ -33,27 +29,27 @@ module apb
 
     // Input status
     always @* begin
-        ack = status_reg[7];
-        busy_bus = status_reg[6];
-        empty = status_reg[5];
-        full = status_reg[4];
+        ack         = status_reg[7];
+        busy_bus    = status_reg[6];
+        empty       = status_reg[5];
+        full        = status_reg[4];
     end
     
     // READY
-    assign PREADY = (PENABLE == 1'b1 & PSELx == 1'b1 & PWRITE == 1'b1) ? 1'b1 : 1'b0;
+    assign PREADY = ((PENABLE == 1'b1) & (PSELx == 1'b1)) ? 1'b1 : 1'b0;
     
     // DATA READ FROM FIFO
-    assign PRDATA = (empty == 0) ? receive_reg : 8'b0;
+    assign PRDATA = ((empty == 0) & (PENABLE == 1'b1) & (PWRITE == 1'b0)) ? receive_reg : 8'b0;
 
     always @(posedge PCLK, negedge PRESETn) begin
         if (!PRESETn) begin
             transmit_reg    <= 8'b0;
-            command_reg     <= 8'b10000000;
+            command_reg     <= 8'b00000000;
             address_reg     <= 8'b0;
             prescale_reg    <= 8'b0;
         end
         else begin 
-            command_reg     <= 8'b00000000;
+            command_reg     <= 8'b10000000;
             prescale_reg    <= 8'b00000100;
             // WRITE
             if (PCLK && PENABLE && PWRITE && (full == 0)) begin

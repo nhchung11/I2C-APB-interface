@@ -12,471 +12,133 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# Loading project controller
-# Compile of controller.v was successful.
+# Loading project apb_to_fifo
+# Compile of top_level_tb.v was successful.
+# Compile of top_level.v was successful.
 # Compile of tb.v was successful.
-# Compile of top_level.v failed with 2 errors.
+# Compile of fifo_top.v was successful.
 # Compile of fifo.v was successful.
-# 4 compiles, 1 failed with 2 errors.
-# Compile of controller.v was successful.
-# Compile of tb.v was successful.
-# Compile of fifo.v was successful.
-# 3 compiles, 0 failed with no errors.
-vsim work.tb -voptargs=+acc
-# vsim work.tb -voptargs="+acc" 
-# Start time: 13:50:16 on Feb 26,2024
-# ** Note: (vsim-8009) Loading existing optimized design _opt2
-# Loading work.tb(fast)
-# Loading work.i2c_controller(fast)
-add wave -position insertpoint sim:/tb/uut/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 8020
-#           Attempting to use alternate WLF file "./wlftt8wkeh".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftt8wkeh
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(49)
-#    Time: 2790 ns  Iteration: 0  Instance: /tb
-# 1
-# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 49
-add wave -position insertpoint sim:/tb/uut/*
+# Compile of apb_slave.v was successful.
+# Compile of apb_to_fifo_top.v was successful.
+# 7 compiles, 0 failed with no errors.
+vsim work.tb_top
+# vsim work.tb_top 
+# Start time: 17:53:45 on Feb 27,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/apb_to_fifo_top.v(58): (vopt-2241) Connection width does not match width of port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(8).
+# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/apb_to_fifo_top.v(68): (vopt-2241) Connection width does not match width of port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(73).
+# Loading work.tb_top(fast)
 quit -sim
-# End time: 13:56:44 on Feb 26,2024, Elapsed time: 0:06:28
+# End time: 17:53:53 on Feb 27,2024, Elapsed time: 0:00:08
 # Errors: 0, Warnings: 2
-# Compile of controller.v was successful.
-# Compile of tb.v was successful.
-# Compile of fifo.v was successful.
-# 3 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.tb
-# vsim -voptargs="+acc" work.tb 
-# Start time: 13:56:51 on Feb 26,2024
+vsim work.tb_top -voptargs=+acc
+# vsim work.tb_top -voptargs="+acc" 
+# Start time: 17:54:04 on Feb 27,2024
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb(fast)
-# Loading work.i2c_controller(fast)
-add wave -position insertpoint sim:/tb/uut/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 8020
-#           Attempting to use alternate WLF file "./wlftaxq6vm".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftaxq6vm
+# Loading work.tb_top(fast)
+# Loading work.apb_to_fifo(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (8) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(8).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top/dut/fifomem File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/apb_to_fifo_top.v Line: 58
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (8) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(73).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top/dut/read_pointer_empty File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/apb_to_fifo_top.v Line: 68
+add wave -position insertpoint sim:/tb_top/dut/apb/*
+add wave -position insertpoint sim:/tb_top/dut/fifomem/*
 run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(48)
-#    Time: 2790 ns  Iteration: 0  Instance: /tb
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_level_tb.v(117)
+#    Time: 170 ns  Iteration: 0  Instance: /tb_top
 # 1
-# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 48
+# Break in Module tb_top at C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_level_tb.v line 117
 quit -sim
-# End time: 13:57:35 on Feb 26,2024, Elapsed time: 0:00:44
+# End time: 17:56:31 on Feb 27,2024, Elapsed time: 0:02:27
 # Errors: 0, Warnings: 2
-# Compile of controller.v was successful.
+# Compile of top_level_tb.v was successful.
+# Compile of top_level.v was successful.
 # Compile of tb.v was successful.
+# Compile of fifo_top.v was successful.
 # Compile of fifo.v was successful.
-# 3 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.tb
-# vsim -voptargs="+acc" work.tb 
-# Start time: 13:57:44 on Feb 26,2024
+# Compile of apb_slave.v was successful.
+# Compile of apb_to_fifo_top.v was successful.
+# 7 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.tb_top
+# vsim -voptargs="+acc" work.tb_top 
+# Start time: 17:56:40 on Feb 27,2024
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb(fast)
-# Loading work.i2c_controller(fast)
-add wave -position insertpoint sim:/tb/uut/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 8020
-#           Attempting to use alternate WLF file "./wlftvrwsg0".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftvrwsg0
+# Loading work.tb_top(fast)
+# Loading work.apb_to_fifo(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (8) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(8).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top/dut/fifomem File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/apb_to_fifo_top.v Line: 58
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (8) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(73).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top/dut/read_pointer_empty File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/apb_to_fifo_top.v Line: 68
+add wave -position insertpoint sim:/tb_top/dut/apb/*
+add wave -position insertpoint sim:/tb_top/dut/fifomem/*
 run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(49)
-#    Time: 2790 ns  Iteration: 0  Instance: /tb
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_level_tb.v(117)
+#    Time: 170 ns  Iteration: 0  Instance: /tb_top
 # 1
-# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 49
+# Break in Module tb_top at C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_level_tb.v line 117
 quit -sim
-# End time: 13:58:16 on Feb 26,2024, Elapsed time: 0:00:32
+# End time: 17:59:05 on Feb 27,2024, Elapsed time: 0:02:25
 # Errors: 0, Warnings: 2
-# Compile of controller.v was successful.
+# Compile of top_level_tb.v was successful.
+# Compile of top_level.v was successful.
 # Compile of tb.v was successful.
+# Compile of fifo_top.v was successful.
 # Compile of fifo.v was successful.
-# 3 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.tb
-# vsim -voptargs="+acc" work.tb 
-# Start time: 13:58:23 on Feb 26,2024
+# Compile of apb_slave.v was successful.
+# Compile of apb_to_fifo_top.v was successful.
+# 7 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.tb_top
+# vsim -voptargs="+acc" work.tb_top 
+# Start time: 17:59:11 on Feb 27,2024
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb(fast)
-# Loading work.i2c_controller(fast)
-add wave -position insertpoint sim:/tb/uut/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 8020
-#           Attempting to use alternate WLF file "./wlft28h7eb".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft28h7eb
+# Loading work.tb_top(fast)
+# Loading work.apb_to_fifo(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (8) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(8).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top/dut/fifomem File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/apb_to_fifo_top.v Line: 58
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (8) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(73).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top/dut/read_pointer_empty File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/apb_to_fifo_top.v Line: 68
+add wave -position insertpoint sim:/tb_top/dut/apb/*
+add wave -position insertpoint sim:/tb_top/dut/fifomem/*
 run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(49)
-#    Time: 2790 ns  Iteration: 0  Instance: /tb
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_level_tb.v(147)
+#    Time: 250 ns  Iteration: 0  Instance: /tb_top
 # 1
-# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 49
-# Break key hit
-quit -sim
-# End time: 14:00:03 on Feb 26,2024, Elapsed time: 0:01:40
-# Errors: 0, Warnings: 2
-# Compile of controller.v was successful.
-# Compile of tb.v was successful.
-# Compile of fifo.v was successful.
-# 3 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.tb
-# vsim -voptargs="+acc" work.tb 
-# Start time: 14:00:10 on Feb 26,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb(fast)
-# Loading work.i2c_controller(fast)
-add wave -position insertpoint sim:/tb/uut/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 8020
-#           Attempting to use alternate WLF file "./wlftjhtmjw".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftjhtmjw
+# Break in Module tb_top at C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_level_tb.v line 147
+add wave -position insertpoint sim:/tb_top/dut/write_pointer_full/*
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading work.tb_top(fast)
+# Loading work.apb_to_fifo(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (8) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(8).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top/dut/fifomem File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/apb_to_fifo_top.v Line: 58
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (8) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(73).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top/dut/read_pointer_empty File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/apb_to_fifo_top.v Line: 68
 run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(49)
-#    Time: 2790 ns  Iteration: 0  Instance: /tb
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_level_tb.v(147)
+#    Time: 250 ns  Iteration: 0  Instance: /tb_top
 # 1
-# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 49
-# Causality operation skipped due to absence of debug database file
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-quit -sim
-# End time: 14:09:59 on Feb 26,2024, Elapsed time: 0:09:49
-# Errors: 7, Warnings: 3
-# Compile of controller.v was successful.
-# Compile of tb.v was successful.
-# Compile of fifo.v was successful.
-# 3 compiles, 0 failed with no errors.
-# Break key hit
-# Load canceled
-# Compile of controller.v was successful.
-# Compile of tb.v was successful.
-# Compile of fifo.v was successful.
-# 3 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.tb
-# vsim -voptargs="+acc" work.tb 
-# Start time: 14:10:08 on Feb 26,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb(fast)
-# Loading work.i2c_controller(fast)
-add wave -position insertpoint sim:/tb/uut/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 8020
-#           Attempting to use alternate WLF file "./wlft1agctg".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft1agctg
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(49)
-#    Time: 2790 ns  Iteration: 0  Instance: /tb
-# 1
-# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 49
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-quit -sim
-# End time: 14:43:43 on Feb 26,2024, Elapsed time: 0:33:35
-# Errors: 67, Warnings: 2
-# Compile of controller.v was successful.
-# Compile of tb.v was successful.
-# Compile of fifo.v was successful.
-# 3 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.tb
-# vsim -voptargs="+acc" work.tb 
-# Start time: 14:43:51 on Feb 26,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb(fast)
-# Loading work.i2c_controller(fast)
-add wave -position insertpoint sim:/tb/uut/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 8020
-#           Attempting to use alternate WLF file "./wlftzh0nx5".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftzh0nx5
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(49)
-#    Time: 2790 ns  Iteration: 0  Instance: /tb
-# 1
-# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 49
-quit -sim
-# End time: 14:46:27 on Feb 26,2024, Elapsed time: 0:02:36
-# Errors: 0, Warnings: 2
-# Compile of controller.v was successful.
-# Compile of tb.v was successful.
-# Compile of fifo.v was successful.
-# 3 compiles, 0 failed with no errors.
-# Compile of controller.v was successful.
-# Compile of tb.v was successful.
-# Compile of fifo.v was successful.
-# 3 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.tb
-# vsim -voptargs="+acc" work.tb 
-# Start time: 14:46:35 on Feb 26,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb(fast)
-# Loading work.i2c_controller(fast)
-add wave -position insertpoint sim:/tb/uut/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 8020
-#           Attempting to use alternate WLF file "./wlftyk4bkn".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftyk4bkn
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(49)
-#    Time: 2790 ns  Iteration: 0  Instance: /tb
-# 1
-# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 49
-quit -sim
-# End time: 14:47:23 on Feb 26,2024, Elapsed time: 0:00:48
-# Errors: 0, Warnings: 2
-# Compile of controller.v was successful.
-# Compile of tb.v was successful.
-# Compile of fifo.v was successful.
-# 3 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.tb
-# vsim -voptargs="+acc" work.tb 
-# Start time: 14:47:31 on Feb 26,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb(fast)
-# Loading work.i2c_controller(fast)
-add wave -position insertpoint sim:/tb/uut/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 8020
-#           Attempting to use alternate WLF file "./wlfthqjja5".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlfthqjja5
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(49)
-#    Time: 2790 ns  Iteration: 0  Instance: /tb
-# 1
-# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 49
-quit -sim
-# End time: 14:48:20 on Feb 26,2024, Elapsed time: 0:00:49
-# Errors: 0, Warnings: 2
-# Compile of controller.v was successful.
-# Compile of tb.v was successful.
-# Compile of fifo.v was successful.
-# 3 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.tb
-# vsim -voptargs="+acc" work.tb 
-# Start time: 14:48:26 on Feb 26,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb(fast)
-# Loading work.i2c_controller(fast)
-view -new wave
-# .main_pane.wave1.interior.cs.body.pw.wf
-add wave -position insertpoint sim:/tb/uut/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 8020
-#           Attempting to use alternate WLF file "./wlft1wdmtk".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft1wdmtk
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(49)
-#    Time: 2790 ns  Iteration: 0  Instance: /tb
-# 1
-# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 49
-add wave -position insertpoint sim:/tb/uut/*
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Break key hit
-quit -sim
-# End time: 14:49:43 on Feb 26,2024, Elapsed time: 0:01:17
-# Errors: 3, Warnings: 2
-# Compile of controller.v failed with 1 errors.
-# Compile of tb.v was successful.
-# Compile of fifo.v was successful.
-# 3 compiles, 1 failed with 1 error.
-# Load canceled
-# Compile of controller.v failed with 1 errors.
-# Compile of tb.v was successful.
-# Compile of fifo.v was successful.
-# 3 compiles, 1 failed with 1 error.
-# Compile of controller.v was successful.
-# Compile of tb.v was successful.
-# Compile of fifo.v was successful.
-# 3 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.tb
-# vsim -voptargs="+acc" work.tb 
-# Start time: 14:50:29 on Feb 26,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb(fast)
-# Loading work.i2c_controller(fast)
-add wave -position insertpoint sim:/tb/uut/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 8020
-#           Attempting to use alternate WLF file "./wlfte8ijxz".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlfte8ijxz
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(49)
-#    Time: 2790 ns  Iteration: 0  Instance: /tb
-# 1
-# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 49
-quit -sim
-# End time: 14:51:23 on Feb 26,2024, Elapsed time: 0:00:54
-# Errors: 0, Warnings: 2
-# Compile of controller.v was successful.
-# Compile of tb.v was successful.
-# Compile of fifo.v was successful.
-# 3 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.tb
-# vsim -voptargs="+acc" work.tb 
-# Start time: 14:51:31 on Feb 26,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb(fast)
-# Loading work.i2c_controller(fast)
-add wave -position insertpoint sim:/tb/uut/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 8020
-#           Attempting to use alternate WLF file "./wlfte79jvf".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlfte79jvf
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(49)
-#    Time: 2790 ns  Iteration: 0  Instance: /tb
-# 1
-# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 49
-quit -sim
-# End time: 14:58:32 on Feb 26,2024, Elapsed time: 0:07:01
-# Errors: 0, Warnings: 2
-# Compile of controller.v was successful.
-# Compile of tb.v was successful.
-# Compile of fifo.v was successful.
-# 3 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.tb
-# vsim -voptargs="+acc" work.tb 
-# Start time: 14:58:42 on Feb 26,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb(fast)
-# Loading work.i2c_controller(fast)
-add wave -position insertpoint sim:/tb/uut/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 8020
-#           Attempting to use alternate WLF file "./wlftnbrh3i".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftnbrh3i
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(49)
-#    Time: 2790 ns  Iteration: 0  Instance: /tb
-# 1
-# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 49
-quit -sim
-# End time: 15:07:20 on Feb 26,2024, Elapsed time: 0:08:38
-# Errors: 0, Warnings: 2
-# Compile of controller.v was successful.
-# Compile of tb.v was successful.
-# Compile of fifo.v was successful.
-# 3 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.tb
-# vsim -voptargs="+acc" work.tb 
-# Start time: 15:07:32 on Feb 26,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb(fast)
-# Loading work.i2c_controller(fast)
-add wave -position insertpoint sim:/tb/uut/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 8020
-#           Attempting to use alternate WLF file "./wlftygxfqe".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftygxfqe
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(49)
-#    Time: 2790 ns  Iteration: 0  Instance: /tb
-# 1
-# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 49
-quit -sim
-# End time: 15:17:26 on Feb 26,2024, Elapsed time: 0:09:54
-# Errors: 0, Warnings: 2
-# Compile of controller.v was successful.
-# Compile of tb.v was successful.
-# Compile of fifo.v was successful.
-# 3 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.tb
-# vsim -voptargs="+acc" work.tb 
-# Start time: 15:17:34 on Feb 26,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb(fast)
-# Loading work.i2c_controller(fast)
-add wave -position insertpoint sim:/tb/uut/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 8020
-#           Attempting to use alternate WLF file "./wlftfjw70y".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftfjw70y
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(49)
-#    Time: 2790 ns  Iteration: 0  Instance: /tb
-# 1
-# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 49
-# End time: 18:18:40 on Feb 26,2024, Elapsed time: 3:01:06
-# Errors: 0, Warnings: 2
+# Break in Module tb_top at C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_level_tb.v line 147

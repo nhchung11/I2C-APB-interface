@@ -12,9 +12,9 @@ module FIFO_memory
         output [data_size-1:0]      read_data
     );
 
-    localparam FIFO_depth = 1<<address_size;
-    reg [data_size-1:0] mem [0:FIFO_depth-1];
-    assign read_data = mem[read_address];
+    localparam  FIFO_depth = 1<<address_size;
+    reg         [data_size-1:0] mem [0:FIFO_depth-1];
+    assign      read_data = mem[read_address];
 
     always @(posedge write_clk)
         if (write_clk_en && !write_full)

@@ -1,12 +1,7 @@
-`include "../mem/fifo_mem.v"
-`include "../full/full.v"
-`include "../empty/empty.v"
-`include "../sync_r2w/sync_r2w.v"
-`include "../sync_w2r/sync_w2r.v"
-
 module FIFO_top 
-#(parameter data_size = 8,parameter address_size = 3)
+#(parameter data_size = 8,parameter address_size = 8)
 (
+    // INPUTS
     input [data_size-1:0]   write_data,
     input                   write_increment,
     input                   write_clk,
@@ -14,13 +9,19 @@ module FIFO_top
     input                   read_increment,
     input                   read_clk,
     input                   read_reset_n,
+
+    // OUTPUTS
     output [data_size-1:0]  read_data,
     output                  write_full,
     output                  read_empty
 );
 
-wire [address_size-1:0] write_address, read_address;
-wire [address_size:0] write_pointer, read_pointer, write_to_read_pointer, read_to_write_pointer;
+wire [address_size-1:0]     write_address;
+wire [address_size-1:0]     read_address;
+wire [address_size:0]       write_pointer;
+wire [address_size:0]       read_pointer;
+wire [address_size:0]       write_to_read_pointer;
+wire [address_size:0]       read_to_write_pointer;
 
 FIFO_memory #(data_size, address_size) fifomem
 (

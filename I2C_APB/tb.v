@@ -1,4 +1,4 @@
-module apb_tb;
+module tb;
     reg             PCLK;
     reg             PRESETn;
     reg             PSELx;
@@ -12,10 +12,10 @@ module apb_tb;
     wire            PREADY;
     wire    [7:0]   PRDATA;
 
-    reg     [7:0]   transmit_reg;
-    reg     [7:0]   command_reg;
-    reg     [7:0]   prescale_reg;
-    reg     [7:0]   address_reg
+    wire    [7:0]   transmit_reg;
+    wire    [7:0]   command_reg;
+    wire    [7:0]   prescale_reg;
+    wire    [7:0]   address_reg;
 
     apb apb_dut
     (
@@ -35,7 +35,7 @@ module apb_tb;
         .transmit_reg(transmit_reg),
         .command_reg(command_reg),
         .prescale_reg(prescale_reg),
-        address_reg(address_reg)
+        .address_reg(address_reg)
     );
 
     
@@ -48,7 +48,7 @@ module apb_tb;
 
     initial begin
         PRESETn = 1;
-        PADDR = 8'b00001111;
+        PADDR = 7'b0;
         PWRITE = 0;
         PSELx = 0;
         PWDATA = 8'b00000000;
@@ -56,7 +56,7 @@ module apb_tb;
         status_reg = 8'b00000000;   // ack, not_busy, not_empty, not_full
 
         #10;
-        PADDR = 8'd0;
+        PADDR = 7'b0001111;
         PWRITE = 1;
         PSELx = 1;
         PENABLE = 0;
@@ -71,10 +71,10 @@ module apb_tb;
         PWRITE = 0;
 
         #20;
-        PADDR = 8'd4;
+        PADDR = 7'b1001100;
         PWRITE = 0;
         PSELx = 1;
-        APB_RX = 8'b01010101;        // Receive from FIFO      
+        receive_reg = 8'b10101010;        // Receive from FIFO      
 
         #10;
         PENABLE = 1;
