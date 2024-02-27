@@ -27,7 +27,6 @@ module i2c_controller
     reg [2:0]   current_state;
     reg [3:0]   next_state;
     reg         scl_enable;
-    reg         sda_enable;
     reg         i2c_clk = 1;
     reg [7:0]   counter2 = 0;
     reg         sda_in_check = 0;
@@ -48,8 +47,11 @@ module i2c_controller
 
     // State register logic
     always @(posedge i2c_clk, negedge rst_n) begin
-        if (~rst_n)
+        if (~rst_n) begin
             current_state <= IDLE;
+            sda_o <= 1;
+            scl_enable <= 0;
+        end
         else
             current_state <= next_state;
     end
@@ -141,74 +143,65 @@ module i2c_controller
             default:        next_state = IDLE;
         endcase
     end
-
-    // Output logic
-    always @(current_state, counter) begin
-        case (current_state)
+    always @(posedge clk) begin
+        case(current_state)
             IDLE: begin
-                // enable   = 1;
-                // rw       = 1;
-                sda_enable  = 1;
-                sda_o     = 1;
-                saved_addr  = {slave_address, rw};  // 1101.011.1
-                saved_data  = {data_in};            // 1010.1010
-                scl_enable  = 0;
+                if ((i2c_clk == 0) && (enable == 1)) begin
+                    saved_addr  <= {slave_address, rw};  // 1101.011.1
+                    saved_data  <= {data_in};            // 1010.1010
+                    scl_enable  <= 0;
+                end
             end
             //-----------------------------------------------------
-
             START: begin
-                sda_o       = 0;
-                counter     = 7;
-                scl_enable  = 0;
+                sda_o <= 0;
+                if (i2c_clk == 0)
+                    sda_o <= 0;
             end
             //-----------------------------------------------------
-
             WRITE_ADDRESS: begin
-                sda_o       = saved_addr[counter];
-                sda_enable  = 1;
-                scl_enable  = 1;
+                if (i2c_clk == 0)
+                    sda_o <= saved_addr[counter];
+                    scl_enable <= 1;
             end
             //-----------------------------------------------------
-
             ADDRESS_ACK: begin
-                sda_enable  = 0;
-                sda_o     = 1;
-                counter     = 7;
-                scl_enable  = 1;
+                sda_o <= 1;
+                scl_enable <= 1;
+                counter <= 7;
             end
             //-----------------------------------------------------
-
             WRITE_DATA: begin
-                sda_enable  = 1;
-                sda_o       = saved_data[counter];
-                scl_enable  = 1;
+                if (i2c_clk == 0) begin
+                    sda_o <= saved_data[counter];
+                    scl_enable <= 1;
+                end
             end
             //-----------------------------------------------------
 
             WRITE_ACK: begin
-                sda_enable  = 0;
-                sda_o       = 1;
-                scl_enable  = 1;
+                if (i2c_clk == 0) begin
+                    sda_o       <= 1;
+                    scl_enable  <= 1;
+                end
             end
             //-----------------------------------------------------
 
             READ_DATA: begin
-                sda_o       = 1;
-                sda_enable  = 0;
-                scl_enable  = 1;
+                sda_o       <= 1;
+                scl_enable  <= 1;
             end
             //-----------------------------------------------------
 
             READ_ACK: begin
-                sda_o       = 1;
-                sda_enable  = 0;
-                scl_enable  = 1;
+                sda_o       <= 1;
+                scl_enable  <= 1;
             end
             //-----------------------------------------------------
 
             STOP: begin
-                sda_o     = 1;
-                scl_enable  = 0;
+                sda_o     <= 1;
+                scl_enable  <= 0;
             end
             //-----------------------------------------------------
         endcase

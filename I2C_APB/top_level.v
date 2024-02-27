@@ -2,21 +2,44 @@ module APB_toI2C_BRIDGE_TOP
     #(parameter data_size = 8,parameter address_size = 3)
     (   
         // FIFO inputs and outputs
-        input                   read_clk,
-        input                   read_reset_n,
-        input                   write_clk,
-        input                   write_reset_n,
+        // input                   read_clk,
+        // input                   read_reset_n,
+        // input                   write_clk,
+        // input                   write_reset_n,
 
-        wire [data_size-1:0]    write_data,
-        wire                    write_increment, 
-        wire                    read_increment,
-        wire [data_size-1:0]    read_data,
-        wire                    write_full,
-        wire                    read_empty
+        // APB inputs and outputs
+        input                       PCLK,
+        input                       PRESETn,
+        input                       PWRITE,
+        input                       PENABLE,
+        input [data_size - 1:0]     PADDR,
+        input [data_size - 1:0]     PWDATA,
+
+        output [data_size - 1:0]    PRDATA,
+        output                      PREADY,
+        wire                        R_ENA,
+        wire                        W_ENA
     );
+    wire                            R_ENA;
+    wire                            W_ENA;
+    reg                             WRITE_FULL;
+    reg                             READ_EMPTY;
 
-    wire [address_size-1:0] write_address, read_address;
-    wire [address_size:0] write_pointer, read_pointer, write_to_read_pointer, read_to_write_pointer;
+    wire [data_size-1:0]            write_data;
+    wire                            write_increment; 
+    wire                            read_increment;
+    wire [data_size-1:0]            read_data;
+    wire                            write_full;
+    wire                            read_empty;
+    wire                            APB_TX;
+    wire                            APB_RX;
+
+    wire [address_size-1:0]         write_address;
+    wire [address_size-1:0]         read_address;
+    wire [address_size:0]           write_pointer;
+    wire [address_size-1:0]         read_pointer;
+    wire [address_size-1:0]         write_to_read_pointer;
+    wire [address_size-1:0]         read_to_write_pointer;
 
     FIFO_memory #(data_size, address_size) fifomem
     (

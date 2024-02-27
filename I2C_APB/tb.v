@@ -1,20 +1,21 @@
 module apb_tb;
-    reg PCLK;
-    reg PRESETn;
-    reg PSELx;
-    reg PWRITE;
-    reg PENABLE;
-    reg [7:0] PADDR;
-    reg [7:0] PWDATA;
-    reg [7:0] APB_RX;
-    reg WRITE_FULL;
-    reg READ_EMPTY;
+    reg             PCLK;
+    reg             PRESETn;
+    reg             PSELx;
+    reg             PWRITE;
+    reg             PENABLE;
+    reg     [6:0]   PADDR;
+    reg     [7:0]   PWDATA;
+    reg     [7:0]   status_reg;
+    reg     [7:0]   receive_reg;
 
-    wire PREADY;
-    wire [7:0] PRDATA;
-    wire R_ENA;
-    wire W_ENA;
-    wire [7:0] APB_TX;
+    wire            PREADY;
+    wire    [7:0]   PRDATA;
+
+    reg     [7:0]   transmit_reg;
+    reg     [7:0]   command_reg;
+    reg     [7:0]   prescale_reg;
+    reg     [7:0]   address_reg
 
     apb apb_dut
     (
@@ -25,14 +26,16 @@ module apb_tb;
         .PENABLE(PENABLE),
         .PADDR(PADDR),
         .PWDATA(PWDATA),
-        .APB_RX(APB_RX),
-        .WRITE_FULL(WRITE_FULL),
-        .READ_EMPTY(READ_EMPTY),
+        .status_reg(status_reg),
+        .receive_reg(receive_reg),
+        
         .PREADY(PREADY),
         .PRDATA(PRDATA),
-        .R_ENA(R_ENA),
-        .W_ENA(W_ENA),
-        .APB_TX(APB_TX)
+        
+        .transmit_reg(transmit_reg),
+        .command_reg(command_reg),
+        .prescale_reg(prescale_reg),
+        address_reg(address_reg)
     );
 
     
@@ -50,9 +53,7 @@ module apb_tb;
         PSELx = 0;
         PWDATA = 8'b00000000;
         PENABLE = 0;
-        APB_RX = 0;             // Not receive from FIFO
-        WRITE_FULL = 0;
-        READ_EMPTY = 0;
+        status_reg = 8'b00000000;   // ack, not_busy, not_empty, not_full
 
         #10;
         PADDR = 8'd0;
