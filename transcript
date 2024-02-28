@@ -12,133 +12,506 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# Loading project apb_to_fifo
-# Compile of top_level_tb.v was successful.
-# Compile of top_level.v was successful.
+# Project file D:/Questamsim_project/apb_fifo/apb_to_fifo.mpf was not found.
+# Unable to open project.
+# Loading project apb_fifo_i2c
+# Compile of top_tb.v failed with 1 errors.
+# Compile of top.v was successful.
 # Compile of tb.v was successful.
-# Compile of fifo_top.v was successful.
+# Compile of i2c_controller.v was successful.
 # Compile of fifo.v was successful.
-# Compile of apb_slave.v was successful.
+# Compile of apb_to_fifo_top_tb.v was successful.
 # Compile of apb_to_fifo_top.v was successful.
-# 7 compiles, 0 failed with no errors.
-vsim work.tb_top
-# vsim work.tb_top 
-# Start time: 17:53:45 on Feb 27,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/apb_to_fifo_top.v(58): (vopt-2241) Connection width does not match width of port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(8).
-# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/apb_to_fifo_top.v(68): (vopt-2241) Connection width does not match width of port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(73).
-# Loading work.tb_top(fast)
-quit -sim
-# End time: 17:53:53 on Feb 27,2024, Elapsed time: 0:00:08
-# Errors: 0, Warnings: 2
-vsim work.tb_top -voptargs=+acc
-# vsim work.tb_top -voptargs="+acc" 
-# Start time: 17:54:04 on Feb 27,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb_top(fast)
-# Loading work.apb_to_fifo(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.apb(fast)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (8) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(8).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_top/dut/fifomem File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/apb_to_fifo_top.v Line: 58
-# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (8) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(73).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_top/dut/read_pointer_empty File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/apb_to_fifo_top.v Line: 68
-add wave -position insertpoint sim:/tb_top/dut/apb/*
-add wave -position insertpoint sim:/tb_top/dut/fifomem/*
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_level_tb.v(117)
-#    Time: 170 ns  Iteration: 0  Instance: /tb_top
-# 1
-# Break in Module tb_top at C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_level_tb.v line 117
-quit -sim
-# End time: 17:56:31 on Feb 27,2024, Elapsed time: 0:02:27
-# Errors: 0, Warnings: 2
-# Compile of top_level_tb.v was successful.
-# Compile of top_level.v was successful.
+# Compile of apb_slave.v was successful.
+# 8 compiles, 1 failed with 1 error.
+# Compile of top_tb.v failed with 2 errors.
+# Compile of top.v was successful.
 # Compile of tb.v was successful.
-# Compile of fifo_top.v was successful.
+# Compile of i2c_controller.v was successful.
 # Compile of fifo.v was successful.
-# Compile of apb_slave.v was successful.
+# Compile of apb_to_fifo_top_tb.v was successful.
 # Compile of apb_to_fifo_top.v was successful.
-# 7 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.tb_top
-# vsim -voptargs="+acc" work.tb_top 
-# Start time: 17:56:40 on Feb 27,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb_top(fast)
-# Loading work.apb_to_fifo(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.apb(fast)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (8) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(8).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_top/dut/fifomem File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/apb_to_fifo_top.v Line: 58
-# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (8) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(73).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_top/dut/read_pointer_empty File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/apb_to_fifo_top.v Line: 68
-add wave -position insertpoint sim:/tb_top/dut/apb/*
-add wave -position insertpoint sim:/tb_top/dut/fifomem/*
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_level_tb.v(117)
-#    Time: 170 ns  Iteration: 0  Instance: /tb_top
-# 1
-# Break in Module tb_top at C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_level_tb.v line 117
-quit -sim
-# End time: 17:59:05 on Feb 27,2024, Elapsed time: 0:02:25
-# Errors: 0, Warnings: 2
-# Compile of top_level_tb.v was successful.
-# Compile of top_level.v was successful.
+# Compile of apb_slave.v was successful.
+# 8 compiles, 1 failed with 2 errors.
+# Compile of top_tb.v failed with 1 errors.
+# Compile of top.v was successful.
 # Compile of tb.v was successful.
-# Compile of fifo_top.v was successful.
+# Compile of i2c_controller.v was successful.
 # Compile of fifo.v was successful.
-# Compile of apb_slave.v was successful.
+# Compile of apb_to_fifo_top_tb.v was successful.
 # Compile of apb_to_fifo_top.v was successful.
-# 7 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.tb_top
-# vsim -voptargs="+acc" work.tb_top 
-# Start time: 17:59:11 on Feb 27,2024
+# Compile of apb_slave.v was successful.
+# 8 compiles, 1 failed with 1 error.
+# Compile of top_tb.v was successful.
+# Compile of top.v was successful.
+# Compile of tb.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of fifo.v was successful.
+# Compile of apb_to_fifo_top_tb.v was successful.
+# Compile of apb_to_fifo_top.v was successful.
+# Compile of apb_slave.v was successful.
+# 8 compiles, 0 failed with no errors.
+vsim work.top_level_tb -voptargs=+acc
+# vsim work.top_level_tb -voptargs="+acc" 
+# Start time: 10:29:52 on Feb 28,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v(18): (vopt-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 14, found 11.
+# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v(18): (vopt-2718) [TFMPC] - Missing connection for port 'sda_out'.
+# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v(18): (vopt-2718) [TFMPC] - Missing connection for port 'scl_out'.
+# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v(18): (vopt-2718) [TFMPC] - Missing connection for port 'sda_in'.
+# Loading work.top_level_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (8) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(8).
+#    Time: 0 ns  Iteration: 0  Instance: /top_level_tb/dut/fifomem File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 62
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (8) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(73).
+#    Time: 0 ns  Iteration: 0  Instance: /top_level_tb/dut/read_pointer_empty File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 72
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (8) for port 'slave_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/i2c_controller.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /top_level_tb/dut/i2c_controller File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 126
+add wave -position insertpoint sim:/top_level_tb/dut/apb/*
+add wave -position insertpoint sim:/top_level_tb/dut/fifomem/*
+add wave -position insertpoint sim:/top_level_tb/dut/i2c_controller/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v(146)
+#    Time: 250 ns  Iteration: 0  Instance: /top_level_tb
+# 1
+# Break in Module top_level_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v line 146
+quit -sim
+# End time: 10:31:52 on Feb 28,2024, Elapsed time: 0:02:00
+# Errors: 0, Warnings: 7
+# Compile of top_tb.v was successful.
+# Compile of top.v was successful.
+# Compile of tb.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of fifo.v was successful.
+# Compile of apb_to_fifo_top_tb.v was successful.
+# Compile of apb_to_fifo_top.v was successful.
+# Compile of apb_slave.v was successful.
+# 8 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top_level_tb
+# vsim -voptargs="+acc" work.top_level_tb 
+# Start time: 10:31:59 on Feb 28,2024
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb_top(fast)
-# Loading work.apb_to_fifo(fast)
+# Loading work.top_level_tb(fast)
+# Loading work.top_level(fast)
 # Loading work.FIFO_memory(fast)
 # Loading work.read_pointer_empty(fast)
 # Loading work.write_pointer_full(fast)
 # Loading work.sync_read_to_write(fast)
 # Loading work.sync_write_to_read(fast)
 # Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
 # ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (8) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(8).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_top/dut/fifomem File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/apb_to_fifo_top.v Line: 58
+#    Time: 0 ns  Iteration: 0  Instance: /top_level_tb/dut/fifomem File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 62
 # ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (8) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(73).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_top/dut/read_pointer_empty File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/apb_to_fifo_top.v Line: 68
-add wave -position insertpoint sim:/tb_top/dut/apb/*
-add wave -position insertpoint sim:/tb_top/dut/fifomem/*
+#    Time: 0 ns  Iteration: 0  Instance: /top_level_tb/dut/read_pointer_empty File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 72
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (8) for port 'slave_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/i2c_controller.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /top_level_tb/dut/i2c_controller File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 126
+add wave -position insertpoint sim:/top_level_tb/dut/apb/*
+add wave -position insertpoint sim:/top_level_tb/dut/fifomem/*
+add wave -position insertpoint sim:/top_level_tb/dut/i2c_controller/*
 run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_level_tb.v(147)
-#    Time: 250 ns  Iteration: 0  Instance: /tb_top
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v(149)
+#    Time: 250 ns  Iteration: 0  Instance: /top_level_tb
 # 1
-# Break in Module tb_top at C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_level_tb.v line 147
-add wave -position insertpoint sim:/tb_top/dut/write_pointer_full/*
-restart
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# Loading work.tb_top(fast)
-# Loading work.apb_to_fifo(fast)
+# Break in Module top_level_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v line 149
+quit -sim
+# End time: 10:33:16 on Feb 28,2024, Elapsed time: 0:01:17
+# Errors: 0, Warnings: 3
+# Compile of top_tb.v was successful.
+# Compile of top.v was successful.
+# Compile of tb.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of fifo.v was successful.
+# Compile of apb_to_fifo_top_tb.v was successful.
+# Compile of apb_to_fifo_top.v was successful.
+# Compile of apb_slave.v was successful.
+# 8 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top_level_tb
+# vsim -voptargs="+acc" work.top_level_tb 
+# Start time: 10:33:46 on Feb 28,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.top_level_tb(fast)
+# Loading work.top_level(fast)
 # Loading work.FIFO_memory(fast)
 # Loading work.read_pointer_empty(fast)
 # Loading work.write_pointer_full(fast)
 # Loading work.sync_read_to_write(fast)
 # Loading work.sync_write_to_read(fast)
 # Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
 # ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (8) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(8).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_top/dut/fifomem File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/apb_to_fifo_top.v Line: 58
+#    Time: 0 ns  Iteration: 0  Instance: /top_level_tb/dut/fifomem File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 62
 # ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (8) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(73).
-#    Time: 0 ns  Iteration: 0  Instance: /tb_top/dut/read_pointer_empty File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/apb_to_fifo_top.v Line: 68
+#    Time: 0 ns  Iteration: 0  Instance: /top_level_tb/dut/read_pointer_empty File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 72
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (8) for port 'slave_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/i2c_controller.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /top_level_tb/dut/i2c_controller File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 126
+add wave -position insertpoint sim:/top_level_tb/dut/apb/*
+add wave -position insertpoint sim:/top_level_tb/dut/fifomem/*
+add wave -position insertpoint sim:/top_level_tb/dut/i2c_controller/*
 run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_level_tb.v(147)
-#    Time: 250 ns  Iteration: 0  Instance: /tb_top
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v(74)
+#    Time: 530 ns  Iteration: 0  Instance: /top_level_tb
 # 1
-# Break in Module tb_top at C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_level_tb.v line 147
+# Break in Module top_level_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v line 74
+# Causality operation skipped due to absence of debug database file
+quit -sim
+# End time: 10:38:21 on Feb 28,2024, Elapsed time: 0:04:35
+# Errors: 0, Warnings: 4
+# Compile of top_tb.v was successful.
+# Compile of top.v was successful.
+# Compile of tb.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of fifo.v was successful.
+# Compile of apb_to_fifo_top_tb.v was successful.
+# Compile of apb_to_fifo_top.v was successful.
+# Compile of apb_slave.v was successful.
+# 8 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top_level_tb
+# vsim -voptargs="+acc" work.top_level_tb 
+# Start time: 10:38:50 on Feb 28,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.top_level_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (8) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(8).
+#    Time: 0 ns  Iteration: 0  Instance: /top_level_tb/dut/fifomem File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 62
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (8) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(73).
+#    Time: 0 ns  Iteration: 0  Instance: /top_level_tb/dut/read_pointer_empty File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 72
+add wave -position insertpoint sim:/top_level_tb/dut/apb/*
+add wave -position insertpoint sim:/top_level_tb/dut/fifomem/*
+add wave -position insertpoint sim:/top_level_tb/dut/i2c_controller/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v(74)
+#    Time: 530 ns  Iteration: 0  Instance: /top_level_tb
+# 1
+# Break in Module top_level_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v line 74
+quit -sim
+# End time: 10:41:59 on Feb 28,2024, Elapsed time: 0:03:09
+# Errors: 0, Warnings: 2
+# Compile of top_tb.v was successful.
+# Compile of top.v was successful.
+# Compile of tb.v was successful.
+# Compile of i2c_controller.v failed with 1 errors.
+# Compile of fifo.v was successful.
+# Compile of apb_to_fifo_top_tb.v was successful.
+# Compile of apb_to_fifo_top.v was successful.
+# Compile of apb_slave.v was successful.
+# 8 compiles, 1 failed with 1 error.
+# Compile of top_tb.v was successful.
+# Compile of top.v was successful.
+# Compile of tb.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of fifo.v was successful.
+# Compile of apb_to_fifo_top_tb.v was successful.
+# Compile of apb_to_fifo_top.v was successful.
+# Compile of apb_slave.v was successful.
+# 8 compiles, 0 failed with no errors.
+clear
+# invalid command name "clear"
+# Compile of top_tb.v was successful.
+# Compile of top.v was successful.
+# Compile of tb.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of fifo.v was successful.
+# Compile of apb_to_fifo_top_tb.v was successful.
+# Compile of apb_to_fifo_top.v was successful.
+# Compile of apb_slave.v was successful.
+# 8 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top_level_tb
+# vsim -voptargs="+acc" work.top_level_tb 
+# Start time: 10:43:23 on Feb 28,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.top_level_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (8) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(8).
+#    Time: 0 ns  Iteration: 0  Instance: /top_level_tb/dut/fifomem File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 62
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (8) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(73).
+#    Time: 0 ns  Iteration: 0  Instance: /top_level_tb/dut/read_pointer_empty File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 72
+add wave -position insertpoint sim:/top_level_tb/dut/apb/*
+add wave -position insertpoint sim:/top_level_tb/dut/fifomem/*
+add wave -position insertpoint sim:/top_level_tb/dut/i2c_controller/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v(74)
+#    Time: 530 ns  Iteration: 0  Instance: /top_level_tb
+# 1
+# Break in Module top_level_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v line 74
+quit -sim
+# End time: 10:47:02 on Feb 28,2024, Elapsed time: 0:03:39
+# Errors: 0, Warnings: 2
+# Compile of top_tb.v was successful.
+# Compile of top.v was successful.
+# Compile of tb.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of fifo.v was successful.
+# Compile of apb_to_fifo_top_tb.v was successful.
+# Compile of apb_to_fifo_top.v was successful.
+# Compile of apb_slave.v was successful.
+# 8 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top_level_tb
+# vsim -voptargs="+acc" work.top_level_tb 
+# Start time: 10:47:13 on Feb 28,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.top_level_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (8) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(8).
+#    Time: 0 ns  Iteration: 0  Instance: /top_level_tb/dut/fifomem File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 62
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (8) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(73).
+#    Time: 0 ns  Iteration: 0  Instance: /top_level_tb/dut/read_pointer_empty File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 72
+add wave -position insertpoint sim:/top_level_tb/dut/apb/*
+add wave -position insertpoint sim:/top_level_tb/dut/fifomem/*
+add wave -position insertpoint sim:/top_level_tb/dut/i2c_controller/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v(74)
+#    Time: 530 ns  Iteration: 0  Instance: /top_level_tb
+# 1
+# Break in Module top_level_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v line 74
+quit -sim
+# End time: 10:50:21 on Feb 28,2024, Elapsed time: 0:03:08
+# Errors: 0, Warnings: 2
+# Compile of top_tb.v was successful.
+# Compile of top.v was successful.
+# Compile of tb.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of fifo.v was successful.
+# Compile of apb_to_fifo_top_tb.v was successful.
+# Compile of apb_to_fifo_top.v was successful.
+# Compile of apb_slave.v was successful.
+# 8 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top_level_tb
+# vsim -voptargs="+acc" work.top_level_tb 
+# Start time: 10:50:38 on Feb 28,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.top_level_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (1) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(8).
+#    Time: 0 ns  Iteration: 0  Instance: /top_level_tb/dut/fifomem File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 62
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (1) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(73).
+#    Time: 0 ns  Iteration: 0  Instance: /top_level_tb/dut/read_pointer_empty File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 72
+add wave -position insertpoint sim:/top_level_tb/dut/apb/*
+add wave -position insertpoint sim:/top_level_tb/dut/fifomem/*
+add wave -position insertpoint sim:/top_level_tb/dut/i2c_controller/*
+# Load canceled
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v(74)
+#    Time: 530 ns  Iteration: 0  Instance: /top_level_tb
+# 1
+# Break in Module top_level_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v line 74
+quit -sim
+# End time: 10:56:24 on Feb 28,2024, Elapsed time: 0:05:46
+# Errors: 1, Warnings: 2
+# Compile of top_tb.v was successful.
+# Compile of top.v was successful.
+# Compile of tb.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of fifo.v was successful.
+# Compile of apb_to_fifo_top_tb.v was successful.
+# Compile of apb_to_fifo_top.v was successful.
+# Compile of apb_slave.v was successful.
+# 8 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top_level_tb
+# vsim -voptargs="+acc" work.top_level_tb 
+# Start time: 10:56:37 on Feb 28,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.top_level_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (1) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(8).
+#    Time: 0 ns  Iteration: 0  Instance: /top_level_tb/dut/fifomem File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 62
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (1) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(73).
+#    Time: 0 ns  Iteration: 0  Instance: /top_level_tb/dut/read_pointer_empty File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 72
+add wave -position insertpoint sim:/top_level_tb/dut/apb/*
+add wave -position insertpoint sim:/top_level_tb/dut/fifomem/*
+add wave -position insertpoint sim:/top_level_tb/dut/i2c_controller/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v(74)
+#    Time: 530 ns  Iteration: 0  Instance: /top_level_tb
+# 1
+# Break in Module top_level_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v line 74
+quit -sim
+# End time: 11:08:50 on Feb 28,2024, Elapsed time: 0:12:13
+# Errors: 0, Warnings: 2
+# Compile of top_tb.v was successful.
+# Compile of top.v was successful.
+# Compile of tb.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of fifo.v was successful.
+# Compile of apb_to_fifo_top_tb.v was successful.
+# Compile of apb_to_fifo_top.v was successful.
+# Compile of apb_slave.v was successful.
+# 8 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top_level_tb
+# vsim -voptargs="+acc" work.top_level_tb 
+# Start time: 11:08:59 on Feb 28,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.top_level_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (1) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(8).
+#    Time: 0 ns  Iteration: 0  Instance: /top_level_tb/dut/fifomem File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 62
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (1) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(73).
+#    Time: 0 ns  Iteration: 0  Instance: /top_level_tb/dut/read_pointer_empty File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 72
+add wave -position insertpoint sim:/top_level_tb/dut/apb/*
+add wave -position insertpoint sim:/top_level_tb/dut/fifomem/*
+add wave -position insertpoint sim:/top_level_tb/dut/i2c_controller/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v(74)
+#    Time: 530 ns  Iteration: 0  Instance: /top_level_tb
+# 1
+# Break in Module top_level_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v line 74
+quit -sim
+# End time: 11:10:00 on Feb 28,2024, Elapsed time: 0:01:01
+# Errors: 0, Warnings: 2
+# Compile of top_tb.v was successful.
+# Compile of top.v was successful.
+# Compile of tb.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of fifo.v was successful.
+# Compile of apb_to_fifo_top_tb.v was successful.
+# Compile of apb_to_fifo_top.v was successful.
+# Compile of apb_slave.v was successful.
+# 8 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top_level_tb
+# vsim -voptargs="+acc" work.top_level_tb 
+# Start time: 11:10:11 on Feb 28,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.top_level_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (1) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(8).
+#    Time: 0 ns  Iteration: 0  Instance: /top_level_tb/dut/fifomem File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 62
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (1) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(73).
+#    Time: 0 ns  Iteration: 0  Instance: /top_level_tb/dut/read_pointer_empty File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 72
+add wave -position insertpoint sim:/top_level_tb/dut/apb/*
+add wave -position insertpoint sim:/top_level_tb/dut/fifomem/*
+add wave -position insertpoint sim:/top_level_tb/dut/i2c_controller/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v(74)
+#    Time: 530 ns  Iteration: 0  Instance: /top_level_tb
+# 1
+# Break in Module top_level_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v line 74
+quit -sim
+# End time: 11:13:44 on Feb 28,2024, Elapsed time: 0:03:33
+# Errors: 0, Warnings: 2
+# Compile of top_tb.v was successful.
+# Compile of top.v was successful.
+# Compile of tb.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of fifo.v was successful.
+# Compile of apb_to_fifo_top_tb.v was successful.
+# Compile of apb_to_fifo_top.v was successful.
+# Compile of apb_slave.v was successful.
+# 8 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top_level_tb
+# vsim -voptargs="+acc" work.top_level_tb 
+# Start time: 11:13:52 on Feb 28,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.top_level_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (1) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(8).
+#    Time: 0 ns  Iteration: 0  Instance: /top_level_tb/dut/fifomem File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 62
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (1) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(73).
+#    Time: 0 ns  Iteration: 0  Instance: /top_level_tb/dut/read_pointer_empty File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 72
+add wave -position insertpoint sim:/top_level_tb/dut/apb/*
+add wave -position insertpoint sim:/top_level_tb/dut/fifomem/*
+add wave -position insertpoint sim:/top_level_tb/dut/i2c_controller/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v(74)
+#    Time: 530 ns  Iteration: 0  Instance: /top_level_tb
+# 1
+# Break in Module top_level_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v line 74
+quit -sim
+# End time: 11:14:19 on Feb 28,2024, Elapsed time: 0:00:27
+# Errors: 0, Warnings: 2
+# Compile of top_tb.v was successful.
+# Compile of top.v was successful.
+# Compile of tb.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of fifo.v was successful.
+# Compile of apb_to_fifo_top_tb.v was successful.
+# Compile of apb_to_fifo_top.v was successful.
+# Compile of apb_slave.v was successful.
+# 8 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top_level_tb
+# vsim -voptargs="+acc" work.top_level_tb 
+# Start time: 11:14:40 on Feb 28,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.top_level_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (1) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(8).
+#    Time: 0 ns  Iteration: 0  Instance: /top_level_tb/dut/fifomem File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 62
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (1) for port 'read_address'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/fifo.v(73).
+#    Time: 0 ns  Iteration: 0  Instance: /top_level_tb/dut/read_pointer_empty File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 72
+add wave -position insertpoint sim:/top_level_tb/dut/apb/*
+add wave -position insertpoint sim:/top_level_tb/dut/fifomem/*
+add wave -position insertpoint sim:/top_level_tb/dut/i2c_controller/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v(74)
+#    Time: 1530 ns  Iteration: 0  Instance: /top_level_tb
+# 1
+# Break in Module top_level_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v line 74

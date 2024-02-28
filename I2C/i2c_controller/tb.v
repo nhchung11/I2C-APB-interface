@@ -4,7 +4,7 @@ module tb;
   reg [7:0] data_in;
   reg rw;
   reg repeated_start_cond;
-  reg sda_in, scl_in;
+  reg sda_in;
   wire sda_out, scl_out;
 
   // Instantiate the i2c_core module
@@ -17,7 +17,6 @@ module tb;
     .rw(rw),
     .repeated_start_cond(repeated_start_cond),
     .sda_in(sda_in),
-    .scl_in(scl_in),
     .sda_out(sda_out),
     .scl_out(scl_out)
   );
@@ -35,7 +34,6 @@ module tb;
     repeated_start_cond = 1;
     rw = 1;
     enable = 1;
-    scl_in = 1;
     sda_in = 1;
     #20 rst_n = 1;
 

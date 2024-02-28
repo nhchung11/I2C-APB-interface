@@ -1,12 +1,11 @@
 module i2c_controller
     (
-        input wire          clk,
-        input wire          rst_n,
-        input wire          enable,
-        input wire [6:0]    slave_address,
-        input wire [7:0]    data_in,
-        input wire          rw,
-        input wire          repeated_start_cond,
+        input               clk,
+        input               rst_n,
+        input               enable,
+        input  [7:0]        slave_address,
+        input  [7:0]        data_in,
+        input               repeated_start_cond,
         input               sda_in,
         output              sda_out, scl_out
     );
@@ -31,11 +30,13 @@ module i2c_controller
     reg [7:0]   counter2 = 0;
     reg         sda_in_check = 0;
     reg         sda_o;
+    wire        rw;
 
 
     // assign sda_out = (sda_enable == 1) ? sda_o : 1'bz;
     assign scl_out = (scl_enable == 1) ? i2c_clk : 1;
     assign sda_out = sda_o;
+    assign rw = slave_address[0];
 
 	always @(posedge clk) begin
 		if (counter2 == 1) begin
@@ -61,7 +62,9 @@ module i2c_controller
         if (~rst_n)
             counter <= 7;
         else begin
-            if ((current_state == WRITE_ADDRESS) || (current_state == WRITE_DATA) || (current_state == READ_DATA))
+            if (current_state == START)
+                counter <= 7;
+            else if ((current_state == WRITE_ADDRESS) || (current_state == WRITE_DATA) || (current_state == READ_DATA))
                 counter <= counter - 1;
         end
     end
@@ -78,7 +81,9 @@ module i2c_controller
     always @* begin
         case (current_state)
             IDLE: begin
-                if (enable) next_state = START;
+                if (enable) begin 
+                    next_state = START;
+                end
                 else        next_state = IDLE;
             end
             //-----------------------------------------------------
@@ -149,8 +154,9 @@ module i2c_controller
                 if ((i2c_clk == 0) && (enable == 1)) begin
                     saved_addr  <= {slave_address, rw};  // 1101.011.1
                     saved_data  <= {data_in};            // 1010.1010
-                    scl_enable  <= 0;
                 end
+                scl_enable <= 0;
+                sda_o   <= 1;
             end
             //-----------------------------------------------------
             START: begin

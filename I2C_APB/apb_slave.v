@@ -44,12 +44,12 @@ module apb
     always @(posedge PCLK, negedge PRESETn) begin
         if (!PRESETn) begin
             transmit_reg    <= 8'b0;
-            command_reg     <= 8'b00000000;
+            command_reg     <= 8'b01000000;
             address_reg     <= 8'b0;
             prescale_reg    <= 8'b0;
         end
         else begin 
-            command_reg     <= 8'b10000000;
+            command_reg     <= 8'b11000000;
             prescale_reg    <= 8'b00000100;
             // WRITE
             if (PCLK && PENABLE && PWRITE && (full == 0)) begin

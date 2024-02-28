@@ -1,4 +1,4 @@
-module tb_top;
+module apb_to_fifo_tb;
     reg             PCLK;
     reg             PRESETn;
     reg             PSELx;
