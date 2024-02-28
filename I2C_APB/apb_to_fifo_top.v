@@ -44,17 +44,11 @@ module apb_to_fifo
     wire                            read_reset_n;
     wire                            write_reset_n;
 
-    // Assign values
-    // assign write_reset_n            = command_reg[6];
-    // assign read_reset_n             = command_reg[6];
-    // assign write_increment          = command_reg[7];
-    // assign read_increment           = command_reg[7];
-    // assign status_reg[7]            = write_full;
-    // assign status_reg[6]            = read_empty;
     assign status_reg[5:0]          = 0;
     assign TX                       = transmit_reg;
     assign status_reg [7]           = write_full;
     assign status_reg [6]           = read_empty;
+    
     FIFO_memory #(data_size, address_size) fifomem
     (
         .write_clk                  (write_clk),

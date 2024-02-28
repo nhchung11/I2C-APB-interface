@@ -4,21 +4,21 @@ module FIFO_memory
     //let us define the data and address size to get 8 location X 8 bit memory
     (
         input [data_size-1:0]       write_data,
-        input [address_size-1:0]    write_address,
-        input [address_size-1:0]    read_address,
+        input [address_size-1:0]    write_address_input,
+        input [address_size-1:0]    read_address_input,
         input                       write_clk_en,
-        input                       write_full,
+        input                       write_full_check,
         input                       write_clk,
         output [data_size-1:0]      read_data
     );
 
     localparam  FIFO_depth = 1<<address_size;
     reg         [data_size-1:0] mem [0:FIFO_depth-1];
-    assign      read_data = mem[read_address];
+    assign      read_data = mem[read_address_input];
 
     always @(posedge write_clk)
-        if (write_clk_en && !write_full)
-            mem[write_address] <= write_data;
+        if (write_clk_en && !write_full_check)
+            mem[write_address_input] <= write_data;
 endmodule
 
 
@@ -30,9 +30,9 @@ module write_pointer_full
         input                           write_clk, 
         input                           write_increment,
         input [address_size :0]         write_to_read_pointer,
-        output reg [address_size-1:0]   write_address,
+        output reg [address_size-1:0]   write_address_output,
         output reg [address_size :0]    write_pointer,
-        output reg                      write_full
+        output reg                      write_full_output
     );
 
     reg [address_size:0] write_gray_next;
@@ -42,8 +42,8 @@ module write_pointer_full
     // Binary pointers to the memory buffer
     always@*
         begin
-            write_address = write_binary[address_size-1:0];
-            write_binary_next = write_binary + (write_increment & ~write_full); 
+            write_address_output = write_binary[address_size-1:0];
+            write_binary_next = write_binary + (write_increment & ~write_full_output); 
             write_gray_next = (write_binary_next>>1) ^ write_binary_next;
         end
 
@@ -57,9 +57,9 @@ module write_pointer_full
     //Let us create FIFO_Full logic using the pointer 
     always @(posedge write_clk , negedge write_reset_n)
         if (!write_reset_n) 
-            write_full <= 1'b0;
+            write_full_output <= 1'b0;
         else
-            write_full <= (write_gray_next=={~write_to_read_pointer[address_size:address_size-1], write_to_read_pointer[address_size-2:0]});
+            write_full_output <= (write_gray_next=={~write_to_read_pointer[address_size:address_size-1], write_to_read_pointer[address_size-2:0]});
 endmodule
 
 
@@ -70,9 +70,9 @@ module read_pointer_empty #(parameter address_size = 3)
         input                           read_increment,
         input                           read_clk,
         input [address_size :0]         read_to_write_pointer,
-        output reg [address_size-1:0]   read_address,
+        output reg [address_size-1:0]   read_address_output,
         output reg [address_size :0]    read_pointer,
-        output reg                      read_empty 
+        output reg                      read_empty_output 
     );
 
     reg [address_size:0] read_binary;
@@ -81,8 +81,8 @@ module read_pointer_empty #(parameter address_size = 3)
 
     always@*
         begin
-        read_address = read_binary[address_size-1:0];
-        read_binary_next = read_binary + (read_increment & ~read_empty); 
+        read_address_output = read_binary[address_size-1:0];
+        read_binary_next = read_binary + (read_increment & ~read_empty_output); 
         read_gray_next = (read_binary_next>>1) ^ read_binary_next;
     end
 
@@ -95,9 +95,9 @@ module read_pointer_empty #(parameter address_size = 3)
     // FIFO empty logic
     always @(posedge read_clk , negedge read_reset_n)
         if (~read_reset_n)
-            read_empty <= 1'b1;
+            read_empty_output <= 1'b1;
         else
-            read_empty <= (read_gray_next == read_to_write_pointer);
+            read_empty_output <= (read_gray_next == read_to_write_pointer);
 endmodule
 
 // SYNC READ TO WRITE

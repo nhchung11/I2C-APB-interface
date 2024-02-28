@@ -1,6 +1,6 @@
 module i2c_controller
     (
-        input               clk,
+        input               i2c_core_clk,
         input               rst_n,
         input               enable,
         input  [7:0]        slave_address,
@@ -38,7 +38,7 @@ module i2c_controller
     assign sda_out = sda_o;
     assign rw = slave_address[0];
 
-	always @(posedge clk) begin
+	always @(posedge i2c_core_clk) begin
 		if (counter2 == 1) begin
 			i2c_clk <= ~i2c_clk;
 			counter2 <= 0;
@@ -64,7 +64,7 @@ module i2c_controller
         else begin
             if (current_state == START)
                 counter <= 7;
-            else if ((current_state == WRITE_ADDRESS) || (current_state == WRITE_DATA) || (current_state == READ_DATA))
+            if ((current_state == WRITE_ADDRESS) || (current_state == WRITE_DATA) || (current_state == READ_DATA))
                 counter <= counter - 1;
         end
     end
@@ -152,7 +152,7 @@ module i2c_controller
         case(current_state)
             IDLE: begin
                 if ((i2c_clk == 0) && (enable == 1)) begin
-                    saved_addr  <= {slave_address, rw};  // 1101.011.1
+                    saved_addr  <= {slave_address};  // 1101.011.1
                     saved_data  <= {data_in};            // 1010.1010
                 end
                 scl_enable <= 0;

@@ -48,14 +48,16 @@ module top_level_tb;
     initial begin
         write_clk = 0;
         read_clk = 0;
-        PRESETn = 1;
+        PRESETn = 0;
         PADDR = 7'b0;
         PWRITE = 0;
         PSELx = 0;
         PWDATA = 8'd0;
         PENABLE = 0;
+        sda_in = 1;
 
         #10;
+        PRESETn = 1;
         PADDR = 7'b0001111;
         PWRITE = 1;
         PSELx = 1;
@@ -70,7 +72,17 @@ module top_level_tb;
         PSELx = 0;
         PWRITE = 0;
 
-        #1500;
+        #360;
+        sda_in = 0;
+        #40;
+        sda_in = 1;
+
+        #320;
+        sda_in = 0;
+        #40
+        sda_in = 1;
+
+        #800;
         $finish;
     end
-endmodule
+endmodule 

@@ -20,45 +20,58 @@ module apb
         output reg  [7:0]   prescale_reg,
         output reg  [7:0]   address_reg
 	);
-    reg empty;
-    reg full;
-    reg ack;        // 1: NACK
-                    // 0: ACK
-    reg busy_bus;   // 1: after START condition
-                    // 0: after STOP condition
+    reg                     RX_empty;
+    reg                     TX_full;
+    reg [7:0]               PREV_ADDR;
+    reg [3:0]               enable_counter;
 
     // Input status
     always @* begin
-        ack         = status_reg[7];
-        busy_bus    = status_reg[6];
-        empty       = status_reg[5];
-        full        = status_reg[4];
+        TX_full             = status_reg[7];
+        RX_empty            = status_reg[6];
     end
+
+    always @(posedge PCLK, negedge PRESETn) begin
+        PREV_ADDR           <= PADDR;
+        if (PADDR != PADDR) begin
+            command_reg[3]  <= 0;
+        end
+        else begin
+            command_reg[3]  <= 1;
+        end
+    end
+    
     
     // READY
     assign PREADY = ((PENABLE == 1'b1) & (PSELx == 1'b1)) ? 1'b1 : 1'b0;
     
     // DATA READ FROM FIFO
-    assign PRDATA = ((empty == 0) & (PENABLE == 1'b1) & (PWRITE == 1'b0)) ? receive_reg : 8'b0;
+    assign PRDATA = ((RX_empty == 0) & (PENABLE == 1'b1) & (PWRITE == 1'b0)) ? receive_reg : 8'b0;
 
     always @(posedge PCLK, negedge PRESETn) begin
         if (!PRESETn) begin
-            transmit_reg    <= 8'b0;
-            command_reg     <= 8'b01000000;
-            address_reg     <= 8'b0;
-            prescale_reg    <= 8'b0;
+            transmit_reg        <= 8'b0;
+            command_reg         <= 8'b00000000;
+            address_reg         <= 8'b0;
+            prescale_reg        <= 8'b0;
         end
         else begin 
-            command_reg     <= 8'b11000000;
-            prescale_reg    <= 8'b00000100;
+            command_reg[4]      <= 1;
+            prescale_reg        <= 8'b00000100;
             // WRITE
-            if (PCLK && PENABLE && PWRITE && (full == 0)) begin
-                transmit_reg <= PWDATA;
-                address_reg <= {PADDR, 1'b1};
+            if (PCLK && PENABLE && PWRITE && (TX_full == 0)) begin
+                transmit_reg    <= PWDATA;
+                address_reg     <= {PADDR, 1'b1};
+                command_reg[6]  <= 1;
+                command_reg[5]  <= 0;
+                command_reg[7]  <= 1;
             end
             // READ
-            else if (PCLK && PENABLE && (PWRITE == 0) && (empty == 0)) begin
-                address_reg <= {PADDR, 1'b0};
+            else if (PCLK && PENABLE && (PWRITE == 0) && (RX_empty == 0)) begin
+                address_reg     <= {PADDR, 1'b0};
+                command_reg[5]  <= 1;
+                command_reg[6]  <= 0;
+                command_reg[7]  <= 1;
             end
         end
     end

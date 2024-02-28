@@ -12,6 +12,7 @@ module top_level
         input                       write_clk,
         input                       read_clk,
         input                       sda_in,
+        input                       i2c_core_clk,
 
         output [data_size - 1:0]    PRDATA,
         output                      PREADY,
@@ -21,88 +22,154 @@ module top_level
     // Internal register
     wire [data_size - 1:0]          prescale_reg;
     wire [data_size - 1:0]          command_reg;
-    wire [data_size - 1:0]          status_reg;
+    reg  [data_size - 1:0]          status_reg;
     wire [data_size - 1:0]          transmit_reg;
     wire [data_size - 1:0]          receive_reg;
     wire [data_size - 1:0]          address_reg;
 
-    // Internal FIFO wires
-    wire [address_size-1:0]         write_address;
-    wire                            read_address;
+    // FIFO TX
+    // Internal FIFO TX wires
+    wire [address_size - 1:0]       write_address_output;
+    wire [address_size - 1:0]       read_address_output;
     wire [address_size:0]           write_pointer;
     wire [address_size:0]           read_pointer;
     wire [address_size:0]           write_to_read_pointer;
     wire [address_size:0]           read_to_write_pointer;
-
-    // Internal FIFO signals
+    
+    // Internal FIFO TX signals
     wire                            write_increment;
     wire                            read_increment;
-    wire [data_size - 1:0]          read_data;
-    wire                            write_full;
-    wire                            read_empty;
+    wire [data_size - 1:0]          read_data_output;
+    wire                            write_full_output;
+    wire                            read_empty_output;
     wire [data_size - 1:0]          write_data;
     wire                            read_reset_n;
     wire                            write_reset_n;
+
+    // FIFO RX
+    // Internal FIFO RX wires
+    wire [address_size - 1:0]       write_address_output_rx;
+    wire [address_size - 1:0]       read_address_output_rx;
+    wire [address_size:0]           write_pointer_rx;
+    wire [address_size:0]           read_pointer_rx;
+    wire [address_size:0]           write_to_read_pointer_rx;
+    wire [address_size:0]           read_to_write_pointer_rx;
+
+    // Internal FIFO RX signals
+    wire                            write_increment_rx;
+    wire                            read_increment_rx;
+    wire [data_size - 1:0]          read_data_output_rx;
+    wire                            write_full_output_rx;
+    wire                            read_empty_output_rx;
+    wire [data_size - 1:0]          write_data_rx;
+    wire                            read_reset_n_rx;
+    wire                            write_reset_n_rx;
+    
 
     // FIFO inputs and outputs
     wire [data_size - 1:0]          TX;
     wire [data_size - 1:0]          RX;
 
-    // Assign values
-    // assign write_reset_n            = command_reg[6];
-    // assign read_reset_n             = command_reg[6];
-    // assign write_increment          = command_reg[7];
-    // assign read_increment           = command_reg[7];
-    // assign status_reg[7]            = write_full;
-    // assign status_reg[6]            = read_empty;
-    assign status_reg[5:0]          = 0;
     assign TX                       = transmit_reg;
-    assign status_reg [7]           = write_full;
-    assign status_reg [6]           = read_empty;
+    always @* begin
+        status_reg [5:0]            = 0;
+        status_reg [7]              = write_full_output;
+        status_reg [6]              = read_empty_output;
+    end
+
+    // FIFO TX
     FIFO_memory #(data_size, address_size) fifomem
     (
-        .write_clk                  (write_clk),
+        .write_clk                  (PCLK),
         .write_clk_en               (command_reg[7]),
         .write_data                 (transmit_reg),
-        .write_address              (write_address),
-        .read_data                  (receive_reg),
-        .read_address               (read_address),
-        .write_full                 (write_full)
+        .write_address_input        (write_address_output),
+        .read_data                  (RX),
+        .read_address_input         (read_address_output),
+        .write_full_check           (write_full_output)
     );
     read_pointer_empty #(address_size) read_pointer_empty
     (
-        .read_clk                   (read_clk),
+        .read_clk                   (i2c_core_clk),
         .read_reset_n               (command_reg[6]),
         .read_increment             (command_reg[7]),
-        .read_address               (read_address),
+        .read_address_output        (read_address_output),
         .read_pointer               (read_pointer),
-        .read_empty                 (read_empty),
+        .read_empty_output          (read_empty_output),
         .read_to_write_pointer      (read_to_write_pointer)
     );
     write_pointer_full #(address_size) write_pointer_full
     (
-        .write_clk                  (write_clk),
+        .write_clk                  (PCLK),
         .write_reset_n              (command_reg[6]),
         .write_increment            (command_reg[7]),
-        .write_address              (write_address),
+        .write_address_output       (write_address_output),
         .write_pointer              (write_pointer),
-        .write_full                 (write_full),
+        .write_full_output          (write_full_output),
         .write_to_read_pointer      (write_to_read_pointer)
     );
     sync_read_to_write sync_read_to_write
     (
-        .write_clk                  (write_clk),
+        .write_clk                  (PCLK),
         .write_reset_n              (command_reg[6]),
         .read_pointer               (read_pointer),
         .write_to_read_pointer      (write_to_read_pointer)
     );
     sync_write_to_read sync_write_to_read
     (
-        .read_clk                   (read_clk),
+        .read_clk                   (i2c_core_clk),
         .read_reset_n               (command_reg[6]),
         .write_pointer              (write_pointer),
         .read_to_write_pointer      (read_to_write_pointer)
     );
+
+    // FIFO RX
+    fifo_memory_rx #(data_size, address_size)   fifo_memory_rx
+    (
+        .write_clk_rx                (write_clk),
+        .write_clk_en_rx             (command_reg[7]),
+        .write_data_rx               (transmit_reg),
+        .write_address_input_rx      (write_address_output),
+        .read_data_rx                (RX),
+        .read_address_input_rx       (read_address_output),
+        .write_full_check_rx         (write_full_output)
+    );
+    read_pointer_empty_rx #(address_size)       read_pointer_empty_rx
+    (
+        .read_clk_rx                 (read_clk),
+        .read_reset_n_rx             (command_reg[6]),
+        .read_increment_rx           (command_reg[7]),
+        .read_address_output_rx      (read_address_output),
+        .read_pointer_rx             (read_pointer),
+        .read_empty_output_rx        (read_empty_output),
+        .read_to_write_pointer_rx    (read_to_write_pointer)
+    );
+    write_pointer_full_rx #(address_size)       write_pointer_full_rx
+    (
+        .write_clk_rx                (write_clk),
+        .write_reset_n_rx            (command_reg[6]),
+        .write_increment_rx          (command_reg[7]),
+        .write_address_output_rx     (write_address_output),
+        .write_pointer_rx            (write_pointer),
+        .write_full_output_rx        (write_full_output),
+        .write_to_read_pointer_rx    (write_to_read_pointer)
+    );
+    sync_read_to_write_rx                       sync_read_to_write_rx
+    (
+        .write_clk_rx                (write_clk),
+        .write_reset_n_rx            (command_reg[6]),
+        .read_pointer_rx             (read_pointer),
+        .write_to_read_pointer_rx    (write_to_read_pointer)
+    );
+    sync_write_to_read_rx                       sync_write_to_read_rx
+    (
+        .read_clk_rx                 (read_clk),
+        .read_reset_n_rx             (command_reg[6]),
+        .write_pointer_rx            (write_pointer),
+        .read_to_write_pointer_rx    (read_to_write_pointer)
+    );
+
+    // APB INTERFACE
     apb apb
     (
         .PCLK                       (PCLK),
@@ -125,12 +192,12 @@ module top_level
 
     i2c_controller i2c_controller
     (
-        .clk                        (PCLK),
-        .rst_n                      (command_reg[6]),
+        .i2c_core_clk               (i2c_core_clk),
+        .rst_n                      (command_reg[4]),
         .enable                     (command_reg[7]),
         .slave_address              (address_reg),
         .data_in                    (TX),
-        .repeated_start_cond        (command_reg[5]),
+        .repeated_start_cond        (command_reg[3]),
         .sda_in                     (sda_in),
         .sda_out                    (sda_out),
         .scl_out                    (scl_out)
