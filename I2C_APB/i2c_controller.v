@@ -148,7 +148,7 @@ module i2c_controller
             default:        next_state = IDLE;
         endcase
     end
-    always @(posedge clk) begin
+    always @(posedge i2c_core_clk) begin
         case(current_state)
             IDLE: begin
                 if ((i2c_clk == 0) && (enable == 1)) begin

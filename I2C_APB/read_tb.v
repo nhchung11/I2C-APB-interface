@@ -1,4 +1,4 @@
-module top_level_tb;
+module read_tb;
     reg             PCLK;
     reg             PRESETn;
     reg             PSELx;
@@ -44,39 +44,30 @@ module top_level_tb;
 
     initial begin
         i2c_core_clk_top = 0;
+        sda_in = 1;
+        PENABLE = 0;
+        PWRITE = 0;
+        PSELx = 0;
         PRESETn = 0;
-        PADDR = 7'b0;
-        PWRITE = 0;
-        PSELx = 0;
-        PWDATA = 8'd0;
-        PENABLE = 0;
-        sda_in = 1;
 
-        #10;
-        PRESETn = 1;
-        PADDR = 7'b0001111;
-        PWRITE = 1;
-        PSELx = 1;
-        PENABLE = 0;
-        PWDATA = 8'd1;
-
-        #10;
+        #20;
         PENABLE = 1;
+        PRESETn = 1;
+        PENABLE = 1;
+        PADDR = 7'b0101011;
 
-        #10;
-        PENABLE = 0;
-        PSELx = 0;
-        PWRITE = 0;
+        sda_in      = 1;
+        #10 sda_in  = 0;
+        #10 sda_in  = 1;
+        #10 sda_in  = 0;
+        #10 sda_in  = 1;
+        #10 sda_in  = 1;
+        #10 sda_in  = 0;
+        #10 sda_in  = 0;
 
-        #360;
-        sda_in = 0;
-        #40;
-        sda_in = 1;
-
-        #320;
-        sda_in = 0;
-        #40
-        sda_in = 1;
+        #10 PENABLE = 0;
+        #10 PENABLE = 1;
+        #10 PENABLE = 0;
 
         #800;
         $finish;
