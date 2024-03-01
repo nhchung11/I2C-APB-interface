@@ -29,22 +29,22 @@ module top_level
 
     // FIFO TX
     // Internal FIFO TX wires
-    wire [address_size - 1:0]       write_address_output;
-    wire [address_size - 1:0]       read_address_output;
-    wire [address_size:0]           write_pointer;
-    wire [address_size:0]           read_pointer;
-    wire [address_size:0]           write_to_read_pointer;
-    wire [address_size:0]           read_to_write_pointer;
+    wire [address_size - 1:0]       write_address_output_tx;
+    wire [address_size - 1:0]       read_address_output_tx;
+    wire [address_size:0]           write_pointer_tx;
+    wire [address_size:0]           read_pointer_tx;
+    wire [address_size:0]           write_to_read_pointer_tx;
+    wire [address_size:0]           read_to_write_pointer_tx;
     
     // Internal FIFO TX signals
-    wire                            write_increment;
-    wire                            read_increment;
-    wire [data_size - 1:0]          read_data_output;
-    wire                            write_full_output;
-    wire                            read_empty_output;
-    wire [data_size - 1:0]          write_data;
-    wire                            read_reset_n;
-    wire                            write_reset_n;
+    wire                            write_increment_tx;
+    wire                            read_increment_tx;
+    wire [data_size - 1:0]          read_data_output_tx;
+    wire                            write_full_output_tx;
+    wire                            read_empty_output_tx;
+    wire [data_size - 1:0]          write_data_tx;
+    wire                            read_reset_n_tx;
+    wire                            write_reset_n_tx;
 
     // FIFO RX
     // Internal FIFO RX wires
@@ -78,59 +78,59 @@ module top_level
 
     always @* begin
         status_reg [5:0]            = 0;
-        status_reg [7]              = write_full_output;
-        status_reg [6]              = read_empty_output;
+        status_reg [7]              = write_full_output_tx;
+        status_reg [6]              = read_empty_output_tx;
     end
 
 
     // FIFO TX
-    FIFO_memory #(data_size, address_size) fifomem
+    fifo_memory_tx #(data_size, address_size) fifomem_tx
     (
-        .write_clk                  (PCLK),
-        .write_clk_en               (command_reg[6]),
-        .write_data                 (transmit_reg),
-        .write_address_input        (write_address_output),
-        .read_data                  (TX),
-        .read_address_input         (read_address_output),
-        .write_full_check           (write_full_output)
+        .write_clk_tx                  (PCLK),
+        .write_clk_en_tx               (command_reg[6]),
+        .write_data_tx                 (transmit_reg),
+        .write_address_input_tx        (write_address_output_tx),
+        .read_data_tx                  (TX),
+        .read_address_input_tx         (read_address_output_tx),
+        .write_full_check_tx           (write_full_output_tx)
     );
 
-    read_pointer_empty #(address_size) read_pointer_empty
+    read_pointer_empty_tx #(address_size) read_pointer_empty_tx
     (
-        .read_clk                   (i2c_core_clk_top),
-        .read_reset_n               (command_reg[4]),
-        .read_increment             (command_reg[7]),
-        .read_address_output        (read_address_output),
-        .read_pointer               (read_pointer),
-        .read_empty_output          (read_empty_output),
-        .read_to_write_pointer      (read_to_write_pointer)
+        .read_clk_tx                   (i2c_core_clk_top),
+        .read_reset_n_tx               (command_reg[4]),
+        .read_increment_tx             (command_reg[7]),
+        .read_address_output_tx        (read_address_output_tx),
+        .read_pointer_tx               (read_pointer_tx),
+        .read_empty_output_tx          (read_empty_output_tx),
+        .read_to_write_pointer_tx      (read_to_write_pointer_tx)
     );
 
-    write_pointer_full #(address_size) write_pointer_full
+    write_pointer_full_tx #(address_size) write_pointer_full_tx
     (
-        .write_clk                  (PCLK),
-        .write_reset_n              (command_reg[4]),
-        .write_increment            (command_reg[7]),
-        .write_address_output       (write_address_output),
-        .write_pointer              (write_pointer),
-        .write_full_output          (write_full_output),
-        .write_to_read_pointer      (write_to_read_pointer)
+        .write_clk_tx                  (PCLK),
+        .write_reset_n_tx              (command_reg[4]),
+        .write_increment_tx            (command_reg[7]),
+        .write_address_output_tx       (write_address_output_tx),
+        .write_pointer_tx              (write_pointer_tx),
+        .write_full_output_tx          (write_full_output_tx),
+        .write_to_read_pointer_tx      (write_to_read_pointer_tx)
     );
 
-    sync_read_to_write sync_read_to_write
+    sync_read_to_write_tx sync_read_to_write_tx
     (
-        .write_clk                  (PCLK),
-        .write_reset_n              (command_reg[4]),
-        .read_pointer               (read_pointer),
-        .write_to_read_pointer      (write_to_read_pointer)
+        .write_clk_tx                  (PCLK),
+        .write_reset_n_tx              (command_reg[4]),
+        .read_pointer_tx               (read_pointer_tx),
+        .write_to_read_pointer_tx      (write_to_read_pointer_tx)
     );
 
-    sync_write_to_read sync_write_to_read
+    sync_write_to_read_tx sync_write_to_read_tx
     (
-        .read_clk                   (i2c_core_clk_top),
-        .read_reset_n               (command_reg[4]),
-        .write_pointer              (write_pointer),
-        .read_to_write_pointer      (read_to_write_pointer)
+        .read_clk_tx                   (i2c_core_clk_top),
+        .read_reset_n_tx               (command_reg[4]),
+        .write_pointer_tx              (write_pointer_tx),
+        .read_to_write_pointer_tx      (read_to_write_pointer_tx)
     );
 
 

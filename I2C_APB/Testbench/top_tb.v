@@ -78,6 +78,41 @@ module top_level_tb;
         #40
         sda_in = 1;
 
+
+        i2c_core_clk_top = 0;
+        PRESETn = 0;
+        PADDR = 7'b0;
+        PWRITE = 0;
+        PSELx = 0;
+        PWDATA = 8'd0;
+        PENABLE = 0;
+        sda_in = 1;
+
+        #10;
+        PRESETn = 1;
+        PADDR = 7'b0001111;
+        PWRITE = 1;
+        PSELx = 1;
+        PENABLE = 0;
+        PWDATA = 8'd5;
+
+        #10;
+        PENABLE = 1;
+
+        #10;
+        PENABLE = 0;
+        PSELx = 0;
+        PWRITE = 0;
+
+        #360;
+        sda_in = 0;
+        #40;
+        sda_in = 1;
+
+        #320;
+        sda_in = 0;
+        #40
+        sda_in = 1;
         #800;
         $finish;
     end

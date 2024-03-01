@@ -13,1133 +13,129 @@
 # //  18 U.S.C. Section 1905.
 # //
 # Loading project apb_fifo_i2c
-# Compile of top_tb.v was successful.
-# Compile of top.v was successful.
-# Compile of tb.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of fifo.v was successful.
-# Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of apb_to_fifo_top.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo_rx.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of 8bit_to1byte.v was successful.
-# 11 compiles, 0 failed with no errors.
-vsim work.read_tb
-# vsim work.read_tb 
-# Start time: 09:26:59 on Mar 01,2024
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v(218): (vopt-2241) Connection width does not match width of port 'in'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/8bit_to1byte.v(5).
-# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(17): (vopt-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 15, found 13.
-# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(17): (vopt-2718) [TFMPC] - Missing connection for port 'read_clk'.
-# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(17): (vopt-2718) [TFMPC] - Missing connection for port 'write_clk'.
-# Loading work.read_tb(fast)
-quit -sim
-# End time: 09:27:19 on Mar 01,2024, Elapsed time: 0:00:20
-# Errors: 0, Warnings: 4
-vsim work.read_tb -voptargs=+acc
-# vsim work.read_tb -voptargs="+acc" 
-# Start time: 09:27:29 on Mar 01,2024
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(17): (vopt-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 15, found 13.
-# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(17): (vopt-2718) [TFMPC] - Missing connection for port 'read_clk'.
-# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(17): (vopt-2718) [TFMPC] - Missing connection for port 'write_clk'.
-# Loading work.read_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.fifo_memory_rx(fast)
-# Loading work.read_pointer_empty_rx(fast)
-# Loading work.write_pointer_full_rx(fast)
-# Loading work.sync_read_to_write_rx(fast)
-# Loading work.sync_write_to_read_rx(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (8) for port 'in'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/8bit_to1byte.v(5).
-#    Time: 0 ns  Iteration: 0  Instance: /read_tb/dut/bit_to_byte_converter File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 218
-add wave -position insertpoint sim:/read_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 3348
-#           Attempting to use alternate WLF file "./wlftx2f2sj".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftx2f2sj
-add wave -position insertpoint sim:/read_tb/dut/i2c_controller/*
-add wave -position insertpoint sim:/read_tb/dut/bit_to_byte_converter/*
-add wave -position insertpoint sim:/read_tb/dut/fifo_memory_rx/*
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(73)
-#    Time: 920 ns  Iteration: 0  Instance: /read_tb
-# 1
-# Break in Module read_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v line 73
-quit -sim
-# End time: 09:50:18 on Mar 01,2024, Elapsed time: 0:22:49
-# Errors: 0, Warnings: 6
-# Compile of top_tb.v was successful.
-# Compile of top.v was successful.
-# Compile of tb.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of fifo.v was successful.
-# Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of apb_to_fifo_top.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo_rx.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of 8bit_to1byte.v was successful.
-# 11 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.read_tb
-# vsim -voptargs="+acc" work.read_tb 
-# Start time: 09:50:27 on Mar 01,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.read_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.fifo_memory_rx(fast)
-# Loading work.read_pointer_empty_rx(fast)
-# Loading work.write_pointer_full_rx(fast)
-# Loading work.sync_read_to_write_rx(fast)
-# Loading work.sync_write_to_read_rx(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (8) for port 'in'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/8bit_to1byte.v(5).
-#    Time: 0 ns  Iteration: 0  Instance: /read_tb/dut/bit_to_byte_converter File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 218
-add wave -position insertpoint sim:/read_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 3348
-#           Attempting to use alternate WLF file "./wlftcc9s6t".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftcc9s6t
-add wave -position insertpoint sim:/read_tb/dut/i2c_controller/*
-add wave -position insertpoint sim:/read_tb/dut/fifo_memory_rx/*
-add wave -position insertpoint sim:/read_tb/dut/bit_to_byte_converter/*
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(73)
-#    Time: 920 ns  Iteration: 0  Instance: /read_tb
-# 1
-# Break in Module read_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v line 73
-quit -sim
-# End time: 09:52:40 on Mar 01,2024, Elapsed time: 0:02:13
-# Errors: 0, Warnings: 3
-# Compile of top_tb.v was successful.
-# Compile of top.v was successful.
-# Compile of tb.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of fifo.v was successful.
-# Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of apb_to_fifo_top.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo_rx.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of 8bit_to1byte.v was successful.
-# 11 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.read_tb
-# vsim -voptargs="+acc" work.read_tb 
-# Start time: 09:52:49 on Mar 01,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(17): (vopt-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 15, found 13.
-# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(17): (vopt-2718) [TFMPC] - Missing connection for port 'read_clk'.
-# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(17): (vopt-2718) [TFMPC] - Missing connection for port 'write_clk'.
-# Loading work.read_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.fifo_memory_rx(fast)
-# Loading work.read_pointer_empty_rx(fast)
-# Loading work.write_pointer_full_rx(fast)
-# Loading work.sync_read_to_write_rx(fast)
-# Loading work.sync_write_to_read_rx(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (8) for port 'in'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/8bit_to1byte.v(5).
-#    Time: 0 ns  Iteration: 0  Instance: /read_tb/dut/bit_to_byte_converter File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 218
-add wave -position insertpoint sim:/read_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 3348
-#           Attempting to use alternate WLF file "./wlft3a3ajn".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft3a3ajn
-add wave -position insertpoint sim:/read_tb/dut/i2c_controller/*
-add wave -position insertpoint sim:/read_tb/dut/bit_to_byte_converter/*
-add wave -position insertpoint sim:/read_tb/dut/fifo_memory_rx/*
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(74)
-#    Time: 920 ns  Iteration: 0  Instance: /read_tb
-# 1
-# Break in Module read_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v line 74
-quit -sim
-# End time: 09:59:29 on Mar 01,2024, Elapsed time: 0:06:40
-# Errors: 0, Warnings: 6
-# Compile of top_tb.v was successful.
-# Compile of top.v was successful.
-# Compile of tb.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of fifo.v was successful.
-# Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of apb_to_fifo_top.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo_rx.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of 8bit_to1byte.v was successful.
-# 11 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.read_tb
-# vsim -voptargs="+acc" work.read_tb 
-# Start time: 09:59:38 on Mar 01,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.read_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.fifo_memory_rx(fast)
-# Loading work.read_pointer_empty_rx(fast)
-# Loading work.write_pointer_full_rx(fast)
-# Loading work.sync_read_to_write_rx(fast)
-# Loading work.sync_write_to_read_rx(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (8) for port 'in'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/8bit_to1byte.v(5).
-#    Time: 0 ns  Iteration: 0  Instance: /read_tb/dut/bit_to_byte_converter File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 218
-add wave -position insertpoint sim:/read_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 3348
-#           Attempting to use alternate WLF file "./wlftaa8ss4".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftaa8ss4
-add wave -position insertpoint sim:/read_tb/dut/i2c_controller/*
-add wave -position insertpoint sim:/read_tb/dut/bit_to_byte_converter/*
-add wave -position insertpoint sim:/read_tb/dut/fifo_memory_rx/*
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(74)
-#    Time: 920 ns  Iteration: 0  Instance: /read_tb
-# 1
-# Break in Module read_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v line 74
-# Causality operation skipped due to absence of debug database file
-quit -sim
-# End time: 10:19:34 on Mar 01,2024, Elapsed time: 0:19:56
-# Errors: 0, Warnings: 4
-# Compile of top_tb.v was successful.
-# Compile of top.v was successful.
-# Compile of tb.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of fifo.v was successful.
-# Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of apb_to_fifo_top.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo_rx.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of 8bit_to1byte.v was successful.
-# 11 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.read_tb
-# vsim -voptargs="+acc" work.read_tb 
-# Start time: 10:19:43 on Mar 01,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(17): (vopt-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 15, found 13.
-# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(17): (vopt-2718) [TFMPC] - Missing connection for port 'read_clk'.
-# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(17): (vopt-2718) [TFMPC] - Missing connection for port 'write_clk'.
-# Loading work.read_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.fifo_memory_rx(fast)
-# Loading work.read_pointer_empty_rx(fast)
-# Loading work.write_pointer_full_rx(fast)
-# Loading work.sync_read_to_write_rx(fast)
-# Loading work.sync_write_to_read_rx(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (8) for port 'in'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/8bit_to1byte.v(5).
-#    Time: 0 ns  Iteration: 0  Instance: /read_tb/dut/bit_to_byte_converter File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 218
-add wave -position insertpoint sim:/read_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 3348
-#           Attempting to use alternate WLF file "./wlft91sjke".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft91sjke
-# Error - UndoAdd called without an UndoStart
-add wave -position insertpoint sim:/read_tb/dut/i2c_controller/*
-# Error - UndoAdd called without an UndoStart
-add wave -position insertpoint sim:/read_tb/dut/fifo_memory_rx/*
-# Error - UndoAdd called without an UndoStart
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(74)
-#    Time: 1810 ns  Iteration: 0  Instance: /read_tb
-# 1
-# Break in Module read_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v line 74
-# Error - UndoAdd called without an UndoStart
-restart
-# ** Note: (vsim-8009) Loading existing optimized design _opt3
-# Loading work.read_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.fifo_memory_rx(fast)
-# Loading work.read_pointer_empty_rx(fast)
-# Loading work.write_pointer_full_rx(fast)
-# Loading work.sync_read_to_write_rx(fast)
-# Loading work.sync_write_to_read_rx(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (8) for port 'in'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/8bit_to1byte.v(5).
-#    Time: 0 ns  Iteration: 0  Instance: /read_tb/dut/bit_to_byte_converter File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top.v Line: 218
-add wave -position insertpoint sim:/read_tb/dut/bit_to_byte_converter/*
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(74)
-#    Time: 1810 ns  Iteration: 0  Instance: /read_tb
-# 1
-# Break in Module read_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v line 74
-quit -sim
-# End time: 10:28:15 on Mar 01,2024, Elapsed time: 0:08:32
-# Errors: 0, Warnings: 0
-# Compile of top_tb.v was successful.
-# Compile of top.v was successful.
-# Compile of tb.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of fifo.v was successful.
-# Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of apb_to_fifo_top.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo_rx.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of 8bit_to1byte.v was successful.
-# 11 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.read_tb
-# vsim -voptargs="+acc" work.read_tb 
-# Start time: 10:28:27 on Mar 01,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.read_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.fifo_memory_rx(fast)
-# Loading work.read_pointer_empty_rx(fast)
-# Loading work.write_pointer_full_rx(fast)
-# Loading work.sync_read_to_write_rx(fast)
-# Loading work.sync_write_to_read_rx(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-add wave -position insertpoint sim:/read_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 3348
-#           Attempting to use alternate WLF file "./wlft3crenz".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft3crenz
-add wave -position insertpoint sim:/read_tb/dut/i2c_controller/*
-add wave -position insertpoint sim:/read_tb/dut/bit_to_byte_converter/*
-add wave -position insertpoint sim:/read_tb/dut/fifo_memory_rx/*
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(74)
-#    Time: 1810 ns  Iteration: 0  Instance: /read_tb
-# 1
-# Break in Module read_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v line 74
-quit -sim
-# End time: 10:39:50 on Mar 01,2024, Elapsed time: 0:11:23
-# Errors: 0, Warnings: 2
-# Compile of top_tb.v was successful.
-# Compile of top.v was successful.
-# Compile of tb.v was successful.
-# Compile of i2c_controller.v failed with 1 errors.
-# Compile of fifo.v was successful.
-# Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of apb_to_fifo_top.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo_rx.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of 8bit_to1byte.v was successful.
-# 11 compiles, 1 failed with 1 error.
-# Compile of top_tb.v was successful.
-# Compile of top.v was successful.
-# Compile of tb.v was successful.
-# Compile of i2c_controller.v failed with 1 errors.
-# Compile of fifo.v was successful.
-# Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of apb_to_fifo_top.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo_rx.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of 8bit_to1byte.v was successful.
-# 11 compiles, 1 failed with 1 error.
-# Compile of top_tb.v was successful.
-# Compile of top.v was successful.
-# Compile of tb.v was successful.
-# Compile of i2c_controller.v failed with 3 errors.
-# Compile of fifo.v was successful.
-# Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of apb_to_fifo_top.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo_rx.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of 8bit_to1byte.v was successful.
-# 11 compiles, 1 failed with 3 errors.
-# Compile of top_tb.v was successful.
-# Compile of top.v was successful.
-# Compile of tb.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of fifo.v was successful.
-# Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of apb_to_fifo_top.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo_rx.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of 8bit_to1byte.v was successful.
-# 11 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.read_tb
-# vsim -voptargs="+acc" work.read_tb 
-# Start time: 10:42:44 on Mar 01,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.read_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.fifo_memory_rx(fast)
-# Loading work.read_pointer_empty_rx(fast)
-# Loading work.write_pointer_full_rx(fast)
-# Loading work.sync_read_to_write_rx(fast)
-# Loading work.sync_write_to_read_rx(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-add wave -position insertpoint sim:/read_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 3348
-#           Attempting to use alternate WLF file "./wlfts4yz0s".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlfts4yz0s
-add wave -position insertpoint sim:/read_tb/dut/i2c_controller/*
-add wave -position insertpoint sim:/read_tb/dut/bit_to_byte_converter/*
-add wave -position insertpoint sim:/read_tb/dut/fifo_memory_rx/*
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(74)
-#    Time: 1810 ns  Iteration: 0  Instance: /read_tb
-# 1
-# Break in Module read_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v line 74
-quit -sim
-# End time: 10:52:17 on Mar 01,2024, Elapsed time: 0:09:33
-# Errors: 0, Warnings: 2
-# Compile of top_tb.v was successful.
-# Compile of top.v was successful.
-# Compile of tb.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of fifo.v was successful.
-# Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of apb_to_fifo_top.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo_rx.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of 8bit_to1byte.v was successful.
-# 11 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.read_tb
-# vsim -voptargs="+acc" work.read_tb 
-# Start time: 10:52:26 on Mar 01,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.read_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.fifo_memory_rx(fast)
-# Loading work.read_pointer_empty_rx(fast)
-# Loading work.write_pointer_full_rx(fast)
-# Loading work.sync_read_to_write_rx(fast)
-# Loading work.sync_write_to_read_rx(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-add wave -position insertpoint sim:/read_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 3348
-#           Attempting to use alternate WLF file "./wlftgdvb4e".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftgdvb4e
-add wave -position insertpoint sim:/read_tb/dut/i2c_controller/*
-add wave -position insertpoint sim:/read_tb/dut/bit_to_byte_converter/*
-add wave -position insertpoint sim:/read_tb/dut/fifo_memory_rx/*
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(74)
-#    Time: 1810 ns  Iteration: 0  Instance: /read_tb
-# 1
-# Break in Module read_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v line 74
-quit -sim
-# End time: 10:54:00 on Mar 01,2024, Elapsed time: 0:01:34
-# Errors: 0, Warnings: 2
-# Compile of top_tb.v was successful.
-# Compile of top.v was successful.
-# Compile of tb.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of fifo.v was successful.
-# Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of apb_to_fifo_top.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo_rx.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of 8bit_to1byte.v was successful.
-# 11 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.read_tb
-# vsim -voptargs="+acc" work.read_tb 
-# Start time: 10:55:36 on Mar 01,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.read_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.fifo_memory_rx(fast)
-# Loading work.read_pointer_empty_rx(fast)
-# Loading work.write_pointer_full_rx(fast)
-# Loading work.sync_read_to_write_rx(fast)
-# Loading work.sync_write_to_read_rx(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-add wave -position insertpoint sim:/read_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 3348
-#           Attempting to use alternate WLF file "./wlft8wwwme".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft8wwwme
-add wave -position insertpoint sim:/read_tb/dut/i2c_controller/*
-add wave -position insertpoint sim:/read_tb/dut/bit_to_byte_converter/*
-add wave -position insertpoint sim:/read_tb/dut/fifo_memory_rx/*
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(74)
-#    Time: 1810 ns  Iteration: 0  Instance: /read_tb
-# 1
-# Break in Module read_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v line 74
-quit -sim
-# End time: 11:06:58 on Mar 01,2024, Elapsed time: 0:11:22
-# Errors: 0, Warnings: 2
-# Compile of top_tb.v was successful.
-# Compile of top.v was successful.
-# Compile of tb.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of fifo.v was successful.
-# Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of apb_to_fifo_top.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo_rx.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of 8bit_to1byte.v was successful.
-# 11 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.read_tb
-# vsim -voptargs="+acc" work.read_tb 
-# Start time: 11:07:31 on Mar 01,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.read_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.fifo_memory_rx(fast)
-# Loading work.read_pointer_empty_rx(fast)
-# Loading work.write_pointer_full_rx(fast)
-# Loading work.sync_read_to_write_rx(fast)
-# Loading work.sync_write_to_read_rx(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-add wave -position insertpoint sim:/read_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 3348
-#           Attempting to use alternate WLF file "./wlftf10zn9".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftf10zn9
-add wave -position insertpoint sim:/read_tb/dut/i2c_controller/*
-add wave -position insertpoint sim:/read_tb/dut/bit_to_byte_converter/*
-add wave -position insertpoint sim:/read_tb/dut/fifo_memory_rx/*
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(74)
-#    Time: 1810 ns  Iteration: 0  Instance: /read_tb
-# 1
-# Break in Module read_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v line 74
-quit -sim
-# End time: 11:13:45 on Mar 01,2024, Elapsed time: 0:06:14
-# Errors: 0, Warnings: 2
-# Compile of top_tb.v was successful.
-# Compile of top.v was successful.
-# Compile of tb.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of fifo.v was successful.
-# Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of apb_to_fifo_top.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo_rx.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of 8bit_to1byte.v was successful.
-# 11 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.read_tb
-# vsim -voptargs="+acc" work.read_tb 
-# Start time: 11:13:52 on Mar 01,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.read_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.fifo_memory_rx(fast)
-# Loading work.read_pointer_empty_rx(fast)
-# Loading work.write_pointer_full_rx(fast)
-# Loading work.sync_read_to_write_rx(fast)
-# Loading work.sync_write_to_read_rx(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-add wave -position insertpoint sim:/read_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 3348
-#           Attempting to use alternate WLF file "./wlft04zik9".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft04zik9
-add wave -position insertpoint sim:/read_tb/dut/i2c_controller/*
-add wave -position insertpoint sim:/read_tb/dut/bit_to_byte_converter/*
-add wave -position insertpoint sim:/read_tb/dut/fifo_memory_rx/*
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(74)
-#    Time: 1810 ns  Iteration: 0  Instance: /read_tb
-# 1
-# Break in Module read_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v line 74
-quit -sim
-# End time: 11:15:54 on Mar 01,2024, Elapsed time: 0:02:02
-# Errors: 0, Warnings: 2
-# Compile of top_tb.v was successful.
-# Compile of top.v was successful.
-# Compile of tb.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of fifo.v was successful.
-# Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of apb_to_fifo_top.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo_rx.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of 8bit_to1byte.v was successful.
-# 11 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.read_tb
-# vsim -voptargs="+acc" work.read_tb 
-# Start time: 11:16:02 on Mar 01,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.read_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.fifo_memory_rx(fast)
-# Loading work.read_pointer_empty_rx(fast)
-# Loading work.write_pointer_full_rx(fast)
-# Loading work.sync_read_to_write_rx(fast)
-# Loading work.sync_write_to_read_rx(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-add wave -position insertpoint sim:/read_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 3348
-#           Attempting to use alternate WLF file "./wlfti8n4r4".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlfti8n4r4
-add wave -position insertpoint sim:/read_tb/dut/i2c_controller/*
-add wave -position insertpoint sim:/read_tb/dut/bit_to_byte_converter/*
-add wave -position insertpoint sim:/read_tb/dut/fifo_memory_rx/*
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(74)
-#    Time: 1810 ns  Iteration: 0  Instance: /read_tb
-# 1
-# Break in Module read_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v line 74
-quit -sim
-# End time: 11:23:00 on Mar 01,2024, Elapsed time: 0:06:58
-# Errors: 0, Warnings: 2
-# Compile of top_tb.v was successful.
-# Compile of top.v was successful.
-# Compile of tb.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of fifo.v was successful.
-# Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of apb_to_fifo_top.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo_rx.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of 8bit_to1byte.v was successful.
-# 11 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.read_tb
-# vsim -voptargs="+acc" work.read_tb 
-# Start time: 11:23:06 on Mar 01,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.read_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.fifo_memory_rx(fast)
-# Loading work.read_pointer_empty_rx(fast)
-# Loading work.write_pointer_full_rx(fast)
-# Loading work.sync_read_to_write_rx(fast)
-# Loading work.sync_write_to_read_rx(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-add wave -position insertpoint sim:/read_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 3348
-#           Attempting to use alternate WLF file "./wlftiyryf6".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftiyryf6
-add wave -position insertpoint sim:/read_tb/dut/i2c_controller/*
-add wave -position insertpoint sim:/read_tb/dut/bit_to_byte_converter/*
-add wave -position insertpoint sim:/read_tb/dut/fifo_memory_rx/*
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(74)
-#    Time: 1810 ns  Iteration: 0  Instance: /read_tb
-# 1
-# Break in Module read_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v line 74
-quit -sim
-# End time: 11:24:16 on Mar 01,2024, Elapsed time: 0:01:10
-# Errors: 0, Warnings: 2
-# Compile of top_tb.v was successful.
-# Compile of top.v was successful.
-# Compile of tb.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of fifo.v was successful.
-# Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of apb_to_fifo_top.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo_rx.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of 8bit_to1byte.v was successful.
-# 11 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.read_tb
-# vsim -voptargs="+acc" work.read_tb 
-# Start time: 11:24:22 on Mar 01,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.read_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.fifo_memory_rx(fast)
-# Loading work.read_pointer_empty_rx(fast)
-# Loading work.write_pointer_full_rx(fast)
-# Loading work.sync_read_to_write_rx(fast)
-# Loading work.sync_write_to_read_rx(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-add wave -position insertpoint sim:/read_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 3348
-#           Attempting to use alternate WLF file "./wlftq5reyx".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftq5reyx
-add wave -position insertpoint sim:/read_tb/dut/i2c_controller/*
-add wave -position insertpoint sim:/read_tb/dut/bit_to_byte_converter/*
-add wave -position insertpoint sim:/read_tb/dut/fifo_memory_rx/*
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(74)
-#    Time: 1810 ns  Iteration: 0  Instance: /read_tb
-# 1
-# Break in Module read_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v line 74
-quit -sim
-# End time: 11:27:34 on Mar 01,2024, Elapsed time: 0:03:12
-# Errors: 0, Warnings: 2
-# Compile of top_tb.v was successful.
-# Compile of top.v was successful.
-# Compile of tb.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of fifo.v was successful.
-# Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of apb_to_fifo_top.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo_rx.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of 8bit_to1byte.v was successful.
-# 11 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.read_tb
-# vsim -voptargs="+acc" work.read_tb 
-# Start time: 11:27:42 on Mar 01,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.read_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.fifo_memory_rx(fast)
-# Loading work.read_pointer_empty_rx(fast)
-# Loading work.write_pointer_full_rx(fast)
-# Loading work.sync_read_to_write_rx(fast)
-# Loading work.sync_write_to_read_rx(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-add wave -position insertpoint sim:/read_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 3348
-#           Attempting to use alternate WLF file "./wlft3fmn7y".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft3fmn7y
-add wave -position insertpoint sim:/read_tb/dut/i2c_controller/*
-add wave -position insertpoint sim:/read_tb/dut/bit_to_byte_converter/*
-add wave -position insertpoint sim:/read_tb/dut/fifo_memory_rx/*
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(74)
-#    Time: 1810 ns  Iteration: 0  Instance: /read_tb
-# 1
-# Break in Module read_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v line 74
-quit -sim
-# End time: 11:28:46 on Mar 01,2024, Elapsed time: 0:01:04
-# Errors: 0, Warnings: 2
-# Compile of top_tb.v was successful.
-# Compile of top.v was successful.
-# Compile of tb.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of fifo.v was successful.
-# Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of apb_to_fifo_top.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo_rx.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of 8bit_to1byte.v was successful.
-# 11 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.read_tb
-# vsim -voptargs="+acc" work.read_tb 
-# Start time: 11:28:54 on Mar 01,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.read_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.fifo_memory_rx(fast)
-# Loading work.read_pointer_empty_rx(fast)
-# Loading work.write_pointer_full_rx(fast)
-# Loading work.sync_read_to_write_rx(fast)
-# Loading work.sync_write_to_read_rx(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-add wave -position insertpoint sim:/read_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 3348
-#           Attempting to use alternate WLF file "./wlfthd44r1".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlfthd44r1
-add wave -position insertpoint sim:/read_tb/dut/i2c_controller/*
-add wave -position insertpoint sim:/read_tb/dut/bit_to_byte_converter/*
-add wave -position insertpoint sim:/read_tb/dut/fifo_memory_rx/*
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(74)
-#    Time: 1810 ns  Iteration: 0  Instance: /read_tb
-# 1
-# Break in Module read_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v line 74
-quit -sim
-# End time: 11:32:50 on Mar 01,2024, Elapsed time: 0:03:56
-# Errors: 0, Warnings: 2
-project open D:/Questamsim_project/Test/Test
 # reading F:/questasim64_10.7c/win64/../modelsim.ini
-# Loading project Test
-# Compile of main.v was successful.
-# Compile of tb.v was successful.
-# 2 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.BitToByteConverter_TB
-# vsim -voptargs="+acc" work.BitToByteConverter_TB 
-# Start time: 11:33:00 on Mar 01,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.BitToByteConverter_TB(fast)
-# Loading work.BitToByteConverter(fast)
-add wave -position insertpoint sim:/BitToByteConverter_TB/uut/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 9652
-#           Attempting to use alternate WLF file "./wlft7bxgbb".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft7bxgbb
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/Testing/tb.v(54)
-#    Time: 400 ns  Iteration: 0  Instance: /BitToByteConverter_TB
-# 1
-# Break in Module BitToByteConverter_TB at C:/Users/PC/Documents/Chung_training/code/Testing/tb.v line 54
-quit -sim
-# End time: 11:36:09 on Mar 01,2024, Elapsed time: 0:03:09
-# Errors: 0, Warnings: 2
-project open D:/Questamsim_project/apb_fifo_i2c/apb_fifo_i2c
-# reading F:/questasim64_10.7c/win64/../modelsim.ini
-# Loading project apb_fifo_i2c
-# Compile of top_tb.v was successful.
-# Compile of top.v was successful.
-# Compile of tb.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of fifo.v was successful.
+# Loading project apb_i2c
 # Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of apb_to_fifo_top.v was successful.
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of top_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
 # Compile of apb_slave.v was successful.
 # Compile of fifo_rx.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of 8bit_to1byte.v was successful.
-# 11 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.read_tb
-# vsim -voptargs="+acc" work.read_tb 
-# Start time: 11:36:35 on Mar 01,2024
-# ** Note: (vsim-8009) Loading existing optimized design _opt3
-# Loading work.read_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.fifo_memory_rx(fast)
-# Loading work.read_pointer_empty_rx(fast)
-# Loading work.write_pointer_full_rx(fast)
-# Loading work.sync_read_to_write_rx(fast)
-# Loading work.sync_write_to_read_rx(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-add wave -position insertpoint sim:/read_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 3348
-#           Attempting to use alternate WLF file "./wlftg6vev0".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftg6vev0
-add wave -position insertpoint sim:/read_tb/dut/i2c_controller/*
-add wave -position insertpoint sim:/read_tb/dut/bit_to_byte_converter/*
-add wave -position insertpoint sim:/read_tb/dut/fifo_memory_rx/*
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(74)
-#    Time: 1810 ns  Iteration: 0  Instance: /read_tb
-# 1
-# Break in Module read_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v line 74
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-quit -sim
-# End time: 11:49:44 on Mar 01,2024, Elapsed time: 0:13:09
-# Errors: 9, Warnings: 2
-# Compile of top_tb.v was successful.
-# Compile of top.v was successful.
-# Compile of tb.v was successful.
+# Compile of fifo_tx.v failed with 3 errors.
 # Compile of i2c_controller.v was successful.
-# Compile of fifo.v was successful.
+# Compile of top.v failed with 2 errors.
+# 10 compiles, 2 failed with 5 errors.
 # Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of apb_to_fifo_top.v was successful.
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of top_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
 # Compile of apb_slave.v was successful.
 # Compile of fifo_rx.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of 8bit_to1byte.v was successful.
-# 11 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.read_tb
-# vsim -voptargs="+acc" work.read_tb 
-# Start time: 11:49:50 on Mar 01,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(17): (vopt-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 15, found 13.
-# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(17): (vopt-2718) [TFMPC] - Missing connection for port 'read_clk'.
-# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(17): (vopt-2718) [TFMPC] - Missing connection for port 'write_clk'.
-# Loading work.read_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.fifo_memory_rx(fast)
-# Loading work.read_pointer_empty_rx(fast)
-# Loading work.write_pointer_full_rx(fast)
-# Loading work.sync_read_to_write_rx(fast)
-# Loading work.sync_write_to_read_rx(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-add wave -position insertpoint sim:/read_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 3348
-#           Attempting to use alternate WLF file "./wlftn6cie0".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftn6cie0
-add wave -position insertpoint sim:/read_tb/dut/i2c_controller/*
-add wave -position insertpoint sim:/read_tb/dut/bit_to_byte_converter/*
-add wave -position insertpoint sim:/read_tb/dut/fifo_memory_rx/*
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(74)
-#    Time: 1810 ns  Iteration: 0  Instance: /read_tb
-# 1
-# Break in Module read_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v line 74
-quit -sim
-# End time: 11:53:29 on Mar 01,2024, Elapsed time: 0:03:39
-# Errors: 0, Warnings: 5
-# Compile of top_tb.v was successful.
-# Compile of top.v was successful.
-# Compile of tb.v was successful.
+# Compile of fifo_tx.v failed with 3 errors.
 # Compile of i2c_controller.v was successful.
-# Compile of fifo.v was successful.
+# Compile of top.v was successful.
+# 10 compiles, 1 failed with 3 errors.
 # Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of apb_to_fifo_top.v was successful.
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of top_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
 # Compile of apb_slave.v was successful.
 # Compile of fifo_rx.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of 8bit_to1byte.v was successful.
-# 11 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.read_tb
-# vsim -voptargs="+acc" work.read_tb 
-# Start time: 11:53:33 on Mar 01,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.read_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.fifo_memory_rx(fast)
-# Loading work.read_pointer_empty_rx(fast)
-# Loading work.write_pointer_full_rx(fast)
-# Loading work.sync_read_to_write_rx(fast)
-# Loading work.sync_write_to_read_rx(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-add wave -position insertpoint sim:/read_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 3348
-#           Attempting to use alternate WLF file "./wlftnc7xrw".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftnc7xrw
-add wave -position insertpoint sim:/read_tb/dut/i2c_controller/*
-add wave -position insertpoint sim:/read_tb/dut/bit_to_byte_converter/*
-add wave -position insertpoint sim:/read_tb/dut/fifo_memory_rx/*
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(74)
-#    Time: 1810 ns  Iteration: 0  Instance: /read_tb
-# 1
-# Break in Module read_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v line 74
-quit -sim
-# End time: 11:57:17 on Mar 01,2024, Elapsed time: 0:03:44
-# Errors: 0, Warnings: 2
-# Compile of top_tb.v was successful.
-# Compile of top.v was successful.
-# Compile of tb.v was successful.
+# Compile of fifo_tx.v failed with 2 errors.
 # Compile of i2c_controller.v was successful.
-# Compile of fifo.v was successful.
+# Compile of top.v was successful.
+# 10 compiles, 1 failed with 2 errors.
 # Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of apb_to_fifo_top.v was successful.
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of top_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
 # Compile of apb_slave.v was successful.
 # Compile of fifo_rx.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of 8bit_to1byte.v was successful.
-# 11 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.read_tb
-# vsim -voptargs="+acc" work.read_tb 
-# Start time: 11:57:22 on Mar 01,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.read_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.fifo_memory_rx(fast)
-# Loading work.read_pointer_empty_rx(fast)
-# Loading work.write_pointer_full_rx(fast)
-# Loading work.sync_read_to_write_rx(fast)
-# Loading work.sync_write_to_read_rx(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-add wave -position insertpoint sim:/read_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 3348
-#           Attempting to use alternate WLF file "./wlft0fs0tb".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft0fs0tb
-add wave -position insertpoint sim:/read_tb/dut/i2c_controller/*
-add wave -position insertpoint sim:/read_tb/dut/bit_to_byte_converter/*
-add wave -position insertpoint sim:/read_tb/dut/fifo_memory_rx/*
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v(74)
-#    Time: 1810 ns  Iteration: 0  Instance: /read_tb
-# 1
-# Break in Module read_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/read_tb.v line 74
-quit -sim
-# End time: 13:32:08 on Mar 01,2024, Elapsed time: 1:34:46
-# Errors: 0, Warnings: 2
-# Compile of top_tb.v was successful.
-# Compile of top.v was successful.
-# Compile of tb.v was successful.
+# Compile of fifo_tx.v failed with 1 errors.
 # Compile of i2c_controller.v was successful.
-# Compile of fifo.v was successful.
+# Compile of top.v was successful.
+# 10 compiles, 1 failed with 1 error.
 # Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of apb_to_fifo_top.v was successful.
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of top_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
 # Compile of apb_slave.v was successful.
 # Compile of fifo_rx.v was successful.
+# Compile of fifo_tx.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# 10 compiles, 0 failed with no errors.
+# Compile of apb_to_fifo_top_tb.v was successful.
 # Compile of read_tb.v was successful.
-# Compile of 8bit_to1byte.v was successful.
-# 11 compiles, 0 failed with no errors.
+# Compile of tb.v was successful.
+# Compile of top_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo_rx.v was successful.
+# Compile of fifo_tx.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim work.top_level_tb -voptargs=+acc
+# vsim work.top_level_tb -voptargs="+acc" 
+# Start time: 17:24:10 on Mar 01,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error: C:/Users/PC/Documents/Chung_training/code/I2C_APB/RTL/top.v(87): Module 'fifo_memory' is not defined.
+# ** Error: C:/Users/PC/Documents/Chung_training/code/I2C_APB/RTL/top.v(128): Module 'sync_write_to_read_tx' is not defined.
+# Optimization failed
+# Error loading design
+# End time: 17:24:11 on Mar 01,2024, Elapsed time: 0:00:01
+# Errors: 2, Warnings: 0
+# Compile of apb_to_fifo_top_tb.v was successful.
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of top_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo_rx.v was successful.
+# Compile of fifo_tx.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# 10 compiles, 0 failed with no errors.
 vsim -voptargs=+acc work.top_level_tb
 # vsim -voptargs="+acc" work.top_level_tb 
-# Start time: 13:32:19 on Mar 01,2024
+# Start time: 17:24:43 on Mar 01,2024
 # ** Note: (vsim-3812) Design is being optimized...
-# ** Warning: (vopt-31) Unable to unlink file "D:/Questamsim_project/apb_fifo_i2c/work/@_opt3/_lib3_0.qpg".
-# ** Warning: (vopt-31) Unable to unlink file "D:/Questamsim_project/apb_fifo_i2c/work/@_opt3/_lib3_0.qtl".
-# The process cannot access the file because it is being used by another process. (GetLastError() = 32)
-# ** Warning: (vopt-133) Unable to remove directory "D:/Questamsim_project/apb_fifo_i2c/work/@_opt3".
-# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v(17): (vopt-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 15, found 13.
-# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v(17): (vopt-2718) [TFMPC] - Missing connection for port 'read_clk'.
-# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v(17): (vopt-2718) [TFMPC] - Missing connection for port 'write_clk'.
+# ** Error: C:/Users/PC/Documents/Chung_training/code/I2C_APB/RTL/top.v(87): Module 'fifo_memory' is not defined.
+# Optimization failed
+# Error loading design
+# End time: 17:24:43 on Mar 01,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# Compile of apb_to_fifo_top_tb.v was successful.
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of top_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo_rx.v was successful.
+# Compile of fifo_tx.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top_level_tb
+# vsim -voptargs="+acc" work.top_level_tb 
+# Start time: 17:25:27 on Mar 01,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/top_tb.v(17): (vopt-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 15, found 13.
+# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/top_tb.v(17): (vopt-2718) [TFMPC] - Missing connection for port 'read_clk'.
+# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/top_tb.v(17): (vopt-2718) [TFMPC] - Missing connection for port 'write_clk'.
 # Loading work.top_level_tb(fast)
 # Loading work.top_level(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
+# Loading work.fifo_memory_tx(fast)
+# Loading work.read_pointer_empty_tx(fast)
+# Loading work.write_pointer_full_tx(fast)
+# Loading work.sync_read_to_write_tx(fast)
+# Loading work.sync_write_to_read_tx(fast)
 # Loading work.fifo_memory_rx(fast)
 # Loading work.read_pointer_empty_rx(fast)
 # Loading work.write_pointer_full_rx(fast)
@@ -1149,15 +145,51 @@ vsim -voptargs=+acc work.top_level_tb
 # Loading work.i2c_controller(fast)
 # Loading work.BitToByteConverter(fast)
 add wave -position insertpoint sim:/top_level_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 3348
-#           Attempting to use alternate WLF file "./wlftn958w4".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftn958w4
 add wave -position insertpoint sim:/top_level_tb/dut/i2c_controller/*
-add wave -position insertpoint sim:/top_level_tb/dut/fifomem/*
+add wave -position insertpoint sim:/top_level_tb/dut/fifomem_tx/*
 run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v(82)
-#    Time: 1590 ns  Iteration: 0  Instance: /top_level_tb
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/top_tb.v(117)
+#    Time: 2380 ns  Iteration: 0  Instance: /top_level_tb
 # 1
-# Break in Module top_level_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/top_tb.v line 82
+# Break in Module top_level_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/top_tb.v line 117
+quit -sim
+# End time: 17:29:50 on Mar 01,2024, Elapsed time: 0:04:23
+# Errors: 0, Warnings: 3
+# Compile of apb_to_fifo_top_tb.v was successful.
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of top_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo_rx.v was successful.
+# Compile of fifo_tx.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top_level_tb
+# vsim -voptargs="+acc" work.top_level_tb 
+# Start time: 17:30:01 on Mar 01,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.top_level_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.fifo_memory_tx(fast)
+# Loading work.read_pointer_empty_tx(fast)
+# Loading work.write_pointer_full_tx(fast)
+# Loading work.sync_read_to_write_tx(fast)
+# Loading work.sync_write_to_read_tx(fast)
+# Loading work.fifo_memory_rx(fast)
+# Loading work.read_pointer_empty_rx(fast)
+# Loading work.write_pointer_full_rx(fast)
+# Loading work.sync_read_to_write_rx(fast)
+# Loading work.sync_write_to_read_rx(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+add wave -position insertpoint sim:/top_level_tb/dut/apb/*
+add wave -position insertpoint sim:/top_level_tb/dut/i2c_controller/*
+add wave -position insertpoint sim:/top_level_tb/dut/fifomem_tx/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/top_tb.v(117)
+#    Time: 2380 ns  Iteration: 0  Instance: /top_level_tb
+# 1
+# Break in Module top_level_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/top_tb.v line 117
