@@ -71,8 +71,11 @@ module top_level
     wire [data_size - 1:0]          RX;
     wire [data_size - 1:0]          APB_TX;
     wire [data_size - 1:0]          APB_RX;
+    wire                            fifo_rx_enable;
+
     assign APB_TX                   = transmit_reg;
     assign APB_RX                   = fifo_memory_rx.read_data_rx;
+
     always @* begin
         status_reg [5:0]            = 0;
         status_reg [7]              = write_full_output;
@@ -212,15 +215,16 @@ module top_level
         .repeated_start_cond        (command_reg[3]),
         .sda_in                     (sda_in),
         .sda_out                    (sda_out),
-        .scl_out                    (scl_out)
+        .scl_out                    (scl_out),
+        .fifo_rx_enable             (fifo_rx_enable)
     );
 
     BitToByteConverter bit_to_byte_converter
     (
         .clk                        (i2c_core_clk_top),
         .rst_n                      (command_reg[4]),
-        .in                         (TX),
-        .enable                     (command_reg[7]),
+        .in                         (sda_in),
+        .enable                     (fifo_rx_enable),
         .out                        (RX)
     );
 endmodule

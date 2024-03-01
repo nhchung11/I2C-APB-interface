@@ -46,7 +46,7 @@ module apb
     assign PREADY = ((PENABLE == 1'b1) & (PSELx == 1'b1)) ? 1'b1 : 1'b0;
     
     // DATA READ FROM FIFO
-    assign PRDATA = ((RX_empty == 0) & (PENABLE == 1'b1) & (PWRITE == 1'b0)) ? receive_reg : 8'b0;
+    assign PRDATA = ((RX_empty == 0) & (PENABLE == 1'b1) & (PWRITE == 1'b0) & (PSELx == 1'b1)) ? receive_reg : 8'b0;
 
     always @(posedge PCLK, negedge PRESETn) begin
         if (!PRESETn) begin
@@ -59,7 +59,7 @@ module apb
             command_reg[4]      <= 1;
             prescale_reg        <= 8'b00000100;
             // WRITE
-            if (PCLK && PENABLE && PWRITE && (TX_full == 0)) begin
+            if (PENABLE && PWRITE && (TX_full == 0)) begin
                 transmit_reg    <= PWDATA;
                 address_reg     <= {PADDR, 1'b1};
                 command_reg[6]  <= 1;
@@ -67,7 +67,7 @@ module apb
                 command_reg[7]  <= 1;
             end
             // READ
-            else if (PCLK && PENABLE && (PWRITE == 0) && (RX_empty == 0)) begin
+            else if (PENABLE && (PWRITE == 0) && (RX_empty == 1)) begin
                 address_reg     <= {PADDR, 1'b0};
                 command_reg[5]  <= 1;
                 command_reg[6]  <= 0;

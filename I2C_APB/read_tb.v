@@ -55,21 +55,22 @@ module read_tb;
         PRESETn = 1;
         PENABLE = 1;
         PADDR = 7'b0101011;
-
         sda_in      = 1;
-        #10 sda_in  = 0;
-        #10 sda_in  = 1;
-        #10 sda_in  = 0;
-        #10 sda_in  = 1;
-        #10 sda_in  = 1;
-        #10 sda_in  = 0;
-        #10 sda_in  = 0;
-
-        #10 PENABLE = 0;
+        
+        #405 sda_in = 1;
+        #40 sda_in = 0;
+        #40 sda_in = 1;
+        #40 sda_in = 0;
+        #40 sda_in = 1;
+        #40 sda_in = 1;
+        #40 sda_in = 0;
+        #40 sda_in = 0;
+        #85 PENABLE = 0;
+        PSELx = 1;
         #10 PENABLE = 1;
         #10 PENABLE = 0;
 
-        #800;
+        #1000;
         $finish;
     end
 endmodule 
