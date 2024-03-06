@@ -136,11 +136,11 @@ module FIFO_top
     #(parameter data_size = 8,parameter address_size = 3)
     (
         input [data_size-1:0]   write_data,
-        input                   write_increment,
+        input                   write_enable,
         input                   write_clk,
         input                   write_reset_n,
 
-        input                   read_increment,
+        input                   read_enable,
         input                   read_clk,
         input                   read_reset_n,
 
@@ -159,7 +159,7 @@ module FIFO_top
     FIFO_memory #(data_size, address_size) fifomem
     (
         .write_clk              (write_clk),
-        .write_clk_en           (write_increment),
+        .write_enable           (write_enable),
         .write_data             (write_data),
         .write_address          (write_address),
         .read_data              (read_data),
@@ -171,7 +171,7 @@ module FIFO_top
     (
         .read_clk               (read_clk),
         .read_reset_n           (read_reset_n),
-        .read_increment         (read_increment) ,
+        .read_enable            (read_enable) ,
         .read_address           (read_address),
         .read_pointer           (read_pointer),
         .read_empty             (read_empty),
@@ -182,7 +182,7 @@ module FIFO_top
     (
         .write_clk              (write_clk),
         .write_reset_n          (write_reset_n),
-        .write_increment        (write_increment),
+        .write_enable           (write_enable),
         .write_address          (write_address),
         .write_pointer          (write_pointer),
         .write_full             (write_full),

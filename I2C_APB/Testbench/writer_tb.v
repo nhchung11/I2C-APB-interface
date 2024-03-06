@@ -1,11 +1,12 @@
-module top_level_tb;
+module write_tb;
     reg             PCLK;
     reg             PRESETn;
+    reg             PENABLE;
     reg             PSELx;
     reg             PWRITE;
-    reg             PENABLE;
     reg [7:0]       PADDR;
     reg [7:0]       PWDATA;
+
     reg             sda_in;
     reg             i2c_core_clk_top;
 
@@ -43,6 +44,12 @@ module top_level_tb;
 	end
 
     initial begin
+        PRESETn = 0;
+        PWRITE = 0;
+        PSELx = 0;
+        PENABLE = 1;
+        sda_in = 1;
+        #100;
         i2c_core_clk_top = 1;
         sda_in = 1;
         PRESETn = 1;
@@ -99,13 +106,13 @@ module top_level_tb;
         PWRITE = 1;
         PSELx = 1;
         PENABLE = 0;
-        PWDATA = 8'd1; 
+        PWDATA = 8'd10; 
         #10;
         PENABLE = 1;
         
         // Command reg = 5;
         #10;
-        PENABLE = 0;
+        PENABLE = 1;
         PSELx = 0;
         PWRITE = 0;
         #10;
@@ -118,11 +125,65 @@ module top_level_tb;
         PENABLE = 1;
 
         #10;
+        PENABLE = 1;
+        PSELx = 0;
+        PWRITE = 0;
+        // Transmit reg = 4
+        #10;
         PENABLE = 0;
         PSELx = 0;
         PWRITE = 0;
+        #10;
+        PADDR = 8'b10000000;
+        PWRITE = 1;
+        PSELx = 1;
+        PENABLE = 0;
+        PWDATA = 8'd11; 
+        #10;
+        PENABLE = 1;
         
-        #800;
+        // Transmit reg = 4
+        #10;
+        PENABLE = 0;
+        PSELx = 0;
+        PWRITE = 0;
+        #10;
+        PADDR = 8'b10000000;
+        PWRITE = 1;
+        PSELx = 1;
+        PENABLE = 0;
+        PWDATA = 8'd12; 
+        #10;
+        PENABLE = 1;
+
+        // Transmit reg = 4
+        #10;
+        PENABLE = 1;
+        PSELx = 0;
+        PWRITE = 0;
+        #10;
+        PADDR = 8'b10000000;
+        PWRITE = 1;
+        PSELx = 1;
+        PENABLE = 0;
+        PWDATA = 8'd13; 
+        #10;
+        PENABLE = 1;
+
+        // Transmit reg = 4
+        #10;
+        PENABLE = 1;
+        PSELx = 0;
+        PWRITE = 0;
+        #10;
+        PADDR = 8'b10000000;
+        PWRITE = 1;
+        PSELx = 1;
+        PENABLE = 0;
+        PWDATA = 8'd14; 
+        #10;
+        PENABLE = 1;
+        #5000;
         $finish;
     end
 endmodule 

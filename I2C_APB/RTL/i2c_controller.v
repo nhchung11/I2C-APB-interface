@@ -25,7 +25,7 @@ module i2c_controller
     reg [2:0]   counter = 0;
     reg [7:0]   saved_addr;
     reg [7:0]   saved_data;
-    reg [2:0]   current_state;
+    reg [3:0]   current_state;
     reg [3:0]   next_state;
     reg         scl_enable;
     reg         i2c_clk = 1;
@@ -156,7 +156,6 @@ module i2c_controller
             IDLE: begin
                 if ((i2c_clk == 0) && (enable == 1)) begin
                     saved_addr  <= {slave_address};  // 1101.011.1
-                    saved_data  <= {data_in};            // 1010.1010
                 end
                 scl_enable <= 0;
                 sda_o   <= 1;
@@ -178,6 +177,7 @@ module i2c_controller
                 sda_o <= 1;
                 scl_enable <= 1;
                 counter <= 7;
+                saved_data  <= {data_in};            // 1010.1010
             end
             //-----------------------------------------------------
             WRITE_DATA: begin

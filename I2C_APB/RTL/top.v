@@ -9,7 +9,7 @@ module top_level
         input                           PWRITE,
         input [7:0]                     PADDR,
         input [data_size - 1:0]         PWDATA,
-        input                           read_clk,
+        
         input                           sda_in,
         input                           i2c_core_clk_top,
 
@@ -21,7 +21,7 @@ module top_level
     // Internal register
     wire [data_size - 1:0]              prescale_reg;
     wire [data_size - 1:0]              command_reg;
-    reg  [data_size - 1:0]              status_reg;
+    wire [data_size - 1:0]              status_reg;
     wire [data_size - 1:0]              transmit_reg;
     wire [data_size - 1:0]              receive_reg;
     wire [data_size - 1:0]              address_reg;    
@@ -34,12 +34,13 @@ module top_level
     wire                                fifo_rx_enable;
 
     assign APB_TX                   =   transmit_reg;
-    assign APB_RX                   =   fifo_memory_rx.read_data_rx;
+    assign APB_RX                   =   fifo_rx.read_data;
     assign command_reg [4:0]        =   0;
-
-    always @* begin
-        status_reg [3:0]            =   0;
-    end
+    assign status_reg [3:0]         =   0;
+    
+    // always @* begin
+    //     status_reg [3:0]            =   0;
+    // end
 
 
     // FIFO TX
