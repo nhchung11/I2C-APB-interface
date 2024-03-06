@@ -12,184 +12,155 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# Loading project apb_fifo_i2c
+# Loading project fifo
+# Compile of empty.v was successful.
+# Compile of full.v was successful.
+# Compile of fifo_mem.v was successful.
+# Compile of sync_r2w.v was successful.
+# Compile of sync_w2r.v was successful.
+# Compile of tb_top.v was successful.
+# Compile of top.v was successful.
+# 7 compiles, 0 failed with no errors.
+vsim work.tb_top -voptargs=+acc
+# vsim work.tb_top -voptargs="+acc" 
+# Start time: 15:57:24 on Mar 06,2024
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.tb_top(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+add wave -position insertpoint sim:/tb_top/uut/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/AsyncFIFO/top_level/tb_top.v(50)
+#    Time: 640 ns  Iteration: 0  Instance: /tb_top
+# 1
+# Break in Module tb_top at C:/Users/PC/Documents/Chung_training/code/AsyncFIFO/top_level/tb_top.v line 50
+quit -sim
+# End time: 15:58:34 on Mar 06,2024, Elapsed time: 0:01:10
+# Errors: 0, Warnings: 0
+# Compile of empty.v was successful.
+# Compile of full.v was successful.
+# Compile of fifo_mem.v was successful.
+# Compile of sync_r2w.v was successful.
+# Compile of sync_w2r.v was successful.
+# Compile of tb_top.v was successful.
+# Compile of top.v was successful.
+# 7 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.tb_top
+# vsim -voptargs="+acc" work.tb_top 
+# Start time: 15:59:22 on Mar 06,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.tb_top(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+add wave -position insertpoint sim:/tb_top/uut/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/AsyncFIFO/top_level/tb_top.v(54)
+#    Time: 690 ns  Iteration: 0  Instance: /tb_top
+# 1
+# Break in Module tb_top at C:/Users/PC/Documents/Chung_training/code/AsyncFIFO/top_level/tb_top.v line 54
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.tb_top(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/AsyncFIFO/top_level/tb_top.v(54)
+#    Time: 690 ns  Iteration: 0  Instance: /tb_top
+# 1
+# Break in Module tb_top at C:/Users/PC/Documents/Chung_training/code/AsyncFIFO/top_level/tb_top.v line 54
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.tb_top(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Compile of empty.v was successful.
+# Compile of full.v was successful.
+# Compile of fifo_mem.v was successful.
+# Compile of sync_r2w.v was successful.
+# Compile of sync_w2r.v was successful.
+# Compile of tb_top.v was successful.
+# Compile of top.v was successful.
+# 7 compiles, 0 failed with no errors.
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/AsyncFIFO/top_level/tb_top.v(54)
+#    Time: 690 ns  Iteration: 0  Instance: /tb_top
+# 1
+# Break in Module tb_top at C:/Users/PC/Documents/Chung_training/code/AsyncFIFO/top_level/tb_top.v line 54
+restart
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.tb_top(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Compile of empty.v was successful.
+# Compile of full.v was successful.
+# Compile of fifo_mem.v was successful.
+# Compile of sync_r2w.v was successful.
+# Compile of sync_w2r.v was successful.
+# Compile of tb_top.v was successful.
+# Compile of top.v was successful.
+# 7 compiles, 0 failed with no errors.
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/AsyncFIFO/top_level/tb_top.v(54)
+#    Time: 700 ns  Iteration: 0  Instance: /tb_top
+# 1
+# Break in Module tb_top at C:/Users/PC/Documents/Chung_training/code/AsyncFIFO/top_level/tb_top.v line 54
+add wave -position insertpoint sim:/tb_top/uut/*
+# Causality operation skipped due to absence of debug database file
+quit -sim
+# End time: 16:38:41 on Mar 06,2024, Elapsed time: 0:39:19
+# Errors: 0, Warnings: 1
+project open D:/Questamsim_project/apb_fifo_i2c/apb_i2c
 # reading F:/questasim64_10.7c/win64/../modelsim.ini
 # Loading project apb_i2c
-# Compile of apb_to_fifo_top_tb.v was successful.
 # Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
 # Compile of top_tb.v was successful.
 # Compile of 8bit_to_1byte.v was successful.
 # Compile of apb_slave.v was successful.
-# Compile of fifo_rx.v was successful.
-# Compile of fifo_tx.v failed with 3 errors.
 # Compile of i2c_controller.v was successful.
-# Compile of top.v failed with 2 errors.
-# 10 compiles, 2 failed with 5 errors.
-# Compile of apb_to_fifo_top_tb.v was successful.
+# Compile of top.v failed with 1 errors.
+# Compile of fifo.v was successful.
+# 7 compiles, 1 failed with 1 error.
 # Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
 # Compile of top_tb.v was successful.
 # Compile of 8bit_to_1byte.v was successful.
 # Compile of apb_slave.v was successful.
-# Compile of fifo_rx.v was successful.
-# Compile of fifo_tx.v failed with 3 errors.
 # Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# 10 compiles, 1 failed with 3 errors.
-# Compile of apb_to_fifo_top_tb.v was successful.
+# Compile of top.v failed with 1 errors.
+# Compile of fifo.v was successful.
+# 7 compiles, 1 failed with 1 error.
 # Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
 # Compile of top_tb.v was successful.
 # Compile of 8bit_to_1byte.v was successful.
 # Compile of apb_slave.v was successful.
-# Compile of fifo_rx.v was successful.
-# Compile of fifo_tx.v failed with 2 errors.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v failed with 1 errors.
+# Compile of fifo.v was successful.
+# 7 compiles, 1 failed with 1 error.
+# Compile of read_tb.v was successful.
+# Compile of top_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
 # Compile of i2c_controller.v was successful.
 # Compile of top.v was successful.
-# 10 compiles, 1 failed with 2 errors.
-# Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
-# Compile of top_tb.v was successful.
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo_rx.v was successful.
-# Compile of fifo_tx.v failed with 1 errors.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# 10 compiles, 1 failed with 1 error.
-# Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
-# Compile of top_tb.v was successful.
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo_rx.v was successful.
-# Compile of fifo_tx.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# 10 compiles, 0 failed with no errors.
-# Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
-# Compile of top_tb.v was successful.
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo_rx.v was successful.
-# Compile of fifo_tx.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# 10 compiles, 0 failed with no errors.
-vsim work.top_level_tb -voptargs=+acc
-# vsim work.top_level_tb -voptargs="+acc" 
-# Start time: 17:24:10 on Mar 01,2024
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Error: C:/Users/PC/Documents/Chung_training/code/I2C_APB/RTL/top.v(87): Module 'fifo_memory' is not defined.
-# ** Error: C:/Users/PC/Documents/Chung_training/code/I2C_APB/RTL/top.v(128): Module 'sync_write_to_read_tx' is not defined.
-# Optimization failed
-# Error loading design
-# End time: 17:24:11 on Mar 01,2024, Elapsed time: 0:00:01
-# Errors: 2, Warnings: 0
-# Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
-# Compile of top_tb.v was successful.
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo_rx.v was successful.
-# Compile of fifo_tx.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# 10 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.top_level_tb
-# vsim -voptargs="+acc" work.top_level_tb 
-# Start time: 17:24:43 on Mar 01,2024
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Error: C:/Users/PC/Documents/Chung_training/code/I2C_APB/RTL/top.v(87): Module 'fifo_memory' is not defined.
-# Optimization failed
-# Error loading design
-# End time: 17:24:43 on Mar 01,2024, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-# Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
-# Compile of top_tb.v was successful.
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo_rx.v was successful.
-# Compile of fifo_tx.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# 10 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.top_level_tb
-# vsim -voptargs="+acc" work.top_level_tb 
-# Start time: 17:25:27 on Mar 01,2024
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/top_tb.v(17): (vopt-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 15, found 13.
-# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/top_tb.v(17): (vopt-2718) [TFMPC] - Missing connection for port 'read_clk'.
-# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/top_tb.v(17): (vopt-2718) [TFMPC] - Missing connection for port 'write_clk'.
-# Loading work.top_level_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.fifo_memory_tx(fast)
-# Loading work.read_pointer_empty_tx(fast)
-# Loading work.write_pointer_full_tx(fast)
-# Loading work.sync_read_to_write_tx(fast)
-# Loading work.sync_write_to_read_tx(fast)
-# Loading work.fifo_memory_rx(fast)
-# Loading work.read_pointer_empty_rx(fast)
-# Loading work.write_pointer_full_rx(fast)
-# Loading work.sync_read_to_write_rx(fast)
-# Loading work.sync_write_to_read_rx(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-add wave -position insertpoint sim:/top_level_tb/dut/apb/*
-add wave -position insertpoint sim:/top_level_tb/dut/i2c_controller/*
-add wave -position insertpoint sim:/top_level_tb/dut/fifomem_tx/*
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/top_tb.v(117)
-#    Time: 2380 ns  Iteration: 0  Instance: /top_level_tb
-# 1
-# Break in Module top_level_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/top_tb.v line 117
-quit -sim
-# End time: 17:29:50 on Mar 01,2024, Elapsed time: 0:04:23
-# Errors: 0, Warnings: 3
-# Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
-# Compile of top_tb.v was successful.
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo_rx.v was successful.
-# Compile of fifo_tx.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# 10 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.top_level_tb
-# vsim -voptargs="+acc" work.top_level_tb 
-# Start time: 17:30:01 on Mar 01,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.top_level_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.fifo_memory_tx(fast)
-# Loading work.read_pointer_empty_tx(fast)
-# Loading work.write_pointer_full_tx(fast)
-# Loading work.sync_read_to_write_tx(fast)
-# Loading work.sync_write_to_read_tx(fast)
-# Loading work.fifo_memory_rx(fast)
-# Loading work.read_pointer_empty_rx(fast)
-# Loading work.write_pointer_full_rx(fast)
-# Loading work.sync_read_to_write_rx(fast)
-# Loading work.sync_write_to_read_rx(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-add wave -position insertpoint sim:/top_level_tb/dut/apb/*
-add wave -position insertpoint sim:/top_level_tb/dut/i2c_controller/*
-add wave -position insertpoint sim:/top_level_tb/dut/fifomem_tx/*
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/top_tb.v(117)
-#    Time: 2380 ns  Iteration: 0  Instance: /top_level_tb
-# 1
-# Break in Module top_level_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/top_tb.v line 117
+# Compile of fifo.v was successful.
+# 7 compiles, 0 failed with no errors.

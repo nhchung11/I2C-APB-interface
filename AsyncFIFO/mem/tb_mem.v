@@ -40,7 +40,7 @@ module tb_mem;
     $dumpvars(0, tb_mem);
     // Initialize inputs
     write_data = 8'b00000000;
-    write_address = 3'b000;
+    write_address = 2'b00;
     read_address = 3'b000;
     write_clk_en = 0;
     write_full = 0;

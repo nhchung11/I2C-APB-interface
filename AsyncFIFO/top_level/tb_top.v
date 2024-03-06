@@ -1,11 +1,10 @@
-`include "top.v"
 module tb_top;
 // Inputs
 reg [7:0] write_data;
-reg write_increment;
+reg write_enable;
 reg write_clk;
 reg write_reset_n;
-reg read_increment;
+reg read_enable;
 reg read_clk;
 reg read_reset_n;
 
@@ -16,10 +15,10 @@ wire read_empty;
 FIFO_top uut 
 (
     .write_data(write_data),
-    .write_increment(write_increment),
+    .write_enable(write_enable),
     .write_clk(write_clk),
     .write_reset_n(write_reset_n),
-    .read_increment(read_increment),
+    .read_enable(read_enable),
     .read_clk(read_clk),
     .read_reset_n(read_reset_n),
     .read_data(read_data),
@@ -29,23 +28,20 @@ FIFO_top uut
 
 always #5 write_clk= ~write_clk;
 always #10 read_clk= ~read_clk;
-always #80 write_increment= ~write_increment;
-always #80 read_increment = ~ read_increment;
-always #200 write_reset_n = ~write_reset_n;
-always #200 read_reset_n = ~ read_reset_n;
 initial begin
-    $dumpfile("tb_top.vcd");
-    $dumpvars(0, tb_top);
-    // Initial inputs
-    write_data = 0;
-    write_increment = 0;
+    write_enable = 0;
     write_clk = 0;
-    write_reset_n = 0;
-    read_increment = 0;
+    read_enable = 0;
     read_clk = 0;
+    write_reset_n = 0;
     read_reset_n = 0;
+
     #100
-    // Wait 100 ns for global reset to finish
+    write_reset_n = 1;
+    read_reset_n = 1;
+    
+    #10 write_enable = 1;
+    write_data = 0;
     #10 write_data = 1;
     #10 write_data = 2;
     #10 write_data = 3;
@@ -54,5 +50,7 @@ initial begin
     #10 write_data = 6;
     #10 write_data = 7;
     #10 write_data = 8;
+    #10 read_enable = 1;
+    #500 $finish;
 end
 endmodule

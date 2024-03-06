@@ -213,6 +213,10 @@ module i2c_controller
                 scl_enable  <= 0;
             end
             //-----------------------------------------------------
+            default: begin
+                sda_o <= 1;
+                scl_enable <= 0;
+            end
         endcase
     end
 endmodule

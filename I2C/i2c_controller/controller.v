@@ -1,14 +1,15 @@
 module i2c_controller
     (
-        input wire          clk,
-        input wire          rst_n,
-        input wire          enable,
-        input wire [6:0]    slave_address,
-        input wire [7:0]    data_in,
-        input wire          rw,
-        input wire          repeated_start_cond,
+        input               i2c_core_clk,
+        input               rst_n,
+        input               enable,
+        input  [7:0]        slave_address,
+        input  [7:0]        data_in,
+        input               repeated_start_cond,
         input               sda_in,
-        output              sda_out, scl_out
+        output              sda_out,
+        output              scl_out,
+        output              fifo_rx_enable
     );
     
     localparam IDLE          = 0;
@@ -24,20 +25,23 @@ module i2c_controller
     reg [2:0]   counter = 0;
     reg [7:0]   saved_addr;
     reg [7:0]   saved_data;
-    reg [2:0]   current_state;
+    reg [3:0]   current_state;
     reg [3:0]   next_state;
     reg         scl_enable;
     reg         i2c_clk = 1;
     reg [7:0]   counter2 = 0;
     reg         sda_in_check = 0;
     reg         sda_o;
+    wire        rw;
 
+    assign fifo_rx_enable = (current_state == READ_DATA) ? 1'b1 : 1'b0;
 
     // assign sda_out = (sda_enable == 1) ? sda_o : 1'bz;
     assign scl_out = (scl_enable == 1) ? i2c_clk : 1;
     assign sda_out = sda_o;
+    assign rw = slave_address[0];
 
-	always @(posedge clk) begin
+	always @(posedge i2c_core_clk) begin
 		if (counter2 == 1) begin
 			i2c_clk <= ~i2c_clk;
 			counter2 <= 0;
@@ -61,6 +65,8 @@ module i2c_controller
         if (~rst_n)
             counter <= 7;
         else begin
+            if (current_state == START)
+                counter <= 7;
             if ((current_state == WRITE_ADDRESS) || (current_state == WRITE_DATA) || (current_state == READ_DATA))
                 counter <= counter - 1;
         end
@@ -78,7 +84,9 @@ module i2c_controller
     always @* begin
         case (current_state)
             IDLE: begin
-                if (enable) next_state = START;
+                if (enable) begin 
+                    next_state = START;
+                end
                 else        next_state = IDLE;
             end
             //-----------------------------------------------------
@@ -117,13 +125,19 @@ module i2c_controller
                 if (sda_in_check == 1) begin
                     next_state = STOP;
                 end
+                if ((enable) && (repeated_start_cond == 0)) begin
+                    next_state = WRITE_DATA;
+                end
+                else if ((enable) && (repeated_start_cond == 1)) begin
+                    next_state = START;
+                end
             end
             
             //-----------------------------------------------------
 
             READ_DATA: begin
                 if (counter == 0) begin
-                            next_state = READ_ACK;
+                        next_state = READ_ACK;
                 end
             end
             //-----------------------------------------------------
@@ -143,14 +157,15 @@ module i2c_controller
             default:        next_state = IDLE;
         endcase
     end
-    always @(posedge clk) begin
+    always @(posedge i2c_core_clk) begin
         case(current_state)
             IDLE: begin
                 if ((i2c_clk == 0) && (enable == 1)) begin
-                    saved_addr  <= {slave_address, rw};  // 1101.011.1
+                    saved_addr  <= {slave_address};  // 1101.011.1
                     saved_data  <= {data_in};            // 1010.1010
-                    scl_enable  <= 0;
                 end
+                scl_enable <= 0;
+                sda_o   <= 1;
             end
             //-----------------------------------------------------
             START: begin
@@ -204,6 +219,10 @@ module i2c_controller
                 scl_enable  <= 0;
             end
             //-----------------------------------------------------
+            default: begin
+                sda_o <= 1;
+                scl_enable <= 0;
+            end
         endcase
     end
 endmodule

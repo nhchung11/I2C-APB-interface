@@ -4,7 +4,7 @@ module top_level_tb;
     reg             PSELx;
     reg             PWRITE;
     reg             PENABLE;
-    reg [6:0]       PADDR;
+    reg [7:0]       PADDR;
     reg [7:0]       PWDATA;
     reg             sda_in;
     reg             i2c_core_clk_top;
@@ -43,59 +43,77 @@ module top_level_tb;
 	end
 
     initial begin
-        i2c_core_clk_top = 0;
-        PRESETn = 0;
-        PADDR = 7'b0;
+        i2c_core_clk_top = 1;
+        sda_in = 1;
+        PRESETn = 1;
+        PADDR = 8'b0;
         PWRITE = 0;
         PSELx = 0;
-        PWDATA = 8'd0;
+        PWDATA = 8'b0;
         PENABLE = 0;
-        sda_in = 1;
 
+        // Prescale reg = 1
         #10;
-        PRESETn = 1;
-        PADDR = 7'b0001111;
+        PADDR = 8'b00100000;
         PWRITE = 1;
         PSELx = 1;
         PENABLE = 0;
+        PWDATA = 8'd4;
+        #10;
+        PENABLE = 1;
+
+        // Address reg = 2
+        #10;
+        PENABLE = 0;
+        PSELx = 0;
+        PWRITE = 0;
+        #10;
+        PADDR = 8'b01000000;
+        PWRITE = 1;
+        PSELx = 1;
         PWDATA = 8'd1;
+        PENABLE = 0;    
+        #10;
+        PENABLE = 1; 
 
+        // Status reg = 3
+        #10;
+        PENABLE = 0;
+        PSELx = 0;
+        PWRITE = 0;
+        #10;
+        PADDR = 8'b01100000;
+        PWRITE = 0;
+        PSELx = 1;
+        PENABLE = 0; 
         #10;
         PENABLE = 1;
 
+        // Transmit reg = 4
         #10;
         PENABLE = 0;
         PSELx = 0;
         PWRITE = 0;
-
-        #360;
-        sda_in = 0;
-        #40;
-        sda_in = 1;
-
-        #320;
-        sda_in = 0;
-        #40
-        sda_in = 1;
-
-
-        i2c_core_clk_top = 0;
-        PRESETn = 0;
-        PADDR = 7'b0;
-        PWRITE = 0;
-        PSELx = 0;
-        PWDATA = 8'd0;
-        PENABLE = 0;
-        sda_in = 1;
-
         #10;
-        PRESETn = 1;
-        PADDR = 7'b0001111;
+        PADDR = 8'b10000000;
         PWRITE = 1;
         PSELx = 1;
         PENABLE = 0;
-        PWDATA = 8'd5;
-
+        PWDATA = 8'd1; 
+        #10;
+        PENABLE = 1;
+        
+        // Command reg = 5;
+        #10;
+        PENABLE = 0;
+        PSELx = 0;
+        PWRITE = 0;
+        #10;
+        PADDR = 8'b11000000;
+        PWRITE = 1;
+        PSELx = 1;
+        PENABLE = 0; 
+        PWDATA = 8'b11000000;
         #10;
         PENABLE = 1;
 
@@ -103,16 +121,7 @@ module top_level_tb;
         PENABLE = 0;
         PSELx = 0;
         PWRITE = 0;
-
-        #360;
-        sda_in = 0;
-        #40;
-        sda_in = 1;
-
-        #320;
-        sda_in = 0;
-        #40
-        sda_in = 1;
+        
         #800;
         $finish;
     end
