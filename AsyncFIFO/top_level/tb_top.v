@@ -27,7 +27,7 @@ FIFO_top uut
 );
 
 always #5 write_clk= ~write_clk;
-always #10 read_clk= ~read_clk;
+always #20 read_clk= ~read_clk;
 initial begin
     write_enable = 0;
     write_clk = 0;
@@ -51,6 +51,7 @@ initial begin
     #10 write_data = 7;
     #10 write_data = 8;
     #10 read_enable = 1;
-    #500 $finish;
+    write_enable = 0;
+    #20000 $finish;
 end
 endmodule

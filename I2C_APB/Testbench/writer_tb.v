@@ -34,7 +34,7 @@ module write_tb;
     );
 
     
-    always #5 i2c_core_clk_top= ~i2c_core_clk_top;
+    always #20 i2c_core_clk_top= ~i2c_core_clk_top;
 
 	initial begin
 		PCLK = 1;
@@ -49,8 +49,8 @@ module write_tb;
         PSELx = 0;
         PENABLE = 1;
         sda_in = 1;
-        #100;
         i2c_core_clk_top = 1;
+        #100;
         sda_in = 1;
         PRESETn = 1;
         PADDR = 8'b0;
@@ -75,7 +75,7 @@ module write_tb;
         PSELx = 0;
         PWRITE = 0;
         #10;
-        PADDR = 8'b01000000;
+        PADDR = 8'b01001111;
         PWRITE = 1;
         PSELx = 1;
         PWDATA = 8'd1;
@@ -106,7 +106,7 @@ module write_tb;
         PWRITE = 1;
         PSELx = 1;
         PENABLE = 0;
-        PWDATA = 8'd10; 
+        PWDATA = 8'd1; 
         #10;
         PENABLE = 1;
         
@@ -138,7 +138,7 @@ module write_tb;
         PWRITE = 1;
         PSELx = 1;
         PENABLE = 0;
-        PWDATA = 8'd11; 
+        PWDATA = 8'd2; 
         #10;
         PENABLE = 1;
         
@@ -152,7 +152,7 @@ module write_tb;
         PWRITE = 1;
         PSELx = 1;
         PENABLE = 0;
-        PWDATA = 8'd12; 
+        PWDATA = 8'd3; 
         #10;
         PENABLE = 1;
 
@@ -166,7 +166,7 @@ module write_tb;
         PWRITE = 1;
         PSELx = 1;
         PENABLE = 0;
-        PWDATA = 8'd13; 
+        PWDATA = 8'd4; 
         #10;
         PENABLE = 1;
 
@@ -180,9 +180,14 @@ module write_tb;
         PWRITE = 1;
         PSELx = 1;
         PENABLE = 0;
-        PWDATA = 8'd14; 
+        PWDATA = 8'd5; 
+        
         #10;
         PENABLE = 1;
+        PSELx = 0;
+        PWRITE = 0;
+        
+
         #5000;
         $finish;
     end

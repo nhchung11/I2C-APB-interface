@@ -104,7 +104,7 @@ module i2c_controller
             ADDRESS_ACK: begin
                 if (sda_in_check == 1) begin
                     // Sda_in = 0 -> ack
-                    if (rw == 1) 
+                    if (rw == 0) 
                             next_state = WRITE_DATA;
                     else    next_state = READ_DATA;
                 end

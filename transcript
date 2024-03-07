@@ -12,41 +12,361 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# Project file D:/Questamsim_project/apb_fifo_i2c/apb_i2c.mpf was not found.
-# Unable to open project.
-# Loading project apb_fifo_i2c
-# Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of read_tb.v was successful.
+# Loading project controller
+# Compile of controller.v was successful.
 # Compile of tb.v was successful.
-# Compile of writer_tb.v was successful.
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# 9 compiles, 0 failed with no errors.
-vsim work.write_tb -voptargs=+acc
-# vsim work.write_tb -voptargs="+acc" 
-# Start time: 17:57:55 on Mar 06,2024
+# 2 compiles, 0 failed with no errors.
+vsim work.tb
+# vsim work.tb 
+# Start time: 15:42:00 on Mar 07,2024
 # ** Note: (vsim-3812) Design is being optimized...
+# Loading work.tb(fast)
+quit -sim
+# End time: 15:42:11 on Mar 07,2024, Elapsed time: 0:00:11
+# Errors: 0, Warnings: 0
+vsim work.tb -voptargs=+acc
+# vsim work.tb -voptargs="+acc" 
+# Start time: 15:42:20 on Mar 07,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Note: (vopt-143) Recognized 1 FSM in module "i2c_controller(fast)".
-# Loading work.write_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_top(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.FIFO_top(fast__1)
-# Loading work.apb(fast)
+# Loading work.tb(fast)
 # Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-add wave -position insertpoint sim:/write_tb/dut/apb/*
-add wave -position insertpoint sim:/write_tb/dut/i2c_controller/*
-add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+add wave -position insertpoint sim:/tb/uut/*
 run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(187)
-#    Time: 5370 ns  Iteration: 0  Instance: /write_tb
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(52)
+#    Time: 1580 ns  Iteration: 0  Instance: /tb
 # 1
-# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 187
+# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 52
+quit -sim
+# End time: 15:47:36 on Mar 07,2024, Elapsed time: 0:05:16
+# Errors: 0, Warnings: 0
+# Compile of controller.v was successful.
+# Compile of tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.tb
+# vsim -voptargs="+acc" work.tb 
+# Start time: 15:47:42 on Mar 07,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "i2c_controller(fast)".
+# Loading work.tb(fast)
+# Loading work.i2c_controller(fast)
+add wave -position insertpoint sim:/tb/uut/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(52)
+#    Time: 1580 ns  Iteration: 0  Instance: /tb
+# 1
+# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 52
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.tb(fast)
+# Loading work.i2c_controller(fast)
+# Compile of controller.v was successful.
+# Compile of tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+# Load canceled
+# Compile of controller.v was successful.
+# Compile of tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(52)
+#    Time: 1580 ns  Iteration: 0  Instance: /tb
+# 1
+# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 52
+run -all
+# Break key hit
+# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 30
+quit -sim
+# End time: 15:48:52 on Mar 07,2024, Elapsed time: 0:01:10
+# Errors: 1, Warnings: 0
+# Compile of controller.v was successful.
+# Compile of tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.tb
+# vsim -voptargs="+acc" work.tb 
+# Start time: 15:49:02 on Mar 07,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.tb(fast)
+# Loading work.i2c_controller(fast)
+add wave -position insertpoint sim:/tb/uut/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(52)
+#    Time: 5080 ns  Iteration: 0  Instance: /tb
+# 1
+# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 52
+quit -sim
+# End time: 15:55:59 on Mar 07,2024, Elapsed time: 0:06:57
+# Errors: 0, Warnings: 0
+# Compile of controller.v was successful.
+# Compile of tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.tb
+# vsim -voptargs="+acc" work.tb 
+# Start time: 15:57:55 on Mar 07,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "i2c_controller(fast)".
+# Loading work.tb(fast)
+# Loading work.i2c_controller(fast)
+add wave -position insertpoint sim:/tb/uut/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(52)
+#    Time: 5080 ns  Iteration: 0  Instance: /tb
+# 1
+# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 52
+quit -sim
+# End time: 16:00:14 on Mar 07,2024, Elapsed time: 0:02:19
+# Errors: 0, Warnings: 0
+# Compile of controller.v was successful.
+# Compile of tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.tb
+# vsim -voptargs="+acc" work.tb 
+# Start time: 16:00:19 on Mar 07,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "i2c_controller(fast)".
+# Loading work.tb(fast)
+# Loading work.i2c_controller(fast)
+add wave -position insertpoint sim:/tb/uut/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(52)
+#    Time: 5080 ns  Iteration: 0  Instance: /tb
+# 1
+# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 52
+quit -sim
+# End time: 16:11:21 on Mar 07,2024, Elapsed time: 0:11:02
+# Errors: 0, Warnings: 0
+# Compile of controller.v was successful.
+# Compile of tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.tb
+# vsim -voptargs="+acc" work.tb 
+# Start time: 16:11:28 on Mar 07,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "i2c_controller(fast)".
+# Loading work.tb(fast)
+# Loading work.i2c_controller(fast)
+add wave -position insertpoint sim:/tb/uut/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(52)
+#    Time: 5080 ns  Iteration: 0  Instance: /tb
+# 1
+# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 52
+quit -sim
+# End time: 16:12:32 on Mar 07,2024, Elapsed time: 0:01:04
+# Errors: 0, Warnings: 0
+# Compile of controller.v was successful.
+# Compile of tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.tb
+# vsim -voptargs="+acc" work.tb 
+# Start time: 16:12:38 on Mar 07,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "i2c_controller(fast)".
+# Loading work.tb(fast)
+# Loading work.i2c_controller(fast)
+add wave -position insertpoint sim:/tb/uut/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(52)
+#    Time: 5080 ns  Iteration: 0  Instance: /tb
+# 1
+# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 52
+quit -sim
+# End time: 16:14:24 on Mar 07,2024, Elapsed time: 0:01:46
+# Errors: 0, Warnings: 0
+# Compile of controller.v was successful.
+# Compile of tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.tb
+# vsim -voptargs="+acc" work.tb 
+# Start time: 16:14:30 on Mar 07,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "i2c_controller(fast)".
+# Loading work.tb(fast)
+# Loading work.i2c_controller(fast)
+add wave -position insertpoint sim:/tb/uut/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(52)
+#    Time: 5080 ns  Iteration: 0  Instance: /tb
+# 1
+# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 52
+quit -sim
+# End time: 16:16:04 on Mar 07,2024, Elapsed time: 0:01:34
+# Errors: 0, Warnings: 0
+# Compile of controller.v was successful.
+# Compile of tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.tb
+# vsim -voptargs="+acc" work.tb 
+# Start time: 16:16:08 on Mar 07,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "i2c_controller(fast)".
+# Loading work.tb(fast)
+# Loading work.i2c_controller(fast)
+add wave -position insertpoint sim:/tb/uut/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(52)
+#    Time: 5080 ns  Iteration: 0  Instance: /tb
+# 1
+# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 52
+# Causality operation skipped due to absence of debug database file
+quit -sim
+# End time: 16:24:24 on Mar 07,2024, Elapsed time: 0:08:16
+# Errors: 0, Warnings: 1
+# Compile of controller.v was successful.
+# Compile of tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.tb
+# vsim -voptargs="+acc" work.tb 
+# Start time: 16:24:27 on Mar 07,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "i2c_controller(fast)".
+# Loading work.tb(fast)
+# Loading work.i2c_controller(fast)
+add wave -position insertpoint sim:/tb/uut/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(52)
+#    Time: 5080 ns  Iteration: 0  Instance: /tb
+# 1
+# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 52
+quit -sim
+# End time: 16:26:47 on Mar 07,2024, Elapsed time: 0:02:20
+# Errors: 0, Warnings: 0
+# Compile of controller.v was successful.
+# Compile of tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.tb
+# vsim -voptargs="+acc" work.tb 
+# Start time: 16:26:52 on Mar 07,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "i2c_controller(fast)".
+# Loading work.tb(fast)
+# Loading work.i2c_controller(fast)
+add wave -position insertpoint sim:/tb/uut/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(52)
+#    Time: 5080 ns  Iteration: 0  Instance: /tb
+# 1
+# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 52
+quit -sim
+# End time: 16:45:46 on Mar 07,2024, Elapsed time: 0:18:54
+# Errors: 0, Warnings: 0
+# Compile of controller.v failed with 4 errors.
+# Compile of tb.v was successful.
+# 2 compiles, 1 failed with 4 errors.
+# Compile of controller.v was successful.
+# Compile of tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.tb
+# vsim -voptargs="+acc" work.tb 
+# Start time: 16:46:42 on Mar 07,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "i2c_controller(fast)".
+# Loading work.tb(fast)
+# Loading work.i2c_controller(fast)
+add wave -position insertpoint sim:/tb/uut/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(52)
+#    Time: 5080 ns  Iteration: 0  Instance: /tb
+# 1
+# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 52
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+quit -sim
+# End time: 16:49:17 on Mar 07,2024, Elapsed time: 0:02:35
+# Errors: 23, Warnings: 0
+# Compile of controller.v was successful.
+# Compile of tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.tb
+# vsim -voptargs="+acc" work.tb 
+# Start time: 16:49:21 on Mar 07,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "i2c_controller(fast)".
+# Loading work.tb(fast)
+# Loading work.i2c_controller(fast)
+add wave -position insertpoint sim:/tb/uut/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(52)
+#    Time: 5080 ns  Iteration: 0  Instance: /tb
+# 1
+# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 52
+quit -sim
+# End time: 16:50:43 on Mar 07,2024, Elapsed time: 0:01:22
+# Errors: 0, Warnings: 0
+# Compile of controller.v was successful.
+# Compile of tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.tb
+# vsim -voptargs="+acc" work.tb 
+# Start time: 16:50:51 on Mar 07,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "i2c_controller(fast)".
+# Loading work.tb(fast)
+# Loading work.i2c_controller(fast)
+add wave -position insertpoint sim:/tb/uut/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(52)
+#    Time: 5080 ns  Iteration: 0  Instance: /tb
+# 1
+# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 52
+quit -sim
+# End time: 16:52:09 on Mar 07,2024, Elapsed time: 0:01:18
+# Errors: 0, Warnings: 0
+# Compile of controller.v was successful.
+# Compile of tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.tb
+# vsim -voptargs="+acc" work.tb 
+# Start time: 16:52:14 on Mar 07,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "i2c_controller(fast)".
+# Loading work.tb(fast)
+# Loading work.i2c_controller(fast)
+add wave -position insertpoint sim:/tb/uut/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(52)
+#    Time: 5080 ns  Iteration: 0  Instance: /tb
+# 1
+# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 52
+quit -sim
+# End time: 16:54:46 on Mar 07,2024, Elapsed time: 0:02:32
+# Errors: 0, Warnings: 0
+# Compile of controller.v was successful.
+# Compile of tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.tb
+# vsim -voptargs="+acc" work.tb 
+# Start time: 16:54:50 on Mar 07,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "i2c_controller(fast)".
+# Loading work.tb(fast)
+# Loading work.i2c_controller(fast)
+add wave -position insertpoint sim:/tb/uut/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v(52)
+#    Time: 5080 ns  Iteration: 0  Instance: /tb
+# 1
+# Break in Module tb at C:/Users/PC/Documents/Chung_training/code/I2C/i2c_controller/tb.v line 52
+quit -sim
+# End time: 17:00:42 on Mar 07,2024, Elapsed time: 0:05:52
+# Errors: 0, Warnings: 0

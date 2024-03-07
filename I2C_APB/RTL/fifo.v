@@ -72,19 +72,32 @@ module read_pointer_empty #(parameter address_size = 3)
     reg [address_size:0] read_binary;
     reg [address_size:0] read_gray_next;
     reg [address_size:0] read_binary_next;
+    reg [7:0] counter;
+    always @(posedge read_clk, negedge read_reset_n) begin
+        if (!read_reset_n)
+            counter <= 8'b0;
+        else begin
+            counter <= counter + 1;
+            if (counter == 8'd76)
+                counter <= 8'b0;
+        end
+    end
 
     always@*
         begin
-        read_address = read_binary[address_size-1:0];
-        read_binary_next = read_binary + (read_enable & ~read_empty); 
-        read_gray_next = (read_binary_next>>1) ^ read_binary_next;
+            if (counter == 8'd76) begin
+                read_address = read_binary[address_size-1:0];
+                read_binary_next = read_binary + (read_enable & ~read_empty); 
+                read_gray_next = (read_binary_next>>1) ^ read_binary_next;
+            end
     end
 
     always @(posedge read_clk , negedge read_reset_n) begin
         if (~read_reset_n)
             {read_binary, read_pointer} <= 0;
         else
-            {read_binary, read_pointer} <= {read_binary_next, read_gray_next};
+            if (counter == 8'd76)
+                {read_binary, read_pointer} <= {read_binary_next, read_gray_next};
     end
 
     // FIFO empty logic
@@ -92,7 +105,8 @@ module read_pointer_empty #(parameter address_size = 3)
         if (~read_reset_n)
             read_empty <= 1'b1;
         else
-            read_empty <= (read_gray_next == read_to_write_pointer);
+            if (counter == 8'd76)
+                read_empty <= (read_gray_next == read_to_write_pointer);
     end
 endmodule
 

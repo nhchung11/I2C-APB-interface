@@ -10,7 +10,7 @@ module FIFO_memory
         output  [data_size-1:0]     read_data
     );
     
-    localparam FIFO_depth = 1<<address_size;
+    localparam  FIFO_depth = 1<<address_size;
     reg [data_size-1:0] mem [0:FIFO_depth-1];
     
     // read the data at the output of memory
