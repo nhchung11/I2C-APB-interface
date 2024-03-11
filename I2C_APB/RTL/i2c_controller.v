@@ -9,7 +9,11 @@ module i2c_controller
         input               repeated_start_cond,
         input               sda_in,
         output              sda_out,
-        output              scl_out
+        output              scl_out,
+
+        // fifo enable
+        output reg          fifo_tx_enable,
+        output reg          fifo_rx_enable
     );
     
     localparam  IDLE          = 0;
@@ -37,6 +41,23 @@ module i2c_controller
     assign sda_out = sda_o;
     assign rw = slave_address[0];
 
+    //Fifo enable logic
+    always @(posedge core_clk, negedge rst_n) begin
+        if(!rst_n) begin
+            fifo_rx_enable <= 0;
+            fifo_tx_enable <= 0;
+        end
+        else begin
+            if (current_state == WRITE_ACK)
+                fifo_tx_enable <= 1;
+            else
+                fifo_tx_enable <= 0;
+            if(current_state == READ_ACK)
+                fifo_rx_enable <= 1;
+            else
+                fifo_rx_enable <= 0;
+        end
+    end
 
     // State register logic
     always @(posedge i2c_clk, negedge rst_n) begin
@@ -164,7 +185,6 @@ module i2c_controller
             case(current_state)
                 IDLE: begin
                     saved_addr  <= {slave_address}; 
-                    saved_data  <= {data_in}; 
                     scl_enable <= 0;
                     sda_o   <= 1;
                 end
@@ -181,7 +201,8 @@ module i2c_controller
                 end
                 //-----------------------------------------------------
                 ADDRESS_ACK: begin
-                    scl_enable <= 1;           
+                    scl_enable <= 1;  
+                    saved_data  <= {data_in};          
                     if (i2c_clk == 0)
                         sda_o <= 1;
                 end
@@ -195,6 +216,7 @@ module i2c_controller
 
                 WRITE_ACK: begin
                     scl_enable <= 1;
+                    saved_data  <= {data_in};  
                     if (i2c_clk == 0)
                         sda_o <= 1;
                 end

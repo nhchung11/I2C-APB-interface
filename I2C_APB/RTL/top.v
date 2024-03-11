@@ -32,7 +32,11 @@ module top_level
     wire [data_size - 1:0]              APB_RX;
     wire                                i2c_clk_gen;
 
-    assign command_reg [4:0]        =   0;
+    // FIFO read/write enable
+    wire                                fifo_tx_enable;
+    wire                                fifo_rx_enable;
+    
+    assign command_reg [2:0]        =   0;
     assign status_reg [3:0]         =   0;
     
 
@@ -40,34 +44,34 @@ module top_level
     FIFO_top #(data_size, address_size) fifo_tx
     (
         .write_data                     (transmit_reg),
-        .write_enable                   (command_reg[7]),
+        .write_enable                   (command_reg[6]),
         .write_clk                      (PCLK),
-        .write_reset_n                  (command_reg[6]),
+        .write_reset_n                  (command_reg[4]),
         
-        .read_enable                    (command_reg[7]),
+        .read_enable                    (fifo_tx_enable),           // Modify
         .read_clk                       (core_clk),
-        .read_reset_n                   (command_reg[6]),
+        .read_reset_n                   (command_reg[4]),
 
         .read_data                      (TX),
         .write_full                     (status_reg[7]),
-        .read_empty                     (status_reg[5])
+        .read_empty                     (status_reg[6])
     );
 
     // FIFO RX
     FIFO_top #(data_size, address_size) fifo_rx
     (
         .write_data                     (RX),
-        .write_enable                   (command_reg[7]),
+        .write_enable                   (fifo_rx_enable),            // Modify
         .write_clk                      (core_clk),
-        .write_reset_n                  (command_reg[6]),
+        .write_reset_n                  (command_reg[4]),
         
-        .read_enable                    (command_reg[7]),
+        .read_enable                    (command_reg[5]),           // Modify
         .read_clk                       (PCLK),
-        .read_reset_n                   (command_reg[6]),
+        .read_reset_n                   (command_reg[4]),
 
         .read_data                      (APB_RX),
-        .write_full                     (status_reg[4]),
-        .read_empty                     (status_reg[6])
+        .write_full                     (status_reg[5]),
+        .read_empty                     (status_reg[4])
     );
 
     // APB INTERFACE
@@ -91,20 +95,24 @@ module top_level
         .address_reg                    (address_reg)
     );
 
+    // I2C MASTER
     i2c_controller i2c_controller
     (
         .core_clk                       (core_clk),
         .i2c_clk                        (i2c_clk_gen),
-        .rst_n                          (command_reg[6]),
+        .rst_n                          (command_reg[4]),
         .enable                         (command_reg[7]),
         .slave_address                  (address_reg),
         .data_in                        (TX),
-        .repeated_start_cond            (command_reg[5]),
+        .repeated_start_cond            (command_reg[3]),
         .sda_in                         (sda_in),
         .sda_out                        (sda_out),
-        .scl_out                        (scl_out)
+        .scl_out                        (scl_out),
+        .fifo_tx_enable                 (fifo_tx_enable),
+        .fifo_rx_enable                 (fifo_rx_enable)
     );
 
+    // BYTE CONVERTER
     BitToByteConverter bit_to_byte_converter
     (
         .clk                            (core_clk),
@@ -113,11 +121,13 @@ module top_level
         .enable                         (command_reg[7]),
         .out                            (RX)
     );
+
+    // CLOCK GENERATOR
     ClockGenerator clock_gen
     (
         .core_clk                       (core_clk),
         .prescale                       (prescale_reg),
-        .rst_n                          (command_reg[6]),
+        .rst_n                          (command_reg[4]),
         .i2c_clk                        (i2c_clk_gen)
     );
 endmodule

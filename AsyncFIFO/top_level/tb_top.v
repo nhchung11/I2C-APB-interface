@@ -52,6 +52,6 @@ initial begin
     #10 write_data = 8;
     #10 read_enable = 1;
     write_enable = 0;
-    #20000 $finish;
+    #2000 $finish;
 end
 endmodule

@@ -36,12 +36,7 @@ module write_tb;
     
     always #20 core_clk= ~core_clk;
 
-	initial begin
-		PCLK = 1;
-		forever begin
-			#5 PCLK = ~PCLK;
-		end		
-	end
+	always #5 PCLK= ~PCLK;
 
     initial begin
         PRESETn = 0;
@@ -50,6 +45,7 @@ module write_tb;
         PENABLE = 1;
         sda_in = 1;
         core_clk = 1;
+        PCLK = 1;
         #100;
         sda_in = 1;
         PRESETn = 1;
@@ -120,7 +116,7 @@ module write_tb;
         PWRITE = 1;
         PSELx = 1;
         PENABLE = 0; 
-        PWDATA = 8'b11000000;
+        PWDATA = 8'b11010000;
         #10;
         PENABLE = 1;
 
@@ -222,9 +218,21 @@ module write_tb;
         PENABLE = 1;
         PSELx = 0;
         PWRITE = 0;
-        
+        // Command reg = 5;
+        #10;
+        PENABLE = 1;
+        PSELx = 0;
+        PWRITE = 0;
+        #10;
+        PADDR = 8'b11000000;
+        PWRITE = 1;
+        PSELx = 1;
+        PENABLE = 0; 
+        PWDATA = 8'b11010000;
+        #10;
+        PENABLE = 1;
 
-        #10000;
+        #20000;
         $finish;
     end
 endmodule 
