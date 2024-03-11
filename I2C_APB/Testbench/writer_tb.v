@@ -181,6 +181,42 @@ module write_tb;
         PSELx = 1;
         PENABLE = 0;
         PWDATA = 8'd5; 
+
+        // Transmit reg = 4
+        #10;
+        PENABLE = 1;
+        PSELx = 0;
+        PWRITE = 0;
+        #10;
+        PADDR = 8'b10000000;
+        PWRITE = 1;
+        PSELx = 1;
+        PENABLE = 0;
+        PWDATA = 8'd6;
+
+        // Transmit reg = 4
+        #10;
+        PENABLE = 1;
+        PSELx = 0;
+        PWRITE = 0;
+        #10;
+        PADDR = 8'b10000000;
+        PWRITE = 1;
+        PSELx = 1;
+        PENABLE = 0;
+        PWDATA = 8'd7;  
+
+        // Transmit reg = 4
+        #10;
+        PENABLE = 1;
+        PSELx = 0;
+        PWRITE = 0;
+        #10;
+        PADDR = 8'b10000000;
+        PWRITE = 1;
+        PSELx = 1;
+        PENABLE = 0;
+        PWDATA = 8'd8; 
         
         #10;
         PENABLE = 1;

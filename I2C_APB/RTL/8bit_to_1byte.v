@@ -38,10 +38,12 @@ module BitToByteConverter
     always @(posedge i2c_clk or negedge rst_n) begin
         if (!rst_n) begin
             tmp <= 8'b00000000;  // Reset to 0 when reset is active
-        end else if (enable) begin
-            tmp <= {tmp[6:0], in};  // Shift the existing bits and append the new input bit
-            if ((counter == 7) && (tmp != 0))
-              out <= tmp;
+        end else begin
+            if (enable) begin
+                tmp <= {tmp[6:0], in};  // Shift the existing bits and append the new input bit
+                if ((counter == 7) && (tmp != 0))
+                    out <= tmp;
+            end
         end
     end
 endmodule
