@@ -11,7 +11,7 @@ module top_level
         input [data_size - 1:0]         PWDATA,
         
         input                           sda_in,
-        input                           i2c_core_clk_top,
+        input                           core_clk,
 
         output [data_size - 1:0]        PRDATA,
         output                          PREADY,
@@ -31,17 +31,13 @@ module top_level
     wire [data_size - 1:0]              RX;
     wire [data_size - 1:0]              APB_TX;
     wire [data_size - 1:0]              APB_RX;
-    wire                                fifo_rx_enable;
+    wire                                i2c_clk_gen;
 
     assign APB_TX                   =   transmit_reg;
     assign APB_RX                   =   fifo_rx.read_data;
     assign command_reg [4:0]        =   0;
     assign status_reg [3:0]         =   0;
     
-    // always @* begin
-    //     status_reg [3:0]            =   0;
-    // end
-
 
     // FIFO TX
     FIFO_top #(data_size, address_size) fifo_tx
@@ -52,7 +48,7 @@ module top_level
         .write_reset_n                  (command_reg[6]),
         
         .read_enable                    (command_reg[7]),
-        .read_clk                       (i2c_core_clk_top),
+        .read_clk                       (core_clk),
         .read_reset_n                   (command_reg[6]),
 
         .read_data                      (TX),
@@ -65,7 +61,7 @@ module top_level
     (
         .write_data                     (RX),
         .write_enable                   (command_reg[7]),
-        .write_clk                      (i2c_core_clk_top),
+        .write_clk                      (core_clk),
         .write_reset_n                  (command_reg[6]),
         
         .read_enable                    (command_reg[7]),
@@ -100,7 +96,8 @@ module top_level
 
     i2c_controller i2c_controller
     (
-        .i2c_core_clk                   (i2c_core_clk_top),
+        .core_clk                       (core_clk),
+        .i2c_clk                        (i2c_clk_gen),
         .rst_n                          (command_reg[6]),
         .enable                         (command_reg[7]),
         .slave_address                  (address_reg),
@@ -108,16 +105,22 @@ module top_level
         .repeated_start_cond            (command_reg[5]),
         .sda_in                         (sda_in),
         .sda_out                        (sda_out),
-        .scl_out                        (scl_out),
-        .fifo_rx_enable                 (fifo_rx_enable)
+        .scl_out                        (scl_out)
     );
 
     BitToByteConverter bit_to_byte_converter
     (
-        .clk                            (i2c_core_clk_top),
+        .clk                            (core_clk),
         .rst_n                          (command_reg[4]),
         .in                             (sda_in),
-        .enable                         (fifo_rx_enable),
+        .enable                         (command_reg[7]),
         .out                            (RX)
+    );
+    ClockGenerator clock_gen
+    (
+        .core_clk                       (core_clk),
+        .prescale                       (prescale_reg),
+        .rst_n                          (command_reg[6]),
+        .i2c_clk                        (i2c_clk_gen)
     );
 endmodule

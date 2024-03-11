@@ -9,8 +9,7 @@ module i2c_controller
         input               repeated_start_cond,
         input               sda_in,
         output              sda_out,
-        output              scl_out,
-        output              fifo_rx_enable
+        output              scl_out
     );
     
     localparam  IDLE          = 0;
@@ -29,7 +28,6 @@ module i2c_controller
     reg [3:0]   current_state;
     reg [3:0]   next_state;
     reg         scl_enable;
-    reg [7:0]   counter2;
     reg         sda_in_check;
     reg         sda_o;
     wire        rw;
@@ -44,11 +42,8 @@ module i2c_controller
 
     // State register logic
     always @(posedge i2c_clk, negedge rst_n) begin
-        if (~rst_n) begin
+        if (~rst_n) 
             current_state <= IDLE;
-            sda_o <= 1;
-            scl_enable <= 0;
-        end
         else
             current_state <= next_state;
     end
@@ -66,12 +61,16 @@ module i2c_controller
     end
 
     // In simulation
-    always @(posedge i2c_clk) begin
-        if ((next_state == ADDRESS_ACK) || (next_state == WRITE_ACK) || (next_state == READ_ACK)) begin
-            sda_in_check <= 1;
-        end
-        else
+    always @(posedge i2c_clk, negedge rst_n) begin
+        if (!rst_n)
             sda_in_check <= 0;
+        else begin
+            if ((next_state == ADDRESS_ACK) || (next_state == WRITE_ACK) || (next_state == READ_ACK)) begin
+                sda_in_check <= 1;
+            end
+            else
+                sda_in_check <= 0;
+        end
     end
 
     // Next state combinational logic
@@ -116,8 +115,19 @@ module i2c_controller
             //-----------------------------------------------------
 
             WRITE_ACK: begin
-                if (sda_in_check == 1) begin
+                if (sda_in_check == 0) begin
                     next_state = STOP;
+                end
+                else begin
+                    if (enable == 0) begin
+                                next_state = STOP;
+                    end
+                    else if (enable == 1) begin
+                        if (repeated_start_cond == 0)   
+                                next_state = WRITE_DATA;
+                        else
+                                next_state = START;
+                    end
                 end
             end
             
@@ -145,73 +155,77 @@ module i2c_controller
             default:        next_state = IDLE;
         endcase
     end
-    always @(posedge i2c_core_clk) begin
-        case(current_state)
-            IDLE: begin
-                if ((i2c_clk == 0) && (enable == 1)) begin
-                    saved_addr  <= {slave_address};  // 1101.011.1
+    always @(posedge core_clk, negedge rst_n) begin
+        if (!rst_n) begin
+            scl_enable <= 0;
+            sda_o <= 1;
+            saved_addr <= 0;
+            saved_data <= 0;
+        end
+        else begin
+            case(current_state)
+                IDLE: begin
+                    saved_addr  <= {slave_address}; 
+                    saved_data  <= {data_in}; 
+                    scl_enable <= 0;
+                    sda_o   <= 1;
                 end
-                scl_enable <= 0;
-                sda_o   <= 1;
-            end
-            //-----------------------------------------------------
-            START: begin
-                sda_o <= 0;
-                if (i2c_clk == 0)
+                //-----------------------------------------------------
+                START: begin
                     sda_o <= 0;
-            end
-            //-----------------------------------------------------
-            WRITE_ADDRESS: begin
-                if (i2c_clk == 0)
-                    sda_o <= saved_addr[counter];
-                    scl_enable <= 1;
-            end
-            //-----------------------------------------------------
-            ADDRESS_ACK: begin
-                sda_o <= 1;
-                scl_enable <= 1;
-                counter <= 7;
-                saved_data  <= {data_in};            // 1010.1010
-            end
-            //-----------------------------------------------------
-            WRITE_DATA: begin
-                if (i2c_clk == 0) begin
-                    sda_o <= saved_data[counter];
-                    scl_enable <= 1;
+                    scl_enable <= 0;
                 end
-            end
-            //-----------------------------------------------------
+                //-----------------------------------------------------
+                WRITE_ADDRESS: begin
+                    scl_enable <= 1;
+                    if (i2c_clk == 0) 
+                        sda_o <= saved_addr[counter];
+                end
+                //-----------------------------------------------------
+                ADDRESS_ACK: begin
+                    scl_enable <= 1;           
+                    if (i2c_clk == 0)
+                        sda_o <= 1;
+                end
+                //-----------------------------------------------------
+                WRITE_DATA: begin
+                    scl_enable <= 1;
+                    if (i2c_clk == 0)
+                        sda_o <= saved_data[counter];
+                end
+                //-----------------------------------------------------
 
-            WRITE_ACK: begin
-                if (i2c_clk == 0) begin
+                WRITE_ACK: begin
+                    scl_enable <= 1;
+                    if (i2c_clk == 0)
+                        sda_o <= 1;
+                end
+                //-----------------------------------------------------
+
+                READ_DATA: begin
                     sda_o       <= 1;
                     scl_enable  <= 1;
                 end
-            end
-            //-----------------------------------------------------
+                //-----------------------------------------------------
 
-            READ_DATA: begin
-                sda_o       <= 1;
-                scl_enable  <= 1;
-            end
-            //-----------------------------------------------------
+                READ_ACK: begin
+                    scl_enable  <= 1;
+                    if (i2c_clk == 0)
+                        sda_o       <= 1;
+                end
+                //-----------------------------------------------------
 
-            READ_ACK: begin
-                sda_o       <= 1;
-                scl_enable  <= 1;
-            end
-            //-----------------------------------------------------
-
-            STOP: begin
-                sda_o     <= 1;
-                scl_enable  <= 0;
-            end
-            //-----------------------------------------------------
-            default: begin
-                sda_o <= 1;
-                scl_enable <= 0;
-            end
-        endcase
+                STOP: begin
+                    sda_o     <= 1;
+                    scl_enable  <= 1;
+                end
+                //-----------------------------------------------------
+                default: begin
+                    sda_o <= 1;
+                    scl_enable <= 0;
+                end
+            endcase
+        end
     end
 endmodule
 
