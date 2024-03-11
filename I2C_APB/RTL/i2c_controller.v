@@ -32,8 +32,6 @@ module i2c_controller
     reg         sda_o;
     wire        rw;
 
-    assign fifo_rx_enable = (current_state == READ_DATA) ? 1'b1 : 1'b0;
-
     // assign sda_out = (sda_enable == 1) ? sda_o : 1'bz;
     assign scl_out = (scl_enable == 1) ? i2c_clk : 1;
     assign sda_out = sda_o;

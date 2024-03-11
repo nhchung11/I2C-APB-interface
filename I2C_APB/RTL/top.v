@@ -29,12 +29,9 @@ module top_level
     // FIFO inputs and outputs
     wire [data_size - 1:0]              TX;
     wire [data_size - 1:0]              RX;
-    wire [data_size - 1:0]              APB_TX;
     wire [data_size - 1:0]              APB_RX;
     wire                                i2c_clk_gen;
 
-    assign APB_TX                   =   transmit_reg;
-    assign APB_RX                   =   fifo_rx.read_data;
     assign command_reg [4:0]        =   0;
     assign status_reg [3:0]         =   0;
     
@@ -42,7 +39,7 @@ module top_level
     // FIFO TX
     FIFO_top #(data_size, address_size) fifo_tx
     (
-        .write_data                     (APB_TX),
+        .write_data                     (transmit_reg),
         .write_enable                   (command_reg[7]),
         .write_clk                      (PCLK),
         .write_reset_n                  (command_reg[6]),
@@ -101,7 +98,7 @@ module top_level
         .rst_n                          (command_reg[6]),
         .enable                         (command_reg[7]),
         .slave_address                  (address_reg),
-        .data_in                        (APB_TX),
+        .data_in                        (TX),
         .repeated_start_cond            (command_reg[5]),
         .sda_in                         (sda_in),
         .sda_out                        (sda_out),

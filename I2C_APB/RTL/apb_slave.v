@@ -23,7 +23,6 @@ module apb
 
     reg                     RX_empty;
     reg                     TX_full;
-    reg [7:0]               PREV_ADDR;
     reg [2:0]               reg_map;
 
 
