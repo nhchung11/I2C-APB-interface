@@ -31,14 +31,14 @@ module tb;
   end
 
   initial begin
-    i2c_clk  = 1;
-    forever #40 i2c_clk = ~i2c_clk;
+    i2c_clk  = 0;
+    forever #20 i2c_clk = ~i2c_clk;
   end
 
   initial begin
     rst_n = 0;
     enable = 0;
-    slave_address = 8'b0;     //1101011.1
+    slave_address = 8'b0;   
     data_in = 8'b0;
     sda_in = 1;
     repeated_start_cond = 0;
@@ -48,7 +48,7 @@ module tb;
     slave_address = 8'b11110000;     
     data_in = 8'd1;
 
-    #5000;
+    #4000;
     $finish;
   end
 endmodule

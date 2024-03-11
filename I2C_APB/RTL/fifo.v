@@ -73,15 +73,6 @@ module read_pointer_empty #(parameter address_size = 3)
     reg [address_size:0] read_gray_next;
     reg [address_size:0] read_binary_next;
     reg [7:0] counter;
-    always @(posedge read_clk, negedge read_reset_n) begin
-        if (!read_reset_n)
-            counter <= 8'b0;
-        else begin
-            counter <= counter + 1;
-            if (counter == 8'd76)
-                counter <= 8'b0;
-        end
-    end
 
     always@*
         begin

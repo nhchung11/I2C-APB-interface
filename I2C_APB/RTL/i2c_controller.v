@@ -1,6 +1,7 @@
 module i2c_controller
     (
-        input               i2c_core_clk,
+        input               core_clk,
+        input               i2c_clk,
         input               rst_n,
         input               enable,
         input  [7:0]        slave_address,
@@ -12,25 +13,24 @@ module i2c_controller
         output              fifo_rx_enable
     );
     
-    localparam IDLE          = 0;
-    localparam START         = 1;
-    localparam WRITE_ADDRESS = 2; 
-    localparam ADDRESS_ACK   = 3;
-    localparam WRITE_DATA    = 4;
-    localparam WRITE_ACK     = 5;
-    localparam READ_DATA     = 6;
-    localparam READ_ACK      = 7;
-    localparam STOP          = 8;
+    localparam  IDLE          = 0;
+    localparam  START         = 1;
+    localparam  WRITE_ADDRESS = 2; 
+    localparam  ADDRESS_ACK   = 3;
+    localparam  WRITE_DATA    = 4;
+    localparam  WRITE_ACK     = 5;
+    localparam  READ_DATA     = 6;
+    localparam  READ_ACK      = 7;
+    localparam  STOP          = 8;
 
-    reg [2:0]   counter = 0;
+    reg [2:0]   counter;
     reg [7:0]   saved_addr;
     reg [7:0]   saved_data;
     reg [3:0]   current_state;
     reg [3:0]   next_state;
     reg         scl_enable;
-    reg         i2c_clk = 1;
-    reg [7:0]   counter2 = 0;
-    reg         sda_in_check = 0;
+    reg [7:0]   counter2;
+    reg         sda_in_check;
     reg         sda_o;
     wire        rw;
 
@@ -41,13 +41,6 @@ module i2c_controller
     assign sda_out = sda_o;
     assign rw = slave_address[0];
 
-	always @(posedge i2c_core_clk) begin
-		if (counter2 == 1) begin
-			i2c_clk <= ~i2c_clk;
-			counter2 <= 0;
-		end
-		else counter2 <= counter2 + 1;
-	end 
 
     // State register logic
     always @(posedge i2c_clk, negedge rst_n) begin
@@ -72,6 +65,7 @@ module i2c_controller
         end
     end
 
+    // In simulation
     always @(posedge i2c_clk) begin
         if ((next_state == ADDRESS_ACK) || (next_state == WRITE_ACK) || (next_state == READ_ACK)) begin
             sda_in_check <= 1;
