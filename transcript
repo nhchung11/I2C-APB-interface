@@ -21,16 +21,41 @@
 # Compile of read_tb.v was successful.
 # Compile of tb.v was successful.
 # Compile of writer_tb.v was successful.
-# 8 compiles, 0 failed with no errors.
+# Compile of clock_generator.v was successful.
+# 9 compiles, 0 failed with no errors.
 vsim work.write_tb -voptargs=+acc
 # vsim work.write_tb -voptargs="+acc" 
-# Start time: 22:54:31 on Mar 13,2024
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Error: D:/wavelet_training/code/I2C_APB/RTL/top.v(100): Module 'ClockGenerator' is not defined.
-# Optimization failed
-# Error loading design
-# End time: 22:54:32 on Mar 13,2024, Elapsed time: 0:00:01
-# Errors: 1, Warnings: 0
+# Start time: 00:57:58 on Mar 14,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "i2c_controller(fast)".
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: admin  Hostname: DESKTOP-A5DHFV4  ProcessID: 2200
+#           Attempting to use alternate WLF file "./wlft13wb0c".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft13wb0c
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : D:/wavelet_training/code/I2C_APB/Testbench/writer_tb.v(215)
+#    Time: 30490 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at D:/wavelet_training/code/I2C_APB/Testbench/writer_tb.v line 215
+quit -sim
+# End time: 01:02:11 on Mar 14,2024, Elapsed time: 0:04:13
+# Errors: 0, Warnings: 2
 # Compile of 8bit_to_1byte.v was successful.
 # Compile of apb_slave.v was successful.
 # Compile of fifo.v was successful.
@@ -43,8 +68,51 @@ vsim work.write_tb -voptargs=+acc
 # 9 compiles, 0 failed with no errors.
 vsim -voptargs=+acc work.write_tb
 # vsim -voptargs="+acc" work.write_tb 
-# Start time: 22:55:01 on Mar 13,2024
-# ** Note: (vsim-3812) Design is being optimized...
+# Start time: 01:02:20 on Mar 14,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: admin  Hostname: DESKTOP-A5DHFV4  ProcessID: 2200
+#           Attempting to use alternate WLF file "./wlft7950hq".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft7950hq
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : D:/wavelet_training/code/I2C_APB/Testbench/writer_tb.v(220)
+#    Time: 32920 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at D:/wavelet_training/code/I2C_APB/Testbench/writer_tb.v line 220
+quit -sim
+# End time: 01:05:17 on Mar 14,2024, Elapsed time: 0:02:57
+# Errors: 0, Warnings: 2
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of clock_generator.v was successful.
+# 9 compiles, 0 failed with no errors.
+# Load canceled
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 01:05:30 on Mar 14,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Note: (vopt-143) Recognized 1 FSM in module "i2c_controller(fast)".
 # Loading work.write_tb(fast)
 # Loading work.top_level(fast)
@@ -56,39 +124,111 @@ vsim -voptargs=+acc work.write_tb
 # Loading work.sync_write_to_read(fast)
 # Loading work.apb(fast)
 # Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
 # Loading work.ClockGenerator(fast)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (8) for port 'prescale'. The port definition is at: D:/wavelet_training/code/I2C_APB/RTL/clock_generator.v(4).
-#    Time: 0 ns  Iteration: 0  Instance: /write_tb/dut/clock_gen File: D:/wavelet_training/code/I2C_APB/RTL/top.v Line: 100
 add wave -position insertpoint sim:/write_tb/dut/apb/*
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: admin  Hostname: DESKTOP-A5DHFV4  ProcessID: 2200
-#           Attempting to use alternate WLF file "./wlft6sz0a5".
+#           Attempting to use alternate WLF file "./wlft53403q".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft6sz0a5
-add wave -position insertpoint sim:/write_tb/dut/i2c/*
-add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
-add wave -position insertpoint sim:/write_tb/dut/apb/*
+#           Using alternate file: ./wlft53403q
 add wave -position insertpoint sim:/write_tb/dut/i2c/*
 add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
 run -all
-# ** Note: $finish    : D:/wavelet_training/code/I2C_APB/Testbench/writer_tb.v(215)
-#    Time: 30490 ns  Iteration: 0  Instance: /write_tb
+# ** Note: $finish    : D:/wavelet_training/code/I2C_APB/Testbench/writer_tb.v(220)
+#    Time: 32920 ns  Iteration: 0  Instance: /write_tb
 # 1
-# Break in Module write_tb at D:/wavelet_training/code/I2C_APB/Testbench/writer_tb.v line 215
+# Break in Module write_tb at D:/wavelet_training/code/I2C_APB/Testbench/writer_tb.v line 220
+quit -sim
+# End time: 01:06:43 on Mar 14,2024, Elapsed time: 0:01:13
+# Errors: 0, Warnings: 2
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of clock_generator.v was successful.
+# 9 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 01:06:54 on Mar 14,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "i2c_controller(fast)".
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: admin  Hostname: DESKTOP-A5DHFV4  ProcessID: 2200
+#           Attempting to use alternate WLF file "./wlftazmkm7".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftazmkm7
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : D:/wavelet_training/code/I2C_APB/Testbench/writer_tb.v(220)
+#    Time: 32920 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at D:/wavelet_training/code/I2C_APB/Testbench/writer_tb.v line 220
+quit -sim
+# End time: 01:07:59 on Mar 14,2024, Elapsed time: 0:01:05
+# Errors: 0, Warnings: 2
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of clock_generator.v was successful.
+# 9 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 01:08:08 on Mar 14,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "i2c_controller(fast)".
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: admin  Hostname: DESKTOP-A5DHFV4  ProcessID: 2200
+#           Attempting to use alternate WLF file "./wlft0d66fx".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft0d66fx
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : D:/wavelet_training/code/I2C_APB/Testbench/writer_tb.v(220)
+#    Time: 32920 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at D:/wavelet_training/code/I2C_APB/Testbench/writer_tb.v line 220
 # Causality operation skipped due to absence of debug database file
 quit -sim
-# End time: 23:04:54 on Mar 13,2024, Elapsed time: 0:09:53
-# Errors: 0, Warnings: 4
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo.v was successful.
-# Compile of i2c_controller.v failed with 1 errors.
-# Compile of top.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
-# Compile of writer_tb.v was successful.
-# Compile of clock_generator.v was successful.
-# 9 compiles, 1 failed with 1 error.
+# End time: 01:16:36 on Mar 14,2024, Elapsed time: 0:08:28
+# Errors: 0, Warnings: 3
 # Compile of 8bit_to_1byte.v was successful.
 # Compile of apb_slave.v was successful.
 # Compile of fifo.v was successful.
@@ -101,90 +241,7 @@ quit -sim
 # 9 compiles, 0 failed with no errors.
 vsim -voptargs=+acc work.write_tb
 # vsim -voptargs="+acc" work.write_tb 
-# Start time: 23:23:13 on Mar 13,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Note: (vopt-143) Recognized 1 FSM in module "i2c_controller(fast)".
-# Loading work.write_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_top(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.ClockGenerator(fast)
-add wave -position insertpoint sim:/write_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: admin  Hostname: DESKTOP-A5DHFV4  ProcessID: 2200
-#           Attempting to use alternate WLF file "./wlft2v7g5h".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft2v7g5h
-add wave -position insertpoint sim:/write_tb/dut/i2c/*
-add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
-run -all
-# ** Note: $finish    : D:/wavelet_training/code/I2C_APB/Testbench/writer_tb.v(215)
-#    Time: 30490 ns  Iteration: 0  Instance: /write_tb
-# 1
-# Break in Module write_tb at D:/wavelet_training/code/I2C_APB/Testbench/writer_tb.v line 215
-quit -sim
-# End time: 23:24:54 on Mar 13,2024, Elapsed time: 0:01:41
-# Errors: 0, Warnings: 2
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
-# Compile of writer_tb.v was successful.
-# Compile of clock_generator.v was successful.
-# 9 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.write_tb
-# vsim -voptargs="+acc" work.write_tb 
-# Start time: 23:26:20 on Mar 13,2024
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# Loading work.write_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_top(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.ClockGenerator(fast)
-add wave -position insertpoint **
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: admin  Hostname: DESKTOP-A5DHFV4  ProcessID: 2200
-#           Attempting to use alternate WLF file "./wlft6e1ktn".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft6e1ktn
-add wave -position insertpoint sim:/write_tb/dut/i2c/*
-add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
-run -all
-# ** Note: $finish    : D:/wavelet_training/code/I2C_APB/Testbench/writer_tb.v(215)
-#    Time: 30490 ns  Iteration: 0  Instance: /write_tb
-# 1
-# Break in Module write_tb at D:/wavelet_training/code/I2C_APB/Testbench/writer_tb.v line 215
-quit -sim
-# End time: 23:36:51 on Mar 13,2024, Elapsed time: 0:10:31
-# Errors: 0, Warnings: 2
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
-# Compile of writer_tb.v was successful.
-# Compile of clock_generator.v was successful.
-# 9 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.write_tb
-# vsim -voptargs="+acc" work.write_tb 
-# Start time: 23:36:57 on Mar 13,2024
+# Start time: 01:16:43 on Mar 14,2024
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # Loading work.write_tb(fast)
 # Loading work.top_level(fast)
@@ -196,40 +253,20 @@ vsim -voptargs=+acc work.write_tb
 # Loading work.sync_write_to_read(fast)
 # Loading work.apb(fast)
 # Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
 # Loading work.ClockGenerator(fast)
 add wave -position insertpoint sim:/write_tb/dut/apb/*
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: admin  Hostname: DESKTOP-A5DHFV4  ProcessID: 2200
-#           Attempting to use alternate WLF file "./wlftdz92qf".
+#           Attempting to use alternate WLF file "./wlft6ek5m7".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftdz92qf
+#           Using alternate file: ./wlft6ek5m7
 add wave -position insertpoint sim:/write_tb/dut/i2c/*
 add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
 run -all
-# ** Note: $finish    : D:/wavelet_training/code/I2C_APB/Testbench/writer_tb.v(215)
-#    Time: 30490 ns  Iteration: 0  Instance: /write_tb
+# ** Note: $finish    : D:/wavelet_training/code/I2C_APB/Testbench/writer_tb.v(248)
+#    Time: 53080 ns  Iteration: 0  Instance: /write_tb
 # 1
-# Break in Module write_tb at D:/wavelet_training/code/I2C_APB/Testbench/writer_tb.v line 215
-quit -sim
-# End time: 23:56:14 on Mar 13,2024, Elapsed time: 0:19:17
+# Break in Module write_tb at D:/wavelet_training/code/I2C_APB/Testbench/writer_tb.v line 248
+# End time: 01:17:52 on Mar 14,2024, Elapsed time: 0:01:09
 # Errors: 0, Warnings: 2
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
-# Compile of writer_tb.v was successful.
-# Compile of clock_generator.v was successful.
-# 9 compiles, 0 failed with no errors.
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
-# Compile of writer_tb.v was successful.
-# Compile of clock_generator.v was successful.
-# 9 compiles, 0 failed with no errors.

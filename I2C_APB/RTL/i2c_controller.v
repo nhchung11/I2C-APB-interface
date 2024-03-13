@@ -38,29 +38,13 @@ module i2c_controller
     wire        rw;
     reg         tx_check;
     reg         rx_check;
+    reg         sda_prev;
+    reg         ack;
 
     // assign sda_out = (sda_enable == 1) ? sda_o : 1'bz;
     assign scl_out = (scl_enable == 1) ? i2c_clk : 1;
     assign sda_out = sda_o;
     assign rw = slave_address[0];
-
-    //Fifo enable logic
-    // always @(posedge core_clk, negedge rst_n) begin
-    //     if(!rst_n) begin
-    //         fifo_rx_enable <= 0;
-    //         fifo_tx_enable <= 0;
-    //     end
-    //     else begin
-    //         if (current_state == WRITE_ACK)
-    //             fifo_tx_enable <= 1;
-    //         else
-    //             fifo_tx_enable <= 0;
-    //         if(current_state == READ_ACK)
-    //             fifo_rx_enable <= 1;
-    //         else
-    //             fifo_rx_enable <= 0;
-    //     end
-    // end
 
     // State register logic
     always @(posedge i2c_clk, negedge rst_n) begin
@@ -80,19 +64,28 @@ module i2c_controller
             if ((current_state == WRITE_ADDRESS) || (current_state == WRITE_DATA) || (current_state == READ_DATA))
                 counter <= counter - 1;
         end
-    end
+    end 
 
     // In simulation
     always @(posedge i2c_clk, negedge rst_n) begin
-        if (!rst_n)
+        if (!rst_n) begin
             sda_in_check        <= 0;
+            sda_prev            <= 0;
+        end
         else begin
+            if (!sda_in && sda_prev) begin
+                ack             <= 1;
+            end
+            else begin
+                ack             <= 0;
+            end
             if ((next_state == ADDRESS_ACK) || (next_state == WRITE_ACK) || (next_state == READ_ACK)) begin
                 sda_in_check    <= 1;
             end
             else
                 sda_in_check    <= 0;
         end
+        sda_prev <= sda_in;
     end
 
     // Next state combinational logic
