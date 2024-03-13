@@ -130,3 +130,63 @@ covergroup coverage_model;
 endgroup
 
 coverage_model instance = new();
+
+module test;
+    int q;
+    function int sum(int x = 0; y = 10, z = 20)
+        return x + y + z;
+    endfunction
+
+    initial begin
+        q = sum( , , 10);
+        $display("%0d",q);
+    end
+endmodule
+
+module passing_byname;
+    function void display(int x, string y);
+        $display("x = %0d, y = %0s", x, y);
+    endfunction
+    // ....
+endmodule
+
+rand bit [3:0]  value;
+
+randc bit value;
+object.randomize();
+
+constraint value_range {value > 5;}
+
+constraint range {value inside {[5:10]};}
+
+constraint range {value inside {1,2,3,4,5};}
+
+constraint range {value inside {1, [2:4], 6, [9:10]};}
+
+constraint range (value !(inside{[5:10]});)
+
+rand bit[3:0] start_val;
+rand bit[3:0] end_val;
+constraint range (value inside{[start_val: end_val]};)
+
+value := weight
+value :/ weight
+
+class packet
+    rand bit [7:0] addr;
+    constraint addr_range {addr == 5;}
+endclass
+
+module test;
+    packet pkt1;
+    packet pkt2;
+    pkt1 = new()
+    pkt2 = new()
+
+    pkt1.randomize();
+
+endmodule
+
+object.randomize() with {...}
+
+constraint constraint_name { var = function_call(); };

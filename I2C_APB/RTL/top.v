@@ -10,6 +10,7 @@ module top_level
         input [7:0]                     PADDR,
         input [data_size - 1:0]         PWDATA,
         
+        input                           scl_in,
         input                           sda_in,
         input                           core_clk,
 
@@ -56,24 +57,6 @@ module top_level
         .write_full                     (status_reg[7]),
         .read_empty                     (status_reg[6])
     );
-
-    // FIFO RX
-    FIFO_top #(data_size, address_size) fifo_rx
-    (
-        .write_data                     (RX),
-        .write_enable                   (fifo_rx_enable),            // Modify
-        .write_clk                      (core_clk),
-        .write_reset_n                  (command_reg[4]),
-        
-        .read_enable                    (command_reg[5]),           // Modify
-        .read_clk                       (PCLK),
-        .read_reset_n                   (command_reg[4]),
-
-        .read_data                      (APB_RX),
-        .write_full                     (status_reg[5]),
-        .read_empty                     (status_reg[4])
-    );
-
     // APB INTERFACE
     apb apb
     (
@@ -93,33 +76,6 @@ module top_level
         .transmit_reg                   (transmit_reg),
         .receive_reg                    (APB_RX),
         .address_reg                    (address_reg)
-    );
-
-    // I2C MASTER
-    i2c_controller i2c_controller
-    (
-        .core_clk                       (core_clk),
-        .i2c_clk                        (i2c_clk_gen),
-        .rst_n                          (command_reg[4]),
-        .enable                         (command_reg[7]),
-        .slave_address                  (address_reg),
-        .data_in                        (TX),
-        .repeated_start_cond            (command_reg[3]),
-        .sda_in                         (sda_in),
-        .sda_out                        (sda_out),
-        .scl_out                        (scl_out),
-        .fifo_tx_enable                 (fifo_tx_enable),
-        .fifo_rx_enable                 (fifo_rx_enable)
-    );
-
-    // BYTE CONVERTER
-    BitToByteConverter bit_to_byte_converter
-    (
-        .clk                            (core_clk),
-        .rst_n                          (command_reg[4]),
-        .in                             (sda_in),
-        .enable                         (command_reg[7]),
-        .out                            (RX)
     );
 
     // CLOCK GENERATOR

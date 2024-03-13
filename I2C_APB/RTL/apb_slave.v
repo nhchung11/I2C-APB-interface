@@ -21,15 +21,19 @@ module apb
         output reg  [7:0]   address_reg
 	);
 
-    reg                     RX_empty;
+    reg                     TX_empty;
     reg                     TX_full;
+    reg                     RX_full;
+    reg                     RX_empty;
     reg [2:0]               reg_map;
 
 
     // Input status
     always @* begin
         TX_full             = status_reg[7];
-        RX_empty            = status_reg[6];
+        TX_empty            = status_reg[6];
+        RX_full             = status_reg[5];
+        RX_empty            = status_reg[4];
     end
 
     always @(posedge PCLK, negedge PRESETn) begin
@@ -49,8 +53,7 @@ module apb
 
     always @(posedge PCLK, negedge PRESETn) begin
         if (!PRESETn) begin
-            transmit_reg        <= 8'b0;
-            command_reg         <= 8'b0;
+            command_reg         <= 8'b00000000;
             address_reg         <= 8'b0;
             prescale_reg        <= 8'b0;
         end
@@ -76,20 +79,34 @@ module apb
 
                 // Write to transmit register
                 3'b100: begin
-                    if ((PWRITE == 1) && (PSELx == 1) && (PENABLE == 1))
+                    if ((PWRITE == 1) && (PSELx == 1) && (PENABLE == 1)) begin
                         transmit_reg <= PWDATA;
+                        command_reg     <= 11010000;
+                    end
+                    if (PSELx == 0)
+                        command_reg     <= 10010000;
                 end
 
                 // Read from receive register
                 3'b101: begin
-                    if ((PWRITE == 0) && (PSELx == 1) && (PENABLE == 1))
+                    if ((PWRITE == 0) && (PSELx == 1) && (PENABLE == 1)) begin
                         PRDATA          <= receive_reg;
+                        command_reg     <= 10110000;
+                    end
+                    if (PSELx == 0)
+                        command_reg     <= 10010000;
                 end
                 
                 // Write to Command regisger
                 3'b110: begin
-                    if ((PWRITE == 1) && (PSELx == 1) && (PENABLE == 1))
-                        command_reg     <= PWDATA;
+                    if (TX_full == 1)
+                        command_reg         <= 8'b10000000;
+                    else begin
+                        if ((PWRITE == 1) && (PSELx == 1) && (PENABLE == 1))
+                            command_reg     <= PWDATA;
+                        if (PSELx == 0)
+                            command_reg     <= 10010000;
+                    end
                 end
             endcase
         end

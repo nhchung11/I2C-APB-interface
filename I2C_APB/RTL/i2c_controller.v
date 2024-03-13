@@ -42,22 +42,22 @@ module i2c_controller
     assign rw = slave_address[0];
 
     //Fifo enable logic
-    always @(posedge core_clk, negedge rst_n) begin
-        if(!rst_n) begin
-            fifo_rx_enable <= 0;
-            fifo_tx_enable <= 0;
-        end
-        else begin
-            if (current_state == WRITE_ACK)
-                fifo_tx_enable <= 1;
-            else
-                fifo_tx_enable <= 0;
-            if(current_state == READ_ACK)
-                fifo_rx_enable <= 1;
-            else
-                fifo_rx_enable <= 0;
-        end
-    end
+    // always @(posedge core_clk, negedge rst_n) begin
+    //     if(!rst_n) begin
+    //         fifo_rx_enable <= 0;
+    //         fifo_tx_enable <= 0;
+    //     end
+    //     else begin
+    //         if (current_state == WRITE_ACK)
+    //             fifo_tx_enable <= 1;
+    //         else
+    //             fifo_tx_enable <= 0;
+    //         if(current_state == READ_ACK)
+    //             fifo_rx_enable <= 1;
+    //         else
+    //             fifo_rx_enable <= 0;
+    //     end
+    // end
 
     // State register logic
     always @(posedge i2c_clk, negedge rst_n) begin
@@ -180,6 +180,8 @@ module i2c_controller
             sda_o <= 1;
             saved_addr <= 0;
             saved_data <= 0;
+            fifo_rx_enable <= 0;
+            fifo_tx_enable <= 0;
         end
         else begin
             case(current_state)
@@ -209,6 +211,7 @@ module i2c_controller
                 //-----------------------------------------------------
                 WRITE_DATA: begin
                     scl_enable <= 1;
+                    fifo_tx_enable <= 0;
                     if (i2c_clk == 0)
                         sda_o <= saved_data[counter];
                 end
@@ -217,6 +220,7 @@ module i2c_controller
                 WRITE_ACK: begin
                     scl_enable <= 1;
                     saved_data  <= {data_in};  
+                    fifo_tx_enable <= 1;
                     if (i2c_clk == 0)
                         sda_o <= 1;
                 end

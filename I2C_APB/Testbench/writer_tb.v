@@ -39,21 +39,16 @@ module write_tb;
 	always #5 PCLK= ~PCLK;
 
     initial begin
+        core_clk = 1;
+        PCLK = 1;
         PRESETn = 0;
         PWRITE = 0;
         PSELx = 0;
-        PENABLE = 1;
-        sda_in = 1;
-        core_clk = 1;
-        PCLK = 1;
-        #100;
-        sda_in = 1;
-        PRESETn = 1;
-        PADDR = 8'b0;
-        PWRITE = 0;
-        PSELx = 0;
-        PWDATA = 8'b0;
         PENABLE = 0;
+        sda_in = 1;
+
+        #100;
+        PRESETn = 1;
 
         // Prescale reg = 1
         #10;
@@ -67,9 +62,7 @@ module write_tb;
 
         // Address reg = 2
         #10;
-        PENABLE = 0;
         PSELx = 0;
-        PWRITE = 0;
         #10;
         PADDR = 8'b01000000;
         PWRITE = 1;
@@ -81,9 +74,7 @@ module write_tb;
 
         // Status reg = 3
         #10;
-        PENABLE = 0;
         PSELx = 0;
-        PWRITE = 0;
         #10;
         PADDR = 8'b01100000;
         PWRITE = 0;
@@ -94,9 +85,7 @@ module write_tb;
 
         // Transmit reg = 4
         #10;
-        PENABLE = 0;
         PSELx = 0;
-        PWRITE = 0;
         #10;
         PADDR = 8'b10000000;
         PWRITE = 1;
@@ -104,13 +93,11 @@ module write_tb;
         PENABLE = 0;
         PWDATA = 8'd1; 
         #10;
-        PENABLE = 1;
-        
+        PENABLE = 1;   
+
         // Command reg = 5;
         #10;
-        PENABLE = 1;
         PSELx = 0;
-        PWRITE = 0;
         #10;
         PADDR = 8'b11000000;
         PWRITE = 1;
@@ -121,14 +108,7 @@ module write_tb;
         PENABLE = 1;
 
         #10;
-        PENABLE = 1;
         PSELx = 0;
-        PWRITE = 0;
-        // Transmit reg = 4
-        #10;
-        PENABLE = 0;
-        PSELx = 0;
-        PWRITE = 0;
         #10;
         PADDR = 8'b10000000;
         PWRITE = 1;
@@ -140,9 +120,7 @@ module write_tb;
         
         // Transmit reg = 4
         #10;
-        PENABLE = 0;
         PSELx = 0;
-        PWRITE = 0;
         #10;
         PADDR = 8'b10000000;
         PWRITE = 1;
@@ -154,9 +132,7 @@ module write_tb;
 
         // Transmit reg = 4
         #10;
-        PENABLE = 1;
         PSELx = 0;
-        PWRITE = 0;
         #10;
         PADDR = 8'b10000000;
         PWRITE = 1;
@@ -168,71 +144,58 @@ module write_tb;
 
         // Transmit reg = 4
         #10;
-        PENABLE = 1;
         PSELx = 0;
-        PWRITE = 0;
         #10;
         PADDR = 8'b10000000;
         PWRITE = 1;
         PSELx = 1;
         PENABLE = 0;
         PWDATA = 8'd5; 
+        #10;
+        PENABLE = 1;
 
         // Transmit reg = 4
         #10;
-        PENABLE = 1;
         PSELx = 0;
-        PWRITE = 0;
         #10;
         PADDR = 8'b10000000;
         PWRITE = 1;
         PSELx = 1;
         PENABLE = 0;
         PWDATA = 8'd6;
+        #10;
+        PENABLE = 1;
 
         // Transmit reg = 4
         #10;
-        PENABLE = 1;
         PSELx = 0;
-        PWRITE = 0;
         #10;
         PADDR = 8'b10000000;
         PWRITE = 1;
         PSELx = 1;
         PENABLE = 0;
         PWDATA = 8'd7;  
+        #10;
+        PENABLE = 1;
 
         // Transmit reg = 4
         #10;
-        PENABLE = 1;
         PSELx = 0;
-        PWRITE = 0;
         #10;
         PADDR = 8'b10000000;
         PWRITE = 1;
         PSELx = 1;
         PENABLE = 0;
         PWDATA = 8'd8; 
+        #10;
+        PENABLE = 1;
         
         #10;
-        PENABLE = 1;
+        PSELx = 0;
+        PENABLE = 0;
         PSELx = 0;
         PWRITE = 0;
-        // Command reg = 5;
-        #10;
-        PENABLE = 1;
-        PSELx = 0;
-        PWRITE = 0;
-        #10;
-        PADDR = 8'b11000000;
-        PWRITE = 1;
-        PSELx = 1;
-        PENABLE = 0; 
-        PWDATA = 8'b11010000;
-        #10;
-        PENABLE = 1;
-
-        #20000;
+        #10000;
         $finish;
     end
 endmodule 

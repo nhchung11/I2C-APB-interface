@@ -10,7 +10,7 @@ module FIFO_memory
         output  [data_size-1:0]     read_data
     );
     
-    localparam FIFO_depth = 1<<address_size;
+    localparam  FIFO_depth = 1<<address_size;
     reg [data_size-1:0] mem [0:FIFO_depth-1];
     
     // read the data at the output of memory
@@ -72,11 +72,14 @@ module read_pointer_empty #(parameter address_size = 3)
     reg [address_size:0] read_binary;
     reg [address_size:0] read_gray_next;
     reg [address_size:0] read_binary_next;
+    
 
-    always@* begin
-        read_address = read_binary[address_size-1:0];
-        read_binary_next = read_binary + (read_enable & ~read_empty); 
-        read_gray_next = (read_binary_next>>1) ^ read_binary_next;
+    always@*
+        begin
+            read_address = read_binary[address_size-1:0];
+            read_binary_next = read_binary + (read_enable & ~read_empty); 
+            read_gray_next = (read_binary_next>>1) ^ read_binary_next;
+            
     end
 
     always @(posedge read_clk , negedge read_reset_n) begin

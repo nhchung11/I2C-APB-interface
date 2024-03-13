@@ -13,189 +13,6 @@
 # //  18 U.S.C. Section 1905.
 # //
 # Loading project apb_fifo_i2c
-# Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
-# Compile of writer_tb.v was successful.
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# Compile of clock_generator.v was successful.
-# 10 compiles, 0 failed with no errors.
-vsim work.write_tb -voptargs=+acc
-# vsim work.write_tb -voptargs="+acc" 
-# Start time: 16:55:03 on Mar 11,2024
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# Loading work.write_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_top(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-# Loading work.ClockGenerator(fast)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (8) for port 'prescale'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/RTL/clock_generator.v(4).
-#    Time: 0 ns  Iteration: 0  Instance: /write_tb/dut/clock_gen File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/RTL/top.v Line: 126
-add wave -position insertpoint sim:/write_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
-#           Attempting to use alternate WLF file "./wlftk2ai3y".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftk2ai3y
-add wave -position insertpoint sim:/write_tb/dut/i2c_controller/*
-add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(224)
-#    Time: 20430 ns  Iteration: 0  Instance: /write_tb
-# 1
-# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 224
-quit -sim
-# End time: 17:08:43 on Mar 11,2024, Elapsed time: 0:13:40
-# Errors: 0, Warnings: 3
-# Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
-# Compile of writer_tb.v was successful.
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# Compile of clock_generator.v was successful.
-# 10 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.write_tb
-# vsim -voptargs="+acc" work.write_tb 
-# Start time: 17:08:50 on Mar 11,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Note: (vopt-143) Recognized 1 FSM in module "i2c_controller(fast)".
-# Loading work.write_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_top(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-# Loading work.ClockGenerator(fast)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (8) for port 'prescale'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/RTL/clock_generator.v(4).
-#    Time: 0 ns  Iteration: 0  Instance: /write_tb/dut/clock_gen File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/RTL/top.v Line: 126
-add wave -position insertpoint sim:/write_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
-#           Attempting to use alternate WLF file "./wlftzd0zt2".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftzd0zt2
-add wave -position insertpoint sim:/write_tb/dut/i2c_controller/*
-add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(224)
-#    Time: 20430 ns  Iteration: 0  Instance: /write_tb
-# 1
-# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 224
-quit -sim
-# End time: 17:11:35 on Mar 11,2024, Elapsed time: 0:02:45
-# Errors: 0, Warnings: 3
-# Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
-# Compile of writer_tb.v was successful.
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# Compile of clock_generator.v was successful.
-# 10 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.write_tb
-# vsim -voptargs="+acc" work.write_tb 
-# Start time: 17:11:41 on Mar 11,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Note: (vopt-143) Recognized 1 FSM in module "i2c_controller(fast)".
-# Loading work.write_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_top(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-# Loading work.ClockGenerator(fast)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (8) for port 'prescale'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/RTL/clock_generator.v(4).
-#    Time: 0 ns  Iteration: 0  Instance: /write_tb/dut/clock_gen File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/RTL/top.v Line: 126
-add wave -position insertpoint sim:/write_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
-#           Attempting to use alternate WLF file "./wlftzxsaxt".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftzxsaxt
-add wave -position insertpoint sim:/write_tb/dut/i2c_controller/*
-add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(224)
-#    Time: 20430 ns  Iteration: 0  Instance: /write_tb
-# 1
-# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 224
-quit -sim
-# End time: 17:15:27 on Mar 11,2024, Elapsed time: 0:03:46
-# Errors: 0, Warnings: 3
-# Compile of apb_to_fifo_top_tb.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
-# Compile of writer_tb.v was successful.
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# Compile of clock_generator.v was successful.
-# 10 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.write_tb
-# vsim -voptargs="+acc" work.write_tb 
-# Start time: 17:15:35 on Mar 11,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Note: (vopt-143) Recognized 1 FSM in module "i2c_controller(fast)".
-# Loading work.write_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_top(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-# Loading work.ClockGenerator(fast)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (8) for port 'prescale'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/RTL/clock_generator.v(4).
-#    Time: 0 ns  Iteration: 0  Instance: /write_tb/dut/clock_gen File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/RTL/top.v Line: 126
-add wave -position insertpoint sim:/write_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
-#           Attempting to use alternate WLF file "./wlftt8856r".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftt8856r
-add wave -position insertpoint sim:/write_tb/dut/i2c_controller/*
-add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(224)
-#    Time: 20430 ns  Iteration: 0  Instance: /write_tb
-# 1
-# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 224
-quit -sim
-# End time: 17:45:25 on Mar 11,2024, Elapsed time: 0:29:50
-# Errors: 0, Warnings: 3
 project open D:/Questamsim_project/AsyncFIFO/fifo
 # reading F:/questasim64_10.7c/win64/../modelsim.ini
 # Loading project fifo
@@ -207,9 +24,9 @@ project open D:/Questamsim_project/AsyncFIFO/fifo
 # Compile of tb_top.v was successful.
 # Compile of top.v was successful.
 # 7 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.tb_top
-# vsim -voptargs="+acc" work.tb_top 
-# Start time: 17:45:44 on Mar 11,2024
+vsim work.tb_top -voptargs=+acc
+# vsim work.tb_top -voptargs="+acc" 
+# Start time: 15:16:29 on Mar 13,2024
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # Loading work.tb_top(fast)
 # Loading work.FIFO_top(fast)
@@ -220,19 +37,18 @@ vsim -voptargs=+acc work.tb_top
 # Loading work.sync_write_to_read(fast)
 add wave -position insertpoint sim:/tb_top/uut/fifomem/*
 add wave -position insertpoint sim:/tb_top/uut/read_pointer_empty/*
+add wave -position insertpoint sim:/tb_top/uut/write_pointer_full/*
 run -all
 # ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/AsyncFIFO/top_level/tb_top.v(55)
 #    Time: 2200 ns  Iteration: 0  Instance: /tb_top
 # 1
 # Break in Module tb_top at C:/Users/PC/Documents/Chung_training/code/AsyncFIFO/top_level/tb_top.v line 55
-# Causality operation skipped due to absence of debug database file
 quit -sim
-# End time: 17:47:17 on Mar 11,2024, Elapsed time: 0:01:33
-# Errors: 0, Warnings: 1
+# End time: 15:17:52 on Mar 13,2024, Elapsed time: 0:01:23
+# Errors: 0, Warnings: 0
 project open D:/Questamsim_project/apb_fifo_i2c/apb_fifo_i2c
 # reading F:/questasim64_10.7c/win64/../modelsim.ini
 # Loading project apb_fifo_i2c
-# Compile of apb_to_fifo_top_tb.v was successful.
 # Compile of read_tb.v was successful.
 # Compile of tb.v was successful.
 # Compile of writer_tb.v was successful.
@@ -242,11 +58,23 @@ project open D:/Questamsim_project/apb_fifo_i2c/apb_fifo_i2c
 # Compile of i2c_controller.v was successful.
 # Compile of top.v was successful.
 # Compile of clock_generator.v was successful.
-# 10 compiles, 0 failed with no errors.
+# 9 compiles, 1 failed with no errors.
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# 9 compiles, 0 failed with no errors.
 vsim -voptargs=+acc work.write_tb
 # vsim -voptargs="+acc" work.write_tb 
-# Start time: 17:47:36 on Mar 11,2024
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Start time: 15:21:25 on Mar 13,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(18): (vopt-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 14, found 13.
+# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(18): (vopt-2718) [TFMPC] - Missing connection for port 'scl_in'.
 # Loading work.write_tb(fast)
 # Loading work.top_level(fast)
 # Loading work.FIFO_top(fast)
@@ -256,28 +84,25 @@ vsim -voptargs=+acc work.write_tb
 # Loading work.sync_read_to_write(fast)
 # Loading work.sync_write_to_read(fast)
 # Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
 # Loading work.ClockGenerator(fast)
 # ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (8) for port 'prescale'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/RTL/clock_generator.v(4).
-#    Time: 0 ns  Iteration: 0  Instance: /write_tb/dut/clock_gen File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/RTL/top.v Line: 126
+#    Time: 0 ns  Iteration: 0  Instance: /write_tb/dut/clock_gen File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/RTL/top.v Line: 82
 add wave -position insertpoint sim:/write_tb/dut/apb/*
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
-#           Attempting to use alternate WLF file "./wlfty4fdyx".
+#           Attempting to use alternate WLF file "./wlft71vk3g".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlfty4fdyx
-add wave -position insertpoint sim:/write_tb/dut/i2c_controller/*
+#           Using alternate file: ./wlft71vk3g
 add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
 run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(224)
-#    Time: 20430 ns  Iteration: 0  Instance: /write_tb
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(191)
+#    Time: 20420 ns  Iteration: 0  Instance: /write_tb
 # 1
-# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 224
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 191
+# Causality operation skipped due to absence of debug database file
 quit -sim
-# End time: 17:54:17 on Mar 11,2024, Elapsed time: 0:06:41
-# Errors: 0, Warnings: 3
-# Compile of apb_to_fifo_top_tb.v was successful.
+# End time: 15:23:46 on Mar 13,2024, Elapsed time: 0:02:21
+# Errors: 0, Warnings: 6
 # Compile of read_tb.v was successful.
 # Compile of tb.v was successful.
 # Compile of writer_tb.v was successful.
@@ -287,10 +112,53 @@ quit -sim
 # Compile of i2c_controller.v was successful.
 # Compile of top.v was successful.
 # Compile of clock_generator.v was successful.
-# 10 compiles, 0 failed with no errors.
+# 9 compiles, 0 failed with no errors.
 vsim -voptargs=+acc work.write_tb
 # vsim -voptargs="+acc" work.write_tb 
-# Start time: 17:54:34 on Mar 11,2024
+# Start time: 15:24:19 on Mar 13,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(18): (vopt-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 14, found 13.
+# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(18): (vopt-2718) [TFMPC] - Missing connection for port 'scl_in'.
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.ClockGenerator(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (8) for port 'prescale'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/RTL/clock_generator.v(4).
+#    Time: 0 ns  Iteration: 0  Instance: /write_tb/dut/clock_gen File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/RTL/top.v Line: 82
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
+#           Attempting to use alternate WLF file "./wlftcxcx13".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftcxcx13
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(191)
+#    Time: 20420 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 191
+quit -sim
+# End time: 15:32:32 on Mar 13,2024, Elapsed time: 0:08:13
+# Errors: 0, Warnings: 5
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# 9 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 15:32:40 on Mar 13,2024
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # Loading work.write_tb(fast)
 # Loading work.top_level(fast)
@@ -301,21 +169,208 @@ vsim -voptargs=+acc work.write_tb
 # Loading work.sync_read_to_write(fast)
 # Loading work.sync_write_to_read(fast)
 # Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
 # Loading work.ClockGenerator(fast)
 # ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (8) for port 'prescale'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/RTL/clock_generator.v(4).
-#    Time: 0 ns  Iteration: 0  Instance: /write_tb/dut/clock_gen File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/RTL/top.v Line: 126
+#    Time: 0 ns  Iteration: 0  Instance: /write_tb/dut/clock_gen File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/RTL/top.v Line: 82
 add wave -position insertpoint sim:/write_tb/dut/apb/*
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
-#           Attempting to use alternate WLF file "./wlft6txhyq".
+#           Attempting to use alternate WLF file "./wlftgk1imi".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft6txhyq
-add wave -position insertpoint sim:/write_tb/dut/i2c_controller/*
+#           Using alternate file: ./wlftgk1imi
 add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
 run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(232)
-#    Time: 20450 ns  Iteration: 0  Instance: /write_tb
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(191)
+#    Time: 20420 ns  Iteration: 0  Instance: /write_tb
 # 1
-# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 232
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 191
+quit -sim
+# End time: 15:35:32 on Mar 13,2024, Elapsed time: 0:02:52
+# Errors: 0, Warnings: 3
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# 9 compiles, 0 failed with no errors.
+# Load canceled
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 15:35:41 on Mar 13,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.ClockGenerator(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (8) for port 'prescale'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/RTL/clock_generator.v(4).
+#    Time: 0 ns  Iteration: 0  Instance: /write_tb/dut/clock_gen File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/RTL/top.v Line: 82
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
+#           Attempting to use alternate WLF file "./wlft3h79eb".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft3h79eb
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(191)
+#    Time: 20420 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 191
+quit -sim
+# End time: 15:39:51 on Mar 13,2024, Elapsed time: 0:04:10
+# Errors: 0, Warnings: 3
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# 9 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 15:39:59 on Mar 13,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.ClockGenerator(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (8) for port 'prescale'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/RTL/clock_generator.v(4).
+#    Time: 0 ns  Iteration: 0  Instance: /write_tb/dut/clock_gen File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/RTL/top.v Line: 82
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
+#           Attempting to use alternate WLF file "./wlftrf45n0".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftrf45n0
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(191)
+#    Time: 20420 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 191
+quit -sim
+# End time: 15:41:54 on Mar 13,2024, Elapsed time: 0:01:55
+# Errors: 0, Warnings: 3
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# 9 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 15:42:01 on Mar 13,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.ClockGenerator(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (8) for port 'prescale'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/RTL/clock_generator.v(4).
+#    Time: 0 ns  Iteration: 0  Instance: /write_tb/dut/clock_gen File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/RTL/top.v Line: 82
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
+#           Attempting to use alternate WLF file "./wlfti961bv".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfti961bv
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(191)
+#    Time: 20420 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 191
+quit -sim
+# End time: 15:43:50 on Mar 13,2024, Elapsed time: 0:01:49
+# Errors: 0, Warnings: 3
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# 9 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 15:43:58 on Mar 13,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(18): (vopt-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 14, found 13.
+# ** Warning: C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(18): (vopt-2718) [TFMPC] - Missing connection for port 'scl_in'.
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.ClockGenerator(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (8) for port 'prescale'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/RTL/clock_generator.v(4).
+#    Time: 0 ns  Iteration: 0  Instance: /write_tb/dut/clock_gen File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/RTL/top.v Line: 82
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
+#           Attempting to use alternate WLF file "./wlftrdktas".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftrdktas
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(199)
+#    Time: 10460 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 199
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt3
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.ClockGenerator(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (8) for port 'prescale'. The port definition is at: C:/Users/PC/Documents/Chung_training/code/I2C_APB/RTL/clock_generator.v(4).
+#    Time: 0 ns  Iteration: 0  Instance: /write_tb/dut/clock_gen File: C:/Users/PC/Documents/Chung_training/code/I2C_APB/RTL/top.v Line: 82
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/fifomem/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/read_pointer_empty/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/write_pointer_full/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(199)
+#    Time: 10460 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 199
