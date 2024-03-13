@@ -101,6 +101,10 @@ module apb
                 3'b110: begin
                     if (TX_full == 1)
                         command_reg         <= 8'b10010000;
+                    if (TX_empty == 1)
+                        command_reg         <= 8'b00010000;
+                    else if (TX_empty == 0)
+                        command_reg         <= 8'b10010000;
                     else begin
                         if ((PWRITE == 1) && (PSELx == 1) && (PENABLE == 1))
                             command_reg     <= PWDATA;
@@ -108,10 +112,7 @@ module apb
                         //     command_reg     <= 10010000;
                     end
                 end
-            endcase
-
-
-            
+            endcase            
         end
     end
 endmodule

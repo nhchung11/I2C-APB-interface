@@ -36,7 +36,8 @@ module i2c_controller
     reg         sda_in_check;
     reg         sda_o;
     wire        rw;
-    reg         check;
+    reg         tx_check;
+    reg         rx_check;
 
     // assign sda_out = (sda_enable == 1) ? sda_o : 1'bz;
     assign scl_out = (scl_enable == 1) ? i2c_clk : 1;
@@ -72,7 +73,7 @@ module i2c_controller
     // Counter logic
     always @(posedge i2c_clk, negedge rst_n) begin
         if (~rst_n)
-            counter <= 7;
+            counter     <= 7;
         else begin
             if (current_state == START)
                 counter <= 7;
@@ -84,13 +85,13 @@ module i2c_controller
     // In simulation
     always @(posedge i2c_clk, negedge rst_n) begin
         if (!rst_n)
-            sda_in_check <= 0;
+            sda_in_check        <= 0;
         else begin
             if ((next_state == ADDRESS_ACK) || (next_state == WRITE_ACK) || (next_state == READ_ACK)) begin
-                sda_in_check <= 1;
+                sda_in_check    <= 1;
             end
             else
-                sda_in_check <= 0;
+                sda_in_check    <= 0;
         end
     end
 
@@ -178,12 +179,12 @@ module i2c_controller
     end
     always @(posedge core_clk, negedge rst_n) begin
         if (!rst_n) begin
-            scl_enable <= 0;
-            sda_o <= 1;
-            saved_addr <= 0;
-            saved_data <= 0;
-            fifo_rx_enable <= 0;
-            fifo_tx_enable <= 0;
+            scl_enable      <= 0;
+            sda_o           <= 1;
+            saved_addr      <= 0;
+            saved_data      <= 0;
+            fifo_rx_enable  <= 0;
+            fifo_tx_enable  <= 0;
         end
         else begin
             if (fifo_tx_enable == 1) begin
@@ -192,59 +193,64 @@ module i2c_controller
             case(current_state)
                 IDLE: begin
                     saved_addr  <= {slave_address}; 
-                    scl_enable <= 0;
-                    sda_o   <= 1;
+                    scl_enable  <= 0;
+                    sda_o       <= 1;
                 end
                 //-----------------------------------------------------
                 START: begin
-                    sda_o <= 0;
-                    scl_enable <= 0;
+                    sda_o       <= 0;
+                    scl_enable  <= 0;
                 end
                 //-----------------------------------------------------
                 WRITE_ADDRESS: begin
-                    scl_enable <= 1;
+                    scl_enable  <= 1;
                     if (i2c_clk == 0) 
-                        sda_o <= saved_addr[counter];
+                        sda_o   <= saved_addr[counter];
                 end
                 //-----------------------------------------------------
                 ADDRESS_ACK: begin
-                    scl_enable <= 1;  
+                    scl_enable  <= 1;  
                     saved_data  <= {data_in};          
                     if (i2c_clk == 0)
-                        sda_o <= 1;
+                        sda_o   <= 1;
                 end
                 //-----------------------------------------------------
                 WRITE_DATA: begin
-                    scl_enable <= 1;
-                    check <= 0;
+                    scl_enable  <= 1;
+                    tx_check    <= 0;
                     if (i2c_clk == 0)
                         sda_o <= saved_data[counter];
                 end
                 //-----------------------------------------------------
 
                 WRITE_ACK: begin
-                    scl_enable <= 1;
+                    scl_enable  <= 1;
                     saved_data  <= {data_in};  
                     if(sda_in_check == 1) begin
-                        fifo_tx_enable <= 1;
-                        check <= 1;
+                        fifo_tx_enable  <= 1;
+                        tx_check        <= 1;
                     end
-                    if (check == 1) begin
+                    if (tx_check == 1) begin
                         fifo_tx_enable <= 0;
                     end
                     if (i2c_clk == 0)
-                        sda_o <= 1;
+                        sda_o       <= 1;
                 end
                 //-----------------------------------------------------
 
                 READ_DATA: begin
-                    sda_o       <= 1;
-                    scl_enable  <= 1;
+                    sda_o           <= 1;
+                    scl_enable      <= 1;
+                    rx_check        <= 0;
                 end
                 //-----------------------------------------------------
 
                 READ_ACK: begin
-                    scl_enable  <= 1;
+                    scl_enable      <= 1;
+                    fifo_rx_enable  <= 1;
+                    rx_check        <= 1;
+                    if (rx_check == 1)
+                        fifo_rx_enable <= 0;
                     if (i2c_clk == 0)
                         sda_o       <= 1;
                 end

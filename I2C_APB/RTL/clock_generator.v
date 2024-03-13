@@ -1,8 +1,8 @@
 module ClockGenerator (
-  input wire    core_clk,       // Input clock
-  input         rst_n,
-  input wire    prescale,
-  output reg    i2c_clk       // Output clock
+  input wire        core_clk,       // Input clock
+  input             rst_n,
+  input wire [7:0]  prescale,
+  output reg        i2c_clk       // Output clock
 );
 
   reg [2:0] counter;        // 3-bit counter to divide the clock by 4

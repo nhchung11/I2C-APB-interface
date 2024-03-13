@@ -49,13 +49,30 @@ module top_level
         .write_clk                      (PCLK),
         .write_reset_n                  (command_reg[4]),
         
-        .read_enable                    (fifo_tx_enable),           // Modify
+        .read_enable                    (fifo_tx_enable),           
         .read_clk                       (core_clk),
         .read_reset_n                   (command_reg[4]),
 
         .read_data                      (TX),
         .write_full                     (status_reg[7]),
         .read_empty                     (status_reg[6])
+    );
+
+    // FIFO RX
+    FIFO_top #(data_size, address_size) fifo_rx
+    (
+        .write_data                     (RX),
+        .write_enable                   (command_reg[6]),
+        .write_clk                      (core_clk),
+        .write_reset_n                  (command_reg[4]),
+        
+        .read_enable                    (command_reg[5]),           
+        .read_clk                       (PCLK),
+        .read_reset_n                   (command_reg[4]),
+
+        .read_data                      (APB_RX),
+        .write_full                     (status_reg[5]),
+        .read_empty                     (status_reg[4])
     );
     
     // APB INTERFACE
@@ -96,6 +113,17 @@ module top_level
         .fifo_tx_enable                 (fifo_tx_enable),
         .fifo_rx_enable                 (fifo_rx_enable)
     );
+
+    // 8 BIT TO 1 BYTE CONVERTER
+    BitToByteConverter converter
+    (
+        .clk                            (i2c_clk),
+        .rst_n                          (command_reg[4]),
+        .in                             (sda_in),
+        .enable                         (command_reg[5]),
+        .out                            (RX)
+    );
+
     // CLOCK GENERATOR
     ClockGenerator clock_gen
     (
