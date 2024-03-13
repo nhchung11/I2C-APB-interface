@@ -8,6 +8,7 @@ module write_tb;
     reg [7:0]       PWDATA;
 
     reg             sda_in;
+    reg             scl_in;
     reg             core_clk;
 
     wire [7:0]      PRDATA;
@@ -25,6 +26,7 @@ module write_tb;
         .PADDR      (PADDR),
         .PWDATA     (PWDATA),
         .sda_in     (sda_in),
+        .scl_in     (scl_in),
         .core_clk   (core_clk),
 
         .PREADY     (PREADY),
@@ -46,6 +48,7 @@ module write_tb;
         PSELx = 0;
         PENABLE = 0;
         sda_in = 1;
+        scl_in = 1;
 
         #100;
         PRESETn = 1;
@@ -103,10 +106,11 @@ module write_tb;
         PWRITE = 1;
         PSELx = 1;
         PENABLE = 0; 
-        PWDATA = 8'b11010000;
+        PWDATA = 8'b10010000;
         #10;
         PENABLE = 1;
 
+        // Transmit reg = 4
         #10;
         PSELx = 0;
         #10;
@@ -189,13 +193,25 @@ module write_tb;
         PWDATA = 8'd8; 
         #10;
         PENABLE = 1;
+
+        // Command reg = 5;
+        #10;
+        PSELx = 0;
+        #10;
+        PADDR = 8'b11000000;
+        PWRITE = 1;
+        PSELx = 1;
+        PENABLE = 0; 
+        PWDATA = 8'b10010000;
+        #10;
+        PENABLE = 1;
         
         #10;
         PSELx = 0;
         PENABLE = 0;
         PSELx = 0;
         PWRITE = 0;
-        #10000;
+        #30000;
         $finish;
     end
 endmodule 

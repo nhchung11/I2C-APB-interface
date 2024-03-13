@@ -100,15 +100,18 @@ module apb
                 // Write to Command regisger
                 3'b110: begin
                     if (TX_full == 1)
-                        command_reg         <= 8'b10000000;
+                        command_reg         <= 8'b10010000;
                     else begin
                         if ((PWRITE == 1) && (PSELx == 1) && (PENABLE == 1))
                             command_reg     <= PWDATA;
-                        if (PSELx == 0)
-                            command_reg     <= 10010000;
+                        // if (PSELx == 0)
+                        //     command_reg     <= 10010000;
                     end
                 end
             endcase
+
+
+            
         end
     end
 endmodule

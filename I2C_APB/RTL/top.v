@@ -57,6 +57,7 @@ module top_level
         .write_full                     (status_reg[7]),
         .read_empty                     (status_reg[6])
     );
+    
     // APB INTERFACE
     apb apb
     (
@@ -78,6 +79,23 @@ module top_level
         .address_reg                    (address_reg)
     );
 
+    i2c_controller i2c
+    (
+        .core_clk                       (core_clk),
+        .i2c_clk                        (i2c_clk_gen),
+        .rst_n                          (command_reg[4]),
+        .enable                         (command_reg[7]),
+        .slave_address                  (address_reg),
+        .data_in                        (TX),
+        .repeated_start_cond            (command_reg[3]),
+        .scl_in                         (scl_in),
+        .sda_in                         (sda_in),
+        .sda_out                        (sda_out),
+        .scl_out                        (scl_out),
+
+        .fifo_tx_enable                 (fifo_tx_enable),
+        .fifo_rx_enable                 (fifo_rx_enable)
+    );
     // CLOCK GENERATOR
     ClockGenerator clock_gen
     (

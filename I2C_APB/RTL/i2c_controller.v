@@ -7,6 +7,7 @@ module i2c_controller
         input  [7:0]        slave_address,
         input  [7:0]        data_in,
         input               repeated_start_cond,
+        input               scl_in,
         input               sda_in,
         output              sda_out,
         output              scl_out,
@@ -35,6 +36,7 @@ module i2c_controller
     reg         sda_in_check;
     reg         sda_o;
     wire        rw;
+    reg         check;
 
     // assign sda_out = (sda_enable == 1) ? sda_o : 1'bz;
     assign scl_out = (scl_enable == 1) ? i2c_clk : 1;
@@ -184,6 +186,9 @@ module i2c_controller
             fifo_tx_enable <= 0;
         end
         else begin
+            if (fifo_tx_enable == 1) begin
+                fifo_tx_enable <= 0;
+            end
             case(current_state)
                 IDLE: begin
                     saved_addr  <= {slave_address}; 
@@ -211,7 +216,7 @@ module i2c_controller
                 //-----------------------------------------------------
                 WRITE_DATA: begin
                     scl_enable <= 1;
-                    fifo_tx_enable <= 0;
+                    check <= 0;
                     if (i2c_clk == 0)
                         sda_o <= saved_data[counter];
                 end
@@ -220,7 +225,13 @@ module i2c_controller
                 WRITE_ACK: begin
                     scl_enable <= 1;
                     saved_data  <= {data_in};  
-                    fifo_tx_enable <= 1;
+                    if(sda_in_check == 1) begin
+                        fifo_tx_enable <= 1;
+                        check <= 1;
+                    end
+                    if (check == 1) begin
+                        fifo_tx_enable <= 0;
+                    end
                     if (i2c_clk == 0)
                         sda_o <= 1;
                 end
