@@ -62,7 +62,7 @@ module i2c_controller
         if (~rst_n)
             counter     <= 7;
         else begin
-            if (current_state == START)
+            if ((current_state == START) || (current_state == ADDRESS_ACK) || (current_state == WRITE_ACK) || (current_state == READ_ACK))
                 counter <= 7;
             if ((current_state == WRITE_ADDRESS) || (current_state == WRITE_DATA) || (current_state == READ_DATA))
                 counter <= counter - 1;

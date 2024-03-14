@@ -94,7 +94,7 @@ module read_tb;
         PWRITE = 1;
         PSELx = 1;
         PENABLE = 0; 
-        PWDATA = 8'b10110000;
+        PWDATA = 8'b10010000;
         #10;
         PENABLE = 1;
         #10;
@@ -256,6 +256,95 @@ module read_tb;
         sda_in = 0;
         #320;
         sda_in = 0;
+
+        // Command reg = 6;
+        #10;
+        PSELx = 0;
+        #10;
+        PADDR = 8'b11000000;
+        PWRITE = 0;
+        PSELx = 1;
+        PENABLE = 0; 
+        PWDATA = 8'b10110000;
+        #10;
+        PENABLE = 1;
+
+        // Receive reg = 5 data 1
+        #10;
+        PSELx = 0;
+        #10;
+        PADDR = 8'b10100000;
+        PWRITE = 0;
+        PSELx = 1;
+        PENABLE = 0; 
+        #10;
+        PENABLE = 1;
+
+        // Receive reg = 5 data 2
+        #10;
+        PSELx = 0;
+        #10;
+        PADDR = 8'b10100000;
+        PWRITE = 0;
+        PSELx = 1;
+        PENABLE = 0; 
+        #10;
+        PENABLE = 1;
+
+        // Receive reg = 5 data 3
+        #10;
+        PSELx = 0;
+        #10;
+        PADDR = 8'b10100000;
+        PWRITE = 0;
+        PSELx = 1;
+        PENABLE = 0; 
+        #10;
+        PENABLE = 1;
+
+        // Receive reg = 5 data 4
+        #10;
+        PSELx = 0;
+        #10;
+        PADDR = 8'b10100000;
+        PWRITE = 0;
+        PSELx = 1;
+        PENABLE = 0; 
+        #10;
+        PENABLE = 1;
+
+        // Receive reg = 5 data 5
+        #10;
+        PSELx = 0;
+        #10;
+        PADDR = 8'b10100000;
+        PWRITE = 0;
+        PSELx = 1;
+        PENABLE = 0; 
+        #10;
+        PENABLE = 1;
+
+        // Receive reg = 5 data 6
+        #10;
+        PSELx = 0;
+        #10;
+        PADDR = 8'b10100000;
+        PWRITE = 0;
+        PSELx = 1;
+        PENABLE = 0; 
+        #10;
+        PENABLE = 1;
+
+        // Receive reg = 5 data 7
+        #10;
+        PSELx = 0;
+        #10;
+        PADDR = 8'b10100000;
+        PWRITE = 0;
+        PSELx = 1;
+        PENABLE = 0; 
+        #10;
+        PENABLE = 1;
 
         #5000;
         $finish;
