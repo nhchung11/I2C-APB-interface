@@ -1,13 +1,15 @@
 module read_tb;
     reg             PCLK;
     reg             PRESETn;
+    reg             PENABLE;
     reg             PSELx;
     reg             PWRITE;
-    reg             PENABLE;
-    reg [6:0]       PADDR;
+    reg [7:0]       PADDR;
     reg [7:0]       PWDATA;
+
     reg             sda_in;
-    reg             i2c_core_clk_top;
+    reg             scl_in;
+    reg             core_clk;
 
     wire [7:0]      PRDATA;
     wire            PREADY;
@@ -24,7 +26,8 @@ module read_tb;
         .PADDR      (PADDR),
         .PWDATA     (PWDATA),
         .sda_in     (sda_in),
-        .i2c_core_clk_top(i2c_core_clk_top),
+        .scl_in     (scl_in),
+        .core_clk   (core_clk),
 
         .PREADY     (PREADY),
         .PRDATA     (PRDATA),
@@ -33,44 +36,229 @@ module read_tb;
     );
 
     
-    always #5 i2c_core_clk_top= ~i2c_core_clk_top;
+    always #20 core_clk= ~core_clk;
 
-	initial begin
-		PCLK = 1;
-		forever begin
-			#5 PCLK = ~PCLK;
-		end		
-	end
+	always #5 PCLK= ~PCLK;
 
     initial begin
-        i2c_core_clk_top = 0;
-        sda_in = 1;
-        PENABLE = 0;
+        core_clk = 1;
+        PCLK = 1;
+        PRESETn = 0;
         PWRITE = 0;
         PSELx = 0;
-        PRESETn = 0;
+        PENABLE = 0;
+        sda_in = 1;
+        scl_in = 1;
 
-        #20;
-        PENABLE = 1;
+        #100;
         PRESETn = 1;
-        PENABLE = 1;
-        PADDR = 7'b0101011;
-        sda_in      = 1;
-        
-        #405 sda_in = 1;
-        #40 sda_in = 0;
-        #40 sda_in = 1;
-        #40 sda_in = 0;
-        #40 sda_in = 1;
-        #40 sda_in = 1;
-        #40 sda_in = 0;
-        #40 sda_in = 0;
-        #85 PENABLE = 0;
-        PSELx = 1;
-        #10 PENABLE = 1;
-        #10 PENABLE = 0;
 
-        #1000;
+        // Prescale reg = 1
+        #10;
+        PADDR = 8'b00100000;
+        PWRITE = 1;
+        PSELx = 1;
+        PENABLE = 0;
+        PWDATA = 8'd4;
+        #10;
+        PENABLE = 1;
+
+        // Address reg = 2
+        #10;
+        PSELx = 0;
+        #10;
+        PADDR = 8'b01000000;
+        PWRITE = 1;
+        PSELx = 1;
+        PWDATA = 8'b11110001;
+        PENABLE = 0;    
+        #10;
+        PENABLE = 1; 
+
+        // Status reg = 3
+        #10;
+        PSELx = 0;
+        #10;
+        PADDR = 8'b01100000;
+        PWRITE = 0;
+        PSELx = 1;
+        PENABLE = 0; 
+        #10;
+        PENABLE = 1;
+
+        // Command reg = 5;
+        #10;
+        PSELx = 0;
+        #10;
+        PADDR = 8'b11000000;
+        PWRITE = 1;
+        PSELx = 1;
+        PENABLE = 0; 
+        PWDATA = 8'b10110000;
+        #10;
+        PENABLE = 1;
+        #10;
+        PSELx = 0;
+        #3380;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        // READ DATA
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 1;
+
+        // READ DATA 2
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 1;
+        #320;
+        sda_in = 0;
+
+        // READ DATA 3
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 1;
+        #320;
+        sda_in = 1;
+
+        // READ DATA 4
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 1;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+
+        // READ DATA 5
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 1;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 1;
+
+        // READ DATA 6
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 1;
+        #320;
+        sda_in = 1;
+        #320;
+        sda_in = 0;
+
+        // READ DATA 7
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 1;
+        #320;
+        sda_in = 1;
+        #320;
+        sda_in = 1;
+
+        // READ DATA 8
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 1;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+
+        #5000;
         $finish;
+
     end
-endmodule 
+endmodule

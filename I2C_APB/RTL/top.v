@@ -36,9 +36,12 @@ module top_level
     // FIFO read/write enable
     wire                                fifo_tx_enable;
     wire                                fifo_rx_enable;
+
+    // Converter enable
+    wire                                converter_enable;
     
-    assign command_reg [2:0]        =   0;
-    assign status_reg [3:0]         =   0;
+    assign command_reg [2:0]            =   0;
+    assign status_reg [3:0]             =   0;
     
 
     // FIFO TX
@@ -62,7 +65,7 @@ module top_level
     FIFO_top #(data_size, address_size) fifo_rx
     (
         .write_data                     (RX),
-        .write_enable                   (command_reg[6]),
+        .write_enable                   (fifo_rx_enable),
         .write_clk                      (core_clk),
         .write_reset_n                  (command_reg[4]),
         
@@ -111,16 +114,17 @@ module top_level
         .scl_out                        (scl_out),
 
         .fifo_tx_enable                 (fifo_tx_enable),
-        .fifo_rx_enable                 (fifo_rx_enable)
+        .fifo_rx_enable                 (fifo_rx_enable),
+        .converter_enable               (converter_enable)
     );
 
     // 8 BIT TO 1 BYTE CONVERTER
     BitToByteConverter converter
     (
-        .clk                            (i2c_clk),
+        .i2c_clk                        (i2c_clk_gen),
         .rst_n                          (command_reg[4]),
         .in                             (sda_in),
-        .enable                         (command_reg[5]),
+        .enable                         (converter_enable),
         .out                            (RX)
     );
 

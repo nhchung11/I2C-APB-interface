@@ -102,7 +102,7 @@ module apb
                     if (TX_full == 1)
                         command_reg         <= 8'b10010000;
                     if (TX_empty == 1)
-                        command_reg         <= 8'b00010000;
+                        command_reg         <= 8'b10010000;
                     else if (TX_empty == 0)
                         command_reg         <= 8'b10010000;
                     else begin

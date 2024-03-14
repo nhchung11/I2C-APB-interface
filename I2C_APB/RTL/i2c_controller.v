@@ -14,7 +14,10 @@ module i2c_controller
 
         // fifo enable
         output reg          fifo_tx_enable,
-        output reg          fifo_rx_enable
+        output reg          fifo_rx_enable,
+
+        // converter enable
+        output reg          converter_enable
     );
     
     localparam  IDLE          = 0;
@@ -172,47 +175,46 @@ module i2c_controller
     end
     always @(posedge core_clk, negedge rst_n) begin
         if (!rst_n) begin
-            scl_enable      <= 0;
-            sda_o           <= 1;
-            saved_addr      <= 0;
-            saved_data      <= 0;
-            fifo_rx_enable  <= 0;
-            fifo_tx_enable  <= 0;
+            scl_enable                  <= 0;
+            sda_o                       <= 1;
+            fifo_rx_enable              <= 0;
+            fifo_tx_enable              <= 0;
+            converter_enable            <= 0;
         end
         else begin
             if (fifo_tx_enable == 1) begin
-                fifo_tx_enable <= 0;
+                fifo_tx_enable          <= 0;
             end
             case(current_state)
                 IDLE: begin
-                    saved_addr  <= {slave_address}; 
-                    scl_enable  <= 0;
-                    sda_o       <= 1;
+                    saved_addr          <= {slave_address}; 
+                    scl_enable          <= 0;
+                    sda_o               <= 1;
                 end
                 //-----------------------------------------------------
                 START: begin
-                    sda_o       <= 0;
-                    scl_enable  <= 0;
+                    sda_o               <= 0;
+                    scl_enable          <= 0;
                 end
                 //-----------------------------------------------------
                 WRITE_ADDRESS: begin
-                    scl_enable  <= 1;
+                    scl_enable          <= 1;
                     if (i2c_clk == 0) 
-                        sda_o   <= saved_addr[counter];
+                        sda_o           <= saved_addr[counter];
                 end
                 //-----------------------------------------------------
                 ADDRESS_ACK: begin
-                    scl_enable  <= 1;  
-                    saved_data  <= {data_in};          
+                    scl_enable          <= 1;  
+                    saved_data          <= {data_in};          
                     if (i2c_clk == 0)
-                        sda_o   <= 1;
+                        sda_o           <= 1;
                 end
                 //-----------------------------------------------------
                 WRITE_DATA: begin
-                    scl_enable  <= 1;
-                    tx_check    <= 0;
+                    scl_enable          <= 1;
+                    tx_check            <= 0;
                     if (i2c_clk == 0)
-                        sda_o <= saved_data[counter];
+                        sda_o           <= saved_data[counter];
                 end
                 //-----------------------------------------------------
 
@@ -224,39 +226,41 @@ module i2c_controller
                         tx_check        <= 1;
                     end
                     if (tx_check == 1) begin
-                        fifo_tx_enable <= 0;
+                        fifo_tx_enable  <= 0;
                     end
                     if (i2c_clk == 0)
-                        sda_o       <= 1;
+                        sda_o           <= 1;
                 end
                 //-----------------------------------------------------
 
                 READ_DATA: begin
-                    sda_o           <= 1;
-                    scl_enable      <= 1;
-                    rx_check        <= 0;
+                    sda_o               <= 1;
+                    scl_enable          <= 1;
+                    converter_enable    <= 1;
+                    rx_check            <= 0;
                 end
                 //-----------------------------------------------------
 
                 READ_ACK: begin
-                    scl_enable      <= 1;
-                    fifo_rx_enable  <= 1;
-                    rx_check        <= 1;
+                    scl_enable          <= 1;
+                    converter_enable    <= 0;
+                    fifo_rx_enable      <= 1;
+                    rx_check            <= 1;
                     if (rx_check == 1)
-                        fifo_rx_enable <= 0;
+                        fifo_rx_enable  <= 0;
                     if (i2c_clk == 0)
-                        sda_o       <= 1;
+                        sda_o           <= 0;
                 end
                 //-----------------------------------------------------
 
                 STOP: begin
-                    sda_o     <= 1;
-                    scl_enable  <= 1;
+                    sda_o               <= 1;
+                    scl_enable          <= 1;
                 end
                 //-----------------------------------------------------
                 default: begin
-                    sda_o <= 1;
-                    scl_enable <= 0;
+                    sda_o               <= 1;
+                    scl_enable          <= 0;
                 end
             endcase
         end
