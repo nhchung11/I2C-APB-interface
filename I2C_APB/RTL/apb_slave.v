@@ -89,12 +89,13 @@ module apb
 
                 // Read from receive register
                 3'b101: begin
-                    if ((PWRITE == 0) && (PSELx == 1) && (PENABLE == 1)) begin
+                    if (PSELx == 0)
+                        command_reg     <= 10010000;
+                    else if ((PWRITE == 0) && (PSELx == 1) && (PENABLE == 1)) begin
                         PRDATA          <= receive_reg;
                         command_reg     <= 10110000;
                     end
-                    if (PSELx == 0)
-                        command_reg     <= 10010000;
+                    
                 end
                 
                 // Write to Command regisger

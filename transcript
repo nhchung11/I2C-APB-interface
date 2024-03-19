@@ -12,362 +12,652 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# Loading project i2c_fifo_i2c
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
-# Compile of writer_tb.v was successful.
-# Compile of clock_generator.v was successful.
-# 9 compiles, 0 failed with no errors.
-vsim work.write_tb -voptargs=+acc
-# vsim work.write_tb -voptargs="+acc" 
-# Start time: 22:29:18 on Mar 14,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Note: (vopt-143) Recognized 1 FSM in module "i2c_controller(fast)".
-# Loading work.write_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_top(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-# Loading work.ClockGenerator(fast)
-add wave -position insertpoint sim:/write_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: admin  Hostname: DESKTOP-A5DHFV4  ProcessID: 2200
-#           Attempting to use alternate WLF file "./wlft44wr54".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft44wr54
-add wave -position insertpoint sim:/write_tb/dut/i2c/*
-add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
-run -all
-# ** Note: $finish    : D:/wavelet_training/code/I2C_APB/Testbench/writer_tb.v(248)
-#    Time: 53080 ns  Iteration: 0  Instance: /write_tb
-# 1
-# Break in Module write_tb at D:/wavelet_training/code/I2C_APB/Testbench/writer_tb.v line 248
-quit -sim
-# End time: 22:30:12 on Mar 14,2024, Elapsed time: 0:00:54
-# Errors: 0, Warnings: 2
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
-# Compile of writer_tb.v was successful.
-# Compile of clock_generator.v was successful.
-# 9 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.read_tb
-# vsim -voptargs="+acc" work.read_tb 
-# Start time: 22:33:04 on Mar 14,2024
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Note: (vopt-143) Recognized 1 FSM in module "i2c_controller(fast)".
-# Loading work.read_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_top(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-# Loading work.ClockGenerator(fast)
-add wave -position insertpoint sim:/read_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: admin  Hostname: DESKTOP-A5DHFV4  ProcessID: 2200
-#           Attempting to use alternate WLF file "./wlftyvt3kx".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftyvt3kx
-add wave -position insertpoint sim:/read_tb/dut/i2c/*
-add wave -position insertpoint sim:/read_tb/dut/converter/*
-add wave -position insertpoint sim:/read_tb/dut/fifo_rx/*
-run -all
-# ** Note: $finish    : D:/wavelet_training/code/I2C_APB/Testbench/read_tb.v(261)
-#    Time: 31 us  Iteration: 0  Instance: /read_tb
-# 1
-# Break in Module read_tb at D:/wavelet_training/code/I2C_APB/Testbench/read_tb.v line 261
-quit -sim
-# End time: 22:35:03 on Mar 14,2024, Elapsed time: 0:01:59
-# Errors: 0, Warnings: 2
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
-# Compile of writer_tb.v was successful.
-# Compile of clock_generator.v was successful.
-# 9 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.read_tb
-# vsim -voptargs="+acc" work.read_tb 
-# Start time: 22:35:10 on Mar 14,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Note: (vopt-143) Recognized 1 FSM in module "i2c_controller(fast)".
-# Loading work.read_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_top(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-# Loading work.ClockGenerator(fast)
-add wave -position insertpoint sim:/read_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: admin  Hostname: DESKTOP-A5DHFV4  ProcessID: 2200
-#           Attempting to use alternate WLF file "./wlftxmxsdh".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftxmxsdh
-add wave -position insertpoint sim:/read_tb/dut/i2c/*
-add wave -position insertpoint sim:/read_tb/dut/converter/*
-add wave -position insertpoint sim:/read_tb/dut/fifo_rx/*
-run -all
-# ** Note: $finish    : D:/wavelet_training/code/I2C_APB/Testbench/read_tb.v(261)
-#    Time: 31 us  Iteration: 0  Instance: /read_tb
-# 1
-# Break in Module read_tb at D:/wavelet_training/code/I2C_APB/Testbench/read_tb.v line 261
-quit -sim
-# End time: 22:36:30 on Mar 14,2024, Elapsed time: 0:01:20
-# Errors: 0, Warnings: 2
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
-# Compile of writer_tb.v was successful.
-# Compile of clock_generator.v was successful.
-# 9 compiles, 0 failed with no errors.
+# Loading project ones_counter
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 3 errors.
+# Compile of env.sv failed with 2 errors.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv failed with 2 errors.
+# Compile of rtl.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test_1.sv failed with 2 errors.
+# Compile of top.sv was successful.
+# Compile of test.sv was successful.
+# 11 compiles, 4 failed with 9 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 3 errors.
+# Compile of env.sv failed with 2 errors.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv failed with 2 errors.
+# Compile of rtl.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test_1.sv failed with 1 errors.
+# Compile of top.sv was successful.
+# Compile of test.sv was successful.
+# 11 compiles, 4 failed with 8 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful with warnings.
+# Compile of env.sv failed with 2 errors.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv failed with 2 errors.
+# Compile of rtl.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test_1.sv failed with 1 errors.
+# Compile of top.sv was successful.
+# Compile of test.sv was successful.
+# 11 compiles, 3 failed with 5 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv failed with 2 errors.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv failed with 2 errors.
+# Compile of rtl.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test_1.sv failed with 1 errors.
+# Compile of top.sv was successful.
+# Compile of test.sv was successful.
+# 11 compiles, 3 failed with 5 errors.
 # Load canceled
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
-# Compile of writer_tb.v was successful.
-# Compile of clock_generator.v was successful.
-# 9 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.read_tb
-# vsim -voptargs="+acc" work.read_tb 
-# Start time: 22:37:33 on Mar 14,2024
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv failed with 2 errors.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv failed with 2 errors.
+# Compile of rtl.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test_1.sv failed with 1 errors.
+# Compile of top.sv was successful.
+# Compile of test.sv was successful.
+# 11 compiles, 3 failed with 5 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv failed with 2 errors.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv failed with 2 errors.
+# Compile of rtl.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test_1.sv failed with 1 errors.
+# Compile of top.sv was successful.
+# Compile of test.sv was successful.
+# 11 compiles, 3 failed with 5 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv failed with 2 errors.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv failed with 2 errors.
+# Compile of rtl.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test_1.sv failed with 1 errors.
+# Compile of top.sv was successful.
+# Compile of test.sv was successful.
+# 11 compiles, 3 failed with 5 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv failed with 2 errors.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful with warnings.
+# Compile of rtl.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test_1.sv failed with 1 errors.
+# Compile of top.sv was successful.
+# Compile of test.sv was successful.
+# 11 compiles, 2 failed with 3 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv failed with 2 errors.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of rtl.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test_1.sv failed with 1 errors.
+# Compile of top.sv was successful.
+# Compile of test.sv was successful.
+# 11 compiles, 2 failed with 3 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful with warnings.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of rtl.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test_1.sv failed with 1 errors.
+# Compile of top.sv was successful.
+# Compile of test.sv was successful.
+# 11 compiles, 1 failed with 1 error.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of rtl.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test_1.sv failed with 1 errors.
+# Compile of top.sv failed with 1 errors.
+# Compile of test.sv was successful.
+# 11 compiles, 2 failed with 2 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of rtl.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test_1.sv failed with 1 errors.
+# Compile of top.sv was successful.
+# Compile of test.sv was successful.
+# 11 compiles, 1 failed with 1 error.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of rtl.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test_1.sv was successful with warnings.
+# Compile of top.sv was successful.
+# Compile of test.sv was successful.
+# 11 compiles, 0 failed with no errors.
+vsim work.testcase
+# vsim work.testcase 
+# Start time: 10:51:46 on Mar 19,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.top_sv_unit(fast)
+# Loading work.testcase(fast)
+# ** Fatal: (vsim-8451) Virtual interface resolution cannot find a matching instance for 'virtual intf_cnt'.
+#    Time: 0 ns  Iteration: 0  Region: /top_sv_unit File: C:/Users/PC/Documents/Chung_training/code/SystemVerilog/driver.sv Line: 27
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 10:51:48 on Mar 19,2024, Elapsed time: 0:00:02
+# Errors: 1, Warnings: 0
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of rtl.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test_1.sv was successful.
+# Compile of top.sv was successful.
+# Compile of test.sv was successful.
+# 11 compiles, 0 failed with no errors.
+vsim work.testcase
+# vsim work.testcase 
+# Start time: 10:52:21 on Mar 19,2024
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading sv_std.std
+# Loading work.top_sv_unit(fast)
+# Loading work.testcase(fast)
+# ** Fatal: (vsim-8451) Virtual interface resolution cannot find a matching instance for 'virtual intf_cnt'.
+#    Time: 0 ns  Iteration: 0  Region: /top_sv_unit File: C:/Users/PC/Documents/Chung_training/code/SystemVerilog/driver.sv Line: 27
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 10:52:21 on Mar 19,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 3 errors.
+# Compile of env.sv failed with 2 errors.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of rtl.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test_1.sv failed with 1 errors.
+# Compile of top.sv was successful.
+# Compile of test.sv was successful.
+# 11 compiles, 3 failed with 6 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 4 errors.
+# Compile of env.sv failed with 2 errors.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of rtl.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test_1.sv failed with 1 errors.
+# Compile of top.sv failed with 2 errors.
+# Compile of test.sv was successful.
+# 11 compiles, 4 failed with 9 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 3 errors.
+# Compile of env.sv failed with 2 errors.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of rtl.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test_1.sv failed with 1 errors.
+# Compile of top.sv failed with 1 errors.
+# Compile of test.sv was successful.
+# 11 compiles, 4 failed with 7 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv failed with 2 errors.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of rtl.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test_1.sv failed with 1 errors.
+# Compile of top.sv was successful.
+# Compile of test.sv was successful.
+# 11 compiles, 2 failed with 3 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv failed with 2 errors.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of rtl.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test_1.sv failed with 1 errors.
+# Compile of top.sv was successful.
+# Compile of test.sv was successful.
+# 11 compiles, 2 failed with 3 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of rtl.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test_1.sv failed with 1 errors.
+# Compile of top.sv was successful.
+# Compile of test.sv was successful.
+# 11 compiles, 1 failed with 1 error.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of rtl.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test_1.sv failed with 5 errors.
+# Compile of top.sv was successful.
+# Compile of test.sv was successful.
+# 11 compiles, 1 failed with 5 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of rtl.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test_1.sv failed with 1 errors.
+# Compile of top.sv was successful with warnings.
+# Compile of test.sv was successful.
+# 11 compiles, 1 failed with 1 error.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of rtl.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test_1.sv failed with 5 errors.
+# Compile of top.sv was successful.
+# Compile of test.sv was successful.
+# 11 compiles, 1 failed with 5 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of rtl.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test_1.sv was successful.
+# Compile of top.sv was successful.
+# Compile of test.sv was successful.
+# 11 compiles, 0 failed with no errors.
+vsim work.testcase
+# vsim work.testcase 
+# Start time: 11:12:52 on Mar 19,2024
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.read_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_top(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-# Loading work.ClockGenerator(fast)
-add wave -position insertpoint sim:/read_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: admin  Hostname: DESKTOP-A5DHFV4  ProcessID: 2200
-#           Attempting to use alternate WLF file "./wlftjciad9".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftjciad9
-add wave -position insertpoint sim:/read_tb/dut/i2c/*
-add wave -position insertpoint sim:/read_tb/dut/converter/*
-add wave -position insertpoint sim:/read_tb/dut/fifo_rx/*
+# Loading sv_std.std
+# Loading work.top_sv_unit(fast)
+# Loading work.testcase(fast)
+# ** Fatal: (vsim-8451) Virtual interface resolution cannot find a matching instance for 'virtual intf_cnt'.
+#    Time: 0 ns  Iteration: 0  Region: /top_sv_unit File: C:/Users/PC/Documents/Chung_training/code/SystemVerilog/driver.sv Line: 24
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 11:12:53 on Mar 19,2024, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+vsim work.test_1_sv_unit
+# vsim work.test_1_sv_unit 
+# Start time: 11:13:06 on Mar 19,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.test_1_sv_unit(fast)
+# ** Fatal: (vsim-8451) Virtual interface resolution cannot find a matching instance for 'virtual intf_cnt'.
+#    Time: 0 ns  Iteration: 0  Region: /test_1_sv_unit File: C:/Users/PC/Documents/Chung_training/code/SystemVerilog/monitor.sv Line: 16
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 11:13:06 on Mar 19,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vsim work.top
+# vsim work.top 
+# Start time: 11:13:33 on Mar 19,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.top_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.testcase(fast)
+# Loading work.intf_cnt(fast)
 run -all
-# ** Note: $finish    : D:/wavelet_training/code/I2C_APB/Testbench/read_tb.v(261)
-#    Time: 31 us  Iteration: 0  Instance: /read_tb
+#            DUT count is 0xxx :: SB count is 0000 
+#            DUT count is 0xxx :: SB count is 0000 
+#            DUT count is 0000 :: SB count is 0000 
+#            DUT count is 0000 :: SB count is 0000 
+#  * ERROR * DUT count is 1111 :: SB count is 0001 
+#  * ERROR * DUT count is 0111 :: SB count is 0001 
+#  * ERROR * DUT count is 1011 :: SB count is 0010 
+#  * ERROR * DUT count is 1011 :: SB count is 0011 
+#            DUT count is 0011 :: SB count is 0011 
+#            DUT count is 0011 :: SB count is 0011 
+#  * ERROR * DUT count is 1101 :: SB count is 0100 
+#  * ERROR * DUT count is 1101 :: SB count is 0101 
+#            DUT count is 0101 :: SB count is 0101 
+#  * ERROR * DUT count is 1001 :: SB count is 0110 
+#  * ERROR * DUT count is 0001 :: SB count is 0110 
+#  * ERROR * DUT count is 0001 :: SB count is 0110 
+#  * ERROR * DUT count is 0001 :: SB count is 0110 
+#  * ERROR * DUT count is 0001 :: SB count is 0110 
+#  * ERROR * DUT count is 0001 :: SB count is 0110 
+#  * ERROR * DUT count is 0001 :: SB count is 0110 
+#  * ERROR * DUT count is 1110 :: SB count is 0111 
+#  * ERROR * DUT count is 0110 :: SB count is 0111 
+#  * ERROR * DUT count is 1010 :: SB count is 1000 
+#  * ERROR * DUT count is 0010 :: SB count is 1000 
+#  * ERROR * DUT count is 1100 :: SB count is 1001 
+#  * ERROR * DUT count is 0100 :: SB count is 1001 
+#  * ERROR * DUT count is 0100 :: SB count is 1001 
+#  * ERROR * DUT count is 1000 :: SB count is 1010 
+#  * ERROR * DUT count is 1000 :: SB count is 1011 
+#  * ERROR * DUT count is 1000 :: SB count is 1100 
+#  * ERROR * DUT count is 1000 :: SB count is 1101 
+#  * ERROR * DUT count is 0000 :: SB count is 1101 
+#  * ERROR * DUT count is 1111 :: SB count is 1110 
+#  * ERROR * DUT count is 0111 :: SB count is 1110 
+#  * ERROR * DUT count is 1011 :: SB count is 1111 
+#  * ERROR * DUT count is 1011 :: SB count is 0000 
+#  * ERROR * DUT count is 1011 :: SB count is 0001 
+#  * ERROR * DUT count is 0011 :: SB count is 0001 
+#  * ERROR * DUT count is 0011 :: SB count is 0001 
+#  * ERROR * DUT count is 0011 :: SB count is 0001 
+#  * ERROR * DUT count is 0011 :: SB count is 0001 
+#  * ERROR * DUT count is 1101 :: SB count is 0010 
+#  * ERROR * DUT count is 0101 :: SB count is 0010 
+#  * ERROR * DUT count is 0101 :: SB count is 0010 
+#  * ERROR * DUT count is 0101 :: SB count is 0010 
+#  * ERROR * DUT count is 0101 :: SB count is 0010 
+#  * ERROR * DUT count is 1001 :: SB count is 0011 
+#  * ERROR * DUT count is 1001 :: SB count is 0100 
+#  * ERROR * DUT count is 0001 :: SB count is 0100 
+#  * ERROR * DUT count is 1110 :: SB count is 0101 
+#  * ERROR * DUT count is 1110 :: SB count is 0110 
+#            DUT count is 0110 :: SB count is 0110 
+#            DUT count is 0110 :: SB count is 0110 
+#            DUT count is 0110 :: SB count is 0110 
+#            DUT count is 0110 :: SB count is 0110 
+#  * ERROR * DUT count is 1010 :: SB count is 0111 
+#  * ERROR * DUT count is 1010 :: SB count is 1000 
+#  * ERROR * DUT count is 1010 :: SB count is 1001 
+#            DUT count is 1010 :: SB count is 1010 
+#  * ERROR * DUT count is 1010 :: SB count is 1011 
+#  * ERROR * DUT count is 1010 :: SB count is 1100 
+#  * ERROR * DUT count is 1010 :: SB count is 1101 
+#  * ERROR * DUT count is 1010 :: SB count is 1110 
+#  * ERROR * DUT count is 1010 :: SB count is 1111 
+#  * ERROR * DUT count is 1010 :: SB count is 0000 
+#  * ERROR * DUT count is 1010 :: SB count is 0001 
+#  * ERROR * DUT count is 1010 :: SB count is 0010 
+#            DUT count is 0010 :: SB count is 0010 
+#            DUT count is 0010 :: SB count is 0010 
+#  * ERROR * DUT count is 1100 :: SB count is 0011 
+#  * ERROR * DUT count is 1100 :: SB count is 0100 
+#  * ERROR * DUT count is 1100 :: SB count is 0101 
+#  * ERROR * DUT count is 0100 :: SB count is 0101 
+#  * ERROR * DUT count is 0100 :: SB count is 0101 
+#  * ERROR * DUT count is 0100 :: SB count is 0101 
+#  * ERROR * DUT count is 1000 :: SB count is 0110 
+#  * ERROR * DUT count is 1000 :: SB count is 0111 
+#  * ERROR * DUT count is 0000 :: SB count is 0111 
+#  * ERROR * DUT count is 1111 :: SB count is 1000 
+#  * ERROR * DUT count is 0111 :: SB count is 1000 
+#  * ERROR * DUT count is 0111 :: SB count is 1000 
+#  * ERROR * DUT count is 0111 :: SB count is 1000 
+#  * ERROR * DUT count is 1011 :: SB count is 1001 
+#  * ERROR * DUT count is 0011 :: SB count is 1001 
+#  * ERROR * DUT count is 1101 :: SB count is 1010 
+#  * ERROR * DUT count is 1101 :: SB count is 1011 
+#  * ERROR * DUT count is 0101 :: SB count is 1011 
+#  * ERROR * DUT count is 0101 :: SB count is 1011 
+#  * ERROR * DUT count is 0101 :: SB count is 1011 
+#  * ERROR * DUT count is 0101 :: SB count is 1011 
+#  * ERROR * DUT count is 0101 :: SB count is 1011 
+#  * ERROR * DUT count is 0101 :: SB count is 1011 
+#  * ERROR * DUT count is 0101 :: SB count is 1011 
+#  * ERROR * DUT count is 1001 :: SB count is 1100 
+#  * ERROR * DUT count is 1001 :: SB count is 1101 
+#  * ERROR * DUT count is 0001 :: SB count is 1101 
+#  * ERROR * DUT count is 0001 :: SB count is 1101 
+#            DUT count is 1110 :: SB count is 1110 
+#  * ERROR * DUT count is 0110 :: SB count is 1110 
+#  * ERROR * DUT count is 0110 :: SB count is 1110 
+#  * ERROR * DUT count is 0110 :: SB count is 1110 
+#  * ERROR * DUT count is 1010 :: SB count is 1111 
+#  * ERROR * DUT count is 0010 :: SB count is 1111 
+#  * ERROR * DUT count is 0010 :: SB count is 1111 
+#  * ERROR * DUT count is 0010 :: SB count is 1111 
+#  * ERROR * DUT count is 0000 :: SB count is 1111 
+#  * ERROR * DUT count is 0000 :: SB count is 1111 
+#  * ERROR * DUT count is 0000 :: SB count is 1111 
+#  * ERROR * DUT count is 0000 :: SB count is 1111 
+#  * ERROR * DUT count is 1111 :: SB count is 0000 
+#  * ERROR * DUT count is 1111 :: SB count is 0001 
+#  * ERROR * DUT count is 1111 :: SB count is 0010 
+#  * ERROR * DUT count is 0111 :: SB count is 0010 
+#  * ERROR * DUT count is 0111 :: SB count is 0010 
+#  * ERROR * DUT count is 0111 :: SB count is 0010 
+#  * ERROR * DUT count is 0111 :: SB count is 0010 
+#  * ERROR * DUT count is 0111 :: SB count is 0010 
+#  * ERROR * DUT count is 1011 :: SB count is 0011 
+#  * ERROR * DUT count is 1011 :: SB count is 0100 
+#  * ERROR * DUT count is 0011 :: SB count is 0100 
+#  * ERROR * DUT count is 0011 :: SB count is 0100 
+#  * ERROR * DUT count is 1101 :: SB count is 0101 
+#            DUT count is 0101 :: SB count is 0101 
+#  * ERROR * DUT count is 1001 :: SB count is 0110 
+#  * ERROR * DUT count is 1001 :: SB count is 0111 
+#  * ERROR * DUT count is 0001 :: SB count is 0111 
+#  * ERROR * DUT count is 1110 :: SB count is 1000 
+#  * ERROR * DUT count is 0110 :: SB count is 1000 
+#  * ERROR * DUT count is 1010 :: SB count is 1001 
+#  * ERROR * DUT count is 0010 :: SB count is 1001 
+#  * ERROR * DUT count is 0010 :: SB count is 1001 
+#  * ERROR * DUT count is 0010 :: SB count is 1001 
+#  * ERROR * DUT count is 0010 :: SB count is 1001 
+#  * ERROR * DUT count is 1100 :: SB count is 1010 
+#  * ERROR * DUT count is 0100 :: SB count is 1010 
+#  * ERROR * DUT count is 1000 :: SB count is 1011 
+#  * ERROR * DUT count is 1000 :: SB count is 1100 
+#  * ERROR * DUT count is 0000 :: SB count is 1100 
+#  * ERROR * DUT count is 1111 :: SB count is 1101 
+#  * ERROR * DUT count is 1111 :: SB count is 1110 
+#            DUT count is 1111 :: SB count is 1111 
+#  * ERROR * DUT count is 1111 :: SB count is 0000 
+#  * ERROR * DUT count is 1111 :: SB count is 0001 
+#  * ERROR * DUT count is 0111 :: SB count is 0001 
+#  * ERROR * DUT count is 1011 :: SB count is 0010 
+#  * ERROR * DUT count is 0011 :: SB count is 0010 
+#  * ERROR * DUT count is 1101 :: SB count is 0011 
+#  * ERROR * DUT count is 0101 :: SB count is 0011 
+#  * ERROR * DUT count is 0101 :: SB count is 0011 
+#  * ERROR * DUT count is 0101 :: SB count is 0011 
+#  * ERROR * DUT count is 0101 :: SB count is 0011 
+#  * ERROR * DUT count is 1001 :: SB count is 0100 
+#  * ERROR * DUT count is 1001 :: SB count is 0101 
+#  * ERROR * DUT count is 1001 :: SB count is 0110 
+#  * ERROR * DUT count is 0001 :: SB count is 0110 
+#  * ERROR * DUT count is 1110 :: SB count is 0111 
+#  * ERROR * DUT count is 1110 :: SB count is 1000 
+#  * ERROR * DUT count is 1110 :: SB count is 1001 
+#  * ERROR * DUT count is 1110 :: SB count is 1010 
+#  * ERROR * DUT count is 1110 :: SB count is 1011 
+#  * ERROR * DUT count is 0110 :: SB count is 1011 
+#  * ERROR * DUT count is 1010 :: SB count is 1100 
+#  * ERROR * DUT count is 1010 :: SB count is 1101 
+#  * ERROR * DUT count is 0010 :: SB count is 1101 
+#  * ERROR * DUT count is 0010 :: SB count is 1101 
+#  * ERROR * DUT count is 1100 :: SB count is 1110 
+#  * ERROR * DUT count is 0100 :: SB count is 1110 
+#  * ERROR * DUT count is 1000 :: SB count is 1111 
+#  * ERROR * DUT count is 0000 :: SB count is 1111 
+#  * ERROR * DUT count is 0000 :: SB count is 1111 
+#  * ERROR * DUT count is 1111 :: SB count is 0000 
+#  * ERROR * DUT count is 0111 :: SB count is 0000 
+#  * ERROR * DUT count is 0111 :: SB count is 0000 
+#  * ERROR * DUT count is 1011 :: SB count is 0001 
+#  * ERROR * DUT count is 1011 :: SB count is 0010 
+#  * ERROR * DUT count is 1011 :: SB count is 0011 
+#            DUT count is 0011 :: SB count is 0011 
+#  * ERROR * DUT count is 1101 :: SB count is 0100 
+#  * ERROR * DUT count is 1101 :: SB count is 0101 
+#  * ERROR * DUT count is 1101 :: SB count is 0110 
+#  * ERROR * DUT count is 0101 :: SB count is 0110 
+#  * ERROR * DUT count is 0101 :: SB count is 0110 
+#  * ERROR * DUT count is 1001 :: SB count is 0111 
+#  * ERROR * DUT count is 0001 :: SB count is 0111 
+#  * ERROR * DUT count is 0001 :: SB count is 0111 
+#  * ERROR * DUT count is 0001 :: SB count is 0111 
+#  * ERROR * DUT count is 1110 :: SB count is 1000 
+#  * ERROR * DUT count is 0110 :: SB count is 1000 
+#  * ERROR * DUT count is 0110 :: SB count is 1000 
+#  * ERROR * DUT count is 0110 :: SB count is 1000 
+#  * ERROR * DUT count is 0110 :: SB count is 1000 
+#  * ERROR * DUT count is 0110 :: SB count is 1000 
+#  * ERROR * DUT count is 1010 :: SB count is 1001 
+#  * ERROR * DUT count is 0010 :: SB count is 1001 
+#  * ERROR * DUT count is 0010 :: SB count is 1001 
+#  * ERROR * DUT count is 0010 :: SB count is 1001 
+#  * ERROR * DUT count is 1100 :: SB count is 1010 
+#  * ERROR * DUT count is 1100 :: SB count is 1011 
+#            DUT count is 1100 :: SB count is 1100 
+#  * ERROR * DUT count is 1100 :: SB count is 1101 
+#  * ERROR * DUT count is 0100 :: SB count is 1101 
+#  * ERROR * DUT count is 1000 :: SB count is 1110 
+#  * ERROR * DUT count is 1000 :: SB count is 1111 
+#  * ERROR * DUT count is 0000 :: SB count is 1111 
+#  * ERROR * DUT count is 0000 :: SB count is 1111 
+#  * ERROR * DUT count is 1111 :: SB count is 0000 
+# ** Note: implicit $finish from program    : C:/Users/PC/Documents/Chung_training/code/SystemVerilog/monitor.sv(18)
+#    Time: 2060 ns  Iteration: 1  Instance: /top/test
 # 1
-# Break in Module read_tb at D:/wavelet_training/code/I2C_APB/Testbench/read_tb.v line 261
+# Simulation stop requested.
 quit -sim
-# End time: 22:38:06 on Mar 14,2024, Elapsed time: 0:00:33
-# Errors: 0, Warnings: 2
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
-# Compile of writer_tb.v was successful.
-# Compile of clock_generator.v was successful.
-# 9 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.read_tb
-# vsim -voptargs="+acc" work.read_tb 
-# Start time: 22:38:29 on Mar 14,2024
+# End time: 11:14:17 on Mar 19,2024, Elapsed time: 0:00:44
+# Errors: 0, Warnings: 0
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of rtl.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test_1.sv was successful.
+# Compile of top.sv was successful.
+# Compile of test.sv was successful.
+# 11 compiles, 0 failed with no errors.
+vsim work.top
+# vsim work.top 
+# Start time: 11:14:24 on Mar 19,2024
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.read_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_top(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-# Loading work.ClockGenerator(fast)
-add wave -position insertpoint sim:/read_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: admin  Hostname: DESKTOP-A5DHFV4  ProcessID: 2200
-#           Attempting to use alternate WLF file "./wlft45816n".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft45816n
-add wave -position insertpoint sim:/read_tb/dut/i2c/*
-add wave -position insertpoint sim:/read_tb/dut/converter/*
-add wave -position insertpoint sim:/read_tb/dut/fifo_rx/*
-run -all
-# ** Note: $finish    : D:/wavelet_training/code/I2C_APB/Testbench/read_tb.v(272)
-#    Time: 31030 ns  Iteration: 0  Instance: /read_tb
-# 1
-# Break in Module read_tb at D:/wavelet_training/code/I2C_APB/Testbench/read_tb.v line 272
+# Loading sv_std.std
+# Loading work.top_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.testcase(fast)
+# Loading work.intf_cnt(fast)
+run
+#            DUT count is 0xxx :: SB count is 0000 
+#            DUT count is 0xxx :: SB count is 0000 
+#            DUT count is 0000 :: SB count is 0000 
+#            DUT count is 0000 :: SB count is 0000 
+#  * ERROR * DUT count is 1111 :: SB count is 0001 
+#  * ERROR * DUT count is 0111 :: SB count is 0001 
+#  * ERROR * DUT count is 1011 :: SB count is 0010 
+#  * ERROR * DUT count is 1011 :: SB count is 0011 
+#            DUT count is 0011 :: SB count is 0011 
+#            DUT count is 0011 :: SB count is 0011 
+coverage report -html -htmldir covhtmlreport -details -assert -directive -cvg -code bcefst -threshL 50 -threshH 90
+# Report created in covhtmlreport/index.html
 quit -sim
-# End time: 22:40:42 on Mar 14,2024, Elapsed time: 0:02:13
-# Errors: 0, Warnings: 2
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
-# Compile of writer_tb.v was successful.
-# Compile of clock_generator.v was successful.
-# 9 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.read_tb
-# vsim -voptargs="+acc" work.read_tb 
-# Start time: 22:40:48 on Mar 14,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.read_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_top(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-# Loading work.ClockGenerator(fast)
-add wave -position insertpoint sim:/read_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: admin  Hostname: DESKTOP-A5DHFV4  ProcessID: 2200
-#           Attempting to use alternate WLF file "./wlft3k92rw".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft3k92rw
-add wave -position insertpoint sim:/read_tb/dut/i2c/*
-add wave -position insertpoint sim:/read_tb/dut/converter/*
-add wave -position insertpoint sim:/read_tb/dut/fifo_rx/*
-run -all
-# ** Note: $finish    : D:/wavelet_training/code/I2C_APB/Testbench/read_tb.v(272)
-#    Time: 31030 ns  Iteration: 0  Instance: /read_tb
-# 1
-# Break in Module read_tb at D:/wavelet_training/code/I2C_APB/Testbench/read_tb.v line 272
-# Causality operation skipped due to absence of debug database file
-quit -sim
-# End time: 22:45:15 on Mar 14,2024, Elapsed time: 0:04:27
-# Errors: 0, Warnings: 3
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
-# Compile of writer_tb.v was successful.
-# Compile of clock_generator.v was successful.
-# 9 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.read_tb
-# vsim -voptargs="+acc" work.read_tb 
-# Start time: 22:46:20 on Mar 14,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.read_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_top(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-# Loading work.ClockGenerator(fast)
-add wave -position insertpoint sim:/read_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: admin  Hostname: DESKTOP-A5DHFV4  ProcessID: 2200
-#           Attempting to use alternate WLF file "./wlftcb1gwg".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftcb1gwg
-add wave -position insertpoint sim:/read_tb/dut/i2c/*
-add wave -position insertpoint sim:/read_tb/dut/converter/*
-add wave -position insertpoint sim:/read_tb/dut/fifo_rx/*
-run -all
-# ** Note: $finish    : D:/wavelet_training/code/I2C_APB/Testbench/read_tb.v(350)
-#    Time: 31240 ns  Iteration: 0  Instance: /read_tb
-# 1
-# Break in Module read_tb at D:/wavelet_training/code/I2C_APB/Testbench/read_tb.v line 350
-quit -sim
-# End time: 22:55:44 on Mar 14,2024, Elapsed time: 0:09:24
-# Errors: 0, Warnings: 2
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
-# Compile of writer_tb.v was successful.
-# Compile of clock_generator.v was successful.
-# 9 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.read_tb
-# vsim -voptargs="+acc" work.read_tb 
-# Start time: 22:55:50 on Mar 14,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.read_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_top(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-# Loading work.ClockGenerator(fast)
-add wave -position insertpoint sim:/read_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: admin  Hostname: DESKTOP-A5DHFV4  ProcessID: 2200
-#           Attempting to use alternate WLF file "./wlftqq0yx1".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftqq0yx1
-add wave -position insertpoint sim:/read_tb/dut/i2c/*
-add wave -position insertpoint sim:/read_tb/dut/converter/*
-add wave -position insertpoint sim:/read_tb/dut/fifo_rx/*
-run -all
-# ** Note: $finish    : D:/wavelet_training/code/I2C_APB/Testbench/read_tb.v(350)
-#    Time: 31240 ns  Iteration: 0  Instance: /read_tb
-# 1
-# Break in Module read_tb at D:/wavelet_training/code/I2C_APB/Testbench/read_tb.v line 350
-quit -sim
-# End time: 23:07:42 on Mar 14,2024, Elapsed time: 0:11:52
-# Errors: 0, Warnings: 2
+# End time: 14:24:10 on Mar 19,2024, Elapsed time: 3:09:46
+# Errors: 0, Warnings: 0
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of rtl.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test_1.sv was successful.
+# Compile of top.sv was successful.
+# Compile of test.sv was successful.
+# 11 compiles, 0 failed with no errors.
+vsim work.class_assignment
+# vsim work.class_assignment 
+# Start time: 14:24:21 on Mar 19,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.test_sv_unit(fast)
+# Loading work.class_assignment(fast)
+run
+# 	****  calling pkt_1 display  ****
+# ---------------------------------------------------------
+# 	 addr  = 10
+# 	 data  = ff
+# 	 start_address  = 10
+# 	 end_address  = 50
+# ---------------------------------------------------------
+# 	****  calling pkt_2 display  ****
+# ---------------------------------------------------------
+# 	 addr  = 10
+# 	 data  = ff
+# 	 start_address  = 10
+# 	 end_address  = 50
+# ---------------------------------------------------------
+# 	****  calling pkt_1 display after changing pkt_2 properties ****
+# ---------------------------------------------------------
+# 	 addr  = 10
+# 	 data  = ff
+# 	 start_address  = 10
+# 	 end_address  = 50
+# ---------------------------------------------------------
+# 	****  calling pkt_2 display after changing pkt_2 properties ****
+# ---------------------------------------------------------
+# 	 addr  = 68
+# 	 data  = ff
+# 	 start_address  = 60
+# 	 end_address  = 80
+# ---------------------------------------------------------
