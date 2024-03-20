@@ -661,3 +661,96 @@ run
 # 	 start_address  = 60
 # 	 end_address  = 80
 # ---------------------------------------------------------
+quit -sim
+# End time: 14:34:27 on Mar 19,2024, Elapsed time: 0:10:06
+# Errors: 0, Warnings: 0
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of rtl.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test_1.sv was successful.
+# Compile of top.sv was successful.
+# Compile of test.sv was successful.
+# 11 compiles, 0 failed with no errors.
+vsim work.semaphore_ex
+# vsim work.semaphore_ex 
+# Start time: 14:35:12 on Mar 19,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.semaphore_ex(fast)
+run
+#                    0	Current Simulation Time process 1
+#                   30	Current Simulation Time process 1
+quit -sim
+# End time: 14:38:39 on Mar 19,2024, Elapsed time: 0:03:27
+# Errors: 0, Warnings: 0
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of rtl.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test_1.sv was successful.
+# Compile of top.sv was successful.
+# Compile of test.sv was successful.
+# 11 compiles, 0 failed with no errors.
+vsim work.semaphore_ex
+# vsim work.semaphore_ex 
+# Start time: 14:39:08 on Mar 19,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.semaphore_ex(fast)
+run
+#                    0	Current Simulation Time process           1
+#                   30	Current Simulation Time process           2
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading work.semaphore_ex(fast)
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of rtl.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test_1.sv was successful.
+# Compile of top.sv was successful.
+# Compile of test.sv was successful.
+# 11 compiles, 0 failed with no errors.
+run
+#                    0	Current Simulation Time process           1
+#                   30	Current Simulation Time process           2
+quit -sim
+# End time: 14:41:13 on Mar 19,2024, Elapsed time: 0:02:05
+# Errors: 0, Warnings: 0
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of rtl.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test_1.sv was successful.
+# Compile of top.sv was successful.
+# Compile of test.sv was successful.
+# 11 compiles, 0 failed with no errors.
+vsim work.semaphore_ex
+# vsim work.semaphore_ex 
+# Start time: 14:41:19 on Mar 19,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.semaphore_ex(fast)
+run
+#                    0	Current Simulation Time Process           1
+#                    0	Current Simulation Time Process           2
+#                   30	Current Simulation Time Process           3
+# End time: 17:29:28 on Mar 19,2024, Elapsed time: 2:48:09
+# Errors: 0, Warnings: 0
