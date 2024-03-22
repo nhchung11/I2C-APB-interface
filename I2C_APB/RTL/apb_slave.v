@@ -53,9 +53,9 @@ module apb
 
     always @(posedge PCLK, negedge PRESETn) begin
         if (!PRESETn) begin
-            command_reg         <= 8'b00000000;
-            address_reg         <= 8'b0;
-            prescale_reg        <= 8'b0;
+            command_reg                 <= 8'b00000000;
+            address_reg                 <= 8'b0;
+            prescale_reg                <= 8'b0;
         end
         else begin 
             case (reg_map)
@@ -95,18 +95,12 @@ module apb
                         PRDATA          <= receive_reg;
                         command_reg     <= 10110000;
                     end
-                    
                 end
                 
                 // Write to Command regisger
                 3'b110: begin
-                    // if (TX_full == 1)
-                    //     command_reg         <= 8'b10010000;
-                    // else 
-                        if ((PWRITE == 1) && (PSELx == 1) && (PENABLE == 1))
-                            command_reg     <= PWDATA;
-                        // if (PSELx == 0)
-                        //     command_reg     <= 10010000
+                    if ((PWRITE == 1) && (PSELx == 1) && (PENABLE == 1))
+                        command_reg     <= PWDATA;
                 end
             endcase            
         end

@@ -36,6 +36,9 @@ module top_level
     // FIFO read/write enable
     wire                                fifo_tx_enable;
     wire                                fifo_rx_enable;
+    wire                                i2c_enable;
+
+    assign i2c_enable = command_reg[7] & !status_reg[6];
 
     // Converter enable
     wire                                converter_enable;
@@ -104,7 +107,7 @@ module top_level
         .core_clk                       (core_clk),
         .i2c_clk                        (i2c_clk_gen),
         .rst_n                          (command_reg[4]),
-        .enable                         (command_reg[7]),
+        .enable                         (i2c_enable),
         .slave_address                  (address_reg),
         .data_in                        (TX),
         .repeated_start_cond            (command_reg[3]),

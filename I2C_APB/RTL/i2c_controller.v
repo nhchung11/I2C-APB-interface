@@ -36,11 +36,11 @@ module i2c_controller
     reg [3:0]   current_state;
     reg [3:0]   next_state;
     reg         scl_enable;
-    reg         sda_in_check;
     reg         sda_o;
     wire        rw;
     reg         tx_check;
     reg         rx_check;
+    reg         ack;
 
     // assign sda_out = (sda_enable == 1) ? sda_o : 1'bz;
     assign scl_out = (scl_enable == 1) ? i2c_clk : 1;
@@ -162,6 +162,7 @@ module i2c_controller
             fifo_tx_enable              <= 0;
             converter_enable            <= 0;
             rx_check                    <= 0;
+            tx_check                    <= 0;
         end
         else begin
             if (fifo_tx_enable == 1) begin
