@@ -244,7 +244,25 @@ module write_tb;
         sda_in = 0;
         #320;
         sda_in = 1;
-        #29000;
+        
+        // Command reg = 5;
+        #10;
+        PSELx = 0;
+        #10;
+        PADDR = 8'b11000000;
+        PWRITE = 1;
+        PSELx = 1;
+        PENABLE = 0; 
+        PWDATA = 8'b00010000;
+        #10;
+        PENABLE = 1;
+        #10;
+        PSELx = 0;
+        PENABLE = 0;
+        PSELx = 0;
+        PWRITE = 0;
+
+        #10000;
         $finish;
     end
 endmodule 

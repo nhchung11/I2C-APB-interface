@@ -41,8 +41,6 @@ module i2c_controller
     wire        rw;
     reg         tx_check;
     reg         rx_check;
-    reg         sda_prev;
-    reg         ack;
 
     // assign sda_out = (sda_enable == 1) ? sda_o : 1'bz;
     assign scl_out = (scl_enable == 1) ? i2c_clk : 1;
@@ -59,119 +57,102 @@ module i2c_controller
 
     // Counter logic
     always @(posedge i2c_clk, negedge rst_n) begin
-        if (~rst_n)
-            counter     <= 7;
+        if (~rst_n) begin
+            counter             <= 7;
+        end
         else begin
             if ((current_state == START) || (current_state == ADDRESS_ACK) || (current_state == WRITE_ACK) || (current_state == READ_ACK))
-                counter <= 7;
+                counter         <= 7;
             if ((current_state == WRITE_ADDRESS) || (current_state == WRITE_DATA) || (current_state == READ_DATA))
-                counter <= counter - 1;
+                counter         <= counter - 1;
         end
     end 
 
-    // In simulation
-    always @(posedge i2c_clk, negedge rst_n) begin
-        if (!rst_n) begin
-            sda_in_check        <= 0;
-            sda_prev            <= 0;
-        end
-        else begin
-            if (!sda_in && sda_prev) begin
-                ack             <= 1;
-            end
-            else begin
-                ack             <= 0;
-            end
-            if ((next_state == ADDRESS_ACK) || (next_state == WRITE_ACK) || (next_state == READ_ACK)) begin
-                sda_in_check    <= 1;
-            end
-            else
-                sda_in_check    <= 0;
-        end
-        sda_prev <= sda_in;
-    end
-
     // Next state combinational logic
-    always @* begin
-        case (current_state)
-            IDLE: begin
-                if (enable) begin 
-                    next_state = START;
-                end
-                else        next_state = IDLE;
-            end
-            //-----------------------------------------------------
-            
-            START:          next_state = WRITE_ADDRESS;
-            //-----------------------------------------------------
-
-            WRITE_ADDRESS: begin
-                if (counter == 0) begin
-                            next_state = ADDRESS_ACK;
-                end
-            end
-            //-----------------------------------------------------
-        
-            ADDRESS_ACK: begin
-                if (sda_in_check == 1) begin
-                    // Sda_in = 0 -> ack
-                    if (rw == 0) 
-                            next_state = WRITE_DATA;
-                    else    next_state = READ_DATA;
-                end
-                else
-                    // sda_in = 1 -> nack
-                    next_state = STOP;
-            end
-            //-----------------------------------------------------
-
-            WRITE_DATA: begin
-                if (counter == 0) begin
-                            next_state = WRITE_ACK;
-                end
-            end
-            //-----------------------------------------------------
-
-            WRITE_ACK: begin
-                if (sda_in_check == 0) begin
-                    next_state = STOP;
-                end
-                else begin
-                    if (enable == 0) begin
-                                next_state = STOP;
+    always @(posedge core_clk, negedge rst_n) begin
+        if (!rst_n)
+            next_state <= IDLE;
+        else begin
+            case (current_state)
+                IDLE: begin
+                    if (enable) begin 
+                        next_state <= START;
                     end
-                    else if (enable == 1) begin
-                        if (repeated_start_cond == 0)   
-                                next_state = WRITE_DATA;
-                        else
-                                next_state = START;
+                    else        next_state  <= IDLE;
+                end
+                //-----------------------------------------------------
+                
+                START:          next_state  <= WRITE_ADDRESS;
+                //-----------------------------------------------------
+
+                WRITE_ADDRESS: begin
+                    if (counter == 0) begin
+                                next_state  <= ADDRESS_ACK;
                     end
                 end
-            end
+                //-----------------------------------------------------
             
-            //-----------------------------------------------------
-
-            READ_DATA: begin
-                if (counter == 0) begin
-                        next_state = READ_ACK;
-                end
-            end
-            //-----------------------------------------------------
-
-            READ_ACK: begin
-                if (enable == 0) begin
-                            next_state = STOP;
-                end
-                else if (enable == 1) begin
-                    if (repeated_start_cond == 0)   
-                            next_state = READ_DATA;
+                ADDRESS_ACK: begin
+                    if ((sda_in == 0)) begin
+                        // Sda_in <= 0 -> ack
+                        if (rw == 0) 
+                                next_state  <= WRITE_DATA;
+                        else    next_state  <= READ_DATA;
+                    end
                     else
-                            next_state = START;
+                        // sda_in <= 1 -> nack
+                        next_state <= STOP;
                 end
-            end
-            //-----------------------------------------------------
-            default:        next_state = IDLE;
-        endcase
+                //-----------------------------------------------------
+
+                WRITE_DATA: begin
+                    if (counter == 0) begin
+                                next_state  <= WRITE_ACK;
+                    end
+                end
+                //-----------------------------------------------------
+
+                WRITE_ACK: begin
+                    if (sda_in == 0) begin
+                        if (enable == 0) begin
+                                    next_state <= STOP;
+                        end
+                        else if (enable == 1) begin
+                            if (repeated_start_cond == 0)   
+                                    next_state <= WRITE_DATA;
+                            else
+                                    next_state <= START;
+                        end
+                    end
+                    else begin
+                        next_state <= STOP;
+                    end
+                end
+                
+                //-----------------------------------------------------
+
+                READ_DATA: begin
+                    if (counter == 0) begin
+                            next_state <= READ_ACK;
+                    end
+                end
+                //-----------------------------------------------------
+
+                READ_ACK: begin
+                    if (enable == 0) begin
+                                next_state  <= STOP;
+                    end
+                    else if (enable <= 1) begin
+                        if (repeated_start_cond == 0)   
+                                next_state  <= READ_DATA;
+                        else
+                                next_state  <= START;
+                    end
+                end
+                //-----------------------------------------------------
+                default:        next_state  <= IDLE;
+            endcase
+        end
     end
     always @(posedge core_clk, negedge rst_n) begin
         if (!rst_n) begin
@@ -180,6 +161,7 @@ module i2c_controller
             fifo_rx_enable              <= 0;
             fifo_tx_enable              <= 0;
             converter_enable            <= 0;
+            rx_check                    <= 0;
         end
         else begin
             if (fifo_tx_enable == 1) begin
@@ -221,7 +203,7 @@ module i2c_controller
                 WRITE_ACK: begin
                     scl_enable  <= 1;
                     saved_data  <= {data_in};  
-                    if(sda_in_check == 1) begin
+                    if(sda_in == 1) begin
                         fifo_tx_enable  <= 1;
                         tx_check        <= 1;
                     end

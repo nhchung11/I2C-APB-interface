@@ -12,745 +12,1212 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# Loading project ones_counter
-# Compile of assertion.sv was successful.
-# Compile of driver.sv failed with 3 errors.
-# Compile of env.sv failed with 2 errors.
-# Compile of interface.sv was successful.
-# Compile of monitor.sv failed with 2 errors.
-# Compile of rtl.sv was successful.
-# Compile of scoreboard.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of test_1.sv failed with 2 errors.
-# Compile of top.sv was successful.
-# Compile of test.sv was successful.
-# 11 compiles, 4 failed with 9 errors.
-# Compile of assertion.sv was successful.
-# Compile of driver.sv failed with 3 errors.
-# Compile of env.sv failed with 2 errors.
-# Compile of interface.sv was successful.
-# Compile of monitor.sv failed with 2 errors.
-# Compile of rtl.sv was successful.
-# Compile of scoreboard.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of test_1.sv failed with 1 errors.
-# Compile of top.sv was successful.
-# Compile of test.sv was successful.
-# 11 compiles, 4 failed with 8 errors.
-# Compile of assertion.sv was successful.
-# Compile of driver.sv was successful with warnings.
-# Compile of env.sv failed with 2 errors.
-# Compile of interface.sv was successful.
-# Compile of monitor.sv failed with 2 errors.
-# Compile of rtl.sv was successful.
-# Compile of scoreboard.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of test_1.sv failed with 1 errors.
-# Compile of top.sv was successful.
-# Compile of test.sv was successful.
-# 11 compiles, 3 failed with 5 errors.
-# Compile of assertion.sv was successful.
-# Compile of driver.sv was successful.
-# Compile of env.sv failed with 2 errors.
-# Compile of interface.sv was successful.
-# Compile of monitor.sv failed with 2 errors.
-# Compile of rtl.sv was successful.
-# Compile of scoreboard.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of test_1.sv failed with 1 errors.
-# Compile of top.sv was successful.
-# Compile of test.sv was successful.
-# 11 compiles, 3 failed with 5 errors.
-# Load canceled
-# Compile of assertion.sv was successful.
-# Compile of driver.sv was successful.
-# Compile of env.sv failed with 2 errors.
-# Compile of interface.sv was successful.
-# Compile of monitor.sv failed with 2 errors.
-# Compile of rtl.sv was successful.
-# Compile of scoreboard.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of test_1.sv failed with 1 errors.
-# Compile of top.sv was successful.
-# Compile of test.sv was successful.
-# 11 compiles, 3 failed with 5 errors.
-# Compile of assertion.sv was successful.
-# Compile of driver.sv was successful.
-# Compile of env.sv failed with 2 errors.
-# Compile of interface.sv was successful.
-# Compile of monitor.sv failed with 2 errors.
-# Compile of rtl.sv was successful.
-# Compile of scoreboard.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of test_1.sv failed with 1 errors.
-# Compile of top.sv was successful.
-# Compile of test.sv was successful.
-# 11 compiles, 3 failed with 5 errors.
-# Compile of assertion.sv was successful.
-# Compile of driver.sv was successful.
-# Compile of env.sv failed with 2 errors.
-# Compile of interface.sv was successful.
-# Compile of monitor.sv failed with 2 errors.
-# Compile of rtl.sv was successful.
-# Compile of scoreboard.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of test_1.sv failed with 1 errors.
-# Compile of top.sv was successful.
-# Compile of test.sv was successful.
-# 11 compiles, 3 failed with 5 errors.
-# Compile of assertion.sv was successful.
-# Compile of driver.sv was successful.
-# Compile of env.sv failed with 2 errors.
-# Compile of interface.sv was successful.
-# Compile of monitor.sv was successful with warnings.
-# Compile of rtl.sv was successful.
-# Compile of scoreboard.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of test_1.sv failed with 1 errors.
-# Compile of top.sv was successful.
-# Compile of test.sv was successful.
-# 11 compiles, 2 failed with 3 errors.
-# Compile of assertion.sv was successful.
-# Compile of driver.sv was successful.
-# Compile of env.sv failed with 2 errors.
-# Compile of interface.sv was successful.
-# Compile of monitor.sv was successful.
-# Compile of rtl.sv was successful.
-# Compile of scoreboard.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of test_1.sv failed with 1 errors.
-# Compile of top.sv was successful.
-# Compile of test.sv was successful.
-# 11 compiles, 2 failed with 3 errors.
-# Compile of assertion.sv was successful.
-# Compile of driver.sv was successful.
-# Compile of env.sv was successful with warnings.
-# Compile of interface.sv was successful.
-# Compile of monitor.sv was successful.
-# Compile of rtl.sv was successful.
-# Compile of scoreboard.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of test_1.sv failed with 1 errors.
-# Compile of top.sv was successful.
-# Compile of test.sv was successful.
-# 11 compiles, 1 failed with 1 error.
-# Compile of assertion.sv was successful.
-# Compile of driver.sv was successful.
-# Compile of env.sv was successful.
-# Compile of interface.sv was successful.
-# Compile of monitor.sv was successful.
-# Compile of rtl.sv was successful.
-# Compile of scoreboard.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of test_1.sv failed with 1 errors.
-# Compile of top.sv failed with 1 errors.
-# Compile of test.sv was successful.
-# 11 compiles, 2 failed with 2 errors.
-# Compile of assertion.sv was successful.
-# Compile of driver.sv was successful.
-# Compile of env.sv was successful.
-# Compile of interface.sv was successful.
-# Compile of monitor.sv was successful.
-# Compile of rtl.sv was successful.
-# Compile of scoreboard.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of test_1.sv failed with 1 errors.
-# Compile of top.sv was successful.
-# Compile of test.sv was successful.
-# 11 compiles, 1 failed with 1 error.
-# Compile of assertion.sv was successful.
-# Compile of driver.sv was successful.
-# Compile of env.sv was successful.
-# Compile of interface.sv was successful.
-# Compile of monitor.sv was successful.
-# Compile of rtl.sv was successful.
-# Compile of scoreboard.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of test_1.sv was successful with warnings.
-# Compile of top.sv was successful.
-# Compile of test.sv was successful.
-# 11 compiles, 0 failed with no errors.
-vsim work.testcase
-# vsim work.testcase 
-# Start time: 10:51:46 on Mar 19,2024
-# ** Note: (vsim-3812) Design is being optimized...
-# Loading sv_std.std
-# Loading work.top_sv_unit(fast)
-# Loading work.testcase(fast)
-# ** Fatal: (vsim-8451) Virtual interface resolution cannot find a matching instance for 'virtual intf_cnt'.
-#    Time: 0 ns  Iteration: 0  Region: /top_sv_unit File: C:/Users/PC/Documents/Chung_training/code/SystemVerilog/driver.sv Line: 27
-# FATAL ERROR while loading design
-# Error loading design
-# End time: 10:51:48 on Mar 19,2024, Elapsed time: 0:00:02
-# Errors: 1, Warnings: 0
-# Compile of assertion.sv was successful.
-# Compile of driver.sv was successful.
-# Compile of env.sv was successful.
-# Compile of interface.sv was successful.
-# Compile of monitor.sv was successful.
-# Compile of rtl.sv was successful.
-# Compile of scoreboard.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of test_1.sv was successful.
-# Compile of top.sv was successful.
-# Compile of test.sv was successful.
-# 11 compiles, 0 failed with no errors.
-vsim work.testcase
-# vsim work.testcase 
-# Start time: 10:52:21 on Mar 19,2024
-# ** Note: (vsim-8009) Loading existing optimized design _opt
-# Loading sv_std.std
-# Loading work.top_sv_unit(fast)
-# Loading work.testcase(fast)
-# ** Fatal: (vsim-8451) Virtual interface resolution cannot find a matching instance for 'virtual intf_cnt'.
-#    Time: 0 ns  Iteration: 0  Region: /top_sv_unit File: C:/Users/PC/Documents/Chung_training/code/SystemVerilog/driver.sv Line: 27
-# FATAL ERROR while loading design
-# Error loading design
-# End time: 10:52:21 on Mar 19,2024, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-# Compile of assertion.sv was successful.
-# Compile of driver.sv failed with 3 errors.
-# Compile of env.sv failed with 2 errors.
-# Compile of interface.sv was successful.
-# Compile of monitor.sv was successful.
-# Compile of rtl.sv was successful.
-# Compile of scoreboard.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of test_1.sv failed with 1 errors.
-# Compile of top.sv was successful.
-# Compile of test.sv was successful.
-# 11 compiles, 3 failed with 6 errors.
-# Compile of assertion.sv was successful.
-# Compile of driver.sv failed with 4 errors.
-# Compile of env.sv failed with 2 errors.
-# Compile of interface.sv was successful.
-# Compile of monitor.sv was successful.
-# Compile of rtl.sv was successful.
-# Compile of scoreboard.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of test_1.sv failed with 1 errors.
-# Compile of top.sv failed with 2 errors.
-# Compile of test.sv was successful.
-# 11 compiles, 4 failed with 9 errors.
-# Compile of assertion.sv was successful.
-# Compile of driver.sv failed with 3 errors.
-# Compile of env.sv failed with 2 errors.
-# Compile of interface.sv was successful.
-# Compile of monitor.sv was successful.
-# Compile of rtl.sv was successful.
-# Compile of scoreboard.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of test_1.sv failed with 1 errors.
-# Compile of top.sv failed with 1 errors.
-# Compile of test.sv was successful.
-# 11 compiles, 4 failed with 7 errors.
-# Compile of assertion.sv was successful.
-# Compile of driver.sv was successful.
-# Compile of env.sv failed with 2 errors.
-# Compile of interface.sv was successful.
-# Compile of monitor.sv was successful.
-# Compile of rtl.sv was successful.
-# Compile of scoreboard.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of test_1.sv failed with 1 errors.
-# Compile of top.sv was successful.
-# Compile of test.sv was successful.
-# 11 compiles, 2 failed with 3 errors.
-# Compile of assertion.sv was successful.
-# Compile of driver.sv was successful.
-# Compile of env.sv failed with 2 errors.
-# Compile of interface.sv was successful.
-# Compile of monitor.sv was successful.
-# Compile of rtl.sv was successful.
-# Compile of scoreboard.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of test_1.sv failed with 1 errors.
-# Compile of top.sv was successful.
-# Compile of test.sv was successful.
-# 11 compiles, 2 failed with 3 errors.
-# Compile of assertion.sv was successful.
-# Compile of driver.sv was successful.
-# Compile of env.sv was successful.
-# Compile of interface.sv was successful.
-# Compile of monitor.sv was successful.
-# Compile of rtl.sv was successful.
-# Compile of scoreboard.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of test_1.sv failed with 1 errors.
-# Compile of top.sv was successful.
-# Compile of test.sv was successful.
-# 11 compiles, 1 failed with 1 error.
-# Compile of assertion.sv was successful.
-# Compile of driver.sv was successful.
-# Compile of env.sv was successful.
-# Compile of interface.sv was successful.
-# Compile of monitor.sv was successful.
-# Compile of rtl.sv was successful.
-# Compile of scoreboard.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of test_1.sv failed with 5 errors.
-# Compile of top.sv was successful.
-# Compile of test.sv was successful.
-# 11 compiles, 1 failed with 5 errors.
-# Compile of assertion.sv was successful.
-# Compile of driver.sv was successful.
-# Compile of env.sv was successful.
-# Compile of interface.sv was successful.
-# Compile of monitor.sv was successful.
-# Compile of rtl.sv was successful.
-# Compile of scoreboard.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of test_1.sv failed with 1 errors.
-# Compile of top.sv was successful with warnings.
-# Compile of test.sv was successful.
-# 11 compiles, 1 failed with 1 error.
-# Compile of assertion.sv was successful.
-# Compile of driver.sv was successful.
-# Compile of env.sv was successful.
-# Compile of interface.sv was successful.
-# Compile of monitor.sv was successful.
-# Compile of rtl.sv was successful.
-# Compile of scoreboard.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of test_1.sv failed with 5 errors.
-# Compile of top.sv was successful.
-# Compile of test.sv was successful.
-# 11 compiles, 1 failed with 5 errors.
-# Compile of assertion.sv was successful.
-# Compile of driver.sv was successful.
-# Compile of env.sv was successful.
-# Compile of interface.sv was successful.
-# Compile of monitor.sv was successful.
-# Compile of rtl.sv was successful.
-# Compile of scoreboard.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of test_1.sv was successful.
-# Compile of top.sv was successful.
-# Compile of test.sv was successful.
-# 11 compiles, 0 failed with no errors.
-vsim work.testcase
-# vsim work.testcase 
-# Start time: 11:12:52 on Mar 19,2024
+# Loading project apb_fifo_i2c
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of tb_top.v was successful.
+# 10 compiles, 0 failed with no errors.
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of tb_top.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim work.write_tb -voptargs=+acc
+# vsim work.write_tb -voptargs="+acc" 
+# Start time: 10:46:44 on Mar 22,2024
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading sv_std.std
-# Loading work.top_sv_unit(fast)
-# Loading work.testcase(fast)
-# ** Fatal: (vsim-8451) Virtual interface resolution cannot find a matching instance for 'virtual intf_cnt'.
-#    Time: 0 ns  Iteration: 0  Region: /top_sv_unit File: C:/Users/PC/Documents/Chung_training/code/SystemVerilog/driver.sv Line: 24
-# FATAL ERROR while loading design
-# Error loading design
-# End time: 11:12:53 on Mar 19,2024, Elapsed time: 0:00:01
-# Errors: 1, Warnings: 0
-vsim work.test_1_sv_unit
-# vsim work.test_1_sv_unit 
-# Start time: 11:13:06 on Mar 19,2024
-# ** Note: (vsim-3812) Design is being optimized...
-# Loading sv_std.std
-# Loading work.test_1_sv_unit(fast)
-# ** Fatal: (vsim-8451) Virtual interface resolution cannot find a matching instance for 'virtual intf_cnt'.
-#    Time: 0 ns  Iteration: 0  Region: /test_1_sv_unit File: C:/Users/PC/Documents/Chung_training/code/SystemVerilog/monitor.sv Line: 16
-# FATAL ERROR while loading design
-# Error loading design
-# End time: 11:13:06 on Mar 19,2024, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-vsim work.top
-# vsim work.top 
-# Start time: 11:13:33 on Mar 19,2024
-# ** Note: (vsim-3812) Design is being optimized...
-# Loading sv_std.std
-# Loading work.top_sv_unit(fast)
-# Loading work.top(fast)
-# Loading work.testcase(fast)
-# Loading work.intf_cnt(fast)
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
+#           Attempting to use alternate WLF file "./wlft69m7aj".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft69m7aj
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
 run -all
-#            DUT count is 0xxx :: SB count is 0000 
-#            DUT count is 0xxx :: SB count is 0000 
-#            DUT count is 0000 :: SB count is 0000 
-#            DUT count is 0000 :: SB count is 0000 
-#  * ERROR * DUT count is 1111 :: SB count is 0001 
-#  * ERROR * DUT count is 0111 :: SB count is 0001 
-#  * ERROR * DUT count is 1011 :: SB count is 0010 
-#  * ERROR * DUT count is 1011 :: SB count is 0011 
-#            DUT count is 0011 :: SB count is 0011 
-#            DUT count is 0011 :: SB count is 0011 
-#  * ERROR * DUT count is 1101 :: SB count is 0100 
-#  * ERROR * DUT count is 1101 :: SB count is 0101 
-#            DUT count is 0101 :: SB count is 0101 
-#  * ERROR * DUT count is 1001 :: SB count is 0110 
-#  * ERROR * DUT count is 0001 :: SB count is 0110 
-#  * ERROR * DUT count is 0001 :: SB count is 0110 
-#  * ERROR * DUT count is 0001 :: SB count is 0110 
-#  * ERROR * DUT count is 0001 :: SB count is 0110 
-#  * ERROR * DUT count is 0001 :: SB count is 0110 
-#  * ERROR * DUT count is 0001 :: SB count is 0110 
-#  * ERROR * DUT count is 1110 :: SB count is 0111 
-#  * ERROR * DUT count is 0110 :: SB count is 0111 
-#  * ERROR * DUT count is 1010 :: SB count is 1000 
-#  * ERROR * DUT count is 0010 :: SB count is 1000 
-#  * ERROR * DUT count is 1100 :: SB count is 1001 
-#  * ERROR * DUT count is 0100 :: SB count is 1001 
-#  * ERROR * DUT count is 0100 :: SB count is 1001 
-#  * ERROR * DUT count is 1000 :: SB count is 1010 
-#  * ERROR * DUT count is 1000 :: SB count is 1011 
-#  * ERROR * DUT count is 1000 :: SB count is 1100 
-#  * ERROR * DUT count is 1000 :: SB count is 1101 
-#  * ERROR * DUT count is 0000 :: SB count is 1101 
-#  * ERROR * DUT count is 1111 :: SB count is 1110 
-#  * ERROR * DUT count is 0111 :: SB count is 1110 
-#  * ERROR * DUT count is 1011 :: SB count is 1111 
-#  * ERROR * DUT count is 1011 :: SB count is 0000 
-#  * ERROR * DUT count is 1011 :: SB count is 0001 
-#  * ERROR * DUT count is 0011 :: SB count is 0001 
-#  * ERROR * DUT count is 0011 :: SB count is 0001 
-#  * ERROR * DUT count is 0011 :: SB count is 0001 
-#  * ERROR * DUT count is 0011 :: SB count is 0001 
-#  * ERROR * DUT count is 1101 :: SB count is 0010 
-#  * ERROR * DUT count is 0101 :: SB count is 0010 
-#  * ERROR * DUT count is 0101 :: SB count is 0010 
-#  * ERROR * DUT count is 0101 :: SB count is 0010 
-#  * ERROR * DUT count is 0101 :: SB count is 0010 
-#  * ERROR * DUT count is 1001 :: SB count is 0011 
-#  * ERROR * DUT count is 1001 :: SB count is 0100 
-#  * ERROR * DUT count is 0001 :: SB count is 0100 
-#  * ERROR * DUT count is 1110 :: SB count is 0101 
-#  * ERROR * DUT count is 1110 :: SB count is 0110 
-#            DUT count is 0110 :: SB count is 0110 
-#            DUT count is 0110 :: SB count is 0110 
-#            DUT count is 0110 :: SB count is 0110 
-#            DUT count is 0110 :: SB count is 0110 
-#  * ERROR * DUT count is 1010 :: SB count is 0111 
-#  * ERROR * DUT count is 1010 :: SB count is 1000 
-#  * ERROR * DUT count is 1010 :: SB count is 1001 
-#            DUT count is 1010 :: SB count is 1010 
-#  * ERROR * DUT count is 1010 :: SB count is 1011 
-#  * ERROR * DUT count is 1010 :: SB count is 1100 
-#  * ERROR * DUT count is 1010 :: SB count is 1101 
-#  * ERROR * DUT count is 1010 :: SB count is 1110 
-#  * ERROR * DUT count is 1010 :: SB count is 1111 
-#  * ERROR * DUT count is 1010 :: SB count is 0000 
-#  * ERROR * DUT count is 1010 :: SB count is 0001 
-#  * ERROR * DUT count is 1010 :: SB count is 0010 
-#            DUT count is 0010 :: SB count is 0010 
-#            DUT count is 0010 :: SB count is 0010 
-#  * ERROR * DUT count is 1100 :: SB count is 0011 
-#  * ERROR * DUT count is 1100 :: SB count is 0100 
-#  * ERROR * DUT count is 1100 :: SB count is 0101 
-#  * ERROR * DUT count is 0100 :: SB count is 0101 
-#  * ERROR * DUT count is 0100 :: SB count is 0101 
-#  * ERROR * DUT count is 0100 :: SB count is 0101 
-#  * ERROR * DUT count is 1000 :: SB count is 0110 
-#  * ERROR * DUT count is 1000 :: SB count is 0111 
-#  * ERROR * DUT count is 0000 :: SB count is 0111 
-#  * ERROR * DUT count is 1111 :: SB count is 1000 
-#  * ERROR * DUT count is 0111 :: SB count is 1000 
-#  * ERROR * DUT count is 0111 :: SB count is 1000 
-#  * ERROR * DUT count is 0111 :: SB count is 1000 
-#  * ERROR * DUT count is 1011 :: SB count is 1001 
-#  * ERROR * DUT count is 0011 :: SB count is 1001 
-#  * ERROR * DUT count is 1101 :: SB count is 1010 
-#  * ERROR * DUT count is 1101 :: SB count is 1011 
-#  * ERROR * DUT count is 0101 :: SB count is 1011 
-#  * ERROR * DUT count is 0101 :: SB count is 1011 
-#  * ERROR * DUT count is 0101 :: SB count is 1011 
-#  * ERROR * DUT count is 0101 :: SB count is 1011 
-#  * ERROR * DUT count is 0101 :: SB count is 1011 
-#  * ERROR * DUT count is 0101 :: SB count is 1011 
-#  * ERROR * DUT count is 0101 :: SB count is 1011 
-#  * ERROR * DUT count is 1001 :: SB count is 1100 
-#  * ERROR * DUT count is 1001 :: SB count is 1101 
-#  * ERROR * DUT count is 0001 :: SB count is 1101 
-#  * ERROR * DUT count is 0001 :: SB count is 1101 
-#            DUT count is 1110 :: SB count is 1110 
-#  * ERROR * DUT count is 0110 :: SB count is 1110 
-#  * ERROR * DUT count is 0110 :: SB count is 1110 
-#  * ERROR * DUT count is 0110 :: SB count is 1110 
-#  * ERROR * DUT count is 1010 :: SB count is 1111 
-#  * ERROR * DUT count is 0010 :: SB count is 1111 
-#  * ERROR * DUT count is 0010 :: SB count is 1111 
-#  * ERROR * DUT count is 0010 :: SB count is 1111 
-#  * ERROR * DUT count is 0000 :: SB count is 1111 
-#  * ERROR * DUT count is 0000 :: SB count is 1111 
-#  * ERROR * DUT count is 0000 :: SB count is 1111 
-#  * ERROR * DUT count is 0000 :: SB count is 1111 
-#  * ERROR * DUT count is 1111 :: SB count is 0000 
-#  * ERROR * DUT count is 1111 :: SB count is 0001 
-#  * ERROR * DUT count is 1111 :: SB count is 0010 
-#  * ERROR * DUT count is 0111 :: SB count is 0010 
-#  * ERROR * DUT count is 0111 :: SB count is 0010 
-#  * ERROR * DUT count is 0111 :: SB count is 0010 
-#  * ERROR * DUT count is 0111 :: SB count is 0010 
-#  * ERROR * DUT count is 0111 :: SB count is 0010 
-#  * ERROR * DUT count is 1011 :: SB count is 0011 
-#  * ERROR * DUT count is 1011 :: SB count is 0100 
-#  * ERROR * DUT count is 0011 :: SB count is 0100 
-#  * ERROR * DUT count is 0011 :: SB count is 0100 
-#  * ERROR * DUT count is 1101 :: SB count is 0101 
-#            DUT count is 0101 :: SB count is 0101 
-#  * ERROR * DUT count is 1001 :: SB count is 0110 
-#  * ERROR * DUT count is 1001 :: SB count is 0111 
-#  * ERROR * DUT count is 0001 :: SB count is 0111 
-#  * ERROR * DUT count is 1110 :: SB count is 1000 
-#  * ERROR * DUT count is 0110 :: SB count is 1000 
-#  * ERROR * DUT count is 1010 :: SB count is 1001 
-#  * ERROR * DUT count is 0010 :: SB count is 1001 
-#  * ERROR * DUT count is 0010 :: SB count is 1001 
-#  * ERROR * DUT count is 0010 :: SB count is 1001 
-#  * ERROR * DUT count is 0010 :: SB count is 1001 
-#  * ERROR * DUT count is 1100 :: SB count is 1010 
-#  * ERROR * DUT count is 0100 :: SB count is 1010 
-#  * ERROR * DUT count is 1000 :: SB count is 1011 
-#  * ERROR * DUT count is 1000 :: SB count is 1100 
-#  * ERROR * DUT count is 0000 :: SB count is 1100 
-#  * ERROR * DUT count is 1111 :: SB count is 1101 
-#  * ERROR * DUT count is 1111 :: SB count is 1110 
-#            DUT count is 1111 :: SB count is 1111 
-#  * ERROR * DUT count is 1111 :: SB count is 0000 
-#  * ERROR * DUT count is 1111 :: SB count is 0001 
-#  * ERROR * DUT count is 0111 :: SB count is 0001 
-#  * ERROR * DUT count is 1011 :: SB count is 0010 
-#  * ERROR * DUT count is 0011 :: SB count is 0010 
-#  * ERROR * DUT count is 1101 :: SB count is 0011 
-#  * ERROR * DUT count is 0101 :: SB count is 0011 
-#  * ERROR * DUT count is 0101 :: SB count is 0011 
-#  * ERROR * DUT count is 0101 :: SB count is 0011 
-#  * ERROR * DUT count is 0101 :: SB count is 0011 
-#  * ERROR * DUT count is 1001 :: SB count is 0100 
-#  * ERROR * DUT count is 1001 :: SB count is 0101 
-#  * ERROR * DUT count is 1001 :: SB count is 0110 
-#  * ERROR * DUT count is 0001 :: SB count is 0110 
-#  * ERROR * DUT count is 1110 :: SB count is 0111 
-#  * ERROR * DUT count is 1110 :: SB count is 1000 
-#  * ERROR * DUT count is 1110 :: SB count is 1001 
-#  * ERROR * DUT count is 1110 :: SB count is 1010 
-#  * ERROR * DUT count is 1110 :: SB count is 1011 
-#  * ERROR * DUT count is 0110 :: SB count is 1011 
-#  * ERROR * DUT count is 1010 :: SB count is 1100 
-#  * ERROR * DUT count is 1010 :: SB count is 1101 
-#  * ERROR * DUT count is 0010 :: SB count is 1101 
-#  * ERROR * DUT count is 0010 :: SB count is 1101 
-#  * ERROR * DUT count is 1100 :: SB count is 1110 
-#  * ERROR * DUT count is 0100 :: SB count is 1110 
-#  * ERROR * DUT count is 1000 :: SB count is 1111 
-#  * ERROR * DUT count is 0000 :: SB count is 1111 
-#  * ERROR * DUT count is 0000 :: SB count is 1111 
-#  * ERROR * DUT count is 1111 :: SB count is 0000 
-#  * ERROR * DUT count is 0111 :: SB count is 0000 
-#  * ERROR * DUT count is 0111 :: SB count is 0000 
-#  * ERROR * DUT count is 1011 :: SB count is 0001 
-#  * ERROR * DUT count is 1011 :: SB count is 0010 
-#  * ERROR * DUT count is 1011 :: SB count is 0011 
-#            DUT count is 0011 :: SB count is 0011 
-#  * ERROR * DUT count is 1101 :: SB count is 0100 
-#  * ERROR * DUT count is 1101 :: SB count is 0101 
-#  * ERROR * DUT count is 1101 :: SB count is 0110 
-#  * ERROR * DUT count is 0101 :: SB count is 0110 
-#  * ERROR * DUT count is 0101 :: SB count is 0110 
-#  * ERROR * DUT count is 1001 :: SB count is 0111 
-#  * ERROR * DUT count is 0001 :: SB count is 0111 
-#  * ERROR * DUT count is 0001 :: SB count is 0111 
-#  * ERROR * DUT count is 0001 :: SB count is 0111 
-#  * ERROR * DUT count is 1110 :: SB count is 1000 
-#  * ERROR * DUT count is 0110 :: SB count is 1000 
-#  * ERROR * DUT count is 0110 :: SB count is 1000 
-#  * ERROR * DUT count is 0110 :: SB count is 1000 
-#  * ERROR * DUT count is 0110 :: SB count is 1000 
-#  * ERROR * DUT count is 0110 :: SB count is 1000 
-#  * ERROR * DUT count is 1010 :: SB count is 1001 
-#  * ERROR * DUT count is 0010 :: SB count is 1001 
-#  * ERROR * DUT count is 0010 :: SB count is 1001 
-#  * ERROR * DUT count is 0010 :: SB count is 1001 
-#  * ERROR * DUT count is 1100 :: SB count is 1010 
-#  * ERROR * DUT count is 1100 :: SB count is 1011 
-#            DUT count is 1100 :: SB count is 1100 
-#  * ERROR * DUT count is 1100 :: SB count is 1101 
-#  * ERROR * DUT count is 0100 :: SB count is 1101 
-#  * ERROR * DUT count is 1000 :: SB count is 1110 
-#  * ERROR * DUT count is 1000 :: SB count is 1111 
-#  * ERROR * DUT count is 0000 :: SB count is 1111 
-#  * ERROR * DUT count is 0000 :: SB count is 1111 
-#  * ERROR * DUT count is 1111 :: SB count is 0000 
-# ** Note: implicit $finish from program    : C:/Users/PC/Documents/Chung_training/code/SystemVerilog/monitor.sv(18)
-#    Time: 2060 ns  Iteration: 1  Instance: /top/test
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(248)
+#    Time: 53080 ns  Iteration: 0  Instance: /write_tb
 # 1
-# Simulation stop requested.
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 248
 quit -sim
-# End time: 11:14:17 on Mar 19,2024, Elapsed time: 0:00:44
-# Errors: 0, Warnings: 0
-# Compile of assertion.sv was successful.
-# Compile of driver.sv was successful.
-# Compile of env.sv was successful.
-# Compile of interface.sv was successful.
-# Compile of monitor.sv was successful.
-# Compile of rtl.sv was successful.
-# Compile of scoreboard.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of test_1.sv was successful.
-# Compile of top.sv was successful.
-# Compile of test.sv was successful.
-# 11 compiles, 0 failed with no errors.
-vsim work.top
-# vsim work.top 
-# Start time: 11:14:24 on Mar 19,2024
+# End time: 10:57:37 on Mar 22,2024, Elapsed time: 0:10:53
+# Errors: 0, Warnings: 2
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v failed with 5 errors.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of tb_top.v was successful.
+# 10 compiles, 1 failed with 5 errors.
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v failed with 5 errors.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of tb_top.v was successful.
+# 10 compiles, 1 failed with 5 errors.
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of tb_top.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 11:00:13 on Mar 22,2024
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading sv_std.std
-# Loading work.top_sv_unit(fast)
-# Loading work.top(fast)
-# Loading work.testcase(fast)
-# Loading work.intf_cnt(fast)
-run
-#            DUT count is 0xxx :: SB count is 0000 
-#            DUT count is 0xxx :: SB count is 0000 
-#            DUT count is 0000 :: SB count is 0000 
-#            DUT count is 0000 :: SB count is 0000 
-#  * ERROR * DUT count is 1111 :: SB count is 0001 
-#  * ERROR * DUT count is 0111 :: SB count is 0001 
-#  * ERROR * DUT count is 1011 :: SB count is 0010 
-#  * ERROR * DUT count is 1011 :: SB count is 0011 
-#            DUT count is 0011 :: SB count is 0011 
-#            DUT count is 0011 :: SB count is 0011 
-coverage report -html -htmldir covhtmlreport -details -assert -directive -cvg -code bcefst -threshL 50 -threshH 90
-# Report created in covhtmlreport/index.html
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
+#           Attempting to use alternate WLF file "./wlft3sj6r3".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft3sj6r3
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(248)
+#    Time: 53080 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 248
 quit -sim
-# End time: 14:24:10 on Mar 19,2024, Elapsed time: 3:09:46
-# Errors: 0, Warnings: 0
-# Compile of assertion.sv was successful.
-# Compile of driver.sv was successful.
-# Compile of env.sv was successful.
-# Compile of interface.sv was successful.
-# Compile of monitor.sv was successful.
-# Compile of rtl.sv was successful.
-# Compile of scoreboard.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of test_1.sv was successful.
-# Compile of top.sv was successful.
-# Compile of test.sv was successful.
-# 11 compiles, 0 failed with no errors.
-vsim work.class_assignment
-# vsim work.class_assignment 
-# Start time: 14:24:21 on Mar 19,2024
-# ** Note: (vsim-3812) Design is being optimized...
-# Loading sv_std.std
-# Loading work.test_sv_unit(fast)
-# Loading work.class_assignment(fast)
-run
-# 	****  calling pkt_1 display  ****
-# ---------------------------------------------------------
-# 	 addr  = 10
-# 	 data  = ff
-# 	 start_address  = 10
-# 	 end_address  = 50
-# ---------------------------------------------------------
-# 	****  calling pkt_2 display  ****
-# ---------------------------------------------------------
-# 	 addr  = 10
-# 	 data  = ff
-# 	 start_address  = 10
-# 	 end_address  = 50
-# ---------------------------------------------------------
-# 	****  calling pkt_1 display after changing pkt_2 properties ****
-# ---------------------------------------------------------
-# 	 addr  = 10
-# 	 data  = ff
-# 	 start_address  = 10
-# 	 end_address  = 50
-# ---------------------------------------------------------
-# 	****  calling pkt_2 display after changing pkt_2 properties ****
-# ---------------------------------------------------------
-# 	 addr  = 68
-# 	 data  = ff
-# 	 start_address  = 60
-# 	 end_address  = 80
-# ---------------------------------------------------------
-quit -sim
-# End time: 14:34:27 on Mar 19,2024, Elapsed time: 0:10:06
-# Errors: 0, Warnings: 0
-# Compile of assertion.sv was successful.
-# Compile of driver.sv was successful.
-# Compile of env.sv was successful.
-# Compile of interface.sv was successful.
-# Compile of monitor.sv was successful.
-# Compile of rtl.sv was successful.
-# Compile of scoreboard.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of test_1.sv was successful.
-# Compile of top.sv was successful.
-# Compile of test.sv was successful.
-# 11 compiles, 0 failed with no errors.
-vsim work.semaphore_ex
-# vsim work.semaphore_ex 
-# Start time: 14:35:12 on Mar 19,2024
-# ** Note: (vsim-3812) Design is being optimized...
-# Loading sv_std.std
-# Loading work.semaphore_ex(fast)
-run
-#                    0	Current Simulation Time process 1
-#                   30	Current Simulation Time process 1
-quit -sim
-# End time: 14:38:39 on Mar 19,2024, Elapsed time: 0:03:27
-# Errors: 0, Warnings: 0
-# Compile of assertion.sv was successful.
-# Compile of driver.sv was successful.
-# Compile of env.sv was successful.
-# Compile of interface.sv was successful.
-# Compile of monitor.sv was successful.
-# Compile of rtl.sv was successful.
-# Compile of scoreboard.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of test_1.sv was successful.
-# Compile of top.sv was successful.
-# Compile of test.sv was successful.
-# 11 compiles, 0 failed with no errors.
-vsim work.semaphore_ex
-# vsim work.semaphore_ex 
-# Start time: 14:39:08 on Mar 19,2024
+# End time: 11:14:19 on Mar 22,2024, Elapsed time: 0:14:06
+# Errors: 0, Warnings: 2
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of tb_top.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 11:14:26 on Mar 22,2024
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading sv_std.std
-# Loading work.semaphore_ex(fast)
-run
-#                    0	Current Simulation Time process           1
-#                   30	Current Simulation Time process           2
-restart
-# ** Note: (vsim-8009) Loading existing optimized design _opt2
-# Loading work.semaphore_ex(fast)
-# Compile of assertion.sv was successful.
-# Compile of driver.sv was successful.
-# Compile of env.sv was successful.
-# Compile of interface.sv was successful.
-# Compile of monitor.sv was successful.
-# Compile of rtl.sv was successful.
-# Compile of scoreboard.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of test_1.sv was successful.
-# Compile of top.sv was successful.
-# Compile of test.sv was successful.
-# 11 compiles, 0 failed with no errors.
-run
-#                    0	Current Simulation Time process           1
-#                   30	Current Simulation Time process           2
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
+#           Attempting to use alternate WLF file "./wlfthr1ydc".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfthr1ydc
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(248)
+#    Time: 53080 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 248
 quit -sim
-# End time: 14:41:13 on Mar 19,2024, Elapsed time: 0:02:05
-# Errors: 0, Warnings: 0
-# Compile of assertion.sv was successful.
-# Compile of driver.sv was successful.
-# Compile of env.sv was successful.
-# Compile of interface.sv was successful.
-# Compile of monitor.sv was successful.
-# Compile of rtl.sv was successful.
-# Compile of scoreboard.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of test_1.sv was successful.
-# Compile of top.sv was successful.
-# Compile of test.sv was successful.
-# 11 compiles, 0 failed with no errors.
-vsim work.semaphore_ex
-# vsim work.semaphore_ex 
-# Start time: 14:41:19 on Mar 19,2024
+# End time: 11:15:28 on Mar 22,2024, Elapsed time: 0:01:02
+# Errors: 0, Warnings: 2
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of tb_top.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 11:15:34 on Mar 22,2024
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading sv_std.std
-# Loading work.semaphore_ex(fast)
-run
-#                    0	Current Simulation Time Process           1
-#                    0	Current Simulation Time Process           2
-#                   30	Current Simulation Time Process           3
-# End time: 17:29:28 on Mar 19,2024, Elapsed time: 2:48:09
-# Errors: 0, Warnings: 0
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
+#           Attempting to use alternate WLF file "./wlftiea31q".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftiea31q
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(248)
+#    Time: 53080 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 248
+quit -sim
+# End time: 11:17:09 on Mar 22,2024, Elapsed time: 0:01:35
+# Errors: 0, Warnings: 2
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of tb_top.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 11:17:15 on Mar 22,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
+#           Attempting to use alternate WLF file "./wlftzrah62".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftzrah62
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(248)
+#    Time: 53080 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 248
+# Causality operation skipped due to absence of debug database file
+quit -sim
+# End time: 11:27:36 on Mar 22,2024, Elapsed time: 0:10:21
+# Errors: 0, Warnings: 3
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of tb_top.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 11:28:06 on Mar 22,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
+#           Attempting to use alternate WLF file "./wlftgz2jy7".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftgz2jy7
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(248)
+#    Time: 53080 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 248
+quit -sim
+# End time: 11:29:04 on Mar 22,2024, Elapsed time: 0:00:58
+# Errors: 0, Warnings: 2
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of tb_top.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 11:29:09 on Mar 22,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
+#           Attempting to use alternate WLF file "./wlfts11wa6".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfts11wa6
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(248)
+#    Time: 53080 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 248
+quit -sim
+# End time: 11:37:44 on Mar 22,2024, Elapsed time: 0:08:35
+# Errors: 0, Warnings: 2
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of tb_top.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 11:37:57 on Mar 22,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
+#           Attempting to use alternate WLF file "./wlft0q9vcf".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft0q9vcf
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(248)
+#    Time: 53080 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 248
+quit -sim
+# End time: 11:38:43 on Mar 22,2024, Elapsed time: 0:00:46
+# Errors: 0, Warnings: 2
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of tb_top.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 11:38:49 on Mar 22,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
+#           Attempting to use alternate WLF file "./wlftxrvg9f".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftxrvg9f
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(248)
+#    Time: 53080 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 248
+quit -sim
+# End time: 11:44:15 on Mar 22,2024, Elapsed time: 0:05:26
+# Errors: 0, Warnings: 2
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of tb_top.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 11:45:06 on Mar 22,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
+#           Attempting to use alternate WLF file "./wlftkbbigi".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftkbbigi
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(248)
+#    Time: 53080 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 248
+# Break key hit
+quit -sim
+# End time: 11:47:01 on Mar 22,2024, Elapsed time: 0:01:55
+# Errors: 0, Warnings: 2
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of tb_top.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 11:48:38 on Mar 22,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
+#           Attempting to use alternate WLF file "./wlft0d4mxv".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft0d4mxv
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(248)
+#    Time: 53080 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 248
+quit -sim
+# End time: 11:49:26 on Mar 22,2024, Elapsed time: 0:00:48
+# Errors: 0, Warnings: 2
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of tb_top.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 11:49:44 on Mar 22,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
+#           Attempting to use alternate WLF file "./wlft11k502".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft11k502
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(248)
+#    Time: 53080 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 248
+quit -sim
+# End time: 11:50:38 on Mar 22,2024, Elapsed time: 0:00:54
+# Errors: 0, Warnings: 2
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of tb_top.v was successful.
+# 10 compiles, 0 failed with no errors.
+# Load canceled
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of tb_top.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 11:50:50 on Mar 22,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
+#           Attempting to use alternate WLF file "./wlftits7tt".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftits7tt
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(248)
+#    Time: 53080 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 248
+quit -sim
+# End time: 11:52:14 on Mar 22,2024, Elapsed time: 0:01:24
+# Errors: 0, Warnings: 2
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of tb_top.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 11:52:20 on Mar 22,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
+#           Attempting to use alternate WLF file "./wlftktx7cj".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftktx7cj
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(248)
+#    Time: 53080 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 248
+quit -sim
+# End time: 11:54:04 on Mar 22,2024, Elapsed time: 0:01:44
+# Errors: 0, Warnings: 2
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of tb_top.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 11:54:10 on Mar 22,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
+#           Attempting to use alternate WLF file "./wlft526ya5".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft526ya5
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(248)
+#    Time: 53080 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 248
+quit -sim
+# End time: 14:15:22 on Mar 22,2024, Elapsed time: 2:21:12
+# Errors: 0, Warnings: 2
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of tb_top.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 14:15:34 on Mar 22,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
+#           Attempting to use alternate WLF file "./wlft5ixrsn".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft5ixrsn
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(259)
+#    Time: 34110 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 259
+quit -sim
+# End time: 14:16:17 on Mar 22,2024, Elapsed time: 0:00:43
+# Errors: 0, Warnings: 2
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of tb_top.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 14:16:23 on Mar 22,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
+#           Attempting to use alternate WLF file "./wlft3bbej7".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft3bbej7
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(259)
+#    Time: 34110 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 259
+quit -sim
+# End time: 14:18:16 on Mar 22,2024, Elapsed time: 0:01:53
+# Errors: 0, Warnings: 2
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of tb_top.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 14:18:22 on Mar 22,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
+#           Attempting to use alternate WLF file "./wlftmah5jk".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftmah5jk
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(261)
+#    Time: 34140 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 261
+quit -sim
+# End time: 14:19:31 on Mar 22,2024, Elapsed time: 0:01:09
+# Errors: 0, Warnings: 2
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of tb_top.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 14:19:36 on Mar 22,2024
+# ** Note: (vsim-8009) Loading existing optimized design _opt4
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
+#           Attempting to use alternate WLF file "./wlftvdetg2".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftvdetg2
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(261)
+#    Time: 34140 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 261
+quit -sim
+# End time: 14:23:07 on Mar 22,2024, Elapsed time: 0:03:31
+# Errors: 0, Warnings: 2
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of tb_top.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 14:23:15 on Mar 22,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
+#           Attempting to use alternate WLF file "./wlftr51zcy".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftr51zcy
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(261)
+#    Time: 34110 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 261
+quit -sim
+# End time: 14:23:49 on Mar 22,2024, Elapsed time: 0:00:34
+# Errors: 0, Warnings: 2
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of tb_top.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 14:23:56 on Mar 22,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
+#           Attempting to use alternate WLF file "./wlftxbtykz".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftxbtykz
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(261)
+#    Time: 34110 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 261
+quit -sim
+# End time: 14:25:48 on Mar 22,2024, Elapsed time: 0:01:52
+# Errors: 0, Warnings: 2
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of tb_top.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 14:25:55 on Mar 22,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
+#           Attempting to use alternate WLF file "./wlftgewnr4".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftgewnr4
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(261)
+#    Time: 34110 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 261
+quit -sim
+# End time: 14:26:56 on Mar 22,2024, Elapsed time: 0:01:01
+# Errors: 0, Warnings: 2
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of tb_top.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 14:27:02 on Mar 22,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
+#           Attempting to use alternate WLF file "./wlftfh2vaa".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftfh2vaa
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(261)
+#    Time: 34110 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 261
+quit -sim
+# End time: 14:36:54 on Mar 22,2024, Elapsed time: 0:09:52
+# Errors: 0, Warnings: 2
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of tb_top.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 14:36:59 on Mar 22,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
+#           Attempting to use alternate WLF file "./wlfti5sv02".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfti5sv02
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(261)
+#    Time: 34110 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 261
+quit -sim
+# End time: 14:37:52 on Mar 22,2024, Elapsed time: 0:00:53
+# Errors: 0, Warnings: 2
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of tb_top.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 14:37:59 on Mar 22,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
+#           Attempting to use alternate WLF file "./wlftdixvbi".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftdixvbi
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(249)
+#    Time: 34080 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 249
+quit -sim
+# End time: 14:41:15 on Mar 22,2024, Elapsed time: 0:03:16
+# Errors: 0, Warnings: 2
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of tb_top.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 14:41:51 on Mar 22,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
+#           Attempting to use alternate WLF file "./wlft4dyq4x".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft4dyq4x
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(261)
+#    Time: 34110 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 261
+quit -sim
+# End time: 14:42:57 on Mar 22,2024, Elapsed time: 0:01:06
+# Errors: 0, Warnings: 2
+# Compile of read_tb.v was successful.
+# Compile of tb.v was successful.
+# Compile of writer_tb.v was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of tb_top.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.write_tb
+# vsim -voptargs="+acc" work.write_tb 
+# Start time: 14:44:27 on Mar 22,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.write_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+add wave -position insertpoint sim:/write_tb/dut/apb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
+#           Attempting to use alternate WLF file "./wlftgcat3a".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftgcat3a
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
+add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+run -all
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(266)
+#    Time: 34120 ns  Iteration: 0  Instance: /write_tb
+# 1
+# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 266
+quit -sim
+# End time: 15:03:08 on Mar 22,2024, Elapsed time: 0:18:41
+# Errors: 0, Warnings: 2
