@@ -102,6 +102,7 @@ module top_level
         .address_reg                    (address_reg)
     );
 
+    // I2C MASTER
     i2c_controller i2c
     (
         .core_clk                       (core_clk),
