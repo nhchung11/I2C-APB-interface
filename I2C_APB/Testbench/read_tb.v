@@ -100,25 +100,8 @@ module read_tb;
         #10;
         PSELx = 0;
         #3380;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        // READ DATA
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 1;
-
-        // READ DATA 2
-        #320;
+        
+        // READ DATA 1
         sda_in = 0;
         #320;
         sda_in = 0;
@@ -134,12 +117,35 @@ module read_tb;
         sda_in = 0;
         #320;
         sda_in = 1;
+
+        // ACK DATA 1
         #320;
         sda_in = 0;
-
+        #320;
+        sda_in = 1;
+        #160;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 1;
+        #320;
+        sda_in = 0;
+        #320;
+        sda_in = 0;
+        #160;
+        sda_in = 1;
+        #160;
+        sda_in = 0;
         // READ DATA 3
-        #320;
-        sda_in = 0;
         #320;
         sda_in = 0;
         #320;

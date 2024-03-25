@@ -69,7 +69,7 @@ module write_tb;
         PADDR = 8'b01000000;
         PWRITE = 1;
         PSELx = 1;
-        PWDATA = 8'b00100001;
+        PWDATA = 8'b00100000;
         PENABLE = 0;    
         #10;
         PENABLE = 1; 
@@ -266,7 +266,7 @@ module write_tb;
         sda_en_tb = 0;
         sda_in = 1;
 
-        #10000;
+        #15000;
         $finish;
     end
 endmodule 

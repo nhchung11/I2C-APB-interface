@@ -44,10 +44,9 @@ module i2c_controller
     wire        rw;
     reg         tx_check;
     reg         rx_check;
-    reg         ack;
 
     assign scl = (scl_enable == 1) ? i2c_clk : 1;
-    assign sda = (sda_enable == 1) ? sda_o   : 1'bz;
+    assign sda = (sda_enable == 1) ? sda_o   : 'bz;
     assign rw = slave_address[0]; 
 
     pullup(sda);
@@ -196,10 +195,10 @@ module i2c_controller
                 //-----------------------------------------------------
                 ADDRESS_ACK: begin
                     scl_enable          <= 1;  
-                    saved_data          <= {data_in};          
+                    saved_data          <= {data_in}; 
                     if (i2c_clk == 0) begin
-                        sda_o           <= 1;
-                        sda_enable      <= 0;
+                        sda_o           <= 1;      
+                        sda_enable      <= 0;   
                     end
                 end
                 //-----------------------------------------------------
@@ -215,7 +214,8 @@ module i2c_controller
 
                 WRITE_ACK: begin
                     scl_enable          <= 1;
-                    saved_data          <= {data_in};  
+                    saved_data          <= {data_in};
+                    sda_enable          <= 0;  
                     if(sda == 1) begin
                         fifo_tx_enable  <= 1;
                         tx_check        <= 1;
@@ -224,7 +224,6 @@ module i2c_controller
                         fifo_tx_enable  <= 0;
                     end
                     if (i2c_clk == 0) begin
-                        sda_enable      <= 0;
                         sda_o           <= 1;
                     end
                 end
