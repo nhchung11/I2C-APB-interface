@@ -10,14 +10,16 @@ module top_level
         input [7:0]                     PADDR,
         input [data_size - 1:0]         PWDATA,
         
-        input                           scl_in,
-        input                           sda_in,
+        // input                           scl_in,
+        // input                           sda_in,
         input                           core_clk,
 
         output [data_size - 1:0]        PRDATA,
         output                          PREADY,
-        output                          scl_out,
-        output                          sda_out
+        // output                          scl_out,
+        // output                          sda_out
+        inout                           sda,
+        inout                           scl
     );
     // Internal register
     wire [data_size - 1:0]              prescale_reg;
@@ -112,11 +114,8 @@ module top_level
         .slave_address                  (address_reg),
         .data_in                        (TX),
         .repeated_start_cond            (command_reg[3]),
-        .scl_in                         (scl_in),
-        .sda_in                         (sda_in),
-        .sda_out                        (sda_out),
-        .scl_out                        (scl_out),
-
+        .sda                            (sda),
+        .scl                            (scl),
         .fifo_tx_enable                 (fifo_tx_enable),
         .fifo_rx_enable                 (fifo_rx_enable),
         .converter_enable               (converter_enable)
@@ -127,7 +126,7 @@ module top_level
     (
         .i2c_clk                        (i2c_clk_gen),
         .rst_n                          (command_reg[4]),
-        .in                             (sda_in),
+        .in                             (sda),
         .enable                         (converter_enable),
         .out                            (RX)
     );

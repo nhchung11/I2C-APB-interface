@@ -47,8 +47,18 @@ class driver
         begin
             sti = new();
             @(posedge intf.pclk);
-            if (sti.randomize())
-                intf 
+            if (sti.randomize()) begin
+                intf.pwdata     = sti.PWDATA;
+                intf.paddr      = sti.PADDR;
+                intf.preset_n   = sti.PRESETn;
+                intf.penable    = sti.PENABLE;
+                intf.pselx      = sti.PSELx;
+                intf.pwrite     = sti.PWRITE;
+            end
+            if (sti.PADDR == 8'b01000000)
+                sb.reg_address = sti.PWDATA;
+            else if (sti.PADDR == 8'b10000000)
+                sb.data_out[iteration] = sti.PWDATA;
         end
     endtask
 endclass

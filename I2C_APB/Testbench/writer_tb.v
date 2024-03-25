@@ -6,15 +6,16 @@ module write_tb;
     reg             PWRITE;
     reg [7:0]       PADDR;
     reg [7:0]       PWDATA;
-
-    reg             sda_in;
-    reg             scl_in;
     reg             core_clk;
 
     wire [7:0]      PRDATA;
     wire            PREADY;
-    wire            sda_out;
-    wire            scl_out;
+    wire            sda;
+    wire            scl;
+
+    reg             sda_en_tb;
+    reg             sda_in;
+    reg             scl_in;
 
     top_level dut
     (
@@ -25,19 +26,16 @@ module write_tb;
         .PENABLE    (PENABLE),
         .PADDR      (PADDR),
         .PWDATA     (PWDATA),
-        .sda_in     (sda_in),
-        .scl_in     (scl_in),
         .core_clk   (core_clk),
 
         .PREADY     (PREADY),
         .PRDATA     (PRDATA),
-        .sda_out    (sda_out),
-        .scl_out    (scl_out)
+        .sda        (sda),
+        .scl        (scl)
     );
-
+    assign sda = sda_en_tb ? sda_in : 1'bz;
     
     always #20 core_clk= ~core_clk;
-
 	always #5 PCLK= ~PCLK;
 
     initial begin
@@ -47,6 +45,7 @@ module write_tb;
         PWRITE = 0;
         PSELx = 0;
         PENABLE = 0;
+        sda_en_tb = 0;
         sda_in = 1;
         scl_in = 1;
 
@@ -70,7 +69,7 @@ module write_tb;
         PADDR = 8'b01000000;
         PWRITE = 1;
         PSELx = 1;
-        PWDATA = 8'b11110000;
+        PWDATA = 8'b00100001;
         PENABLE = 0;    
         #10;
         PENABLE = 1; 
@@ -213,40 +212,58 @@ module write_tb;
         PWRITE = 0;
 
         #3110;
+        sda_en_tb = 1;
         sda_in = 0;
         #320;
+        sda_en_tb = 0;
         sda_in = 1;
         #2560;
+        sda_en_tb = 1;
         sda_in = 0;
         #320;
+        sda_en_tb = 0;
         sda_in = 1;
         #2560;
+        sda_en_tb = 1;
         sda_in = 0;
         #320;
+        sda_en_tb = 0;
         sda_in = 1;
         #2560;
+        sda_en_tb = 1;
         sda_in = 0;
         #320;
+        sda_en_tb = 0;
         sda_in = 1;
         #2560;
+        sda_en_tb = 1;
         sda_in = 0;
         #320;
+        sda_en_tb = 0;
         sda_in = 1;
         #2560;
+        sda_en_tb = 1;
         sda_in = 0;
         #320;
+        sda_en_tb = 0;
         sda_in = 1;
         #2560;
+        sda_en_tb = 1;
         sda_in = 0;
         #320;
+        sda_en_tb = 0;
         sda_in = 1;
         #2560;
+        sda_en_tb = 1;
         sda_in = 0;
         #320;
+        sda_en_tb = 0;
         sda_in = 1;
         #2560;
+        sda_en_tb = 1;
         sda_in = 0;
         #320;
+        sda_en_tb = 0;
         sda_in = 1;
 
         #10000;
