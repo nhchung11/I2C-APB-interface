@@ -6,20 +6,21 @@
 `include "env.sv"
 `include "assertion.sv"
 
-`include "test_1.sv"
+`include "test1.sv"
 module top();
     reg PCLK = 0;
     reg core_clk = 0;
 
     // Generate clk  
-    initial  
-    forever #5 PCLK = ~PCLK;
-    forever #20 core_clk = ~core_clk;
+    initial begin
+        forever #5 PCLK = ~PCLK;
+        forever #20 core_clk = ~core_clk;
+    end
 
     // DUT/assertion monitor/testcase instances
-    intf_cnt intf(PCLK, core_clk);
+    intf_i2c intf(PCLK, core_clk);
     
-    top_level DUT(clk,intf.reset,intf.data,intf.count);
+    top_level DUT
     (
         .PCLK       (PCLK),
         .PRESETn    (intf.preset_n),
@@ -35,6 +36,8 @@ module top();
         .sda        (intf.sda),
         .scl        (intf.scl)
     );
+    i2c_slave_model SLAVE(scl, sda);
+
     testcase test(intf);
     assertion_cov acov(intf);
 endmodule

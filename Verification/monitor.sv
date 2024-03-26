@@ -1,5 +1,6 @@
 `ifndef MONITOR
 `define MONITOR
+`include "scoreboard.sv"
 
 class monitor;
     scoreboard sb;
@@ -21,19 +22,19 @@ class monitor;
     endtask
 
     // Check write data
-    task DATA_WRITE_CHECK();
-        forever begin
-            @(posedge intf.pclk)
-            // ... 
-        end
-    endtask
+    // task DATA_WRITE_CHECK();
+    //     forever begin
+    //         @(posedge intf.pclk)
+    //         // ... 
+    //     end
+    // endtask
 
     // Check read data
     task DATA_READ_CHECK();
         forever begin
             @(posedge intf.pclk)
                 if (sb.data_read != intf.prdata)
-                    $display("*  ERROR  * WRONG DATA OUT: EXPECT %b, RECEIVED %b", sb.data_out, intf.prdata);          
+                    $display("*  ERROR  * WRONG DATA READ: EXPECT %b, RECEIVED %b", sb.data_read, intf.prdata);          
         end
     endtask
 
@@ -49,10 +50,10 @@ class monitor;
     // Check stop condition
     task STOP_CHECK();
         forever begin
-            @(posedge int.core_clk)
+            @(posedge intf.core_clk)
                 if ((sb.start == 1) && (intf.scl == 1) && (intf.sda == 0))
                     $display("*  ERROR  * STOP CONDITION NOT DETECTED");
         end
     endtask
 endclass
-`endif MONITOR
+`endif 

@@ -57,3 +57,1093 @@ run -all
 # 1
 # Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 270
 # Causality operation skipped due to absence of debug database file
+quit -sim
+# End time: 15:05:15 on Mar 26,2024, Elapsed time: 5:09:57
+# Errors: 0, Warnings: 3
+# reading F:/questasim64_10.7c/win64/../modelsim.ini
+# Loading project Verification
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 1 errors.
+# Compile of env.sv failed with 2 errors.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv failed with 2 errors.
+# Compile of scoreboard.sv failed with 1 errors.
+# Compile of stimulus.sv failed with 1 errors.
+# Compile of test1.sv failed with 2 errors.
+# Compile of top.sv failed with 1 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 7 failed with 10 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 54 errors.
+# Compile of env.sv failed with 1 errors.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv failed with 1 errors.
+# Compile of scoreboard.sv failed with 1 errors.
+# Compile of stimulus.sv failed with 2 errors.
+# Compile of test1.sv failed with 1 errors.
+# Compile of top.sv failed with 12 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 7 failed with 72 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 54 errors.
+# Compile of env.sv failed with 1 errors.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv failed with 1 errors.
+# Compile of scoreboard.sv failed with 1 errors.
+# Compile of stimulus.sv failed with 2 errors.
+# Compile of test1.sv failed with 1 errors.
+# Compile of top.sv failed with 12 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 7 failed with 72 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 53 errors.
+# Compile of env.sv failed with 1 errors.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv failed with 1 errors.
+# Compile of scoreboard.sv failed with 1 errors.
+# Compile of stimulus.sv failed with 1 errors.
+# Compile of test1.sv failed with 1 errors.
+# Compile of top.sv failed with 11 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 7 failed with 69 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 54 errors.
+# Compile of env.sv failed with 1 errors.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv failed with 1 errors.
+# Compile of scoreboard.sv failed with 1 errors.
+# Compile of stimulus.sv failed with 2 errors.
+# Compile of test1.sv failed with 1 errors.
+# Compile of top.sv failed with 12 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 7 failed with 72 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 54 errors.
+# Compile of env.sv failed with 20 errors.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv failed with 4 errors.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv failed with 2 errors.
+# Compile of test1.sv failed with 20 errors.
+# Compile of top.sv failed with 12 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 6 failed with 112 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 54 errors.
+# Compile of env.sv failed with 3 errors.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv failed with 3 errors.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv failed with 2 errors.
+# Compile of test1.sv failed with 3 errors.
+# Compile of top.sv failed with 12 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 6 failed with 77 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 54 errors.
+# Compile of env.sv failed with 2 errors.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv failed with 3 errors.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv failed with 2 errors.
+# Compile of test1.sv failed with 2 errors.
+# Compile of top.sv failed with 12 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 6 failed with 75 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 54 errors.
+# Compile of env.sv failed with 58 errors.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv failed with 1 errors.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv failed with 2 errors.
+# Compile of test1.sv failed with 60 errors.
+# Compile of top.sv failed with 12 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 6 failed with 187 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 54 errors.
+# Compile of env.sv failed with 58 errors.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv failed with 2 errors.
+# Compile of test1.sv failed with 60 errors.
+# Compile of top.sv failed with 12 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 5 failed with 186 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 54 errors.
+# Compile of env.sv failed with 58 errors.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv failed with 2 errors.
+# Compile of test1.sv failed with 60 errors.
+# Compile of top.sv failed with 12 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 5 failed with 186 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 50 errors.
+# Compile of env.sv failed with 54 errors.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv failed with 2 errors.
+# Compile of test1.sv failed with 56 errors.
+# Compile of top.sv failed with 4 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 5 failed with 166 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 1 errors.
+# Compile of env.sv failed with 1 errors.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv failed with 2 errors.
+# Compile of test1.sv failed with 1 errors.
+# Compile of top.sv failed with 1 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 5 failed with 6 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 1 errors.
+# Compile of env.sv failed with 1 errors.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv failed with 3 errors.
+# Compile of test1.sv failed with 1 errors.
+# Compile of top.sv failed with 1 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 5 failed with 7 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 1 errors.
+# Compile of env.sv failed with 1 errors.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv failed with 3 errors.
+# Compile of test1.sv failed with 1 errors.
+# Compile of top.sv failed with 1 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 5 failed with 7 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 1 errors.
+# Compile of env.sv failed with 1 errors.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv failed with 3 errors.
+# Compile of test1.sv failed with 1 errors.
+# Compile of top.sv failed with 1 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 5 failed with 7 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 1 errors.
+# Compile of env.sv failed with 1 errors.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv failed with 1 errors.
+# Compile of top.sv failed with 1 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 4 failed with 4 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 1 errors.
+# Compile of env.sv failed with 1 errors.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv failed with 1 errors.
+# Compile of top.sv failed with 1 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 4 failed with 4 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 1 errors.
+# Compile of env.sv failed with 1 errors.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv failed with 1 errors.
+# Compile of top.sv failed with 1 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 4 failed with 4 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 1 errors.
+# Compile of env.sv failed with 1 errors.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv failed with 1 errors.
+# Compile of top.sv failed with 4 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 4 failed with 7 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 1 errors.
+# Compile of env.sv failed with 1 errors.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv failed with 1 errors.
+# Compile of top.sv failed with 4 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 4 failed with 7 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 5 errors.
+# Compile of env.sv failed with 5 errors.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv failed with 15 errors.
+# Compile of top.sv failed with 3 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 4 failed with 28 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 3 errors.
+# Compile of env.sv failed with 3 errors.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv failed with 9 errors.
+# Compile of top.sv failed with 3 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 4 failed with 18 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 3 errors.
+# Compile of env.sv failed with 3 errors.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv failed with 9 errors.
+# Compile of top.sv failed with 3 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 4 failed with 18 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 2 errors.
+# Compile of env.sv failed with 2 errors.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv failed with 7 errors.
+# Compile of top.sv failed with 3 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 4 failed with 14 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful with warnings.
+# Compile of env.sv was successful with warnings.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv failed with 3 errors.
+# Compile of top.sv failed with 3 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 2 failed with 6 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful with warnings.
+# Compile of env.sv was successful with warnings.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv failed with 1 errors.
+# Compile of top.sv failed with 3 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 2 failed with 4 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful with warnings.
+# Compile of env.sv was successful with warnings.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv was successful with warnings.
+# Compile of top.sv failed with 3 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 1 failed with 3 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful with warnings.
+# Compile of env.sv was successful with warnings.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv was successful with warnings.
+# Compile of top.sv failed with 2 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 1 failed with 2 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful with warnings.
+# Compile of env.sv was successful with warnings.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv was successful with warnings.
+# Compile of top.sv failed with 1 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 1 failed with 1 error.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful with warnings.
+# Compile of env.sv was successful with warnings.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv was successful with warnings.
+# Compile of top.sv was successful with warnings.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 0 failed with no errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 1 errors.
+# Compile of env.sv failed with 1 errors.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv failed with 1 errors.
+# Compile of test1.sv failed with 1 errors.
+# Compile of top.sv failed with 1 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 5 failed with 5 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 1 errors.
+# Compile of env.sv failed with 1 errors.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv failed with 1 errors.
+# Compile of test1.sv failed with 2 errors.
+# Compile of top.sv failed with 2 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 5 failed with 7 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful with warnings.
+# Compile of env.sv was successful with warnings.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv was successful with warnings.
+# Compile of top.sv was successful with warnings.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 0 failed with no errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 1 errors.
+# Compile of env.sv failed with 1 errors.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv failed with 1 errors.
+# Compile of test1.sv failed with 1 errors.
+# Compile of top.sv failed with 1 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 5 failed with 5 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful with warnings.
+# Compile of env.sv was successful with warnings.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv was successful with warnings.
+# Compile of top.sv was successful with warnings.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 0 failed with no errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 1 errors.
+# Compile of env.sv failed with 1 errors.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv failed with 1 errors.
+# Compile of test1.sv failed with 1 errors.
+# Compile of top.sv failed with 1 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 5 failed with 5 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv was successful.
+# Compile of top.sv was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 0 failed with no errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv was successful.
+# Compile of top.sv was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# 17 compiles, 0 failed with no errors.
+# Load canceled
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# Compile of top_dut.sv was successful.
+# 17 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top
+# vsim -voptargs="+acc" work.top 
+# Start time: 16:56:22 on Mar 26,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error: C:/Users/PC/Documents/Chung_training/code/Verification/top_dut.sv(40): Module 'assertion_cov' is not defined.
+# Optimization failed
+# Error loading design
+# End time: 16:56:24 on Mar 26,2024, Elapsed time: 0:00:02
+# Errors: 1, Warnings: 0
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# Compile of top_dut.sv was successful.
+# 17 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top
+# vsim -voptargs="+acc" work.top 
+# Start time: 16:58:01 on Mar 26,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.top_dut_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.intf_i2c(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+# Loading work.testcase(fast)
+# Loading work.assertion_cov(fast)
+# Loading work.intf_i2c(fast)
+# ** Error (suppressible): (vsim-8885) Illegal inout port connection for port 'sda' to reg type.
+#    Time: 0 ns  Iteration: 0  Instance: /top/DUT File: C:/Users/PC/Documents/Chung_training/code/Verification/top_dut.sv Line: 23
+# ** Error (suppressible): (vsim-8885) Illegal inout port connection for port 'scl' to reg type.
+#    Time: 0 ns  Iteration: 0  Instance: /top/DUT File: C:/Users/PC/Documents/Chung_training/code/Verification/top_dut.sv Line: 23
+# Error loading design
+# End time: 16:58:02 on Mar 26,2024, Elapsed time: 0:00:01
+# Errors: 2, Warnings: 0
+# Load canceled
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# Compile of top_dut.sv was successful.
+# 17 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top
+# vsim -voptargs="+acc" work.top 
+# Start time: 16:59:32 on Mar 26,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.top_dut_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.intf_i2c(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+# Loading work.testcase(fast)
+# Loading work.assertion_cov(fast)
+# Loading work.intf_i2c(fast)
+run -all
+# ** Note: implicit $finish from program
+#    Time: 25 ns  Iteration: 1  Instance: /top/test
+# 1
+# Simulation stop requested.
+add wave -position insertpoint sim:/top/intf/*
+run -all
+# Break key hit
+# Break in Module top at C:/Users/PC/Documents/Chung_training/code/Verification/top_dut.sv line 16
+# Break key hit
+quit -sim
+# **** Error: QuitSimQ cmd: Transcript::HideSimPanes sim
+# ****        can't read "vsimPriv(:grid)": no such element in array
+# can't read "vsimPriv(:grid)": no such element in array
+#     while executing
+# "set grid $vsimPriv($w:grid)"
+#     (procedure "Wave::BindDND" line 3)
+#     invoked from within
+# "Wave::BindDND [$windowobj GetRegisteredChild]"
+#     (procedure "Wave::WaveDock" line 4)
+#     invoked from within
+# "Wave::WaveDock .main_pane.wave"
+#     ("eval" body line 1)
+#     invoked from within
+# "eval $itk_option(-dockcommand) $frame_name"
+#     (object "::.main_pane.wave" method "::mtiwidgets::WindowObj::_Dock" body line 8)
+#     invoked from within
+# "$windowobj _Dock"
+#     (object "::.windowmgr" method "::mtiwidgets::WindowMgr::Dock" body line 19)
+#     invoked from within
+# "Dock $windowobj"
+#     (object "::.windowmgr" method "::mtiwidgets::WindowMgr::LayoutChangePending" body line 27)
+#     invoked from within
+# "$vsimPriv(windowmgr) LayoutChangePending $reason $layout_data"
+#     (procedure "LoadLayout" line 145)
+#     invoked from within
+# "LoadLayout $new_layout_name quitsim"
+#     (procedure "Load_NoDesignLayout" line 3)
+#     invoked from within
+# "Load_NoDesignLayout"
+#     (procedure "Layout::Load_TemporaryLayout" line 3)
+#     invoked from within
+# "Layout::Load_TemporaryLayout"
+#     (procedure "Transcript::HideSimPanes" line 19)
+#     invoked from within
+# "Transcript::HideSimPanes sim"
+#     ("eval" body line 1)
+#     invoked from within
+# "eval $p $tankNamespace "
+# End time: 17:00:39 on Mar 26,2024, Elapsed time: 0:01:07
+# Errors: 1, Warnings: 0
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# Compile of top_dut.sv was successful.
+# 17 compiles, 0 failed with no errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 1 errors.
+# Compile of env.sv failed with 1 errors.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv failed with 1 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# Compile of top_dut.sv failed with 1 errors.
+# 17 compiles, 4 failed with 4 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 10 errors.
+# Compile of env.sv failed with 10 errors.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv failed with 20 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# Compile of top_dut.sv failed with 20 errors.
+# 17 compiles, 4 failed with 60 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 6 errors.
+# Compile of env.sv failed with 6 errors.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv failed with 12 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# Compile of top_dut.sv failed with 12 errors.
+# 17 compiles, 4 failed with 36 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# Compile of top_dut.sv was successful.
+# 17 compiles, 0 failed with no errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# Compile of top_dut.sv was successful.
+# 17 compiles, 0 failed with no errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# Compile of top_dut.sv was successful.
+# 17 compiles, 0 failed with no errors.
+# Compile of assertion.sv failed with 1 errors.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# Compile of top_dut.sv failed with 3 errors.
+# 17 compiles, 2 failed with 4 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# Compile of top_dut.sv was successful.
+# 17 compiles, 0 failed with no errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# Compile of top_dut.sv was successful.
+# 17 compiles, 0 failed with no errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful with warnings.
+# Compile of env.sv was successful with warnings.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv was successful with warnings.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# Compile of top_dut.sv was successful with warnings.
+# 17 compiles, 0 failed with no errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# Compile of top_dut.sv was successful.
+# 17 compiles, 0 failed with no errors.

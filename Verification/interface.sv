@@ -9,7 +9,7 @@ interface intf_i2c(input pclk, core_clk);
     logic           pselx;
     logic           pwrite;
     logic           pready;
-    logic           sda;
-    logic           scl;    
+    wire            sda;
+    wire            scl;    
 endinterface 
 `endif 
