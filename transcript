@@ -1147,3 +1147,39 @@ quit -sim
 # Compile of top.v was successful.
 # Compile of top_dut.sv was successful.
 # 17 compiles, 0 failed with no errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of i2c_slave_model.v failed with 3 errors.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# Compile of top_dut.sv was successful.
+# 17 compiles, 1 failed with 3 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of i2c_slave_model.v failed with 2 errors.
+# Compile of interface.sv was successful.
+# Compile of monitor.sv was successful.
+# Compile of scoreboard.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of test1.sv was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# Compile of top.v was successful.
+# Compile of top_dut.sv was successful.
+# 17 compiles, 1 failed with 2 errors.

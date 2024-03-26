@@ -1,4 +1,9 @@
-module i2c_slave_model (scl, sda);
+module i2c_slave_model 
+	(
+		wire 				scl,
+		wire 				sda,
+		// output reg [7:0]	saved_data [7:0]
+	);
 	parameter I2C_ADR = 7'b001_0000;
 
 	input scl;
@@ -9,6 +14,10 @@ module i2c_slave_model (scl, sda);
 	reg [7:0] mem [7:0]; // initiate memory
 	reg [7:0] mem_adr;   // memory address
 	reg [7:0] mem_do;    // memory data output
+
+	always @* begin
+		saved_data = mem;
+	end
 
 	reg sta, d_sta;
 	reg sto, d_sto;
