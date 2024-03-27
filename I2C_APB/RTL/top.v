@@ -139,4 +139,10 @@ module top_level
         .rst_n                          (command_reg[4]),
         .i2c_clk                        (i2c_clk_gen)
     );
+
+    i2c_slave_model slave
+    (
+        .scl(scl),
+        .sda(sda)
+    );
 endmodule

@@ -36,7 +36,11 @@ module top();
         .sda        (intf.sda),
         .scl        (intf.scl)
     );
-    i2c_slave_model SLAVE(scl, sda);
+    i2c_slave_model SLAVE
+    (
+        .scl(scl),
+        .sda(sda)
+    );
 
     testcase test(intf);
     assertion_cov acov(intf);

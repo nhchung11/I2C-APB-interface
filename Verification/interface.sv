@@ -11,5 +11,6 @@ interface intf_i2c(input pclk, core_clk);
     logic           pready;
     wire            sda;
     wire            scl;    
+    logic           rw;
 endinterface 
 `endif 

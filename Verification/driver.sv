@@ -28,6 +28,14 @@ class driver;
         cov         = new();
     endfunction
 
+    task assign_intf(stimulus sti);
+        intf.penable = sti.PENABLE;
+        intf.paddr = sti.PADDR;
+        intf.pselx = sti.PSELx;
+        intf.pwdata = sti.PWDATA;
+        intf.pwrite = sti.PWRITE;
+    endtask
+
     // Reset task
     task RESET();
         intf.pwdata = 0;
@@ -48,82 +56,95 @@ class driver;
     // Write to address register 
     task WRITE_TO_ADDRESS_REG();
         sti = new();
-        intf.pready     = 0;
-        intf.paddr      = 8'b01000000;
-        intf.pwdata     = 8'b10101010;
-        intf.pselx      = 1;
-        intf.penable    = 0;
-        intf.pwrite     = 1;
+        sti.PADDR.rand_mode(0);
+
         @(posedge intf.pclk);
-        intf.penable    = 1;
-        sb.reg_address  = intf.paddr;
+        sti.clock_1();
+        sti.PADDR = 8'b01000000;
+        sti.randomize();
+        sti.PWRITE = 1;
+        assign_intf(sti);
+
+        @(posedge intf.pclk);
+        sti.clock_2();
+        intf.penable = sti.PENABLE;
+        intf.rw = intf.pwdata[0];
         sb.apb_ready    = 1;
+        sb.reg_address  = intf.paddr;
     endtask
 
     // Write to prescale register
     task WRITE_TO_PRESCALE_REG();
+        sti = new();
+        sti.rand_mode(0);
+
         @(posedge intf.pclk);
-        intf.pready     = 0;
-        intf.paddr      = 8'b00100000;
-        intf.pwdata     = 8'd4;
-        intf.penable    = 0;
-        intf.pwrite     = 1;
+        sti.clock_1();
+        sti.PADDR       = 8'b00100000;
+        sti.PWDATA      = 8'd4;
+        sti.PWRITE      = 1;
+        assign_intf(sti);
+
         @(posedge intf.pclk);
-        intf.penable    = 1;
+        sti.clock_2();
+        intf.penable    = sti.PENABLE;
         sb.apb_ready    = 1;
         sb.reg_address  = intf.paddr;
     endtask
 
     // Write to command register
     task WRITE_TO_COMMAND_REG();
-        @(posedge intf.pclk);
         sti             = new();
-        intf.pready     = 0;
-        intf.paddr      = 8'b11000000;
-        intf.pwrite     = 1;
-        if (sti.randomize()) begin
-            intf.pwdata     = sti.PWDATA;
-            intf.penable    = 0;
-            @(posedge intf.pclk);
-            intf.penable    = 1;
-            sb.apb_ready    = 1;
-            sb.reg_address  = intf.paddr;
-        end
+        sti.rand_mode(0);
+        @(posedge intf.pclk);
+        sti.clock_1();
+        sti.PADDR       = 8'b11000000;
+        sti.PWDATA      = 8'b10010000;
+        sti.PWRITE      = 1;
+        assign_intf(sti);
+
+        @(posedge intf.pclk);
+        sti.clock_2();
+        intf.penable    = sti.PENABLE;
+        sb.apb_ready    = 1;
+        sb.reg_address  = intf.paddr;
     endtask
 
     // Write to transmit register
     task WRITE_TO_TRANSMIT_REG(input integer iteration, mem_depth);
         int i = 0;
+        sti = new();
+        sti.PADDR.rand_mode(0);
+        sti.PADDR = 8'b10000000;
+        sti.PWRITE = 1;
         repeat(iteration)
-        begin
-            sti = new();
-            intf.paddr      = 8'b10000000;
-            intf.pready     = 0;
-            intf.pwrite     = 1;
-            if(sti.randomize()) begin
-                intf.pwdata     = sti.PWDATA;    
-                intf.penable    = 0;
-                @(posedge intf.pclk);
-                intf.penable    = 1;
-                sb.apb_ready    = 1;
+        begin      
+            sti.clock_1();
+            assign_intf(sti);
+            sti.randomize();
 
-                // Save data out to scoreboard
-                sb.data_write[i]= intf.pwdata;
-                i               = i + 1;
-                if (i == mem_depth - 1)
-                    i = 0;
-            end
+            @(posedge intf.pclk);
+            sti.clock_2();
+            intf.penable    = sti.PENABLE;
+            sb.apb_ready    = 1;
+
+            // Save data out to scoreboard
+            sb.data_write[i]= intf.pwdata;
+            i               = i + 1;
+            if (i == mem_depth - 1)
+                i = 0;
+            
         end
     endtask
 
     // Write task
     task WRITE(input integer iteration, mem_depth);
-        if (intf.paddr == 8'b00100000)
-            WRITE_TO_PRESCALE_REG();
-        else if (intf.paddr == 8'b01000000)
-            WRITE_TO_ADDRESS_REG();
-        else if (intf.paddr == 8'b10000000)
-            WRITE_TO_TRANSMIT_REG(iteration, mem_depth);
+        @(posedge intf.pclk);
+        WRITE_TO_PRESCALE_REG();
+        @(posedge intf.pclk);
+        WRITE_TO_ADDRESS_REG();
+        @(posedge intf.pclk);
+        WRITE_TO_TRANSMIT_REG(iteration, mem_depth);
         if (sti.PWDATA)
             cov.sample();
     endtask

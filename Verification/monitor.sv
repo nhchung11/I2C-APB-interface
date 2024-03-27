@@ -16,25 +16,20 @@ class monitor;
         forever begin
             @(posedge intf.pclk)
                 if (sb.rw != intf.pwrite)
-                    $display("*  ERROR  * WRONG SLAVE ADDRESS: EXPECT %b, RECEIVED %b", sb.rw, intf.pwrite);
+                    $display("*  ERROR    * WRONG SLAVE ADDRESS: EXPECT %b, RECEIVED %b", sb.rw, intf.pwrite);
+                else
+                    $display("*  CORRECR  *EXPECT ADDRESS %b, RECEIVE %b", sb.rw, intf.pwrite);
                 
         end
     endtask
 
-    // Check write data
-    // task DATA_WRITE_CHECK();
-    //     forever begin
-    //         @(posedge intf.pclk)
-    //         // ... 
-    //     end
-    // endtask
 
     // Check read data
     task DATA_READ_CHECK();
         forever begin
             @(posedge intf.pclk)
                 if (sb.data_read != intf.prdata)
-                    $display("*  ERROR  * WRONG DATA READ: EXPECT %b, RECEIVED %b", sb.data_read, intf.prdata);          
+                    $display("*  ERROR    * WRONG DATA READ: EXPECT %b, RECEIVED %b", sb.data_read, intf.prdata);          
         end
     endtask
 
@@ -43,7 +38,7 @@ class monitor;
         forever begin
             @(posedge intf.core_clk)
                 if ((sb.start == 1) && (intf.scl == 1) && (intf.sda == 1))
-                    $display("*  ERROR  * START CONDITION NOT DETECTED");
+                    $display("*  ERROR    * START CONDITION NOT DETECTED");
         end
     endtask
 
@@ -52,7 +47,7 @@ class monitor;
         forever begin
             @(posedge intf.core_clk)
                 if ((sb.start == 1) && (intf.scl == 1) && (intf.sda == 0))
-                    $display("*  ERROR  * STOP CONDITION NOT DETECTED");
+                    $display("*  ERROR    * STOP CONDITION NOT DETECTED");
         end
     endtask
 endclass

@@ -80,7 +80,7 @@ module apb
                 // Write to transmit register
                 3'b100: begin
                     if ((PWRITE == 1) && (PSELx == 1) && (PENABLE == 1)) begin
-                        transmit_reg <= PWDATA;
+                        transmit_reg    <= PWDATA;
                         command_reg     <= 11010000;
                     end
                     if (PSELx == 0)
