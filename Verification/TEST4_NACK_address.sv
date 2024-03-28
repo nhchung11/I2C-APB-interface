@@ -10,7 +10,7 @@ program testcase(intf_i2c intf);
             env.mntr.STOP_CHECK();
         begin
             env.drvr.RESET();
-            env.drvr.WRITE(1, 8);
+            env.drvr.WRITE(1, 8, 7'b001_1010, 1);
         end
         join_any
     end

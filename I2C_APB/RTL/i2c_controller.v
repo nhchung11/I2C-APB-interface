@@ -199,7 +199,7 @@ module i2c_controller
                     saved_data          <= {data_in}; 
                     if (i2c_clk == 0) begin
                         // sda_o           <= 1;      
-                        // sda_enable      <= 0;   
+                        sda_enable      <= 0;   
                     end
                 end
                 //-----------------------------------------------------
@@ -225,7 +225,7 @@ module i2c_controller
                         fifo_tx_enable  <= 0;
                     end
                     if (i2c_clk == 0) begin
-                        // sda_o           <= 1;
+                        sda_o           <= 1;
                     end
                 end
                 //-----------------------------------------------------

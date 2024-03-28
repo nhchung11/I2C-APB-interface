@@ -12,20 +12,6 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# Loading project APB
-# Compile of apb_slave.v was successful.
-# Compile of apb_test_top.v was successful.
-# Compile of apb_testbench.v was successful.
-# Compile of fifo.sv was successful.
-# Compile of i2c.v was successful.
-# Compile of i2c_testbench.v was successful.
-# Compile of test_fifo.sv was successful.
-# Compile of top.v was successful.
-# Compile of i2c_slave_model.v was successful.
-# 9 compiles, 0 failed with no errors.
-# Load canceled
-project open D:/Questamsim_project/apb_fifo_i2c/apb_fifo_i2c
-# reading F:/questasim64_10.7c/win64/../modelsim.ini
 # Loading project apb_fifo_i2c
 # Compile of read_tb.v was successful.
 # Compile of tb.v was successful.
@@ -39,88 +25,10 @@ project open D:/Questamsim_project/apb_fifo_i2c/apb_fifo_i2c
 # Compile of tb_top.v was successful.
 # Compile of i2c_slave_model.v was successful.
 # 11 compiles, 0 failed with no errors.
-vsim work.write_tb
-# vsim work.write_tb 
-# Start time: 17:59:12 on Mar 27,2024
-# ** Note: (vsim-3812) Design is being optimized...
-# Loading work.write_tb(fast)
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(270)
-#    Time: 41960 ns  Iteration: 0  Instance: /write_tb
-# 1
-# Break at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 270
-quit -sim
-# End time: 17:59:35 on Mar 27,2024, Elapsed time: 0:00:23
-# Errors: 0, Warnings: 0
 vsim work.write_tb -voptargs=+acc
 # vsim work.write_tb -voptargs="+acc" 
-# Start time: 17:59:44 on Mar 27,2024
+# Start time: 09:52:11 on Mar 28,2024
 # ** Note: (vsim-3812) Design is being optimized...
-# ** Warning: (vopt-31) Unable to unlink file "D:/Questamsim_project/apb_fifo_i2c/work/@_opt5/_lib3_0.qpg".
-# ** Warning: (vopt-31) Unable to unlink file "D:/Questamsim_project/apb_fifo_i2c/work/@_opt5/_lib3_0.qtl".
-# The process cannot access the file because it is being used by another process. (GetLastError() = 32)
-# ** Warning: (vopt-133) Unable to remove directory "D:/Questamsim_project/apb_fifo_i2c/work/@_opt5".
-# Loading work.write_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_top(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-# Loading work.ClockGenerator(fast)
-add wave -position insertpoint sim:/write_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
-#           Attempting to use alternate WLF file "./wlftwt5r2f".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftwt5r2f
-add wave -position insertpoint sim:/write_tb/dut/i2c/*
-add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
-add wave -position insertpoint  \
-sim:/write_tb/sda_en_tb \
-sim:/write_tb/sda_in
-run -all
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(270)
-#    Time: 41960 ns  Iteration: 0  Instance: /write_tb
-# 1
-# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 270
-# Causality operation skipped due to absence of debug database file
-quit -sim
-# End time: 18:09:29 on Mar 27,2024, Elapsed time: 0:09:45
-# Errors: 0, Warnings: 6
-# Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
-# Compile of writer_tb.v was successful.
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# Compile of clock_generator.v was successful.
-# Compile of tb_top.v was successful.
-# Compile of i2c_slave_model.v was successful.
-# 11 compiles, 0 failed with no errors.
-# Load canceled
-# Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
-# Compile of writer_tb.v was successful.
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# Compile of clock_generator.v was successful.
-# Compile of tb_top.v was successful.
-# Compile of i2c_slave_model.v was successful.
-# 11 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.write_tb
-# vsim -voptargs="+acc" work.write_tb 
-# Start time: 18:10:03 on Mar 27,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Note: (vopt-143) Recognized 1 FSM in module "i2c_slave_model(fast)".
 # Loading work.write_tb(fast)
 # Loading work.top_level(fast)
@@ -138,9 +46,9 @@ vsim -voptargs=+acc work.write_tb
 add wave -position insertpoint sim:/write_tb/dut/apb/*
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
-#           Attempting to use alternate WLF file "./wlftrxj9mr".
+#           Attempting to use alternate WLF file "./wlftzahk4q".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftrxj9mr
+#           Using alternate file: ./wlftzahk4q
 add wave -position insertpoint sim:/write_tb/dut/i2c/*
 add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
 add wave -position insertpoint sim:/write_tb/dut/slave/*
@@ -175,7 +83,7 @@ run -all
 # 1
 # Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 270
 quit -sim
-# End time: 18:11:21 on Mar 27,2024, Elapsed time: 0:01:18
+# End time: 10:12:15 on Mar 28,2024, Elapsed time: 0:20:04
 # Errors: 0, Warnings: 2
 # Compile of read_tb.v was successful.
 # Compile of tb.v was successful.
@@ -191,8 +99,8 @@ quit -sim
 # 11 compiles, 0 failed with no errors.
 vsim -voptargs=+acc work.write_tb
 # vsim -voptargs="+acc" work.write_tb 
-# Start time: 18:11:44 on Mar 27,2024
-# ** Note: (vsim-8009) Loading existing optimized design _opt5
+# Start time: 10:12:21 on Mar 28,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # Loading work.write_tb(fast)
 # Loading work.top_level(fast)
 # Loading work.FIFO_top(fast)
@@ -206,14 +114,12 @@ vsim -voptargs=+acc work.write_tb
 # Loading work.BitToByteConverter(fast)
 # Loading work.ClockGenerator(fast)
 # Loading work.i2c_slave_model(fast)
-add wave -position insertpoint sim:/write_tb/dut/apb/*
+add wave -position insertpoint sim:/write_tb/dut/i2c/*
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
-#           Attempting to use alternate WLF file "./wlft3ehwnz".
+#           Attempting to use alternate WLF file "./wlft14ndzc".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft3ehwnz
-add wave -position insertpoint sim:/write_tb/dut/i2c/*
-add wave -position insertpoint sim:/write_tb/dut/fifo_tx/*
+#           Using alternate file: ./wlft14ndzc
 add wave -position insertpoint sim:/write_tb/dut/slave/*
 run -all
 # DEBUG i2c_slave; stop condition detected at                    0
@@ -246,7 +152,7 @@ run -all
 # 1
 # Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 270
 quit -sim
-# End time: 18:15:14 on Mar 27,2024, Elapsed time: 0:03:30
+# End time: 10:27:35 on Mar 28,2024, Elapsed time: 0:15:14
 # Errors: 0, Warnings: 2
 # Compile of read_tb.v was successful.
 # Compile of tb.v was successful.
@@ -260,60 +166,6 @@ quit -sim
 # Compile of tb_top.v was successful.
 # Compile of i2c_slave_model.v was successful.
 # 11 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.write_tb
-# vsim -voptargs="+acc" work.write_tb 
-# Start time: 18:15:20 on Mar 27,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.write_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_top(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-# Loading work.ClockGenerator(fast)
-# Loading work.i2c_slave_model(fast)
-add wave -position insertpoint sim:/write_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
-#           Attempting to use alternate WLF file "./wlft23ji5r".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft23ji5r
-add wave -position insertpoint sim:/write_tb/dut/i2c/*
-run -all
-# DEBUG i2c_slave; stop condition detected at                    0
-# DEBUG i2c_slave; start condition detected at                  560
-# DEBUG i2c_slave; command byte received (write) at                 3562
-# DEBUG i2c_slave; address received. adr=01, ack=1
-# DEBUG i2c_slave; data block write 02 to address 01
-# DEBUG i2c_slave; data block write 02 to address 02
-# DEBUG i2c_slave; data block write 02 to address 03
-# DEBUG i2c_slave; data block write 02 to address 04
-# DEBUG i2c_slave; data block write 02 to address 05
-# DEBUG i2c_slave; data block write 02 to address 06
-# DEBUG i2c_slave; data block write 02 to address 07
-# DEBUG i2c_slave; data block write 02 to address 08
-# DEBUG i2c_slave; data block write 02 to address 09
-# DEBUG i2c_slave; data block write 02 to address 0a
-# DEBUG i2c_slave; data block write 02 to address 0b
-# DEBUG i2c_slave; data block write 02 to address 0c
-# DEBUG i2c_slave; data block write 02 to address 0d
-# DEBUG i2c_slave; data block write 02 to address 0e
-# DEBUG i2c_slave; data block write 02 to address 0f
-# DEBUG i2c_slave; data block write 02 to address 10
-# DEBUG i2c_slave; data block write 02 to address 11
-# DEBUG i2c_slave; data block write 02 to address 12
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(270)
-#    Time: 60490 ns  Iteration: 0  Instance: /write_tb
-# 1
-# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 270
-quit -sim
-# End time: 18:16:47 on Mar 27,2024, Elapsed time: 0:01:27
-# Errors: 0, Warnings: 2
 # Compile of read_tb.v was successful.
 # Compile of tb.v was successful.
 # Compile of writer_tb.v was successful.
@@ -328,78 +180,8 @@ quit -sim
 # 11 compiles, 0 failed with no errors.
 vsim -voptargs=+acc work.write_tb
 # vsim -voptargs="+acc" work.write_tb 
-# Start time: 18:16:53 on Mar 27,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.write_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_top(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-# Loading work.ClockGenerator(fast)
-# Loading work.i2c_slave_model(fast)
-add wave -position insertpoint sim:/write_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
-#           Attempting to use alternate WLF file "./wlftr0dez0".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftr0dez0
-add wave -position insertpoint sim:/write_tb/dut/i2c/*
-add wave -position insertpoint sim:/write_tb/dut/slave/*
-run -all
-# DEBUG i2c_slave; stop condition detected at                    0
-# DEBUG i2c_slave; start condition detected at                  560
-# DEBUG i2c_slave; command byte received (write) at                 3562
-# DEBUG i2c_slave; address received. adr=01, ack=1
-# DEBUG i2c_slave; data block write 02 to address 01
-# DEBUG i2c_slave; data block write 02 to address 02
-# DEBUG i2c_slave; data block write 02 to address 03
-# DEBUG i2c_slave; data block write 02 to address 04
-# DEBUG i2c_slave; data block write 02 to address 05
-# DEBUG i2c_slave; data block write 02 to address 06
-# DEBUG i2c_slave; data block write 02 to address 07
-# DEBUG i2c_slave; data block write 02 to address 08
-# DEBUG i2c_slave; data block write 02 to address 09
-# DEBUG i2c_slave; data block write 02 to address 0a
-# DEBUG i2c_slave; data block write 02 to address 0b
-# DEBUG i2c_slave; data block write 02 to address 0c
-# DEBUG i2c_slave; data block write 02 to address 0d
-# DEBUG i2c_slave; data block write 02 to address 0e
-# DEBUG i2c_slave; data block write 02 to address 0f
-# DEBUG i2c_slave; data block write 02 to address 10
-# DEBUG i2c_slave; data block write 02 to address 11
-# DEBUG i2c_slave; data block write 02 to address 12
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(270)
-#    Time: 60490 ns  Iteration: 0  Instance: /write_tb
-# 1
-# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 270
-add wave -position insertpoint sim:/write_tb/dut/apb/*
-add wave -position insertpoint sim:/write_tb/dut/i2c/*
-add wave -position insertpoint sim:/write_tb/dut/slave/*
-quit -sim
-# End time: 18:25:36 on Mar 27,2024, Elapsed time: 0:08:43
-# Errors: 0, Warnings: 2
-# Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
-# Compile of writer_tb.v was successful.
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# Compile of clock_generator.v was successful.
-# Compile of tb_top.v was successful.
-# Compile of i2c_slave_model.v was successful.
-# 11 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.write_tb
-# vsim -voptargs="+acc" work.write_tb 
-# Start time: 18:25:42 on Mar 27,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Start time: 10:28:22 on Mar 28,2024
+# ** Note: (vsim-8009) Loading existing optimized design _opt7
 # Loading work.write_tb(fast)
 # Loading work.top_level(fast)
 # Loading work.FIFO_top(fast)
@@ -416,268 +198,9 @@ vsim -voptargs=+acc work.write_tb
 add wave -position insertpoint sim:/write_tb/dut/i2c/*
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
-#           Attempting to use alternate WLF file "./wlfttw7dkq".
+#           Attempting to use alternate WLF file "./wlftzsq29j".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlfttw7dkq
-add wave -position insertpoint sim:/write_tb/dut/slave/*
-run -all
-# DEBUG i2c_slave; stop condition detected at                    0
-# DEBUG i2c_slave; start condition detected at                  560
-# DEBUG i2c_slave; command byte received (write) at                 3562
-# DEBUG i2c_slave; address received. adr=01, ack=1
-# DEBUG i2c_slave; data block write 02 to address 01
-# DEBUG i2c_slave; data block write 02 to address 02
-# DEBUG i2c_slave; data block write 02 to address 03
-# DEBUG i2c_slave; data block write 02 to address 04
-# DEBUG i2c_slave; data block write 02 to address 05
-# DEBUG i2c_slave; data block write 02 to address 06
-# DEBUG i2c_slave; data block write 02 to address 07
-# DEBUG i2c_slave; data block write 02 to address 08
-# DEBUG i2c_slave; data block write 02 to address 09
-# DEBUG i2c_slave; data block write 02 to address 0a
-# DEBUG i2c_slave; data block write 02 to address 0b
-# DEBUG i2c_slave; data block write 02 to address 0c
-# DEBUG i2c_slave; data block write 02 to address 0d
-# DEBUG i2c_slave; data block write 02 to address 0e
-# DEBUG i2c_slave; data block write 02 to address 0f
-# DEBUG i2c_slave; data block write 02 to address 10
-# DEBUG i2c_slave; data block write 02 to address 11
-# DEBUG i2c_slave; data block write 02 to address 12
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(270)
-#    Time: 60490 ns  Iteration: 0  Instance: /write_tb
-# 1
-# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 270
-quit -sim
-# End time: 18:27:36 on Mar 27,2024, Elapsed time: 0:01:54
-# Errors: 0, Warnings: 2
-# Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
-# Compile of writer_tb.v was successful.
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# Compile of clock_generator.v was successful.
-# Compile of tb_top.v was successful.
-# Compile of i2c_slave_model.v was successful.
-# 11 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.write_tb
-# vsim -voptargs="+acc" work.write_tb 
-# Start time: 18:27:42 on Mar 27,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.write_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_top(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-# Loading work.ClockGenerator(fast)
-# Loading work.i2c_slave_model(fast)
-add wave -position insertpoint sim:/write_tb/dut/i2c/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
-#           Attempting to use alternate WLF file "./wlftmwms2s".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftmwms2s
-add wave -position insertpoint sim:/write_tb/dut/slave/*
-run -all
-# DEBUG i2c_slave; stop condition detected at                    0
-# DEBUG i2c_slave; start condition detected at                  560
-# DEBUG i2c_slave; command byte received (write) at                 3562
-# DEBUG i2c_slave; address received. adr=01, ack=1
-# DEBUG i2c_slave; data block write 02 to address 01
-# DEBUG i2c_slave; data block write 02 to address 02
-# DEBUG i2c_slave; data block write 02 to address 03
-# DEBUG i2c_slave; data block write 02 to address 04
-# DEBUG i2c_slave; data block write 02 to address 05
-# DEBUG i2c_slave; data block write 02 to address 06
-# DEBUG i2c_slave; data block write 02 to address 07
-# DEBUG i2c_slave; data block write 02 to address 08
-# DEBUG i2c_slave; data block write 02 to address 09
-# DEBUG i2c_slave; data block write 02 to address 0a
-# DEBUG i2c_slave; data block write 02 to address 0b
-# DEBUG i2c_slave; data block write 02 to address 0c
-# DEBUG i2c_slave; data block write 02 to address 0d
-# DEBUG i2c_slave; data block write 02 to address 0e
-# DEBUG i2c_slave; data block write 02 to address 0f
-# DEBUG i2c_slave; data block write 02 to address 10
-# DEBUG i2c_slave; data block write 02 to address 11
-# DEBUG i2c_slave; data block write 02 to address 12
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(270)
-#    Time: 60490 ns  Iteration: 0  Instance: /write_tb
-# 1
-# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 270
-quit -sim
-# End time: 18:28:36 on Mar 27,2024, Elapsed time: 0:00:54
-# Errors: 0, Warnings: 2
-# Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
-# Compile of writer_tb.v was successful.
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# Compile of clock_generator.v was successful.
-# Compile of tb_top.v was successful.
-# Compile of i2c_slave_model.v was successful.
-# 11 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.write_tb
-# vsim -voptargs="+acc" work.write_tb 
-# Start time: 18:28:42 on Mar 27,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.write_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_top(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-# Loading work.ClockGenerator(fast)
-# Loading work.i2c_slave_model(fast)
-add wave -position insertpoint sim:/write_tb/dut/i2c/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
-#           Attempting to use alternate WLF file "./wlft4v0b72".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft4v0b72
-add wave -position insertpoint sim:/write_tb/dut/slave/*
-run -all
-# DEBUG i2c_slave; stop condition detected at                    0
-# DEBUG i2c_slave; start condition detected at                  560
-# DEBUG i2c_slave; command byte received (write) at                 3562
-# DEBUG i2c_slave; address received. adr=01, ack=1
-# DEBUG i2c_slave; start condition detected at                 6640
-# DEBUG i2c_slave; stop condition detected at                 6960
-# DEBUG i2c_slave; start condition detected at                 7280
-# DEBUG i2c_slave; command byte received (write) at                10282
-# DEBUG i2c_slave; address received. adr=02, ack=1
-# DEBUG i2c_slave; data block write 02 to address 02
-# DEBUG i2c_slave; data block write 02 to address 03
-# DEBUG i2c_slave; data block write 02 to address 04
-# DEBUG i2c_slave; data block write 02 to address 05
-# DEBUG i2c_slave; data block write 02 to address 06
-# DEBUG i2c_slave; data block write 02 to address 07
-# DEBUG i2c_slave; data block write 02 to address 08
-# DEBUG i2c_slave; data block write 02 to address 09
-# DEBUG i2c_slave; data block write 02 to address 0a
-# DEBUG i2c_slave; data block write 02 to address 0b
-# DEBUG i2c_slave; data block write 02 to address 0c
-# DEBUG i2c_slave; data block write 02 to address 0d
-# DEBUG i2c_slave; data block write 02 to address 0e
-# DEBUG i2c_slave; data block write 02 to address 0f
-# DEBUG i2c_slave; data block write 02 to address 10
-# DEBUG i2c_slave; data block write 02 to address 11
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(270)
-#    Time: 60490 ns  Iteration: 0  Instance: /write_tb
-# 1
-# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 270
-restart
-# ** Note: (vsim-8009) Loading existing optimized design _opt5
-# Loading work.write_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_top(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-# Loading work.ClockGenerator(fast)
-# Loading work.i2c_slave_model(fast)
-# Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
-# Compile of writer_tb.v was successful.
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# Compile of clock_generator.v was successful.
-# Compile of tb_top.v was successful.
-# Compile of i2c_slave_model.v was successful.
-# 11 compiles, 0 failed with no errors.
-# Load canceled
-run -all
-# DEBUG i2c_slave; stop condition detected at                    0
-# DEBUG i2c_slave; start condition detected at                  560
-# DEBUG i2c_slave; command byte received (write) at                 3562
-# DEBUG i2c_slave; address received. adr=01, ack=1
-# DEBUG i2c_slave; start condition detected at                 6640
-# DEBUG i2c_slave; stop condition detected at                 6960
-# DEBUG i2c_slave; start condition detected at                 7280
-# DEBUG i2c_slave; command byte received (write) at                10282
-# DEBUG i2c_slave; address received. adr=02, ack=1
-# DEBUG i2c_slave; data block write 02 to address 02
-# DEBUG i2c_slave; data block write 02 to address 03
-# DEBUG i2c_slave; data block write 02 to address 04
-# DEBUG i2c_slave; data block write 02 to address 05
-# DEBUG i2c_slave; data block write 02 to address 06
-# DEBUG i2c_slave; data block write 02 to address 07
-# DEBUG i2c_slave; data block write 02 to address 08
-# DEBUG i2c_slave; data block write 02 to address 09
-# DEBUG i2c_slave; data block write 02 to address 0a
-# DEBUG i2c_slave; data block write 02 to address 0b
-# DEBUG i2c_slave; data block write 02 to address 0c
-# DEBUG i2c_slave; data block write 02 to address 0d
-# DEBUG i2c_slave; data block write 02 to address 0e
-# DEBUG i2c_slave; data block write 02 to address 0f
-# DEBUG i2c_slave; data block write 02 to address 10
-# DEBUG i2c_slave; data block write 02 to address 11
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v(270)
-#    Time: 60490 ns  Iteration: 0  Instance: /write_tb
-# 1
-# Break in Module write_tb at C:/Users/PC/Documents/Chung_training/code/I2C_APB/Testbench/writer_tb.v line 270
-quit -sim
-# End time: 18:31:12 on Mar 27,2024, Elapsed time: 0:02:30
-# Errors: 1, Warnings: 0
-# Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
-# Compile of writer_tb.v was successful.
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of fifo.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# Compile of clock_generator.v was successful.
-# Compile of tb_top.v was successful.
-# Compile of i2c_slave_model.v was successful.
-# 11 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.write_tb
-# vsim -voptargs="+acc" work.write_tb 
-# Start time: 18:31:20 on Mar 27,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.write_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_top(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-# Loading work.ClockGenerator(fast)
-# Loading work.i2c_slave_model(fast)
-add wave -position insertpoint sim:/write_tb/dut/i2c/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 13584
-#           Attempting to use alternate WLF file "./wlftmf8swc".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftmf8swc
+#           Using alternate file: ./wlftzsq29j
 add wave -position insertpoint sim:/write_tb/dut/slave/*
 run -all
 # DEBUG i2c_slave; stop condition detected at                    0

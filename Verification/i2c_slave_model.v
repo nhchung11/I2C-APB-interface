@@ -70,7 +70,7 @@ module i2c_slave_model (scl, sda);
 		sto   <= #1 1'b0;
 
 	        if(debug)
-	          $display("DEBUG i2c_slave; start condition detected at %t", $time);
+	          $display("DEBUG i2c_slave; start condition detected at \t %t", $time);
 	    end
 	  else
 	    sta <= #1 1'b0;
@@ -86,7 +86,7 @@ module i2c_slave_model (scl, sda);
 	       sto <= #1 1'b1;
 
 	       if(debug)
-	         $display("DEBUG i2c_slave; stop condition detected at %t", $time);
+	         $display("DEBUG i2c_slave; stop condition detected at \t %t", $time);
 	    end
 	  else
 	    sto <= #1 1'b0;
@@ -119,9 +119,9 @@ module i2c_slave_model (scl, sda);
 
 	                    #2;
 	                    if(debug && rw)
-	                      $display("DEBUG i2c_slave; command byte received (read) at %t", $time);
+	                      $display("DEBUG i2c_slave; command byte received (read) at \t %t", $time);
 	                    if(debug && !rw)
-	                      $display("DEBUG i2c_slave; command byte received (write) at %t", $time);
+	                      $display("DEBUG i2c_slave; command byte received (write) at \t %t", $time);
 
 	                    if(rw)
 	                      begin

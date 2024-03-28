@@ -2,7 +2,6 @@
 `define SCOREBOARD
 
 class scoreboard;
-    bit [7:0]   reg_address;
     bit [7:0]   slave_address;
     bit [7:0]   data_write [0:7];
     bit [7:0]   data_read;

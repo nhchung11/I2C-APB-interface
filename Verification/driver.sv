@@ -54,14 +54,14 @@ class driver;
     endtask
 
     // Write to address register 
-    task WRITE_TO_ADDRESS_REG();
+    task WRITE_TO_ADDRESS_REG(input bit [6:0] slave_address, input bit rw);
         sti = new();
-        sti.PADDR.rand_mode(0);
+        sti.rand_mode(0);
 
         @(posedge intf.pclk);
         sti.clock_1();
         sti.PADDR = 8'b01000000;
-        sti.randomize();
+        sti.PWDATA = {slave_address, rw};
         sti.PWRITE = 1;
         assign_intf(sti);
 
@@ -138,20 +138,61 @@ class driver;
     endtask
 
     // Write task
-    task WRITE(input integer iteration, mem_depth);
+    task WRITE(input integer iteration, mem_depth, input bit rw, input bit [6:0] slave_address);
         @(posedge intf.pclk);
         WRITE_TO_PRESCALE_REG();
         @(posedge intf.pclk);
-        WRITE_TO_ADDRESS_REG();
+        WRITE_TO_ADDRESS_REG(slave_address, rw);
+        @(posedge intf.pclk);
+        WRITE_TO_COMMAND_REG();
         @(posedge intf.pclk);
         WRITE_TO_TRANSMIT_REG(iteration, mem_depth);
         if (sti.PWDATA)
             cov.sample();
     endtask
 
-    // Read task
-    task READ(input integer iteration);
+    // Read status task
+    task READ_FROM_STATUS_REG();
+        sti = new();
+        sti.PADDR.rand_mode(0);
+        @(posedge intf.pclk);
+        sti.clock_1();
+        sti.PADDR = 8'b01100000;
+        sti.PWRITE = 0;
+        assign_intf(sti);
+        @(posedge intf.pclk);
+        sti.PENABLE = 1;
+        intf.penable = sti.PENABLE;
+        sb.apb_ready = 1;
+    endtask
 
+    // Read receive task
+    task READ_FROM_RECEIVE_REG(input integer iteration);
+        sti = new();
+        sti.PADDR.rand_mode(0);
+        @(posedge intf.pclk);
+        sti.clock_1();
+        sti.PADDR = 8'b10100000;
+        sti.PWRITE = 0;
+        assign_intf(sti);
+        @(posedge intf.pclk);
+        sti.PENABLE = 1;
+        intf.penable = sti.PENABLE;
+        sb.apb_ready = 1;
+    endtask
+
+    // Read task
+    task READ(input integer iteration, bit rw, bit [6:0] slave_address);
+        @(posedge intf.pclk);
+        WRITE_TO_PRESCALE_REG();
+        @(posedge intf.pclk);
+        WRITE_TO_ADDRESS_REG(slave_address, rw);
+        @(posedge intf.pclk);
+        WRITE_TO_COMMAND_REG();
+        @(posedge intf.pclk);
+        READ_FROM_RECEIVE_REG(iteration);
+        if (sti.PWDATA)
+            cov.sample();
     endtask
 endclass
 `endif 

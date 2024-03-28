@@ -15,7 +15,7 @@ class monitor;
     task ADDRESS_CHECK();
         forever begin
             @(posedge intf.pclk)
-                if (sb.rw != intf.pwrite)
+                if (sb.slave_address != intf.slave_address)
                     $display("*  ERROR    * WRONG SLAVE ADDRESS: EXPECT %b, RECEIVED %b", sb.rw, intf.pwrite);
                 else
                     $display("*  CORRECR  *EXPECT ADDRESS %b, RECEIVE %b", sb.rw, intf.pwrite);
@@ -37,8 +37,8 @@ class monitor;
     task START_CHECK();
         forever begin
             @(posedge intf.core_clk)
-                if ((sb.start == 1) && (intf.scl == 1) && (intf.sda == 1))
-                    $display("*  ERROR    * START CONDITION NOT DETECTED");
+                if ((sb.start == 1) && (intf.scl == 1) && (intf.sda == 0))
+                    $display("[START CONDITION NOT DETECTED] \t");
         end
     endtask
 
@@ -47,7 +47,7 @@ class monitor;
         forever begin
             @(posedge intf.core_clk)
                 if ((sb.start == 1) && (intf.scl == 1) && (intf.sda == 0))
-                    $display("*  ERROR    * STOP CONDITION NOT DETECTED");
+                    $display("[STOP CONDITION NOT DETECTED] \t");
         end
     endtask
 endclass
