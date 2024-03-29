@@ -266,7 +266,7 @@ module write_tb;
         // sda_en_tb = 0;
         // sda_in = 1;
 
-        #60000;
+        #40000;
         $finish;
     end
 endmodule 

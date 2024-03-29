@@ -96,6 +96,7 @@ class driver;
     task WRITE_TO_COMMAND_REG();
         sti             = new();
         sti.rand_mode(0);
+        
         @(posedge intf.pclk);
         sti.clock_1();
         sti.PADDR       = 8'b11000000;
@@ -155,13 +156,15 @@ class driver;
     task READ_FROM_STATUS_REG();
         sti = new();
         sti.PADDR.rand_mode(0);
+
         @(posedge intf.pclk);
         sti.clock_1();
         sti.PADDR = 8'b01100000;
         sti.PWRITE = 0;
         assign_intf(sti);
+
         @(posedge intf.pclk);
-        sti.PENABLE = 1;
+        sti.clock_2();
         intf.penable = sti.PENABLE;
         sb.apb_ready = 1;
     endtask
@@ -170,13 +173,15 @@ class driver;
     task READ_FROM_RECEIVE_REG(input integer iteration);
         sti = new();
         sti.PADDR.rand_mode(0);
+
         @(posedge intf.pclk);
         sti.clock_1();
         sti.PADDR = 8'b10100000;
         sti.PWRITE = 0;
         assign_intf(sti);
+
         @(posedge intf.pclk);
-        sti.PENABLE = 1;
+        sti.clock_2();
         intf.penable = sti.PENABLE;
         sb.apb_ready = 1;
     endtask

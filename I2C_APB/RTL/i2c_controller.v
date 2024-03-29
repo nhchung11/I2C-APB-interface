@@ -34,6 +34,8 @@ module i2c_controller
     localparam  STOP          = 8;
 
     reg [2:0]   counter;
+    reg [2:0]   ack_counter1;
+    reg [2:0]   ack_counter2;
     reg [7:0]   saved_addr;
     reg [7:0]   saved_data;
     reg [3:0]   current_state;
@@ -71,6 +73,30 @@ module i2c_controller
                 counter         <= counter - 1;
         end
     end 
+
+    // ACK counter logci
+    always @(posedge core_clk, negedge rst_n) begin
+        if(~rst_n) begin
+            ack_counter1        <= 0;
+            ack_counter2        <= 0;
+        end
+        else begin
+            if (current_state == WRITE_ACK) begin
+                ack_counter1        <= ack_counter1 + 1;
+                if (ack_counter1 == 5)
+                    ack_counter1 <= 0;
+            end
+            else
+                ack_counter1    <= 0;
+            if (current_state == WRITE_DATA) begin
+                ack_counter2        <= ack_counter2 + 1;
+                if (ack_counter2 == 5)
+                    ack_counter2 <= 0;
+            end
+            else    
+                ack_counter2    <= 0;
+        end
+    end
 
     // Next state combinational logic
     always @(posedge core_clk, negedge rst_n) begin
@@ -198,7 +224,7 @@ module i2c_controller
                     scl_enable          <= 1;  
                     saved_data          <= {data_in}; 
                     if (i2c_clk == 0) begin
-                        // sda_o           <= 1;      
+                        sda_o           <= 1;      
                         sda_enable      <= 0;   
                     end
                 end
@@ -206,9 +232,11 @@ module i2c_controller
                 WRITE_DATA: begin
                     scl_enable          <= 1;
                     tx_check            <= 0;
+                    if (ack_counter2 == 3)
+                        sda_enable      <= 1;
+
                     if (i2c_clk == 0) begin
                         sda_o           <= saved_data[counter];
-                        sda_enable      <= 1;
                     end
                 end
                 //-----------------------------------------------------
@@ -216,8 +244,9 @@ module i2c_controller
                 WRITE_ACK: begin
                     scl_enable          <= 1;
                     saved_data          <= {data_in};
-                    sda_enable          <= 0;  
-                    if(sda == 1) begin
+                    if (ack_counter1 == 3)
+                        sda_enable      <= 0;  
+                    if(sda == 0) begin
                         fifo_tx_enable  <= 1;
                         tx_check        <= 1;
                     end
@@ -225,7 +254,7 @@ module i2c_controller
                         fifo_tx_enable  <= 0;
                     end
                     if (i2c_clk == 0) begin
-                        sda_o           <= 1;
+                        sda_o           <= 0;
                     end
                 end
                 //-----------------------------------------------------
