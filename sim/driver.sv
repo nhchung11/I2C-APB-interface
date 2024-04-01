@@ -10,6 +10,14 @@ class driver;
         this.intf   = intf;
     endfunction
 
+    covergroup cov @(posedge intf.pclk);
+        reg_addr: coverpoint intf.paddr {
+            bins write = {1, 2, 4, 6};
+            bins read = {3, 5};
+        }
+        rw: coverpoint intf.pwrite;
+    endgroup
+
     task assign_intf(stimulus sti);
         intf.penable = sti.PENABLE;
         intf.paddr = sti.PADDR;
@@ -34,14 +42,17 @@ class driver;
     endtask
 
     // Write to address register 
-    task WRITE_REGISTER(input bit [7:0] paddr, bit [7:0] pwdata);
+    task WRITE_REGISTER(input bit [7:0] paddr, bit [7:0] pwdata, bit rw);
         sti = new();
 
         @(posedge intf.pclk);
         sti.clock_1();
         sti.PADDR = paddr;
-        sti.PWDATA = pwdata;
-        sti.PWRITE = 1;
+        // if (paddr == 4) 
+        //     sti.randomize();
+        // else
+            sti.PWDATA = pwdata;
+        sti.PWRITE = rw;
         assign_intf(sti);
 
         @(posedge intf.pclk);
@@ -52,13 +63,13 @@ class driver;
     
 
     // Read receive task
-    task READ_REGISTER(input bit [7:0] paddr);
+    task READ_REGISTER(input bit [7:0] paddr, bit rw);
         sti = new();
 
         @(posedge intf.pclk);
         sti.clock_1();
         sti.PADDR = paddr;
-        sti.PWRITE = 0;
+        sti.PWRITE = rw;
         assign_intf(sti);
 
         @(posedge intf.pclk);

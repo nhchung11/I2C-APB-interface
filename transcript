@@ -1367,3 +1367,1437 @@ run -all
 #    Time: 10130 ns  Iteration: 1  Instance: /top/test
 # 1
 # Break in Module testcase at C:/Users/PC/Documents/Chung_training/code/sim/TEST2.sv line 17
+quti -sim
+# invalid command name "quti"
+quit -sim
+# End time: 16:05:20 on Apr 01,2024, Elapsed time: 0:16:00
+# Errors: 1, Warnings: 0
+# Compile of assertion.sv failed with 1 errors.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of interface.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of TEST1.sv was successful.
+# Compile of TEST2.sv was successful.
+# Compile of TEST3.sv was successful.
+# Compile of TEST4.sv was successful.
+# Compile of TEST5.sv was successful.
+# Compile of TEST6.sv was successful.
+# Compile of TEST7.sv was successful.
+# Compile of TEST8.sv was successful.
+# Compile of TEST9.sv was successful.
+# Compile of top_dut.sv failed with 3 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# 22 compiles, 2 failed with 4 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of interface.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of TEST1.sv was successful.
+# Compile of TEST2.sv was successful.
+# Compile of TEST3.sv was successful.
+# Compile of TEST4.sv was successful.
+# Compile of TEST5.sv was successful.
+# Compile of TEST6.sv was successful.
+# Compile of TEST7.sv was successful.
+# Compile of TEST8.sv was successful.
+# Compile of TEST9.sv was successful.
+# Compile of top_dut.sv was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# 22 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top
+# vsim -voptargs="+acc" work.top 
+# Start time: 16:06:15 on Apr 01,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.top_dut_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.intf_i2c(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+# Loading work.i2c_slave_model(fast)
+# Loading work.testcase(fast)
+# Loading work.assertion_cov(fast)
+# Loading work.intf_i2c(fast)
+run -all
+# DEBUG i2c_slave; stop condition detected at 	                    0
+# DEBUG i2c_slave; start condition detected at 	                  480
+# DEBUG i2c_slave; command byte received (write) at 	                 3482
+# DEBUG i2c_slave; address received. adr=01, ack=1
+# DEBUG i2c_slave; data block write 01 to address 01
+# DEBUG i2c_slave; stop condition detected at 	                 9760
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/sim/TEST2.sv(17)
+#    Time: 10130 ns  Iteration: 1  Instance: /top/test
+# 1
+# Break in Module testcase at C:/Users/PC/Documents/Chung_training/code/sim/TEST2.sv line 17
+quit -sim
+# End time: 16:25:53 on Apr 01,2024, Elapsed time: 0:19:38
+# Errors: 0, Warnings: 0
+project compileall
+# Compile of assertion.sv was successful.
+# Compile of driver.sv failed with 1 errors.
+# Compile of env.sv failed with 1 errors.
+# Compile of interface.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of TEST1.sv failed with 1 errors.
+# Compile of TEST2.sv failed with 1 errors.
+# Compile of TEST3.sv failed with 1 errors.
+# Compile of TEST4.sv failed with 1 errors.
+# Compile of TEST5.sv failed with 1 errors.
+# Compile of TEST6.sv failed with 1 errors.
+# Compile of TEST7.sv failed with 1 errors.
+# Compile of TEST8.sv failed with 1 errors.
+# Compile of TEST9.sv was successful.
+# Compile of top_dut.sv failed with 1 errors.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# 22 compiles, 11 failed with 11 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of interface.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of TEST1.sv was successful.
+# Compile of TEST2.sv was successful.
+# Compile of TEST3.sv failed with 10 errors.
+# Compile of TEST4.sv was successful.
+# Compile of TEST5.sv was successful.
+# Compile of TEST6.sv was successful.
+# Compile of TEST7.sv was successful.
+# Compile of TEST8.sv was successful.
+# Compile of TEST9.sv was successful.
+# Compile of top_dut.sv was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# 22 compiles, 1 failed with 10 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of interface.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of TEST1.sv was successful.
+# Compile of TEST2.sv was successful.
+# Compile of TEST3.sv failed with 2 errors.
+# Compile of TEST4.sv was successful.
+# Compile of TEST5.sv was successful.
+# Compile of TEST6.sv was successful.
+# Compile of TEST7.sv was successful.
+# Compile of TEST8.sv was successful.
+# Compile of TEST9.sv was successful.
+# Compile of top_dut.sv was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# 22 compiles, 1 failed with 2 errors.
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of interface.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of TEST1.sv was successful.
+# Compile of TEST2.sv was successful.
+# Compile of TEST3.sv was successful.
+# Compile of TEST4.sv was successful.
+# Compile of TEST5.sv was successful.
+# Compile of TEST6.sv was successful.
+# Compile of TEST7.sv was successful.
+# Compile of TEST8.sv was successful.
+# Compile of TEST9.sv was successful.
+# Compile of top_dut.sv was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# 22 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top
+# vsim -voptargs="+acc" work.top 
+# Start time: 16:27:43 on Apr 01,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.top_dut_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.intf_i2c(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+# Loading work.i2c_slave_model(fast)
+# Loading work.testcase(fast)
+# Loading work.assertion_cov(fast)
+# Loading work.intf_i2c(fast)
+run -all
+# DEBUG i2c_slave; stop condition detected at 	                    0
+# DEBUG i2c_slave; start condition detected at 	                  480
+# DEBUG i2c_slave; command byte received (write) at 	                 3482
+# DEBUG i2c_slave; address received. adr=01, ack=1
+# DEBUG i2c_slave; data block write 01 to address 01
+# DEBUG i2c_slave; stop condition detected at 	                 9760
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/sim/TEST2.sv(17)
+#    Time: 10130 ns  Iteration: 1  Instance: /top/test
+# 1
+# Break in Module testcase at C:/Users/PC/Documents/Chung_training/code/sim/TEST2.sv line 17
+quit -sim
+# End time: 17:18:38 on Apr 01,2024, Elapsed time: 0:50:55
+# Errors: 0, Warnings: 0
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of interface.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of TEST1.sv was successful.
+# Compile of TEST2.sv was successful.
+# Compile of TEST3.sv was successful.
+# Compile of TEST4.sv was successful.
+# Compile of TEST5.sv was successful.
+# Compile of TEST6.sv was successful.
+# Compile of TEST7.sv was successful.
+# Compile of TEST8.sv was successful.
+# Compile of TEST9.sv was successful.
+# Compile of top_dut.sv was successful with warnings.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# 22 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top
+# vsim -voptargs="+acc" work.top 
+# Start time: 17:18:44 on Apr 01,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.top_dut_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.intf_i2c(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+# Loading work.i2c_slave_model(fast)
+# Loading work.testcase(fast)
+# Loading work.assertion_cov(fast)
+# Loading work.intf_i2c(fast)
+run -all
+# DEBUG i2c_slave; stop condition detected at 	                    0
+# DEBUG i2c_slave; start condition detected at 	                  560
+# DEBUG i2c_slave; start condition detected at 	                 3760
+# DEBUG i2c_slave; stop condition detected at 	                 4080
+# DEBUG i2c_slave; start condition detected at 	                 4400
+# DEBUG i2c_slave; start condition detected at 	                 7600
+# DEBUG i2c_slave; stop condition detected at 	                 7920
+# DEBUG i2c_slave; start condition detected at 	                 8240
+# DEBUG i2c_slave; start condition detected at 	                11440
+# DEBUG i2c_slave; stop condition detected at 	                11760
+# DEBUG i2c_slave; start condition detected at 	                12080
+# DEBUG i2c_slave; start condition detected at 	                15280
+# DEBUG i2c_slave; stop condition detected at 	                15600
+# DEBUG i2c_slave; start condition detected at 	                15920
+# DEBUG i2c_slave; start condition detected at 	                19120
+# DEBUG i2c_slave; stop condition detected at 	                19440
+# DEBUG i2c_slave; start condition detected at 	                19760
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/sim/TEST5.sv(21)
+#    Time: 20240 ns  Iteration: 1  Instance: /top/test
+# 1
+# Break in Module testcase at C:/Users/PC/Documents/Chung_training/code/sim/TEST5.sv line 21
+quit -sim
+# End time: 17:19:18 on Apr 01,2024, Elapsed time: 0:00:34
+# Errors: 0, Warnings: 0
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of interface.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of TEST1.sv was successful.
+# Compile of TEST2.sv was successful.
+# Compile of TEST3.sv was successful.
+# Compile of TEST4.sv was successful.
+# Compile of TEST5.sv was successful.
+# Compile of TEST6.sv was successful.
+# Compile of TEST7.sv was successful.
+# Compile of TEST8.sv was successful.
+# Compile of TEST9.sv was successful.
+# Compile of top_dut.sv was successful with warnings.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# 22 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top
+# vsim -voptargs="+acc" work.top 
+# Start time: 17:19:31 on Apr 01,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.top_dut_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.intf_i2c(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+# Loading work.i2c_slave_model(fast)
+# Loading work.testcase(fast)
+# Loading work.assertion_cov(fast)
+# Loading work.intf_i2c(fast)
+run -all
+# DEBUG i2c_slave; stop condition detected at 	                    0
+# DEBUG i2c_slave; start condition detected at 	                  480
+# DEBUG i2c_slave; command byte received (write) at 	                 3482
+# DEBUG i2c_slave; address received. adr=01, ack=1
+# DEBUG i2c_slave; data block write 01 to address 01
+# DEBUG i2c_slave; stop condition detected at 	                 9760
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/sim/TEST2.sv(17)
+#    Time: 10130 ns  Iteration: 1  Instance: /top/test
+# 1
+# Break in Module testcase at C:/Users/PC/Documents/Chung_training/code/sim/TEST2.sv line 17
+quit -sim
+# End time: 17:28:31 on Apr 01,2024, Elapsed time: 0:09:00
+# Errors: 0, Warnings: 0
+project compileall
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful with warnings.
+# Compile of env.sv was successful with warnings.
+# Compile of interface.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of TEST1.sv was successful with warnings.
+# Compile of TEST2.sv was successful with warnings.
+# Compile of TEST3.sv was successful with warnings.
+# Compile of TEST4.sv was successful with warnings.
+# Compile of TEST5.sv was successful with warnings.
+# Compile of TEST6.sv was successful with warnings.
+# Compile of TEST7.sv was successful with warnings.
+# Compile of TEST8.sv was successful with warnings.
+# Compile of TEST9.sv was successful.
+# Compile of top_dut.sv was successful with warnings.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# 22 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top
+# vsim -voptargs="+acc" work.top 
+# Start time: 17:28:39 on Apr 01,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: C:\Users\PC\Documents\Chung_training\code\sim\driver.sv(52): (vopt-2240) Treating stand-alone use of function 'randomize' as an implicit VOID cast.
+# Loading sv_std.std
+# Loading work.top_dut_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.intf_i2c(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+# Loading work.i2c_slave_model(fast)
+# Loading work.testcase(fast)
+# Loading work.assertion_cov(fast)
+# Loading work.intf_i2c(fast)
+run -all
+# DEBUG i2c_slave; stop condition detected at 	                    0
+# DEBUG i2c_slave; start condition detected at 	                  480
+# DEBUG i2c_slave; command byte received (write) at 	                 3482
+# DEBUG i2c_slave; address received. adr=b4, ack=1
+# DEBUG i2c_slave; start condition detected at 	                 6560
+# DEBUG i2c_slave; stop condition detected at 	                 6880
+# DEBUG i2c_slave; start condition detected at 	                 7200
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/sim/TEST2.sv(17)
+#    Time: 10130 ns  Iteration: 1  Instance: /top/test
+# 1
+# Break in Module testcase at C:/Users/PC/Documents/Chung_training/code/sim/TEST2.sv line 17
+quit -sim
+# End time: 17:29:10 on Apr 01,2024, Elapsed time: 0:00:31
+# Errors: 0, Warnings: 1
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful with warnings.
+# Compile of env.sv was successful with warnings.
+# Compile of interface.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of TEST1.sv was successful with warnings.
+# Compile of TEST2.sv was successful with warnings.
+# Compile of TEST3.sv was successful with warnings.
+# Compile of TEST4.sv was successful with warnings.
+# Compile of TEST5.sv was successful with warnings.
+# Compile of TEST6.sv was successful with warnings.
+# Compile of TEST7.sv was successful with warnings.
+# Compile of TEST8.sv was successful with warnings.
+# Compile of TEST9.sv was successful.
+# Compile of top_dut.sv was successful with warnings.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# 22 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top
+# vsim -voptargs="+acc" work.top 
+# Start time: 17:30:32 on Apr 01,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "i2c_slave_model(fast)".
+# ** Warning: C:\Users\PC\Documents\Chung_training\code\sim\driver.sv(52): (vopt-2240) Treating stand-alone use of function 'randomize' as an implicit VOID cast.
+# Loading sv_std.std
+# Loading work.top_dut_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.intf_i2c(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+# Loading work.i2c_slave_model(fast)
+# Loading work.testcase(fast)
+# Loading work.assertion_cov(fast)
+# Loading work.intf_i2c(fast)
+run -all
+# DEBUG i2c_slave; stop condition detected at 	                    0
+# DEBUG i2c_slave; start condition detected at 	                  480
+# DEBUG i2c_slave; command byte received (write) at 	                 3482
+# DEBUG i2c_slave; address received. adr=b4, ack=1
+# DEBUG i2c_slave; start condition detected at 	                 6560
+# DEBUG i2c_slave; stop condition detected at 	                 6880
+# DEBUG i2c_slave; start condition detected at 	                 7200
+# DEBUG i2c_slave; command byte received (write) at 	                10202
+# DEBUG i2c_slave; address received. adr=b4, ack=1
+# DEBUG i2c_slave; start condition detected at 	                13280
+# DEBUG i2c_slave; stop condition detected at 	                13600
+# DEBUG i2c_slave; start condition detected at 	                13920
+# DEBUG i2c_slave; command byte received (write) at 	                16922
+# DEBUG i2c_slave; address received. adr=e4, ack=1
+# DEBUG i2c_slave; start condition detected at 	                20000
+# DEBUG i2c_slave; stop condition detected at 	                20320
+# DEBUG i2c_slave; start condition detected at 	                20640
+# DEBUG i2c_slave; command byte received (write) at 	                23642
+# DEBUG i2c_slave; address received. adr=e4, ack=1
+# DEBUG i2c_slave; start condition detected at 	                26720
+# DEBUG i2c_slave; stop condition detected at 	                27040
+# DEBUG i2c_slave; start condition detected at 	                27360
+# DEBUG i2c_slave; command byte received (write) at 	                30362
+# DEBUG i2c_slave; address received. adr=92, ack=1
+# DEBUG i2c_slave; start condition detected at 	                33440
+# DEBUG i2c_slave; stop condition detected at 	                33760
+# DEBUG i2c_slave; start condition detected at 	                34080
+# DEBUG i2c_slave; command byte received (write) at 	                37082
+# DEBUG i2c_slave; address received. adr=92, ack=1
+# DEBUG i2c_slave; start condition detected at 	                40160
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/sim/TEST3.sv(20)
+#    Time: 40330 ns  Iteration: 1  Instance: /top/test
+# 1
+# Break in Module testcase at C:/Users/PC/Documents/Chung_training/code/sim/TEST3.sv line 20
+quit -sim
+# End time: 17:31:14 on Apr 01,2024, Elapsed time: 0:00:42
+# Errors: 0, Warnings: 1
+project compileall
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful with warnings.
+# Compile of env.sv was successful with warnings.
+# Compile of interface.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of TEST1.sv was successful with warnings.
+# Compile of TEST2.sv was successful with warnings.
+# Compile of TEST3.sv was successful with warnings.
+# Compile of TEST4.sv was successful with warnings.
+# Compile of TEST5.sv was successful with warnings.
+# Compile of TEST6.sv was successful with warnings.
+# Compile of TEST7.sv was successful with warnings.
+# Compile of TEST8.sv was successful with warnings.
+# Compile of TEST9.sv was successful.
+# Compile of top_dut.sv was successful with warnings.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# 22 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top
+# vsim -voptargs="+acc" work.top 
+# Start time: 17:31:41 on Apr 01,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: C:\Users\PC\Documents\Chung_training\code\sim\driver.sv(52): (vopt-2240) Treating stand-alone use of function 'randomize' as an implicit VOID cast.
+# Loading sv_std.std
+# Loading work.top_dut_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.intf_i2c(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+# Loading work.i2c_slave_model(fast)
+# Loading work.testcase(fast)
+# Loading work.assertion_cov(fast)
+# Loading work.intf_i2c(fast)
+run -all
+# DEBUG i2c_slave; stop condition detected at 	                    0
+# DEBUG i2c_slave; start condition detected at 	                  480
+# DEBUG i2c_slave; command byte received (write) at 	                 3482
+# DEBUG i2c_slave; address received. adr=b4, ack=1
+# DEBUG i2c_slave; start condition detected at 	                 6560
+# DEBUG i2c_slave; stop condition detected at 	                 6880
+# DEBUG i2c_slave; start condition detected at 	                 7200
+# DEBUG i2c_slave; command byte received (write) at 	                10202
+# DEBUG i2c_slave; address received. adr=b4, ack=1
+# DEBUG i2c_slave; start condition detected at 	                13280
+# DEBUG i2c_slave; stop condition detected at 	                13600
+# DEBUG i2c_slave; start condition detected at 	                13920
+# DEBUG i2c_slave; command byte received (write) at 	                16922
+# DEBUG i2c_slave; address received. adr=e4, ack=1
+# DEBUG i2c_slave; start condition detected at 	                20000
+# DEBUG i2c_slave; stop condition detected at 	                20320
+# DEBUG i2c_slave; start condition detected at 	                20640
+# DEBUG i2c_slave; command byte received (write) at 	                23642
+# DEBUG i2c_slave; address received. adr=e4, ack=1
+# DEBUG i2c_slave; start condition detected at 	                26720
+# DEBUG i2c_slave; stop condition detected at 	                27040
+# DEBUG i2c_slave; start condition detected at 	                27360
+# DEBUG i2c_slave; command byte received (write) at 	                30362
+# DEBUG i2c_slave; address received. adr=92, ack=1
+# DEBUG i2c_slave; start condition detected at 	                33440
+# DEBUG i2c_slave; stop condition detected at 	                33760
+# DEBUG i2c_slave; start condition detected at 	                34080
+# DEBUG i2c_slave; command byte received (write) at 	                37082
+# DEBUG i2c_slave; address received. adr=92, ack=1
+# DEBUG i2c_slave; start condition detected at 	                40160
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/sim/TEST3.sv(29)
+#    Time: 40310 ns  Iteration: 1  Instance: /top/test
+# 1
+# Break in Module testcase at C:/Users/PC/Documents/Chung_training/code/sim/TEST3.sv line 29
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.top_dut_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.intf_i2c(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+# Loading work.i2c_slave_model(fast)
+# Loading work.testcase(fast)
+# Loading work.assertion_cov(fast)
+# Loading work.intf_i2c(fast)
+add wave -position insertpoint sim:/top/DUT/apb/*
+add wave -position insertpoint sim:/top/DUT/i2c/*
+add wave -position insertpoint sim:/top/DUT/slave/*
+run -all
+# DEBUG i2c_slave; stop condition detected at 	                    0
+# DEBUG i2c_slave; start condition detected at 	                  480
+# DEBUG i2c_slave; command byte received (write) at 	                 3482
+# DEBUG i2c_slave; address received. adr=b4, ack=1
+# DEBUG i2c_slave; start condition detected at 	                 6560
+# DEBUG i2c_slave; stop condition detected at 	                 6880
+# DEBUG i2c_slave; start condition detected at 	                 7200
+# DEBUG i2c_slave; command byte received (write) at 	                10202
+# DEBUG i2c_slave; address received. adr=b4, ack=1
+# DEBUG i2c_slave; start condition detected at 	                13280
+# DEBUG i2c_slave; stop condition detected at 	                13600
+# DEBUG i2c_slave; start condition detected at 	                13920
+# DEBUG i2c_slave; command byte received (write) at 	                16922
+# DEBUG i2c_slave; address received. adr=e4, ack=1
+# DEBUG i2c_slave; start condition detected at 	                20000
+# DEBUG i2c_slave; stop condition detected at 	                20320
+# DEBUG i2c_slave; start condition detected at 	                20640
+# DEBUG i2c_slave; command byte received (write) at 	                23642
+# DEBUG i2c_slave; address received. adr=e4, ack=1
+# DEBUG i2c_slave; start condition detected at 	                26720
+# DEBUG i2c_slave; stop condition detected at 	                27040
+# DEBUG i2c_slave; start condition detected at 	                27360
+# DEBUG i2c_slave; command byte received (write) at 	                30362
+# DEBUG i2c_slave; address received. adr=92, ack=1
+# DEBUG i2c_slave; start condition detected at 	                33440
+# DEBUG i2c_slave; stop condition detected at 	                33760
+# DEBUG i2c_slave; start condition detected at 	                34080
+# DEBUG i2c_slave; command byte received (write) at 	                37082
+# DEBUG i2c_slave; address received. adr=92, ack=1
+# DEBUG i2c_slave; start condition detected at 	                40160
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/sim/TEST3.sv(29)
+#    Time: 40310 ns  Iteration: 1  Instance: /top/test
+# 1
+# Break in Module testcase at C:/Users/PC/Documents/Chung_training/code/sim/TEST3.sv line 29
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.top_dut_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.intf_i2c(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+# Loading work.i2c_slave_model(fast)
+# Loading work.testcase(fast)
+# Loading work.assertion_cov(fast)
+# Loading work.intf_i2c(fast)
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful with warnings.
+# Compile of env.sv was successful with warnings.
+# Compile of interface.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of TEST1.sv was successful with warnings.
+# Compile of TEST2.sv was successful with warnings.
+# Compile of TEST3.sv was successful with warnings.
+# Compile of TEST4.sv was successful with warnings.
+# Compile of TEST5.sv was successful with warnings.
+# Compile of TEST6.sv was successful with warnings.
+# Compile of TEST7.sv was successful with warnings.
+# Compile of TEST8.sv was successful with warnings.
+# Compile of TEST9.sv was successful.
+# Compile of top_dut.sv was successful with warnings.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# 22 compiles, 0 failed with no errors.
+run -all
+# DEBUG i2c_slave; stop condition detected at 	                    0
+# DEBUG i2c_slave; start condition detected at 	                  480
+# DEBUG i2c_slave; command byte received (write) at 	                 3482
+# DEBUG i2c_slave; address received. adr=b4, ack=1
+# DEBUG i2c_slave; start condition detected at 	                 6560
+# DEBUG i2c_slave; stop condition detected at 	                 6880
+# DEBUG i2c_slave; start condition detected at 	                 7200
+# DEBUG i2c_slave; command byte received (write) at 	                10202
+# DEBUG i2c_slave; address received. adr=b4, ack=1
+# DEBUG i2c_slave; start condition detected at 	                13280
+# DEBUG i2c_slave; stop condition detected at 	                13600
+# DEBUG i2c_slave; start condition detected at 	                13920
+# DEBUG i2c_slave; command byte received (write) at 	                16922
+# DEBUG i2c_slave; address received. adr=e4, ack=1
+# DEBUG i2c_slave; start condition detected at 	                20000
+# DEBUG i2c_slave; stop condition detected at 	                20320
+# DEBUG i2c_slave; start condition detected at 	                20640
+# DEBUG i2c_slave; command byte received (write) at 	                23642
+# DEBUG i2c_slave; address received. adr=e4, ack=1
+# DEBUG i2c_slave; start condition detected at 	                26720
+# DEBUG i2c_slave; stop condition detected at 	                27040
+# DEBUG i2c_slave; start condition detected at 	                27360
+# DEBUG i2c_slave; command byte received (write) at 	                30362
+# DEBUG i2c_slave; address received. adr=92, ack=1
+# DEBUG i2c_slave; start condition detected at 	                33440
+# DEBUG i2c_slave; stop condition detected at 	                33760
+# DEBUG i2c_slave; start condition detected at 	                34080
+# DEBUG i2c_slave; command byte received (write) at 	                37082
+# DEBUG i2c_slave; address received. adr=92, ack=1
+# DEBUG i2c_slave; start condition detected at 	                40160
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/sim/TEST3.sv(29)
+#    Time: 40310 ns  Iteration: 1  Instance: /top/test
+# 1
+# Break in Module testcase at C:/Users/PC/Documents/Chung_training/code/sim/TEST3.sv line 29
+quit -sim
+# End time: 17:34:01 on Apr 01,2024, Elapsed time: 0:02:20
+# Errors: 0, Warnings: 0
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful with warnings.
+# Compile of env.sv was successful with warnings.
+# Compile of interface.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of TEST1.sv was successful with warnings.
+# Compile of TEST2.sv was successful with warnings.
+# Compile of TEST3.sv was successful with warnings.
+# Compile of TEST4.sv was successful with warnings.
+# Compile of TEST5.sv was successful with warnings.
+# Compile of TEST6.sv was successful with warnings.
+# Compile of TEST7.sv was successful with warnings.
+# Compile of TEST8.sv was successful with warnings.
+# Compile of TEST9.sv was successful.
+# Compile of top_dut.sv was successful with warnings.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# 22 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top
+# vsim -voptargs="+acc" work.top 
+# Start time: 17:34:08 on Apr 01,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.top_dut_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.intf_i2c(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+# Loading work.i2c_slave_model(fast)
+# Loading work.testcase(fast)
+# Loading work.assertion_cov(fast)
+# Loading work.intf_i2c(fast)
+run -all
+# DEBUG i2c_slave; stop condition detected at 	                    0
+# DEBUG i2c_slave; start condition detected at 	                  480
+# DEBUG i2c_slave; command byte received (write) at 	                 3482
+# DEBUG i2c_slave; address received. adr=b4, ack=1
+# DEBUG i2c_slave; start condition detected at 	                 6560
+# DEBUG i2c_slave; stop condition detected at 	                 6880
+# DEBUG i2c_slave; start condition detected at 	                 7200
+# DEBUG i2c_slave; command byte received (write) at 	                10202
+# DEBUG i2c_slave; address received. adr=b4, ack=1
+# DEBUG i2c_slave; start condition detected at 	                13280
+# DEBUG i2c_slave; stop condition detected at 	                13600
+# DEBUG i2c_slave; start condition detected at 	                13920
+# DEBUG i2c_slave; command byte received (write) at 	                16922
+# DEBUG i2c_slave; address received. adr=e4, ack=1
+# DEBUG i2c_slave; start condition detected at 	                20000
+# DEBUG i2c_slave; stop condition detected at 	                20320
+# DEBUG i2c_slave; start condition detected at 	                20640
+# DEBUG i2c_slave; command byte received (write) at 	                23642
+# DEBUG i2c_slave; address received. adr=e4, ack=1
+# DEBUG i2c_slave; start condition detected at 	                26720
+# DEBUG i2c_slave; stop condition detected at 	                27040
+# DEBUG i2c_slave; start condition detected at 	                27360
+# DEBUG i2c_slave; command byte received (write) at 	                30362
+# DEBUG i2c_slave; address received. adr=92, ack=1
+# DEBUG i2c_slave; start condition detected at 	                33440
+# DEBUG i2c_slave; stop condition detected at 	                33760
+# DEBUG i2c_slave; start condition detected at 	                34080
+# DEBUG i2c_slave; command byte received (write) at 	                37082
+# DEBUG i2c_slave; address received. adr=92, ack=1
+# DEBUG i2c_slave; start condition detected at 	                40160
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/sim/TEST3.sv(29)
+#    Time: 40310 ns  Iteration: 1  Instance: /top/test
+# 1
+# Break in Module testcase at C:/Users/PC/Documents/Chung_training/code/sim/TEST3.sv line 29
+quit -sim
+# End time: 17:34:31 on Apr 01,2024, Elapsed time: 0:00:23
+# Errors: 0, Warnings: 0
+project compileall
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of interface.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of TEST1.sv was successful.
+# Compile of TEST2.sv was successful.
+# Compile of TEST3.sv was successful.
+# Compile of TEST4.sv was successful.
+# Compile of TEST5.sv was successful.
+# Compile of TEST6.sv was successful.
+# Compile of TEST7.sv was successful.
+# Compile of TEST8.sv was successful.
+# Compile of TEST9.sv was successful.
+# Compile of top_dut.sv was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# 22 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top
+# vsim -voptargs="+acc" work.top 
+# Start time: 17:35:07 on Apr 01,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.top_dut_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.intf_i2c(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+# Loading work.i2c_slave_model(fast)
+# Loading work.testcase(fast)
+# Loading work.assertion_cov(fast)
+# Loading work.intf_i2c(fast)
+run -all
+# DEBUG i2c_slave; stop condition detected at 	                    0
+# DEBUG i2c_slave; start condition detected at 	                  480
+# DEBUG i2c_slave; command byte received (write) at 	                 3482
+# DEBUG i2c_slave; address received. adr=01, ack=1
+# DEBUG i2c_slave; data block write 01 to address 01
+# DEBUG i2c_slave; data block write 02 to address 02
+# DEBUG i2c_slave; data block write 02 to address 03
+# DEBUG i2c_slave; data block write 03 to address 04
+# DEBUG i2c_slave; data block write 03 to address 05
+# DEBUG i2c_slave; data block write 04 to address 06
+# DEBUG i2c_slave; data block write 04 to address 07
+# DEBUG i2c_slave; data block write 0a to address 08
+# DEBUG i2c_slave; data block write 0a to address 09
+# DEBUG i2c_slave; data block write 0a to address 0a
+# DEBUG i2c_slave; data block write 0a to address 0b
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/sim/TEST3.sv(29)
+#    Time: 40310 ns  Iteration: 1  Instance: /top/test
+# 1
+# Break in Module testcase at C:/Users/PC/Documents/Chung_training/code/sim/TEST3.sv line 29
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.top_dut_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.intf_i2c(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+# Loading work.i2c_slave_model(fast)
+# Loading work.testcase(fast)
+# Loading work.assertion_cov(fast)
+# Loading work.intf_i2c(fast)
+add wave -position insertpoint sim:/top/DUT/i2c/*
+add wave -position insertpoint sim:/top/DUT/slave/*
+run -all
+# DEBUG i2c_slave; stop condition detected at 	                    0
+# DEBUG i2c_slave; start condition detected at 	                  480
+# DEBUG i2c_slave; command byte received (write) at 	                 3482
+# DEBUG i2c_slave; address received. adr=01, ack=1
+# DEBUG i2c_slave; data block write 01 to address 01
+# DEBUG i2c_slave; data block write 02 to address 02
+# DEBUG i2c_slave; data block write 02 to address 03
+# DEBUG i2c_slave; data block write 03 to address 04
+# DEBUG i2c_slave; data block write 03 to address 05
+# DEBUG i2c_slave; data block write 04 to address 06
+# DEBUG i2c_slave; data block write 04 to address 07
+# DEBUG i2c_slave; data block write 0a to address 08
+# DEBUG i2c_slave; data block write 0a to address 09
+# DEBUG i2c_slave; data block write 0a to address 0a
+# DEBUG i2c_slave; data block write 0a to address 0b
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/sim/TEST3.sv(29)
+#    Time: 40310 ns  Iteration: 1  Instance: /top/test
+# 1
+# Break in Module testcase at C:/Users/PC/Documents/Chung_training/code/sim/TEST3.sv line 29
+quit -sim
+# End time: 17:44:58 on Apr 01,2024, Elapsed time: 0:09:51
+# Errors: 0, Warnings: 0
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of interface.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of TEST1.sv was successful.
+# Compile of TEST2.sv was successful.
+# Compile of TEST3.sv was successful.
+# Compile of TEST4.sv was successful.
+# Compile of TEST5.sv was successful.
+# Compile of TEST6.sv was successful.
+# Compile of TEST7.sv was successful.
+# Compile of TEST8.sv was successful.
+# Compile of TEST9.sv was successful.
+# Compile of top_dut.sv was successful with warnings.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# 22 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top
+# vsim -voptargs="+acc" work.top 
+# Start time: 17:45:06 on Apr 01,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.top_dut_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.intf_i2c(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+# Loading work.i2c_slave_model(fast)
+# Loading work.testcase(fast)
+# Loading work.assertion_cov(fast)
+# Loading work.intf_i2c(fast)
+run -all
+# DEBUG i2c_slave; stop condition detected at 	                    0
+# DEBUG i2c_slave; start condition detected at 	                  480
+# DEBUG i2c_slave; command byte received (write) at 	                 3482
+# DEBUG i2c_slave; address received. adr=01, ack=1
+# DEBUG i2c_slave; data block write 01 to address 01
+# DEBUG i2c_slave; data block write 02 to address 02
+# DEBUG i2c_slave; data block write 02 to address 03
+# DEBUG i2c_slave; data block write 03 to address 04
+# DEBUG i2c_slave; data block write 03 to address 05
+# DEBUG i2c_slave; data block write 04 to address 06
+# DEBUG i2c_slave; data block write 04 to address 07
+# DEBUG i2c_slave; data block write 0c to address 08
+# DEBUG i2c_slave; data block write 0c to address 09
+# DEBUG i2c_slave; data block write 0c to address 0a
+# DEBUG i2c_slave; data block write 0c to address 0b
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/sim/TEST3.sv(31)
+#    Time: 40350 ns  Iteration: 1  Instance: /top/test
+# 1
+# Break in Module testcase at C:/Users/PC/Documents/Chung_training/code/sim/TEST3.sv line 31
+quit -sim
+# End time: 17:47:16 on Apr 01,2024, Elapsed time: 0:02:10
+# Errors: 0, Warnings: 0
+project compileall
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of interface.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of TEST1.sv was successful.
+# Compile of TEST2.sv was successful.
+# Compile of TEST3.sv was successful.
+# Compile of TEST4.sv was successful.
+# Compile of TEST5.sv was successful.
+# Compile of TEST6.sv was successful.
+# Compile of TEST7.sv was successful.
+# Compile of TEST8.sv was successful.
+# Compile of TEST9.sv was successful.
+# Compile of top_dut.sv was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# 22 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top
+# vsim -voptargs="+acc" work.top 
+# Start time: 17:47:39 on Apr 01,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.top_dut_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.intf_i2c(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+# Loading work.i2c_slave_model(fast)
+# Loading work.testcase(fast)
+# Loading work.assertion_cov(fast)
+# Loading work.intf_i2c(fast)
+run -all
+# DEBUG i2c_slave; stop condition detected at 	                    0
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/sim/TEST3.sv(33)
+#    Time: 40390 ns  Iteration: 1  Instance: /top/test
+# 1
+# Break in Module testcase at C:/Users/PC/Documents/Chung_training/code/sim/TEST3.sv line 33
+quit -sim
+# End time: 17:48:22 on Apr 01,2024, Elapsed time: 0:00:43
+# Errors: 0, Warnings: 0
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of interface.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of TEST1.sv was successful.
+# Compile of TEST2.sv was successful.
+# Compile of TEST3.sv was successful.
+# Compile of TEST4.sv was successful.
+# Compile of TEST5.sv was successful.
+# Compile of TEST6.sv was successful.
+# Compile of TEST7.sv was successful.
+# Compile of TEST8.sv was successful.
+# Compile of TEST9.sv was successful.
+# Compile of top_dut.sv was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# 22 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top
+# vsim -voptargs="+acc" work.top 
+# Start time: 17:48:45 on Apr 01,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.top_dut_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.intf_i2c(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+# Loading work.i2c_slave_model(fast)
+# Loading work.testcase(fast)
+# Loading work.assertion_cov(fast)
+# Loading work.intf_i2c(fast)
+run -all
+# DEBUG i2c_slave; stop condition detected at 	                    0
+# DEBUG i2c_slave; start condition detected at 	                  480
+# DEBUG i2c_slave; command byte received (write) at 	                 3482
+# DEBUG i2c_slave; address received. adr=01, ack=1
+# DEBUG i2c_slave; data block write 01 to address 01
+# DEBUG i2c_slave; data block write 02 to address 02
+# DEBUG i2c_slave; data block write 02 to address 03
+# DEBUG i2c_slave; data block write 03 to address 04
+# DEBUG i2c_slave; data block write 03 to address 05
+# DEBUG i2c_slave; data block write 04 to address 06
+# DEBUG i2c_slave; data block write 04 to address 07
+# DEBUG i2c_slave; data block write 0d to address 08
+# DEBUG i2c_slave; data block write 0d to address 09
+# DEBUG i2c_slave; data block write 0d to address 0a
+# DEBUG i2c_slave; data block write 0d to address 0b
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/sim/TEST3.sv(33)
+#    Time: 40390 ns  Iteration: 1  Instance: /top/test
+# 1
+# Break in Module testcase at C:/Users/PC/Documents/Chung_training/code/sim/TEST3.sv line 33
+run
+# ** Note: implicit $finish from program    : C:/Users/PC/Documents/Chung_training/code/sim/TEST3.sv(33)
+#    Time: 40390 ns  Iteration: 1  Instance: /top/test
+# 1
+# Simulation stop requested.
+quit -sim
+# End time: 17:50:02 on Apr 01,2024, Elapsed time: 0:01:17
+# Errors: 0, Warnings: 0
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of interface.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of TEST1.sv was successful.
+# Compile of TEST2.sv was successful.
+# Compile of TEST3.sv was successful.
+# Compile of TEST4.sv was successful.
+# Compile of TEST5.sv was successful.
+# Compile of TEST6.sv was successful.
+# Compile of TEST7.sv was successful.
+# Compile of TEST8.sv was successful.
+# Compile of TEST9.sv was successful.
+# Compile of top_dut.sv was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# 22 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top
+# vsim -voptargs="+acc" work.top 
+# Start time: 17:50:11 on Apr 01,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.top_dut_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.intf_i2c(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+# Loading work.i2c_slave_model(fast)
+# Loading work.testcase(fast)
+# Loading work.assertion_cov(fast)
+# Loading work.intf_i2c(fast)
+add wave -position insertpoint sim:/top/DUT/i2c/*
+add wave -position insertpoint sim:/top/DUT/slave/*
+run -all
+# DEBUG i2c_slave; stop condition detected at 	                    0
+# DEBUG i2c_slave; start condition detected at 	                  480
+# DEBUG i2c_slave; command byte received (write) at 	                 3482
+# DEBUG i2c_slave; address received. adr=01, ack=1
+# DEBUG i2c_slave; data block write 01 to address 01
+# DEBUG i2c_slave; data block write 02 to address 02
+# DEBUG i2c_slave; data block write 02 to address 03
+# DEBUG i2c_slave; data block write 03 to address 04
+# DEBUG i2c_slave; data block write 03 to address 05
+# DEBUG i2c_slave; data block write 04 to address 06
+# DEBUG i2c_slave; data block write 04 to address 07
+# DEBUG i2c_slave; data block write 0b to address 08
+# DEBUG i2c_slave; data block write 0b to address 09
+# DEBUG i2c_slave; data block write 0b to address 0a
+# DEBUG i2c_slave; data block write 0b to address 0b
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/sim/TEST3.sv(31)
+#    Time: 40350 ns  Iteration: 1  Instance: /top/test
+# 1
+# Break in Module testcase at C:/Users/PC/Documents/Chung_training/code/sim/TEST3.sv line 31
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.top_dut_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.intf_i2c(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+# Loading work.i2c_slave_model(fast)
+# Loading work.testcase(fast)
+# Loading work.assertion_cov(fast)
+# Loading work.intf_i2c(fast)
+add wave -position insertpoint sim:/top/DUT/apb/*
+run -all
+# DEBUG i2c_slave; stop condition detected at 	                    0
+# DEBUG i2c_slave; start condition detected at 	                  480
+# DEBUG i2c_slave; command byte received (write) at 	                 3482
+# DEBUG i2c_slave; address received. adr=01, ack=1
+# DEBUG i2c_slave; data block write 01 to address 01
+# DEBUG i2c_slave; data block write 02 to address 02
+# DEBUG i2c_slave; data block write 02 to address 03
+# DEBUG i2c_slave; data block write 03 to address 04
+# DEBUG i2c_slave; data block write 03 to address 05
+# DEBUG i2c_slave; data block write 04 to address 06
+# DEBUG i2c_slave; data block write 04 to address 07
+# DEBUG i2c_slave; data block write 0b to address 08
+# DEBUG i2c_slave; data block write 0b to address 09
+# DEBUG i2c_slave; data block write 0b to address 0a
+# DEBUG i2c_slave; data block write 0b to address 0b
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/sim/TEST3.sv(31)
+#    Time: 40350 ns  Iteration: 1  Instance: /top/test
+# 1
+# Break in Module testcase at C:/Users/PC/Documents/Chung_training/code/sim/TEST3.sv line 31
+quit -sim
+# End time: 17:56:54 on Apr 01,2024, Elapsed time: 0:06:43
+# Errors: 0, Warnings: 0
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of interface.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of TEST1.sv was successful.
+# Compile of TEST2.sv was successful.
+# Compile of TEST3.sv was successful.
+# Compile of TEST4.sv was successful.
+# Compile of TEST5.sv was successful.
+# Compile of TEST6.sv was successful.
+# Compile of TEST7.sv was successful.
+# Compile of TEST8.sv was successful.
+# Compile of TEST9.sv was successful.
+# Compile of top_dut.sv was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# 22 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top
+# vsim -voptargs="+acc" work.top 
+# Start time: 17:57:04 on Apr 01,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.top_dut_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.intf_i2c(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+# Loading work.i2c_slave_model(fast)
+# Loading work.testcase(fast)
+# Loading work.assertion_cov(fast)
+# Loading work.intf_i2c(fast)
+run -all
+# DEBUG i2c_slave; stop condition detected at 	                    0
+# DEBUG i2c_slave; start condition detected at 	                  480
+# DEBUG i2c_slave; command byte received (write) at 	                 3482
+# DEBUG i2c_slave; address received. adr=01, ack=1
+# DEBUG i2c_slave; data block write 01 to address 01
+# DEBUG i2c_slave; data block write 02 to address 02
+# DEBUG i2c_slave; data block write 02 to address 03
+# DEBUG i2c_slave; data block write 03 to address 04
+# DEBUG i2c_slave; data block write 03 to address 05
+# DEBUG i2c_slave; data block write 04 to address 06
+# DEBUG i2c_slave; data block write 04 to address 07
+# DEBUG i2c_slave; data block write 0b to address 08
+# DEBUG i2c_slave; data block write 0b to address 09
+# DEBUG i2c_slave; data block write 0b to address 0a
+# DEBUG i2c_slave; data block write 0b to address 0b
+# DEBUG i2c_slave; data block write 0b to address 0c
+# DEBUG i2c_slave; stop condition detected at 	                41440
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/sim/TEST3.sv(32)
+#    Time: 80850 ns  Iteration: 1  Instance: /top/test
+# 1
+# Break in Module testcase at C:/Users/PC/Documents/Chung_training/code/sim/TEST3.sv line 32
+quit -sim
+# End time: 17:59:29 on Apr 01,2024, Elapsed time: 0:02:25
+# Errors: 0, Warnings: 0
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of interface.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of TEST1.sv was successful.
+# Compile of TEST2.sv was successful.
+# Compile of TEST3.sv was successful.
+# Compile of TEST4.sv was successful.
+# Compile of TEST5.sv was successful.
+# Compile of TEST6.sv was successful.
+# Compile of TEST7.sv was successful.
+# Compile of TEST8.sv was successful.
+# Compile of TEST9.sv was successful.
+# Compile of top_dut.sv was successful.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# 22 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top
+# vsim -voptargs="+acc" work.top 
+# Start time: 17:59:36 on Apr 01,2024
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading sv_std.std
+# Loading work.top_dut_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.intf_i2c(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+# Loading work.i2c_slave_model(fast)
+# Loading work.testcase(fast)
+# Loading work.assertion_cov(fast)
+# Loading work.intf_i2c(fast)
+run -all
+# DEBUG i2c_slave; stop condition detected at 	                    0
+# DEBUG i2c_slave; start condition detected at 	                  480
+# DEBUG i2c_slave; command byte received (write) at 	                 3482
+# DEBUG i2c_slave; address received. adr=01, ack=1
+# DEBUG i2c_slave; data block write 01 to address 01
+# DEBUG i2c_slave; data block write 02 to address 02
+# DEBUG i2c_slave; data block write 02 to address 03
+# DEBUG i2c_slave; data block write 03 to address 04
+# DEBUG i2c_slave; data block write 03 to address 05
+# DEBUG i2c_slave; data block write 04 to address 06
+# DEBUG i2c_slave; data block write 04 to address 07
+# DEBUG i2c_slave; data block write 0b to address 08
+# DEBUG i2c_slave; data block write 0b to address 09
+# DEBUG i2c_slave; data block write 0b to address 0a
+# DEBUG i2c_slave; data block write 0b to address 0b
+# DEBUG i2c_slave; data block write 0b to address 0c
+# DEBUG i2c_slave; stop condition detected at 	                41440
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/sim/TEST3.sv(32)
+#    Time: 80850 ns  Iteration: 1  Instance: /top/test
+# 1
+# Break in Module testcase at C:/Users/PC/Documents/Chung_training/code/sim/TEST3.sv line 32
+quit -sim
+# End time: 18:00:44 on Apr 01,2024, Elapsed time: 0:01:08
+# Errors: 0, Warnings: 0
+# Compile of assertion.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of env.sv was successful.
+# Compile of interface.sv was successful.
+# Compile of stimulus.sv was successful.
+# Compile of TEST1.sv was successful.
+# Compile of TEST2.sv was successful.
+# Compile of TEST3.sv was successful.
+# Compile of TEST4.sv was successful.
+# Compile of TEST5.sv was successful.
+# Compile of TEST6.sv was successful.
+# Compile of TEST7.sv was successful.
+# Compile of TEST8.sv was successful.
+# Compile of TEST9.sv was successful.
+# Compile of top_dut.sv was successful with warnings.
+# Compile of 8bit_to_1byte.v was successful.
+# Compile of apb_slave.v was successful.
+# Compile of clock_generator.v was successful.
+# Compile of fifo.v was successful.
+# Compile of i2c_controller.v was successful.
+# Compile of top.v was successful.
+# Compile of i2c_slave_model.v was successful.
+# 22 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.top
+# vsim -voptargs="+acc" work.top 
+# Start time: 18:00:53 on Apr 01,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.top_dut_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.intf_i2c(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+# Loading work.i2c_slave_model(fast)
+# Loading work.testcase(fast)
+# Loading work.assertion_cov(fast)
+# Loading work.intf_i2c(fast)
+run -all
+# DEBUG i2c_slave; stop condition detected at 	                    0
+# DEBUG i2c_slave; start condition detected at 	                  480
+# DEBUG i2c_slave; command byte received (write) at 	                 3482
+# DEBUG i2c_slave; stop condition detected at 	                 5150
+# DEBUG i2c_slave; start condition detected at 	                 5560
+# DEBUG i2c_slave; start condition detected at 	                 8760
+# DEBUG i2c_slave; stop condition detected at 	                 9080
+# DEBUG i2c_slave; start condition detected at 	                 9400
+# DEBUG i2c_slave; start condition detected at 	                12600
+# DEBUG i2c_slave; stop condition detected at 	                12920
+# DEBUG i2c_slave; start condition detected at 	                13240
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/sim/TEST5.sv(24)
+#    Time: 15760 ns  Iteration: 2  Instance: /top/test
+# 1
+# Break in Module testcase at C:/Users/PC/Documents/Chung_training/code/sim/TEST5.sv line 24
+quit -sim
+# End time: 18:01:51 on Apr 01,2024, Elapsed time: 0:00:58
+# Errors: 0, Warnings: 0
