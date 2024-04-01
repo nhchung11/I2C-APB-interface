@@ -1,0 +1,8 @@
+# seq=TEST2
+seq=TEST1
+
+rm -rf work; 
+vlib work; 
+vlog -64 -timescale=1ns/1ns -sv +acc -incr -f filelist_tb.f -assertdebug +define+$seq -l vlog_tb.log;
+vlog -64 -sv +acc -incr -f filelist_rtl.f -l vlog_rtl.log +cover=sbceft -assertdebug;
+vsim -64 -voptargs=+acc -assertdebug -coverage top -c -do "set WildcardFilter None;add wave -r top/*;run -all; quit;"

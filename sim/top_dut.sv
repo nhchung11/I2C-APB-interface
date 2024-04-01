@@ -5,9 +5,10 @@
 `include "assertion.sv"
 
 `include "TEST1_transmit_1_byte.sv"
+`timescale 1ns/1ns
 module top();
-    reg PCLK = 0;
-    reg core_clk = 0;
+    reg PCLK = 1;
+    reg core_clk = 1;
 
     always #20 core_clk= ~core_clk;
 	always #5 PCLK= ~PCLK;

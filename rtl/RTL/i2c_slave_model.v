@@ -1,3 +1,4 @@
+`timescale 1ns/1ns
 module i2c_slave_model (scl, sda);
 	parameter I2C_ADR = 7'b001_0000;
 
@@ -33,7 +34,7 @@ module i2c_slave_model (scl, sda);
 	parameter data        = 3'b100;
 	parameter data_ack    = 3'b101;
 
-	reg [2:0] state;
+	reg [2:0] state; 
 	initial
 	begin
 	   sda_o = 1'b1;
