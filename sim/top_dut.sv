@@ -4,8 +4,7 @@
 `include "env.sv"
 `include "assertion.sv"
 
-`include "TEST1_transmit_1_byte.sv"
-`timescale 1ns/1ns
+`include "TEST2.sv"
 module top();
     reg PCLK = 1;
     reg core_clk = 1;

@@ -25,7 +25,7 @@ module apb
     reg                     TX_full;
     reg                     RX_full;
     reg                     RX_empty;
-    reg [2:0]               reg_map;
+    // reg [2:0]               reg_map;
 
 
     // Input status
@@ -36,12 +36,12 @@ module apb
         RX_empty            = status_reg[4];
     end
 
-    always @(posedge PCLK, negedge PRESETn) begin
-        if (!PRESETn)
-            reg_map <= 3'b0;
-        else
-            reg_map <= PADDR[7:5];
-    end
+    // always @(posedge PCLK, negedge PRESETn) begin
+    //     if (!PRESETn)
+    //         reg_map <= 3'b0;
+    //     else
+    //         reg_map <= PADDR[7:5];
+    // end
     
     // READY
     assign PREADY = ((PENABLE == 1'b1) & (PSELx == 1'b1)) ? 1'b1 : 1'b0;
@@ -58,27 +58,27 @@ module apb
             prescale_reg                <= 8'b0;
         end
         else begin 
-            case (reg_map)
+            case (PADDR)
                 // Write to Prescale register
-                3'b001: begin
+                1: begin
                     if ((PWRITE == 1) && (PSELx == 1) && (PENABLE == 1))
                         prescale_reg    <= PWDATA;
                 end
 
                 // Write to slave address
-                3'b010: begin
+                2: begin
                     if ((PWRITE == 1) && (PSELx == 1) && (PENABLE == 1))
                         address_reg     <= PWDATA;
                 end
 
                 // Read from status register
-                3'b011: begin
+                3: begin
                     if ((PWRITE == 0) && (PSELx == 1) && (PENABLE == 1))
                         PRDATA          <= status_reg;
                 end
 
                 // Write to transmit register
-                3'b100: begin
+                4: begin
                     if ((PWRITE == 1) && (PSELx == 1) && (PENABLE == 1)) begin
                         transmit_reg    <= PWDATA;
                         command_reg     <= 11010000;
@@ -88,7 +88,7 @@ module apb
                 end
 
                 // Read from receive register
-                3'b101: begin
+                5: begin
                     if (PSELx == 0)
                         command_reg     <= 10010000;
                     else if ((PWRITE == 0) && (PSELx == 1) && (PENABLE == 1)) begin
@@ -98,7 +98,7 @@ module apb
                 end
                 
                 // Write to Command regisger
-                3'b110: begin
+                6: begin
                     if ((PWRITE == 1) && (PSELx == 1) && (PENABLE == 1))
                         command_reg     <= PWDATA;
                 end

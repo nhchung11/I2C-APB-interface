@@ -1,3 +1,4 @@
+`timescale 1ns/1ns
 module i2c_slave_model (scl, sda);
 	parameter I2C_ADR = 7'b001_0000;
 
@@ -6,7 +7,7 @@ module i2c_slave_model (scl, sda);
 
 	wire debug = 1'b1;
 
-	reg [7:0] mem [7:0]; // initiate memory
+	reg [7:0] mem [3:0]; // initiate memory
 	reg [7:0] mem_adr;   // memory address
 	reg [7:0] mem_do;    // memory data output
 
