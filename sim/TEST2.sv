@@ -1,4 +1,4 @@
-// Transmit slave address correctly
+// Transmit slave address 
 // Transmit 1 byte data and receive ACK
 
 `include "env.sv"

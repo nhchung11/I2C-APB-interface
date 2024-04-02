@@ -4,7 +4,7 @@
 `include "env.sv"
 `include "assertion.sv"
 
-`include "TEST5.sv"
+`include "TEST3.sv"
 module top();
     reg PCLK = 1;
     reg core_clk = 1;

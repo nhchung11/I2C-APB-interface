@@ -48,11 +48,7 @@ class driver;
         @(posedge intf.pclk);
         sti.clock_1();
         sti.PADDR = paddr;
-        // if (paddr == 4) 
-        //     sti.randomize();
-        // else 
-            sti.PWDATA = pwdata;
-        
+        sti.PWDATA = pwdata;
         sti.PWRITE = rw;
         assign_intf(sti);
 
