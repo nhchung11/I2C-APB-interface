@@ -50,8 +50,9 @@ class driver;
         sti.PADDR = paddr;
         // if (paddr == 4) 
         //     sti.randomize();
-        // else
+        // else 
             sti.PWDATA = pwdata;
+        
         sti.PWRITE = rw;
         assign_intf(sti);
 

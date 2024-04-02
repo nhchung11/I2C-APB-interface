@@ -28,7 +28,7 @@ module BitToByteConverter
         end else begin
             if (enable) begin
                 tmp <= {tmp[6:0], in};  // Shift the existing bits and append the new input bit
-                if ((counter == 7) && (tmp != 0))
+                if ((counter == 0) && (tmp != 0))
                     out <= tmp;
             end
         end

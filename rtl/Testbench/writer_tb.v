@@ -13,9 +13,9 @@ module write_tb;
     wire            sda;
     wire            scl;
 
-    reg             sda_en_tb;
-    reg             sda_in;
-    reg             scl_in;
+    // reg             sda_en_tb;
+    // reg             sda_in;
+    // reg             scl_in;
 
     top_level dut
     (
@@ -33,7 +33,7 @@ module write_tb;
         .sda        (sda),
         .scl        (scl)
     );
-    assign sda = sda_en_tb ? sda_in : 1'bz;
+    // assign sda = sda_en_tb ? sda_in : 1'bz;
     
     always #20 core_clk= ~core_clk;
 	always #5 PCLK= ~PCLK;
@@ -45,9 +45,9 @@ module write_tb;
         PWRITE = 0;
         PSELx = 0;
         PENABLE = 0;
-        sda_en_tb = 0;
-        sda_in = 1;
-        scl_in = 1;
+        // sda_en_tb = 0;
+        // sda_in = 1;
+        // scl_in = 1;
 
         #100;
         PRESETn = 1;

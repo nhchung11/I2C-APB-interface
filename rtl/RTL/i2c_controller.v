@@ -81,14 +81,14 @@ module i2c_controller
             ack_counter2        <= 0;
         end
         else begin
-            if (current_state == WRITE_ACK) begin
+            if ((current_state == WRITE_ACK) || (current_state == READ_ACK)) begin
                 ack_counter1        <= ack_counter1 + 1;
                 if (ack_counter1 == 5)
                     ack_counter1 <= 0;
             end
             else
                 ack_counter1    <= 0;
-            if (current_state == WRITE_DATA) begin
+            if ((current_state == WRITE_DATA) || (current_state == READ_DATA)) begin
                 ack_counter2        <= ack_counter2 + 1;
                 if (ack_counter2 == 5)
                     ack_counter2 <= 0;
@@ -260,16 +260,16 @@ module i2c_controller
                 //-----------------------------------------------------
 
                 READ_DATA: begin
-                    sda_enable          <= 0;
-                    sda_o               <= 1;
+                    // sda_o               <= 1;
                     scl_enable          <= 1;
                     converter_enable    <= 1;
                     rx_check            <= 0;
+                    if (ack_counter2 == 3)
+                        sda_enable      <= 0;
                 end
                 //-----------------------------------------------------
 
                 READ_ACK: begin
-                    sda_enable          <= 1;
                     scl_enable          <= 1;
                     converter_enable    <= 0;
                     fifo_rx_enable      <= 1;
@@ -278,6 +278,8 @@ module i2c_controller
                         fifo_rx_enable  <= 0;
                     if (i2c_clk == 0)
                         sda_o           <= 0;
+                    if (ack_counter1 == 3)
+                        sda_enable      <= 1;  
                 end
                 //-----------------------------------------------------
 

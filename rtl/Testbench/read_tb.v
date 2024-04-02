@@ -6,15 +6,16 @@ module read_tb;
     reg             PWRITE;
     reg [7:0]       PADDR;
     reg [7:0]       PWDATA;
-
-    reg             sda_in;
-    reg             scl_in;
     reg             core_clk;
 
     wire [7:0]      PRDATA;
     wire            PREADY;
-    wire            sda_out;
-    wire            scl_out;
+    wire            sda;
+    wire            scl;
+
+    // reg             sda_en_tb;
+    // reg             sda_in;
+    // reg             scl_in;
 
     top_level dut
     (
@@ -25,19 +26,16 @@ module read_tb;
         .PENABLE    (PENABLE),
         .PADDR      (PADDR),
         .PWDATA     (PWDATA),
-        .sda_in     (sda_in),
-        .scl_in     (scl_in),
         .core_clk   (core_clk),
 
         .PREADY     (PREADY),
         .PRDATA     (PRDATA),
-        .sda_out    (sda_out),
-        .scl_out    (scl_out)
+        .sda        (sda),
+        .scl        (scl)
     );
-
+    // assign sda = sda_en_tb ? sda_in : 1'bz;
     
     always #20 core_clk= ~core_clk;
-
 	always #5 PCLK= ~PCLK;
 
     initial begin
@@ -47,15 +45,16 @@ module read_tb;
         PWRITE = 0;
         PSELx = 0;
         PENABLE = 0;
-        sda_in = 1;
-        scl_in = 1;
+        // sda_en_tb = 0;
+        // sda_in = 1;
+        // scl_in = 1;
 
         #100;
         PRESETn = 1;
 
         // Prescale reg = 1
         #10;
-        PADDR = 8'b00100000;
+        PADDR = 1;
         PWRITE = 1;
         PSELx = 1;
         PENABLE = 0;
@@ -67,10 +66,10 @@ module read_tb;
         #10;
         PSELx = 0;
         #10;
-        PADDR = 8'b01000000;
+        PADDR = 2;
         PWRITE = 1;
         PSELx = 1;
-        PWDATA = 8'b11110001;
+        PWDATA = 8'b00100000;
         PENABLE = 0;    
         #10;
         PENABLE = 1; 
@@ -79,199 +78,115 @@ module read_tb;
         #10;
         PSELx = 0;
         #10;
-        PADDR = 8'b01100000;
+        PADDR = 3;
         PWRITE = 0;
         PSELx = 1;
         PENABLE = 0; 
         #10;
         PENABLE = 1;
-
-        // Command reg = 5;
+ 
+        // Command reg = 6;
         #10;
         PSELx = 0;
         #10;
-        PADDR = 8'b11000000;
+        PADDR = 6;
         PWRITE = 1;
         PSELx = 1;
         PENABLE = 0; 
         PWDATA = 8'b10010000;
         #10;
         PENABLE = 1;
-        #10;
-        PSELx = 0;
-        #3380;
         
-        // READ DATA 1
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 1;
-
-        // ACK DATA 1
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 1;
-        #160;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 1;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #160;
-        sda_in = 1;
-        #160;
-        sda_in = 0;
-        // READ DATA 3
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 1;
-        #320;
-        sda_in = 1;
-
-        // READ DATA 4
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 1;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-
-        // READ DATA 5
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 1;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 1;
-
-        // READ DATA 6
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 1;
-        #320;
-        sda_in = 1;
-        #320;
-        sda_in = 0;
-
-        // READ DATA 7
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 1;
-        #320;
-        sda_in = 1;
-        #320;
-        sda_in = 1;
-
-        // READ DATA 8
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 1;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-        #320;
-        sda_in = 0;
-
-        // Command reg = 6;
+        // Transmit reg = 4
         #10;
         PSELx = 0;
         #10;
-        PADDR = 8'b11000000;
+        PADDR = 4;
+        PWRITE = 1;
+        PSELx = 1;
+        PENABLE = 0;
+        PWDATA = 0; 
+        #10;
+        PENABLE = 1;  
+
+        // Transmit reg = 4
+        #10;
+        PSELx = 0;
+        #10;
+        PADDR = 4;
+        PWRITE = 1;
+        PSELx = 1;
+        PENABLE = 0;
+        PWDATA = 1; 
+        #10;
+        PENABLE = 1;
+        
+        // Transmit reg = 4
+        #10;
+        PSELx = 0;
+        #10;
+        PADDR = 4;
+        PWRITE = 1;
+        PSELx = 1;
+        PENABLE = 0;
+        PWDATA = 2; 
+        #10;
+        PENABLE = 1;
+
+        // Transmit reg = 4
+        #10;
+        PSELx = 0;
+        #10;
+        PADDR = 4;
+        PWRITE = 1;
+        PSELx = 1;
+        PENABLE = 0;
+        PWDATA = 3; 
+        #10;
+        PENABLE = 1;
+
+        // // Transmit reg = 4
+        // #10;
+        // PSELx = 0;
+        // #10;
+        // PADDR = 4;
+        // PWRITE = 1;
+        // PSELx = 1;
+        // PENABLE = 0;
+        // PWDATA = 4; 
+        // #10;
+        // PENABLE = 1;
+
+        #10;
+        PSELx = 0;
+        PENABLE = 0;
+        PSELx = 0;
+        PWRITE = 0;
+
+
+        // Finish writing
+        #20000
+        // Address reg = 2
+        #10;
+        PSELx = 0;
+        #10;
+        PADDR = 2;
+        PWRITE = 1;
+        PSELx = 1;
+        PWDATA = 8'b00100001;
+        PENABLE = 0;    
+        #10;
+        PENABLE = 1; 
+
+        #20000;
+        // Receive reg = 5 data 1
+        #10;
+        PSELx = 0;
+        #10;
+        PADDR = 5;
         PWRITE = 0;
         PSELx = 1;
         PENABLE = 0; 
-        PWDATA = 8'b10110000;
         #10;
         PENABLE = 1;
 
@@ -279,81 +194,35 @@ module read_tb;
         #10;
         PSELx = 0;
         #10;
-        PADDR = 8'b10100000;
+        PADDR = 5;
         PWRITE = 0;
         PSELx = 1;
         PENABLE = 0; 
         #10;
         PENABLE = 1;
 
-        // Receive reg = 5 data 2
+        // Receive reg = 5 data 1
         #10;
         PSELx = 0;
         #10;
-        PADDR = 8'b10100000;
+        PADDR = 5;
         PWRITE = 0;
         PSELx = 1;
         PENABLE = 0; 
         #10;
         PENABLE = 1;
 
-        // Receive reg = 5 data 3
+        // Receive reg = 5 data 1
         #10;
         PSELx = 0;
         #10;
-        PADDR = 8'b10100000;
+        PADDR = 5;
         PWRITE = 0;
         PSELx = 1;
         PENABLE = 0; 
         #10;
         PENABLE = 1;
-
-        // Receive reg = 5 data 4
-        #10;
-        PSELx = 0;
-        #10;
-        PADDR = 8'b10100000;
-        PWRITE = 0;
-        PSELx = 1;
-        PENABLE = 0; 
-        #10;
-        PENABLE = 1;
-
-        // Receive reg = 5 data 5
-        #10;
-        PSELx = 0;
-        #10;
-        PADDR = 8'b10100000;
-        PWRITE = 0;
-        PSELx = 1;
-        PENABLE = 0; 
-        #10;
-        PENABLE = 1;
-
-        // Receive reg = 5 data 6
-        #10;
-        PSELx = 0;
-        #10;
-        PADDR = 8'b10100000;
-        PWRITE = 0;
-        PSELx = 1;
-        PENABLE = 0; 
-        #10;
-        PENABLE = 1;
-
-        // Receive reg = 5 data 7
-        #10;
-        PSELx = 0;
-        #10;
-        PADDR = 8'b10100000;
-        PWRITE = 0;
-        PSELx = 1;
-        PENABLE = 0; 
-        #10;
-        PENABLE = 1;
-
-        #5000;
+        #1000;
         $finish;
-
     end
-endmodule
+endmodule 

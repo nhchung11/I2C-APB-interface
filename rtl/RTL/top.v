@@ -40,7 +40,7 @@ module top_level
     wire                                fifo_rx_enable;
     wire                                i2c_enable;
 
-    assign i2c_enable = command_reg[7] & !status_reg[6];
+    assign i2c_enable = (!address_reg[0]) ? (command_reg[7] & !status_reg[6]) : (command_reg[7] & !status_reg[5]);
 
     // Converter enable
     wire                                converter_enable;
