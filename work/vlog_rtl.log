@@ -1,0 +1,7 @@
+QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 18 2018
+Start time: 17:37:28 on Apr 03,2024
+vlog -64 -sv "+acc" -incr -f filelist_rtl.f -l vlog_rtl.log "+cover=sbceft" -assertdebug 
+** Error: (vlog-7) Failed to open design unit file "../rtl/*.v" in read mode.
+No such file or directory. (errno = ENOENT)
+End time: 17:37:28 on Apr 03,2024, Elapsed time: 0:00:00
+Errors: 1, Warnings: 1

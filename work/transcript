@@ -1,0 +1,10 @@
+# ** Warning: (vsim-159) Mode option -64 is not supported in this context and will be ignored.
+# ** Warning: (vsim-159) Mode option -64 is not supported in this context and will be ignored.
+# vsim -64 -voptargs="+acc" -assertdebug -coverage top -c -do "set WildcardFilter None;add wave -r top/*;run -all; quit;" 
+# Start time: 17:37:29 on Apr 03,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error: ../sim/top_dut.sv(19): Module 'top_level' is not defined.
+# Optimization failed
+# Error loading design
+# End time: 17:37:29 on Apr 03,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 2
