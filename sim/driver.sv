@@ -1,22 +1,28 @@
 `ifndef DRIVER
 `define DRIVER
 `include "stimulus.sv"
+`include "scoreboard.sv"
 
 class driver;
-    stimulus sti;
-
+    stimulus    sti;
+    scoreboard  sb; 
+    
     virtual intf_i2c intf;
-    function new (virtual intf_i2c intf);
-        this.intf   = intf;
-    endfunction
+    
 
     covergroup cov @(posedge intf.pclk);
         reg_addr: coverpoint intf.paddr {
-            bins write = {1, 2, 4, 6};
-            bins read = {3, 5};
+            bins write  = {1, 2, 4, 6};
+            bins read   = {3, 5};
         }
         rw: coverpoint intf.pwrite;
     endgroup
+
+    function new (virtual intf_i2c intf, scoreboard sb);
+        this.intf   = intf;
+        this.sb     = sb;
+        cov         = new();
+    endfunction
 
     task assign_intf(stimulus sti);
         intf.penable = sti.PENABLE;
@@ -55,6 +61,12 @@ class driver;
         @(posedge intf.pclk);
         sti.clock_2();
         intf.penable = sti.PENABLE;
+        if (intf.paddr == 4) begin
+            sb.data_transmitted.push_back(intf.pwdata);
+            sb.display();
+        end
+        @(posedge intf.pclk)
+        intf.penable = 0;
     endtask
 
     
@@ -72,6 +84,12 @@ class driver;
         @(posedge intf.pclk);
         sti.clock_2();
         intf.penable = sti.PENABLE;
+        @(posedge intf.pclk)
+        intf.penable = 0;
+        if (paddr == 3)
+            $display("APB read data = %b from status register", intf.prdata);
+        else if (paddr == 5)
+            $display("APB read data = %b from receive register", intf.prdata);
     endtask
 endclass
 `endif 

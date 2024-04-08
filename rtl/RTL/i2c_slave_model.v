@@ -1,19 +1,32 @@
-// `timescale 1ns/1ns
-module i2c_slave_model (scl, sda);
-	parameter I2C_ADR = 7'b001_0000;
+`timescale 1ns/1ns
 
-	input scl;
-	inout sda;
+module i2c_slave_model 
+	(
+		inout scl, 
+		inout sda, 
+		output reg [7:0] 	saved_data,
+		output reg 			check_data
+	);
+	
+	//
+	// parameters
+	//
+	parameter I2C_ADR = 7'b0010000;
 
+	//
+	// input && outpus
+	//
+	// input scl;
+	// inout sda;
+
+	//
+	// Variable declaration
+	//
 	wire debug = 1'b1;
 
-	reg [7:0] mem [2:0]; // initiate memory
+	reg [7:0] mem [3:0]; // initiate memory
 	reg [7:0] mem_adr;   // memory address
 	reg [7:0] mem_do;    // memory data output
-
-	// always @* begin
-	// 	saved_data = mem;
-	// end
 
 	reg sta, d_sta;
 	reg sto, d_sto;
@@ -31,34 +44,50 @@ module i2c_slave_model (scl, sda);
 	wire      sda_dly;   // delayed version of sda
 
 	// statemachine declaration
-	parameter idle        = 3'b000;		
+	parameter idle        = 3'b000;
 	parameter slave_ack   = 3'b001;
 	parameter get_mem_adr = 3'b010;
 	parameter gma_ack     = 3'b011;
 	parameter data        = 3'b100;
 	parameter data_ack    = 3'b101;
 
-	reg [2:0] state;
+	reg [2:0] state; // synopsys enum_state
+
+	//
+	// module body
+	//
+
 	initial
 	begin
-	   	sda_o = 1'b1;
-	   	state = idle;
+	   sda_o = 1'b1;
+	   state = idle;
 	end
 
 	// generate shift register
 	always @(posedge scl)
-	  	sr <= #1 {sr[6:0],sda};
+	  sr <= #1 {sr[6:0],sda};
 
 	//detect my_address
 	assign my_adr = (sr[7:1] == I2C_ADR);
+	// FIXME: This should not be a generic assign, but rather
+	// qualified on address transfer phase and probably reset by stop
 
+	//generate bit-counter
 	always @(posedge scl)
-	  	if(ld)
-	    	bit_cnt <= #1 3'b111;
-	  	else
-	    	bit_cnt <= #1 bit_cnt - 3'h1;
+	  if(ld)
+	    bit_cnt <= #1 3'b111;
+	  else
+	    bit_cnt <= #1 bit_cnt - 3'h1;
 
+	//generate access done signal
 	assign acc_done = !(|bit_cnt);
+
+	// generate delayed version of sda
+	// this model assumes a hold time for sda after the falling edge of scl.
+	// According to the Phillips i2c spec, there s/b a 0 ns hold time for sda
+	// with regards to scl. If the data changes coincident with the clock, the
+	// acknowledge is missed
+	// Fix by Michael Sosnoski
 	assign #1 sda_dly = sda;
 
 
@@ -71,7 +100,7 @@ module i2c_slave_model (scl, sda);
 				sto   <= #1 1'b0;
 
 				if(debug)
-				$display("DEBUG i2c_slave; start condition detected at \t %t", $time);
+					$display("DEBUG i2c_slave; start condition detected at %t", $time);
 			end
 		else
 			sta <= #1 1'b0;
@@ -87,7 +116,7 @@ module i2c_slave_model (scl, sda);
 			sto <= #1 1'b1;
 
 			if(debug)
-				$display("DEBUG i2c_slave; stop condition detected at \t %t", $time);
+				$display("DEBUG i2c_slave; stop condition detected at %t", $time);
 			end
 		else
 			sto <= #1 1'b0;
@@ -100,7 +129,6 @@ module i2c_slave_model (scl, sda);
 		if (sto || (sta && !d_sta) )
 			begin
 				state <= #1 idle; // reset statemachine
-
 				sda_o <= #1 1'b1;
 				ld    <= #1 1'b1;
 			end
@@ -120,10 +148,11 @@ module i2c_slave_model (scl, sda);
 
 							#2;
 							if(debug && rw)
-							$display("DEBUG i2c_slave; command byte received (read) at \t %t", $time);
-							if(debug && !rw)
-							$display("DEBUG i2c_slave; command byte received (write) at \t %t", $time);
-
+								$display("DEBUG i2c_slave; command byte received (read) at %t", $time);
+							if(debug && !rw) begin
+								$display("DEBUG i2c_slave; command byte received (write) at %t", $time);
+								// saved_data <= mem_adr;
+							end
 							if(rw)
 							begin
 								mem_adr <= 0;
@@ -133,6 +162,7 @@ module i2c_slave_model (scl, sda);
 									begin
 										#2 $display("DEBUG i2c_slave; data block read %x from address %x (1)", mem_do, mem_adr);
 										#2 $display("DEBUG i2c_slave; memcheck [0]=%x, [1]=%x, [2]=%x", mem[4'h0], mem[4'h1], mem[4'h2]);
+										// saved_data <= mem_adr;
 									end
 							end
 						end
@@ -155,7 +185,11 @@ module i2c_slave_model (scl, sda);
 						begin
 							state <= #1 gma_ack;
 							mem_adr <= #1 sr; // store memory address
+							saved_data <= sr;
 							sda_o <= #1 !(sr <= 15); // generate i2c_ack, for valid address
+							check_data <= 1;
+							// if (check_data == 1)
+							// 	check_data <= 0;
 
 							if(debug)
 							#1 $display("DEBUG i2c_slave; address received. adr=%x, ack=%b", sr, sda_o);
@@ -169,6 +203,9 @@ module i2c_slave_model (scl, sda);
 
 					data: // receive or drive data
 					begin
+						if (acc_done)
+							saved_data <= sr;
+							check_data <= 0;
 						if(rw)
 							sda_o <= #1 mem_do[7];
 
@@ -199,7 +236,7 @@ module i2c_slave_model (scl, sda);
 					data_ack:
 					begin
 						ld <= #1 1'b1;
-
+						check_data <= 1;
 						if(rw)
 							if(sr[0]) // read operation && master send NACK
 							begin
@@ -223,11 +260,12 @@ module i2c_slave_model (scl, sda);
 
 	// read data from memory
 	always @(posedge scl)
-		if(!acc_done && rw)
-			mem_do <= #1 {mem_do[6:0], 1'b1}; // insert 1'b1 for host ack generation
+	  if(!acc_done && rw)
+	    mem_do <= #1 {mem_do[6:0], 1'b1}; // insert 1'b1 for host ack generation
 
 	// generate tri-states
 	assign sda = sda_o ? 1'bz : 1'b0;
+
 endmodule
 
 
