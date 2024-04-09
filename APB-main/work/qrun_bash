@@ -1,14 +1,14 @@
 # seq=TEST0_1
 # seq=TEST0_2
 # seq=TEST1
-seq=TEST2
+# seq=TEST2
 # seq=TEST3
 # seq=TEST4         
 # seq=TEST5         # Reset
 # seq=TEST6         # Repeated Start
 # seq=TEST7         # Many bytes
 # seq=TEST8
-# seq=TEST9
+seq=TEST9
 # seq=TEST10
 # seq=TEST11
 # seq=TEST12

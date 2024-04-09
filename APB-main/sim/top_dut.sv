@@ -3,7 +3,7 @@
 `include "driver.sv"
 `include "env.sv"
 `include "assertion.sv"
-`include "TEST12.sv"
+`include "TEST9.sv"
 `timescale 1ns/1ns
 
 // `ifdef  TEST0_1
@@ -45,7 +45,7 @@ module top();
     
 
     // DUT/assertion monitor/testcase instances
-    intf_i2c intf(PCLK, clk);
+    intf_i2c        intf(PCLK, clk);
     
     apb_to_i2c_top  DUT
     (
@@ -69,9 +69,9 @@ module top();
         .sda        (intf.sda),
         .scl        (intf.scl),
         .saved_data (intf.data_write),
-        .check_data (intf.check_data)
+        .check_data (intf.check_data),
+        .read_data  (intf.read_data)
     );
-    testcase test(intf);
-    assertion_cov acov(intf);
-    
+    testcase        test(intf);
+    assertion_cov   acov(intf);
 endmodule

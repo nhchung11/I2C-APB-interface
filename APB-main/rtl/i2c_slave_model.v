@@ -5,7 +5,8 @@ module i2c_slave_model
 		inout scl, 
 		inout sda, 
 		output reg [7:0] 	saved_data,
-		output reg 			check_data
+		output reg 			check_data,
+		output reg			read_data
 	);
 	
 	//
@@ -203,9 +204,11 @@ module i2c_slave_model
 
 					data: // receive or drive data
 					begin
-						if (acc_done)
+						if (acc_done) 
 							saved_data <= sr;
 							check_data <= 0;
+							read_data <= 0;
+						
 						if(rw)
 							sda_o <= #1 mem_do[7];
 
@@ -236,8 +239,10 @@ module i2c_slave_model
 					data_ack:
 					begin
 						ld <= #1 1'b1;
-						check_data <= 1;
-						if(rw)
+						if (!rw)
+							check_data <= 1;
+						if(rw) begin
+							read_data <= 1;
 							if(sr[0]) // read operation && master send NACK
 							begin
 								state <= #1 idle;
@@ -248,6 +253,7 @@ module i2c_slave_model
 								state <= #1 data;
 								sda_o <= #1 mem_do[7];
 							end
+						end
 						else
 							begin
 								state <= #1 data;

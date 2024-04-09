@@ -7,19 +7,19 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/PC/Documents/Chung_training/APB-main/work
+Z0 dC:/Users/PC/Documents/Chung_training/code/APB-main/work
 T_opt
-!s110 1712648142
-VU[E?44>J6>>WBDf1g]4Oh2
+!s110 1712651083
+Vf[Ud@mYhUW5[XUIDPKLI83
 04 3 4 work top fast 0
-=1-18c04dc4ceb4-6614efce-332-fe0
+=1-18c04dc4ceb4-6614fb4b-23a-1a10
 o-quiet -auto_acc_if_foreign -work work +acc
 Z1 tCvgOpt 0
 n@_opt
 OL;O;10.7c;67
 vapb_slave
 Z2 DXx6 sv_std 3 std 0 22 d=_JfHTnXCN[H5FjiaJJc0
-Z3 !s110 1712648141
+Z3 !s110 1712651082
 !i10b 1
 !s100 XKhT0^NQENh_nQ<i;fg]j2
 I5Y[iL]Noc0E0?VT;RICP>0
@@ -35,7 +35,7 @@ Z6 OL;L;10.7c;67
 r1
 !s85 0
 31
-Z7 !s108 1712648141.000000
+Z7 !s108 1712651082.000000
 Z8 !s107 ../rtl/test_fifo.sv|../rtl/fifo.sv|../rtl/top.v|../rtl/i2c_testbench.v|../rtl/i2c_slave_model.v|../rtl/i2c.v|../rtl/apb_test_top.v|../rtl/apb_testbench.v|../rtl/apb_slave.v|
 Z9 !s90 -64|-sv|+acc|-incr|-f|filelist_rtl.f|-l|vlog_rtl.log|+cover=sbceft|-assertdebug|
 !i113 0
@@ -123,13 +123,13 @@ R12
 R1
 vassertion_cov
 R2
-Z13 DXx4 work 15 top_dut_sv_unit 0 22 ?G;[h8n?l863FQF^5ACkA3
+Z13 DXx4 work 15 top_dut_sv_unit 0 22 2:[nUT]>`kJWfQ`BegYa42
 R4
 r1
 !s85 0
 !i10b 1
 !s100 foafg[6HPgk7Y60OiWIFR3
-IPMH`dgcaJ_T`K6MHz5l5L2
+IdjAAYZWW<eWA8oBT6G?KW3
 Z14 !s105 top_dut_sv_unit
 S1
 R0
@@ -141,10 +141,10 @@ R6
 31
 R7
 Z17 !s107 ../sim/TEST12.sv|../sim/assertion.sv|../sim/monitor.sv|../sim/env.sv|../sim/scoreboard.sv|../sim/driver.sv|../sim/interface.sv|../sim/stimulus.sv|../sim/top_dut.sv|
-Z18 !s90 -64|-timescale=1ns/1ns|-sv|+acc|-incr|-f|filelist_tb.f|-assertdebug|+define+TEST2|-l|vlog_tb.log|
+Z18 !s90 -64|-timescale=1ns/1ns|-sv|+acc|-incr|-f|filelist_tb.f|-assertdebug|+define+TEST9|-l|vlog_tb.log|
 !i113 0
 Z19 o-timescale=1ns/1ns -sv +acc +libext+.svh+.vh+.v+.sv -assertdebug -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z20 !s92 -timescale=1ns/1ns -sv +acc +libext+.svh+.vh+.v+.sv +incdir+../sim -y ../sim -assertdebug +define+TEST2 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z20 !s92 -timescale=1ns/1ns -sv +acc +libext+.svh+.vh+.v+.sv +incdir+../sim -y ../sim -assertdebug +define+TEST9 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R1
 vasync_fifo
 R2
@@ -310,7 +310,7 @@ r1
 !s85 0
 !i10b 1
 !s100 Ge98FPXK^SdS75ELN8^JS3
-IHM;d_?=BkCAcJc1QDEng]0
+Imi1IPgYM[VOMiaUE5F^i[1
 R14
 S1
 R0
@@ -413,7 +413,7 @@ r1
 !s85 0
 !i10b 1
 !s100 >7zE4@3JBa<QgX=][a`SC0
-IlUz[8>VVLcgI`1^I:Fh>N2
+I]noF_40m]9J;LWAVhaJX=1
 R14
 S1
 R0
@@ -438,7 +438,7 @@ r1
 !s85 0
 !i10b 1
 !s100 e12OHBP;3:TjfHMj_2B:l2
-IE>Ha1zS8fnEF`W0EONg6S3
+I^R4NYeXHT^YO`cF<P2FlZ2
 R14
 S1
 R0
@@ -458,16 +458,16 @@ R1
 Xtop_dut_sv_unit
 !s115 intf_i2c
 R2
-V?G;[h8n?l863FQF^5ACkA3
+V2:[nUT]>`kJWfQ`BegYa42
 r1
 !s85 0
 !i10b 1
 !s100 a974j59<2NGNaEl9Pc<f13
-I?G;[h8n?l863FQF^5ACkA3
+I2:[nUT]>`kJWfQ`BegYa42
 !i103 1
 S1
 R0
-w1712647786
+w1712648216
 R26
 R27
 F../sim/stimulus.sv

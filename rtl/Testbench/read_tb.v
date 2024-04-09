@@ -212,17 +212,17 @@ module read_tb;
         #10;
         PENABLE = 1;
 
-        // Receive reg = 5 data 1
-        #10;
-        PSELx = 0;
-        #10;
-        PADDR = 5;
-        PWRITE = 0;
-        PSELx = 1;
-        PENABLE = 0; 
-        #10;
-        PENABLE = 1;
-        #1000;
+        // // Receive reg = 5 data 1
+        // #10;
+        // PSELx = 0;
+        // #10;
+        // PADDR = 5;
+        // PWRITE = 0;
+        // PSELx = 1;
+        // PENABLE = 0; 
+        // #10;
+        // PENABLE = 1;
+        #2000;
         $finish;
     end
 endmodule 

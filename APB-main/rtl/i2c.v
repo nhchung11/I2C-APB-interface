@@ -12,6 +12,7 @@ module i2c_master(
 	inout wire i2c_scl,
 	input i2c_repeat_start,
 	input fifo_tx_empty,
+	input fifo_rx_full,
 	//control fifo
 	output reg fifo_tx_rd_en,
 	output reg fifo_rx_wr_en 
@@ -99,7 +100,6 @@ module i2c_master(
 		end		
 		else begin
 			case(state)
-				// State = 0
 				IDLE: begin
 					if (i2c_enable || i2c_repeat_start) begin
 						state <= START;
@@ -108,13 +108,11 @@ module i2c_master(
 					else state <= IDLE;
 				end
 
-				// State = 1
 				START: begin
 					counter <= 7;
 					state <= ADDRESS;
 				end
 
-				// State = 2
 				ADDRESS: begin
 					if (counter == 0) begin 
 						state <= READ_ACK;
@@ -122,7 +120,6 @@ module i2c_master(
 					
 				end
 
-				// State = 3
 				READ_ACK: begin
 					if (i2c_sda == 0) begin
 						counter <= 7;
@@ -131,14 +128,12 @@ module i2c_master(
 					end else state <= STOP;
 				end
 
-				// State = 4
 				WRITE_DATA: begin
 					if(counter == 0) begin
 						state <= READ_ACK2;
 					end else counter <= counter - 1;
 				end
 				
-				// State = 7
 				READ_ACK2: begin
 					if (i2c_sda == 0 && i2c_repeat_start) begin
 						state <= IDLE;
@@ -157,7 +152,6 @@ module i2c_master(
 					end
 				end
 
-				// State = 6
 				READ_DATA: begin
 					i2c_data_out[counter] <= i2c_sda;
 					if (counter == 0) begin
@@ -167,16 +161,15 @@ module i2c_master(
 					else counter <= counter - 1;
 				end
 				
-				// State = 5
 				WRITE_ACK: begin
 					fifo_rx_wr_en <= 0;
 					if (i2c_sda == 0 && i2c_repeat_start) begin
 						state <= IDLE;
 					end
 					else if (i2c_sda == 0) begin
-							state <= WRITE_DATA;
+							state <= READ_DATA;
 							counter <= 7;	
-							if(fifo_tx_empty) count_done <= 1;
+							if(fifo_rx_full) count_done <= 1;
 							if(count_done) begin
 								count_done <= 0;
 								state <= STOP;
@@ -187,7 +180,6 @@ module i2c_master(
 					end
 				end
 
-				// State = 8
 				STOP: begin
 					state <= IDLE;
 				end

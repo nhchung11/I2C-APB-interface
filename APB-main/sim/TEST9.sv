@@ -26,13 +26,14 @@ program testcase(intf_i2c intf);
                     env.drvr.WRITE_REGISTER(4, 5, 1);              // Transmit data = 1
                     env.drvr.WRITE_REGISTER(4, 6, 1);              // Transmit data = 1
                     env.drvr.WRITE_REGISTER(4, 7, 1);              // Transmit data = 1
-                    env.drvr.WRITE_REGISTER(4, 8, 1);              // Transmit data = 1
                     env.drvr.WRITE_REGISTER(2, 8'b11111100, 1);    // Enable I2C on command register
 
                     #25000;
                     env.drvr.WRITE_REGISTER(6, 8'b0010_0001, 1);   // Address register
                     env.drvr.WRITE_REGISTER(2, 8'b11111100, 1);    // Enable I2C on command register
-                    #20000; 
+                    #21000; 
+                    env.drvr.READ_REGISTER(5, 0);
+                    env.drvr.READ_REGISTER(5, 0);
                     env.drvr.READ_REGISTER(5, 0);
                     env.drvr.READ_REGISTER(5, 0);
                     env.drvr.READ_REGISTER(5, 0);
