@@ -1,0 +1,18 @@
+QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 18 2018
+Start time: 14:35:41 on Apr 09,2024
+vlog -64 -timescale=1ns/1ns -sv "+acc" -incr -f filelist_tb.f -assertdebug "+define+TEST2" -l vlog_tb.log 
+-- Compiling package top_dut_sv_unit
+-- Compiling interface intf_i2c
+-- Compiling module assertion_cov
+-- Compiling program testcase
+-- Compiling module top
+-- Scanning library directory '../sim'
+
+Referenced (but uncompiled) modules or primitives:
+	apb_to_i2c_top
+	i2c_slave_model
+
+Top level modules:
+	top
+End time: 14:35:41 on Apr 09,2024, Elapsed time: 0:00:00
+Errors: 0, Warnings: 1

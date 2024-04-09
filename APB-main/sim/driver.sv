@@ -16,6 +16,7 @@ class driver;
             bins read   = {3, 5};
         }
         rw: coverpoint intf.pwrite;
+        rw_reg: cross reg_addr, rw;
     endgroup
 
     function new (virtual intf_i2c intf, scoreboard sb);
@@ -61,7 +62,6 @@ class driver;
         @(posedge intf.pclk);
         sti.clock_2();
         intf.penable = sti.PENABLE;
-        cov.sample();
         if (intf.paddr == 4) begin
             sb.data_transmitted.push_back(intf.pwdata);
             sb.display();
@@ -85,7 +85,6 @@ class driver;
         @(posedge intf.pclk);
         sti.clock_2();
         intf.penable = sti.PENABLE;
-        cov.sample();
         @(posedge intf.pclk)
         intf.penable = 0;
         if (paddr == 3)

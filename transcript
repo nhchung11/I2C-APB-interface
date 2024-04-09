@@ -12,83 +12,57 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# Loading project Tuan
-# Compile of apb_slave.v was successful.
-# Compile of apb_test_top.v was successful.
-# Compile of apb_testbench.v was successful.
-# Compile of fifo.sv was successful.
-# Compile of i2c.v was successful.
-# Compile of i2c_slave_model.v was successful.
-# Compile of i2c_testbench.v was successful.
-# Compile of test_fifo.sv was successful.
-# Compile of top.v was successful.
-# Compile of assertion.sv was successful.
-# Compile of driver.sv was successful.
-# Compile of env.sv failed with 1 errors.
-# Compile of interface.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of TEST1.sv failed with 2 errors.
-# Compile of TEST2.sv failed with 2 errors.
-# Compile of TEST3.sv failed with 2 errors.
-# Compile of TEST4.sv failed with 2 errors.
-# Compile of TEST5.sv failed with 2 errors.
-# Compile of TEST6.sv failed with 2 errors.
-# Compile of TEST7.sv failed with 2 errors.
-# Compile of TEST8.sv failed with 2 errors.
-# Compile of TEST9.sv was successful.
-# Compile of top_dut.sv failed with 1 errors.
-# 24 compiles, 10 failed with 18 errors.
-# Compile of apb_slave.v was successful.
-# Compile of apb_test_top.v was successful.
-# Compile of apb_testbench.v was successful.
-# Compile of fifo.sv was successful.
-# Compile of i2c.v was successful.
-# Compile of i2c_slave_model.v was successful.
-# Compile of i2c_testbench.v was successful.
-# Compile of test_fifo.sv was successful.
-# Compile of top.v was successful.
-# Compile of assertion.sv was successful.
-# Compile of driver.sv was successful.
-# Compile of env.sv failed with 1 errors.
-# Compile of interface.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of TEST1.sv failed with 2 errors.
-# Compile of TEST2.sv failed with 2 errors.
-# Compile of TEST3.sv failed with 2 errors.
-# Compile of TEST4.sv failed with 2 errors.
-# Compile of TEST5.sv failed with 2 errors.
-# Compile of TEST6.sv failed with 2 errors.
-# Compile of TEST7.sv failed with 2 errors.
-# Compile of TEST8.sv failed with 2 errors.
-# Compile of TEST9.sv was successful.
-# Compile of top_dut.sv failed with 1 errors.
-# 24 compiles, 10 failed with 18 errors.
-project open D:/Questamsim_project/I2C_verify/I2C_verify
-# reading F:/questasim64_10.7c/win64/../modelsim.ini
-# Loading project I2C_verify
-# Compile of assertion.sv was successful.
-# Compile of driver.sv was successful.
-# Compile of env.sv was successful.
-# Compile of interface.sv was successful.
-# Compile of stimulus.sv was successful.
-# Compile of TEST1.sv was successful.
-# Compile of TEST2.sv was successful.
-# Compile of TEST3.sv was successful.
-# Compile of TEST4.sv was successful.
-# Compile of TEST5.sv was successful.
-# Compile of TEST6.sv was successful.
-# Compile of TEST7.sv was successful.
-# Compile of TEST8.sv was successful.
-# Compile of TEST9.sv was successful.
-# Compile of top_dut.sv was successful.
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of clock_generator.v was successful.
-# Compile of fifo.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# Compile of i2c_slave_model.v was successful.
-# 22 compiles, 0 failed with no errors.
-project open D:/Questamsim_project/Tuan/Tuan
-# reading F:/questasim64_10.7c/win64/../modelsim.ini
-# Loading project Tuan
+# Loading project apb_fifo_i2c
+vsim work.read_tb -voptargs=+acc
+# vsim work.read_tb -voptargs="+acc" 
+# Start time: 14:02:06 on Apr 09,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-143) Recognized 1 FSM in module "i2c_slave_model(fast)".
+# ** Warning: C:/Users/PC/Documents/Chung_training/code/rtl/RTL/top.v(143): (vopt-2685) [TFMPC] - Too few port connections for 'slave'.  Expected 4, found 2.
+# ** Warning: C:/Users/PC/Documents/Chung_training/code/rtl/RTL/top.v(143): (vopt-2718) [TFMPC] - Missing connection for port 'check_data'.
+# ** Warning: C:/Users/PC/Documents/Chung_training/code/rtl/RTL/top.v(143): (vopt-2718) [TFMPC] - Missing connection for port 'saved_data'.
+# Loading work.read_tb(fast)
+# Loading work.top_level(fast)
+# Loading work.FIFO_top(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.read_pointer_empty(fast)
+# Loading work.write_pointer_full(fast)
+# Loading work.sync_read_to_write(fast)
+# Loading work.sync_write_to_read(fast)
+# Loading work.apb(fast)
+# Loading work.i2c_controller(fast)
+# Loading work.BitToByteConverter(fast)
+# Loading work.ClockGenerator(fast)
+# Loading work.i2c_slave_model(fast)
+add wave -position insertpoint sim:/read_tb/dut/i2c/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 10196
+#           Attempting to use alternate WLF file "./wlftrn6rwb".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftrn6rwb
+add wave -position insertpoint sim:/read_tb/dut/slave/*
+add wave -position insertpoint sim:/read_tb/dut/fifo_tx/fifomem/*
+add wave -position insertpoint sim:/read_tb/dut/fifo_rx/fifomem/*
+run -all
+# DEBUG i2c_slave; stop condition detected at                    0
+# DEBUG i2c_slave; start condition detected at                  560
+# DEBUG i2c_slave; command byte received (write) at                 3562
+# DEBUG i2c_slave; address received. adr=00, ack=1
+# DEBUG i2c_slave; data block write 01 to address 00
+# DEBUG i2c_slave; data block write 02 to address 01
+# DEBUG i2c_slave; data block write 03 to address 02
+# DEBUG i2c_slave; stop condition detected at                15600
+# DEBUG i2c_slave; start condition detected at                20720
+# DEBUG i2c_slave; command byte received (read) at                23722
+# DEBUG i2c_slave; data block read 01 from address 00 (1)
+# DEBUG i2c_slave; memcheck [0]=01, [1]=02, [2]=03
+# DEBUG i2c_slave; data block read 02 from address 01 (2)
+# DEBUG i2c_slave; data block read 03 from address 02 (2)
+# DEBUG i2c_slave; data block read xx from address 03 (2)
+# DEBUG i2c_slave; data block read xx from address 04 (2)
+# DEBUG i2c_slave; data block read xx from address 05 (2)
+# DEBUG i2c_slave; data block read xx from address 06 (2)
+# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/rtl/Testbench/read_tb.v(226)
+#    Time: 41490 ns  Iteration: 0  Instance: /read_tb
+# 1
+# Break in Module read_tb at C:/Users/PC/Documents/Chung_training/code/rtl/Testbench/read_tb.v line 226
