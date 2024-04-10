@@ -13,124 +13,26 @@
 # //  18 U.S.C. Section 1905.
 # //
 # Loading project Tuan
-project open D:/Questamsim_project/apb_fifo_i2c/apb_fifo_i2c
+# Compile of hello_world.sv failed with 2 errors.
 # reading C:/questasim64_10.7c/win64/../modelsim.ini
-# Loading project apb_fifo_i2c
-vsim work.read_tb -voptargs=+acc
-# vsim work.read_tb -voptargs="+acc" 
-# Start time: 18:00:54 on Apr 09,2024
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Note: (vopt-143) Recognized 1 FSM in module "i2c_slave_model(fast)".
-# ** Warning: C:/Users/PC/Documents/Chung_training/code/rtl/RTL/top.v(143): (vopt-2685) [TFMPC] - Too few port connections for 'slave'.  Expected 4, found 2.
-# ** Warning: C:/Users/PC/Documents/Chung_training/code/rtl/RTL/top.v(143): (vopt-2718) [TFMPC] - Missing connection for port 'check_data'.
-# ** Warning: C:/Users/PC/Documents/Chung_training/code/rtl/RTL/top.v(143): (vopt-2718) [TFMPC] - Missing connection for port 'saved_data'.
-# Loading work.read_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_top(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-# Loading work.ClockGenerator(fast)
-# Loading work.i2c_slave_model(fast)
-add wave -position insertpoint sim:/read_tb/dut/apb/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 10196
-#           Attempting to use alternate WLF file "./wlfthzrzn6".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlfthzrzn6
-add wave -position insertpoint sim:/read_tb/dut/i2c/*
-add wave -position insertpoint sim:/read_tb/dut/slave/*
-add wave -position insertpoint  \
-sim:/read_tb/dut/fifo_rx/fifomem/mem
-run -all
-# DEBUG i2c_slave; stop condition detected at                    0
-# DEBUG i2c_slave; start condition detected at                  560
-# DEBUG i2c_slave; command byte received (write) at                 3562
-# DEBUG i2c_slave; address received. adr=00, ack=1
-# DEBUG i2c_slave; data block write 01 to address 00
-# DEBUG i2c_slave; data block write 02 to address 01
-# DEBUG i2c_slave; data block write 03 to address 02
-# DEBUG i2c_slave; stop condition detected at                15600
-# DEBUG i2c_slave; start condition detected at                20720
-# DEBUG i2c_slave; command byte received (read) at                23722
-# DEBUG i2c_slave; data block read 01 from address 00 (1)
-# DEBUG i2c_slave; memcheck [0]=01, [1]=02, [2]=03
-# DEBUG i2c_slave; data block read 02 from address 01 (2)
-# DEBUG i2c_slave; data block read 03 from address 02 (2)
-# DEBUG i2c_slave; data block read xx from address 03 (2)
-# DEBUG i2c_slave; data block read xx from address 04 (2)
-# DEBUG i2c_slave; data block read xx from address 05 (2)
-# DEBUG i2c_slave; data block read xx from address 06 (2)
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/rtl/Testbench/read_tb.v(226)
-#    Time: 41490 ns  Iteration: 0  Instance: /read_tb
-# 1
-# Break in Module read_tb at C:/Users/PC/Documents/Chung_training/code/rtl/Testbench/read_tb.v line 226
-quit -sim
-# End time: 18:04:02 on Apr 09,2024, Elapsed time: 0:03:08
-# Errors: 0, Warnings: 5
-# Compile of 8bit_to_1byte.v was successful.
-# Compile of apb_slave.v was successful.
-# Compile of clock_generator.v was successful.
-# Compile of fifo.v was successful.
-# Compile of i2c_controller.v was successful.
-# Compile of top.v was successful.
-# Compile of read_tb.v was successful.
-# Compile of tb.v was successful.
-# Compile of tb_top.v was successful.
-# Compile of writer_tb.v was successful.
-# Compile of i2c_slave_model.v was successful.
-# 11 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.read_tb
-# vsim -voptargs="+acc" work.read_tb 
-# Start time: 18:04:13 on Apr 09,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.read_tb(fast)
-# Loading work.top_level(fast)
-# Loading work.FIFO_top(fast)
-# Loading work.FIFO_memory(fast)
-# Loading work.read_pointer_empty(fast)
-# Loading work.write_pointer_full(fast)
-# Loading work.sync_read_to_write(fast)
-# Loading work.sync_write_to_read(fast)
-# Loading work.apb(fast)
-# Loading work.i2c_controller(fast)
-# Loading work.BitToByteConverter(fast)
-# Loading work.ClockGenerator(fast)
-# Loading work.i2c_slave_model(fast)
-add wave -position insertpoint sim:/read_tb/dut/i2c/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: PC  Hostname: DESKTOP-FC8223J  ProcessID: 10196
-#           Attempting to use alternate WLF file "./wlftkzssi5".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftkzssi5
-add wave -position insertpoint sim:/read_tb/dut/slave/*
-add wave -position insertpoint  \
-sim:/read_tb/dut/fifo_rx/fifomem/mem
-run -all
-# DEBUG i2c_slave; stop condition detected at                    0
-# DEBUG i2c_slave; start condition detected at                  560
-# DEBUG i2c_slave; command byte received (write) at                 3562
-# DEBUG i2c_slave; address received. adr=00, ack=1
-# DEBUG i2c_slave; data block write 01 to address 00
-# DEBUG i2c_slave; data block write 02 to address 01
-# DEBUG i2c_slave; data block write 03 to address 02
-# DEBUG i2c_slave; stop condition detected at                15600
-# DEBUG i2c_slave; start condition detected at                20720
-# DEBUG i2c_slave; command byte received (read) at                23722
-# DEBUG i2c_slave; data block read 01 from address 00 (1)
-# DEBUG i2c_slave; memcheck [0]=01, [1]=02, [2]=03
-# DEBUG i2c_slave; data block read 02 from address 01 (2)
-# DEBUG i2c_slave; data block read 03 from address 02 (2)
-# DEBUG i2c_slave; data block read xx from address 03 (2)
-# DEBUG i2c_slave; data block read xx from address 04 (2)
-# DEBUG i2c_slave; data block read xx from address 05 (2)
-# DEBUG i2c_slave; data block read xx from address 06 (2)
-# ** Note: $finish    : C:/Users/PC/Documents/Chung_training/code/rtl/Testbench/read_tb.v(226)
-#    Time: 42460 ns  Iteration: 0  Instance: /read_tb
-# 1
-# Break in Module read_tb at C:/Users/PC/Documents/Chung_training/code/rtl/Testbench/read_tb.v line 226
+# Loading project uvm_test
+# Compile of env.sv failed with 3 errors.
+# Compile of monitor.sv failed with 2 errors.
+# Compile of sequence_item.sv failed with 2 errors.
+# Compile of subscriber.sv failed with 2 errors.
+# 4 compiles, 4 failed with 9 errors.
+# Compile of env.sv failed with 3 errors.
+# Compile of monitor.sv failed with 2 errors.
+# Compile of sequence_item.sv failed with 2 errors.
+# Compile of subscriber.sv failed with 2 errors.
+# 4 compiles, 4 failed with 9 errors.
+# Compile of env.sv failed with 3 errors.
+# Compile of monitor.sv failed with 2 errors.
+# Compile of sequence_item.sv failed with 2 errors.
+# Compile of subscriber.sv failed with 2 errors.
+# 4 compiles, 4 failed with 9 errors.
+# Compile of env.sv failed with 3 errors.
+# Compile of monitor.sv failed with 2 errors.
+# Compile of sequence_item.sv failed with 2 errors.
+# Compile of subscriber.sv failed with 2 errors.
+# 4 compiles, 4 failed with 9 errors.
