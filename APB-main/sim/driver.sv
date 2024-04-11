@@ -26,23 +26,23 @@ class driver;
     endfunction
 
     task assign_intf(stimulus sti);
-        intf.penable = sti.PENABLE;
-        intf.paddr = sti.PADDR;
-        intf.pselx = sti.PSELx;
-        intf.pwdata = sti.PWDATA;
-        intf.pwrite = sti.PWRITE;
+        intf.penable    = sti.PENABLE;
+        intf.paddr      = sti.PADDR;
+        intf.pselx      = sti.PSELx;
+        intf.pwdata     = sti.PWDATA;
+        intf.pwrite     = sti.PWRITE;
     endtask
 
     // Reset task
     task RESET();
-        intf.pwdata = 0;
-        intf.prdata = 0;
-        intf.paddr = 0;
-        intf.penable = 0;
-        intf.pselx = 0;
-        intf.pwrite = 0;
-        intf.pready = 0;
-        intf.preset_n = 0;
+        intf.pwdata     = 0;
+        intf.prdata     = 0;
+        intf.paddr      = 0;
+        intf.penable    = 0;
+        intf.pselx      = 0;
+        intf.pwrite     = 0;
+        intf.pready     = 0;
+        intf.preset_n   = 0;
         repeat(5)
             @(posedge intf.pclk); 
         intf.preset_n = 1;

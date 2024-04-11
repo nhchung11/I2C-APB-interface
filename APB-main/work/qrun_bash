@@ -8,10 +8,10 @@
 # seq=TEST6         # Repeated Start
 # seq=TEST7         # Many bytes
 # seq=TEST8
-seq=TEST9
+# seq=TEST9
 # seq=TEST10
 # seq=TEST11
-# seq=TEST12
+seq=TEST12
 
 rm -rf work; 
 vlib work; 

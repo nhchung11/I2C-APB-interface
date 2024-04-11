@@ -1,0 +1,9 @@
+../rtl/apb_slave.v
+../rtl/fifo.sv
+../rtl/i2c.v
+../rtl/i2c_slave_model.v
+../rtl/top.v
+../sim/assertion.sv
+../sim/driver.sv
+../sim/stimulus.sv
+../sim/top_dut.sv

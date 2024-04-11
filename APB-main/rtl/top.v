@@ -6,7 +6,7 @@ module apb_to_i2c_top
 	//apb block
 	input PCLK,
 	input PRESETn,
-	input [ADDRESSWIDTH-1:0] PADDR,
+	input [DATAWIDTH-1:0] PADDR,
 	input [DATAWIDTH-1:0] PWDATA,
 	input PWRITE,
 	input PSELx,
@@ -126,7 +126,8 @@ module apb_to_i2c_top
 		.fifo_tx_rd_en(fifo_tx_rd_en),
 		.fifo_rx_wr_en(fifo_rx_wr_en),
 		.i2c_repeat_start(reg_command[2]),
-		.fifo_tx_empty(reg_status[6])
+		.fifo_tx_empty(reg_status[6]),
+		.fifo_rx_full(reg_status[5])
 	);
 
 	// i2c_slave_model i2c_slave(

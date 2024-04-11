@@ -1,0 +1,17 @@
+var g_sourceLines = [
+'`ifndef ASSERT',
+'`define ASSERT',
+'',
+'module assertion_cov(intf_i2c intf);',
+'    // PREADY CHECK',
+'    PREADY_CHECK: cover property (@(posedge intf.pclk) (intf.pselx &amp; !intf.penable) |=&gt; (intf.penable));',
+'',
+'    WRITE_REGISTER_CHECK: cover property(@(posedge intf.pclk) ((intf.paddr == 2) || (intf.paddr == 4) || (intf.paddr == 6)) |-&gt; (intf.pwrite));',
+'',
+'    READ_REGISTER_CHECK: cover property (@(posedge intf.pclk) ((intf.paddr == 3) || (intf.paddr == 5)) |-&gt; (!intf.pwrite));',
+'endmodule',
+'`endif ',
+'',
+''
+];
+countinueBuildStmtTable(g_sourceLines);

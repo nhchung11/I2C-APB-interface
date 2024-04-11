@@ -5,7 +5,7 @@ module apb_slave
 	(
 	input PCLK,
 	input PRESETn,
-	input [ADDRESSWIDTH-1:0]PADDR,
+	input [DATAWIDTH-1:0]PADDR,
 	input [DATAWIDTH-1:0] PWDATA,
 	input PWRITE,
 	input PSELx,

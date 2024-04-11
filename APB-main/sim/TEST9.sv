@@ -47,7 +47,7 @@ program testcase(intf_i2c intf);
                     env.drvr.READ_REGISTER(5, 0);
                     env.drvr.READ_REGISTER(5, 0);
                     env.drvr.READ_REGISTER(5, 0);
-                    #1000 
+                    #5000 
                     env.mntr.SUMMARY();
                     $finish;
                 end

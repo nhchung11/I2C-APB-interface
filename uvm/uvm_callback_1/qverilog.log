@@ -1,0 +1,6 @@
+Start time: 15:17:36 on Apr 11,2024
+qverilog "+incdir+/home/mobaxterm/MyDocuments/Chung_training/code/uvm/uvm_callback_1/uvm-1.1d/src" /home/mobaxterm/MyDocuments/Chung_training/code/uvm/uvm_callback_1/uvm-1.1d/src/uvm_pkg.sv "+incdir+." test1.sv -R 
+** Error: (qverilog-7) Failed to open design unit file "/home/mobaxterm/MyDocuments/Chung_training/code/uvm/uvm_callback_1/uvm-1.1d/src/uvm_pkg.sv" in read mode.
+No such file or directory. (errno = ENOENT)
+End time: 15:17:37 on Apr 11,2024, Elapsed time: 0:00:01
+Errors: 1, Warnings: 0

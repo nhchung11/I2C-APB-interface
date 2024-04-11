@@ -1,0 +1,293 @@
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>Questa Coverage Report</title>
+  <link rel="StyleSheet" media="screen" href="../css/hdl2html.css"/>
+</head>
+<body id="hdl2html">
+  <tt>
+<pre>
+<a name="1"><q-n>     1  </q-n></a>`<q-a>timescale</q-w> 1<q-v>ns</q-w>/1<q-v>ns</q-w>
+<a name="2"><q-n>     2  </q-n></a>
+<a name="3"><q-n>     3  </q-n></a><q-w>module</q-w> i2c_slave_model 
+<a name="4"><q-n>     4  </q-n></a>	(
+<a name="5"><q-n>     5  </q-n></a>		<q-w>inout</q-w> scl, 
+<a name="6"><q-n>     6  </q-n></a>		<q-w>inout</q-w> sda, 
+<a name="7"><q-n>     7  </q-n></a>		<q-w>output</q-w> <q-w>reg</q-w> [7:0] 	saved_data,
+<a name="8"><q-n>     8  </q-n></a>		<q-w>output</q-w> <q-w>reg</q-w> 			check_data,
+<a name="9"><q-n>     9  </q-n></a>		<q-w>output</q-w> <q-w>reg</q-w>			read_data
+<a name="10"><q-n>     10  </q-n></a>	);
+<a name="11"><q-n>     11  </q-n></a>	
+<a name="12"><q-n>     12  </q-n></a>	<q-m>//</q-m>
+<a name="13"><q-n>     13  </q-n></a>	<q-m>// parameters</q-m>
+<a name="14"><q-n>     14  </q-n></a>	<q-m>//</q-m>
+<a name="15"><q-n>     15  </q-n></a>	<q-w>parameter</q-w> I2C_ADR = 7'b0010000;
+<a name="16"><q-n>     16  </q-n></a>
+<a name="17"><q-n>     17  </q-n></a>	<q-m>//</q-m>
+<a name="18"><q-n>     18  </q-n></a>	<q-m>// input &amp;&amp; outpus</q-m>
+<a name="19"><q-n>     19  </q-n></a>	<q-m>//</q-m>
+<a name="20"><q-n>     20  </q-n></a>	<q-m>// input scl;</q-m>
+<a name="21"><q-n>     21  </q-n></a>	<q-m>// inout sda;</q-m>
+<a name="22"><q-n>     22  </q-n></a>
+<a name="23"><q-n>     23  </q-n></a>	<q-m>//</q-m>
+<a name="24"><q-n>     24  </q-n></a>	<q-m>// Variable declaration</q-m>
+<a name="25"><q-n>     25  </q-n></a>	<q-m>//</q-m>
+<a name="26"><q-n>     26  </q-n></a>	<q-w>wire</q-w> debug = 1'b1;
+<a name="27"><q-n>     27  </q-n></a>
+<a name="28"><q-n>     28  </q-n></a>	<q-w>reg</q-w> [7:0] mem [7:0]; <q-m>// initiate memory</q-m>
+<a name="29"><q-n>     29  </q-n></a>	<q-w>reg</q-w> [7:0] mem_adr;   <q-m>// memory address</q-m>
+<a name="30"><q-n>     30  </q-n></a>	<q-w>reg</q-w> [7:0] mem_do;    <q-m>// memory data output</q-m>
+<a name="31"><q-n>     31  </q-n></a>
+<a name="32"><q-n>     32  </q-n></a>	<q-w>reg</q-w> sta, d_sta;
+<a name="33"><q-n>     33  </q-n></a>	<q-w>reg</q-w> sto, d_sto;
+<a name="34"><q-n>     34  </q-n></a>
+<a name="35"><q-n>     35  </q-n></a>	<q-w>reg</q-w> [7:0] sr;        <q-m>// 8bit shift register</q-m>
+<a name="36"><q-n>     36  </q-n></a>	<q-w>reg</q-w>       rw;        <q-m>// read/write direction</q-m>
+<a name="37"><q-n>     37  </q-n></a>
+<a name="38"><q-n>     38  </q-n></a>	<q-w>wire</q-w>      my_adr;    <q-m>// my address called ??</q-m>
+<a name="39"><q-n>     39  </q-n></a>	<q-w>wire</q-w>      i2c_reset; <q-m>// i2c-statemachine reset</q-m>
+<a name="40"><q-n>     40  </q-n></a>	<q-w>reg</q-w> [2:0] bit_cnt;   <q-m>// 3bit downcounter</q-m>
+<a name="41"><q-n>     41  </q-n></a>	<q-w>wire</q-w>      acc_done;  <q-m>// 8bits transfered</q-m>
+<a name="42"><q-n>     42  </q-n></a>	<q-w>reg</q-w>       ld;        <q-m>// load downcounter</q-m>
+<a name="43"><q-n>     43  </q-n></a>
+<a name="44"><q-n>     44  </q-n></a>	<q-w>reg</q-w>       sda_o;     <q-m>// sda-drive level</q-m>
+<a name="45"><q-n>     45  </q-n></a>	<q-w>wire</q-w>      sda_dly;   <q-m>// delayed version of sda</q-m>
+<a name="46"><q-n>     46  </q-n></a>
+<a name="47"><q-n>     47  </q-n></a>	<q-m>// statemachine declaration</q-m>
+<a name="48"><q-n>     48  </q-n></a>	<q-w>parameter</q-w> idle        = 3'b000;
+<a name="49"><q-n>     49  </q-n></a>	<q-w>parameter</q-w> slave_ack   = 3'b001;
+<a name="50"><q-n>     50  </q-n></a>	<q-w>parameter</q-w> get_mem_adr = 3'b010;
+<a name="51"><q-n>     51  </q-n></a>	<q-w>parameter</q-w> gma_ack     = 3'b011;
+<a name="52"><q-n>     52  </q-n></a>	<q-w>parameter</q-w> data        = 3'b100;
+<a name="53"><q-n>     53  </q-n></a>	<q-w>parameter</q-w> data_ack    = 3'b101;
+<a name="54"><q-n>     54  </q-n></a>
+<a name="55"><q-n>     55  </q-n></a>	<q-w>reg</q-w> [2:0] state; <q-m>// synopsys enum_state</q-m>
+<a name="56"><q-n>     56  </q-n></a>
+<a name="57"><q-n>     57  </q-n></a>	<q-m>//</q-m>
+<a name="58"><q-n>     58  </q-n></a>	<q-m>// module body</q-m>
+<a name="59"><q-n>     59  </q-n></a>	<q-m>//</q-m>
+<a name="60"><q-n>     60  </q-n></a>
+<a name="61"><q-n>     61  </q-n></a>	<q-w>initial</q-w>
+<a name="62"><q-n>     62  </q-n></a>	<q-w>begin</q-w>
+<a name="63"><q-n>     63  </q-n></a>	   sda_o = 1'b1;
+<a name="64"><q-n>     64  </q-n></a>	   state = idle;
+<a name="65"><q-n>     65  </q-n></a>	<q-w>end</q-w>
+<a name="66"><q-n>     66  </q-n></a>
+<a name="67"><q-n>     67  </q-n></a>	<q-m>// generate shift register</q-m>
+<a name="68"><q-n>     68  </q-n></a>	<q-w>always</q-w> @(<q-a>posedge</q-w> scl)
+<a name="69"><q-n>     69  </q-n></a>	  sr &lt;= #1 {sr[6:0],sda};
+<a name="70"><q-n>     70  </q-n></a>
+<a name="71"><q-n>     71  </q-n></a>	<q-m>//detect my_address</q-m>
+<a name="72"><q-n>     72  </q-n></a>	<q-w>assign</q-w> my_adr = (sr[7:1] == I2C_ADR);
+<a name="73"><q-n>     73  </q-n></a>	<q-m>// FIXME: This should not be a generic assign, but rather</q-m>
+<a name="74"><q-n>     74  </q-n></a>	<q-m>// qualified on address transfer phase and probably reset by stop</q-m>
+<a name="75"><q-n>     75  </q-n></a>
+<a name="76"><q-n>     76  </q-n></a>	<q-m>//generate bit-counter</q-m>
+<a name="77"><q-n>     77  </q-n></a>	<q-w>always</q-w> @(<q-a>posedge</q-w> scl)
+<a name="78"><q-n>     78  </q-n></a>	  <q-w>if</q-w>(ld)
+<a name="79"><q-n>     79  </q-n></a>	    bit_cnt &lt;= #1 3'b111;
+<a name="80"><q-n>     80  </q-n></a>	  <q-w>else</q-w>
+<a name="81"><q-n>     81  </q-n></a>	    bit_cnt &lt;= #1 bit_cnt - 3'h1;
+<a name="82"><q-n>     82  </q-n></a>
+<a name="83"><q-n>     83  </q-n></a>	<q-m>//generate access done signal</q-m>
+<a name="84"><q-n>     84  </q-n></a>	<q-w>assign</q-w> acc_done = !(|bit_cnt);
+<a name="85"><q-n>     85  </q-n></a>
+<a name="86"><q-n>     86  </q-n></a>	<q-m>// generate delayed version of sda</q-m>
+<a name="87"><q-n>     87  </q-n></a>	<q-m>// this model assumes a hold time for sda after the falling edge of scl.</q-m>
+<a name="88"><q-n>     88  </q-n></a>	<q-m>// According to the Phillips i2c spec, there s/b a 0 ns hold time for sda</q-m>
+<a name="89"><q-n>     89  </q-n></a>	<q-m>// with regards to scl. If the data changes coincident with the clock, the</q-m>
+<a name="90"><q-n>     90  </q-n></a>	<q-m>// acknowledge is missed</q-m>
+<a name="91"><q-n>     91  </q-n></a>	<q-m>// Fix by Michael Sosnoski</q-m>
+<a name="92"><q-n>     92  </q-n></a>	<q-w>assign</q-w> #1 sda_dly = sda;
+<a name="93"><q-n>     93  </q-n></a>
+<a name="94"><q-n>     94  </q-n></a>
+<a name="95"><q-n>     95  </q-n></a>	<q-m>//detect start condition</q-m>
+<a name="96"><q-n>     96  </q-n></a>	<q-w>always</q-w> @(<q-a>negedge</q-w> sda)
+<a name="97"><q-n>     97  </q-n></a>		<q-w>if</q-w>(scl)
+<a name="98"><q-n>     98  </q-n></a>			<q-w>begin</q-w>
+<a name="99"><q-n>     99  </q-n></a>				sta   &lt;= #1 1'b1;
+<a name="100"><q-n>     100  </q-n></a>				d_sta &lt;= #1 1'b0;
+<a name="101"><q-n>     101  </q-n></a>				sto   &lt;= #1 1'b0;
+<a name="102"><q-n>     102  </q-n></a>
+<a name="103"><q-n>     103  </q-n></a>				<q-w>if</q-w>(debug)
+<a name="104"><q-n>     104  </q-n></a>					$display(<q-l>"DEBUG i2c_slave; start condition detected at %t"</q-l>, $<q-w>time</q-w>);
+<a name="105"><q-n>     105  </q-n></a>			<q-w>end</q-w>
+<a name="106"><q-n>     106  </q-n></a>		<q-w>else</q-w>
+<a name="107"><q-n>     107  </q-n></a>			sta &lt;= #1 1'b0;
+<a name="108"><q-n>     108  </q-n></a>
+<a name="109"><q-n>     109  </q-n></a>	<q-w>always</q-w> @(<q-a>posedge</q-w> scl)
+<a name="110"><q-n>     110  </q-n></a>	  	d_sta &lt;= #1 sta;
+<a name="111"><q-n>     111  </q-n></a>
+<a name="112"><q-n>     112  </q-n></a>	<q-m>// detect stop condition</q-m>
+<a name="113"><q-n>     113  </q-n></a>	<q-w>always</q-w> @(<q-a>posedge</q-w> sda)
+<a name="114"><q-n>     114  </q-n></a>		<q-w>if</q-w>(scl)
+<a name="115"><q-n>     115  </q-n></a>			<q-w>begin</q-w>
+<a name="116"><q-n>     116  </q-n></a>			sta &lt;= #1 1'b0;
+<a name="117"><q-n>     117  </q-n></a>			sto &lt;= #1 1'b1;
+<a name="118"><q-n>     118  </q-n></a>
+<a name="119"><q-n>     119  </q-n></a>			<q-w>if</q-w>(debug)
+<a name="120"><q-n>     120  </q-n></a>				$display(<q-l>"DEBUG i2c_slave; stop condition detected at %t"</q-l>, $<q-w>time</q-w>);
+<a name="121"><q-n>     121  </q-n></a>			<q-w>end</q-w>
+<a name="122"><q-n>     122  </q-n></a>		<q-w>else</q-w>
+<a name="123"><q-n>     123  </q-n></a>			sto &lt;= #1 1'b0;
+<a name="124"><q-n>     124  </q-n></a>
+<a name="125"><q-n>     125  </q-n></a>	<q-m>//generate i2c_reset signal</q-m>
+<a name="126"><q-n>     126  </q-n></a>	<q-w>assign</q-w> i2c_reset = sta || sto;
+<a name="127"><q-n>     127  </q-n></a>
+<a name="128"><q-n>     128  </q-n></a>	<q-m>// generate statemachine</q-m>
+<a name="129"><q-n>     129  </q-n></a>	<q-w>always</q-w> @(<q-a>negedge</q-w> scl <q-t>or</q-w> <q-a>posedge</q-w> sto)
+<a name="130"><q-n>     130  </q-n></a>		<q-w>if</q-w> (sto || (sta &amp;&amp; !d_sta) )
+<a name="131"><q-n>     131  </q-n></a>			<q-w>begin</q-w>
+<a name="132"><q-n>     132  </q-n></a>				state &lt;= #1 idle; <q-m>// reset statemachine</q-m>
+<a name="133"><q-n>     133  </q-n></a>				sda_o &lt;= #1 1'b1;
+<a name="134"><q-n>     134  </q-n></a>				ld    &lt;= #1 1'b1;
+<a name="135"><q-n>     135  </q-n></a>			<q-w>end</q-w>
+<a name="136"><q-n>     136  </q-n></a>		<q-w>else</q-w>
+<a name="137"><q-n>     137  </q-n></a>			<q-w>begin</q-w>
+<a name="138"><q-n>     138  </q-n></a>				<q-m>// initial settings</q-m>
+<a name="139"><q-n>     139  </q-n></a>				sda_o &lt;= #1 1'b1;
+<a name="140"><q-n>     140  </q-n></a>				ld    &lt;= #1 1'b0;
+<a name="141"><q-n>     141  </q-n></a>
+<a name="142"><q-n>     142  </q-n></a>				<q-w>case</q-w>(state) <q-m>// synopsys full_case parallel_case</q-m>
+<a name="143"><q-n>     143  </q-n></a>					idle: <q-m>// idle state</q-m>
+<a name="144"><q-n>     144  </q-n></a>					<q-w>if</q-w> (acc_done &amp;&amp; my_adr)
+<a name="145"><q-n>     145  </q-n></a>						<q-w>begin</q-w>
+<a name="146"><q-n>     146  </q-n></a>							state &lt;= #1 slave_ack;
+<a name="147"><q-n>     147  </q-n></a>							rw &lt;= #1 sr[0];
+<a name="148"><q-n>     148  </q-n></a>							sda_o &lt;= #1 1'b0; <q-m>// generate i2c_ack</q-m>
+<a name="149"><q-n>     149  </q-n></a>
+<a name="150"><q-n>     150  </q-n></a>							#2;
+<a name="151"><q-n>     151  </q-n></a>							<q-w>if</q-w>(debug &amp;&amp; rw)
+<a name="152"><q-n>     152  </q-n></a>								$display(<q-l>"DEBUG i2c_slave; command byte received (read) at %t"</q-l>, $<q-w>time</q-w>);
+<a name="153"><q-n>     153  </q-n></a>							<q-w>if</q-w>(debug &amp;&amp; !rw) <q-w>begin</q-w>
+<a name="154"><q-n>     154  </q-n></a>								$display(<q-l>"DEBUG i2c_slave; command byte received (write) at %t"</q-l>, $<q-w>time</q-w>);
+<a name="155"><q-n>     155  </q-n></a>								<q-m>// saved_data &lt;= mem_adr;</q-m>
+<a name="156"><q-n>     156  </q-n></a>							<q-w>end</q-w>
+<a name="157"><q-n>     157  </q-n></a>							<q-w>if</q-w>(rw)
+<a name="158"><q-n>     158  </q-n></a>							<q-w>begin</q-w>
+<a name="159"><q-n>     159  </q-n></a>								mem_adr &lt;= 0;
+<a name="160"><q-n>     160  </q-n></a>								mem_do &lt;= #1 mem[0];
+<a name="161"><q-n>     161  </q-n></a>
+<a name="162"><q-n>     162  </q-n></a>								<q-w>if</q-w>(debug)
+<a name="163"><q-n>     163  </q-n></a>									<q-w>begin</q-w>
+<a name="164"><q-n>     164  </q-n></a>										#2 $display(<q-l>"DEBUG i2c_slave; data block read %x from address %x (1)"</q-l>, mem_do, mem_adr);
+<a name="165"><q-n>     165  </q-n></a>										#2 $display(<q-l>"DEBUG i2c_slave; memcheck [0]=%x, [1]=%x, [2]=%x"</q-l>, mem[4'h0], mem[4'h1], mem[4'h2]);
+<a name="166"><q-n>     166  </q-n></a>										<q-m>// saved_data &lt;= mem_adr;</q-m>
+<a name="167"><q-n>     167  </q-n></a>									<q-w>end</q-w>
+<a name="168"><q-n>     168  </q-n></a>							<q-w>end</q-w>
+<a name="169"><q-n>     169  </q-n></a>						<q-w>end</q-w>
+<a name="170"><q-n>     170  </q-n></a>
+<a name="171"><q-n>     171  </q-n></a>					slave_ack:
+<a name="172"><q-n>     172  </q-n></a>					<q-w>begin</q-w>
+<a name="173"><q-n>     173  </q-n></a>						<q-w>if</q-w>(rw)
+<a name="174"><q-n>     174  </q-n></a>							<q-w>begin</q-w>
+<a name="175"><q-n>     175  </q-n></a>								state &lt;= #1 data;
+<a name="176"><q-n>     176  </q-n></a>								sda_o &lt;= #1 mem_do[7];
+<a name="177"><q-n>     177  </q-n></a>							<q-w>end</q-w>
+<a name="178"><q-n>     178  </q-n></a>						<q-w>else</q-w>
+<a name="179"><q-n>     179  </q-n></a>							state &lt;= #1 get_mem_adr;
+<a name="180"><q-n>     180  </q-n></a>
+<a name="181"><q-n>     181  </q-n></a>						ld    &lt;= #1 1'b1;
+<a name="182"><q-n>     182  </q-n></a>					<q-w>end</q-w>
+<a name="183"><q-n>     183  </q-n></a>
+<a name="184"><q-n>     184  </q-n></a>					get_mem_adr: <q-m>// wait for memory address</q-m>
+<a name="185"><q-n>     185  </q-n></a>					<q-w>if</q-w>(acc_done)
+<a name="186"><q-n>     186  </q-n></a>						<q-w>begin</q-w>
+<a name="187"><q-n>     187  </q-n></a>							state &lt;= #1 gma_ack;
+<a name="188"><q-n>     188  </q-n></a>							mem_adr &lt;= #1 sr; <q-m>// store memory address</q-m>
+<a name="189"><q-n>     189  </q-n></a>							saved_data &lt;= sr;
+<a name="190"><q-n>     190  </q-n></a>							sda_o &lt;= #1 !(sr &lt;= 15); <q-m>// generate i2c_ack, for valid address</q-m>
+<a name="191"><q-n>     191  </q-n></a>							check_data &lt;= 1;
+<a name="192"><q-n>     192  </q-n></a>							<q-m>// if (check_data == 1)</q-m>
+<a name="193"><q-n>     193  </q-n></a>							<q-m>// 	check_data &lt;= 0;</q-m>
+<a name="194"><q-n>     194  </q-n></a>
+<a name="195"><q-n>     195  </q-n></a>							<q-w>if</q-w>(debug)
+<a name="196"><q-n>     196  </q-n></a>							#1 $display(<q-l>"DEBUG i2c_slave; address received. adr=%x, ack=%b"</q-l>, sr, sda_o);
+<a name="197"><q-n>     197  </q-n></a>						<q-w>end</q-w>
+<a name="198"><q-n>     198  </q-n></a>
+<a name="199"><q-n>     199  </q-n></a>					gma_ack:
+<a name="200"><q-n>     200  </q-n></a>					<q-w>begin</q-w>
+<a name="201"><q-n>     201  </q-n></a>						state &lt;= #1 data;
+<a name="202"><q-n>     202  </q-n></a>						ld    &lt;= #1 1'b1;
+<a name="203"><q-n>     203  </q-n></a>					<q-w>end</q-w>
+<a name="204"><q-n>     204  </q-n></a>
+<a name="205"><q-n>     205  </q-n></a>					data: <q-m>// receive or drive data</q-m>
+<a name="206"><q-n>     206  </q-n></a>					<q-w>begin</q-w>
+<a name="207"><q-n>     207  </q-n></a>						<q-w>if</q-w> (acc_done) 
+<a name="208"><q-n>     208  </q-n></a>							saved_data &lt;= sr;
+<a name="209"><q-n>     209  </q-n></a>							check_data &lt;= 0;
+<a name="210"><q-n>     210  </q-n></a>							read_data &lt;= 0;
+<a name="211"><q-n>     211  </q-n></a>						
+<a name="212"><q-n>     212  </q-n></a>						<q-w>if</q-w>(rw)
+<a name="213"><q-n>     213  </q-n></a>							sda_o &lt;= #1 mem_do[7];
+<a name="214"><q-n>     214  </q-n></a>
+<a name="215"><q-n>     215  </q-n></a>						<q-w>if</q-w>(acc_done)
+<a name="216"><q-n>     216  </q-n></a>							<q-w>begin</q-w>
+<a name="217"><q-n>     217  </q-n></a>								state &lt;= #1 data_ack;
+<a name="218"><q-n>     218  </q-n></a>								mem_adr &lt;= #2 mem_adr + 8'h1;
+<a name="219"><q-n>     219  </q-n></a>								sda_o &lt;= #1 (rw &amp;&amp; (mem_adr &lt;= 15) ); <q-m>// send ack on write, receive ack on read</q-m>
+<a name="220"><q-n>     220  </q-n></a>
+<a name="221"><q-n>     221  </q-n></a>								<q-w>if</q-w>(rw)
+<a name="222"><q-n>     222  </q-n></a>								<q-w>begin</q-w>
+<a name="223"><q-n>     223  </q-n></a>									#3 mem_do &lt;= mem[mem_adr];
+<a name="224"><q-n>     224  </q-n></a>
+<a name="225"><q-n>     225  </q-n></a>									<q-w>if</q-w>(debug)
+<a name="226"><q-n>     226  </q-n></a>										#5 $display(<q-l>"DEBUG i2c_slave; data block read %x from address %x (2)"</q-l>, mem_do, mem_adr);
+<a name="227"><q-n>     227  </q-n></a>								<q-w>end</q-w>
+<a name="228"><q-n>     228  </q-n></a>
+<a name="229"><q-n>     229  </q-n></a>								<q-w>if</q-w>(!rw)
+<a name="230"><q-n>     230  </q-n></a>								<q-w>begin</q-w>
+<a name="231"><q-n>     231  </q-n></a>									mem[ mem_adr[3:0] ] &lt;= #1 sr; <q-m>// store data in memory</q-m>
+<a name="232"><q-n>     232  </q-n></a>									<q-m>// sda_o &lt;= #1 !(mem_adr &lt; 7);</q-m>
+<a name="233"><q-n>     233  </q-n></a>									<q-w>if</q-w>(debug)
+<a name="234"><q-n>     234  </q-n></a>										#2 $display(<q-l>"DEBUG i2c_slave; data block write %x to address %x"</q-l>, sr, mem_adr);
+<a name="235"><q-n>     235  </q-n></a>								<q-w>end</q-w>
+<a name="236"><q-n>     236  </q-n></a>							<q-w>end</q-w>
+<a name="237"><q-n>     237  </q-n></a>					<q-w>end</q-w>
+<a name="238"><q-n>     238  </q-n></a>
+<a name="239"><q-n>     239  </q-n></a>					data_ack:
+<a name="240"><q-n>     240  </q-n></a>					<q-w>begin</q-w>
+<a name="241"><q-n>     241  </q-n></a>						ld &lt;= #1 1'b1;
+<a name="242"><q-n>     242  </q-n></a>						<q-w>if</q-w> (!rw)
+<a name="243"><q-n>     243  </q-n></a>							check_data &lt;= 1;
+<a name="244"><q-n>     244  </q-n></a>						<q-w>if</q-w>(rw) <q-w>begin</q-w>
+<a name="245"><q-n>     245  </q-n></a>							read_data &lt;= 1;
+<a name="246"><q-n>     246  </q-n></a>							<q-w>if</q-w>(sr[0]) <q-m>// read operation &amp;&amp; master send NACK</q-m>
+<a name="247"><q-n>     247  </q-n></a>							<q-w>begin</q-w>
+<a name="248"><q-n>     248  </q-n></a>								state &lt;= #1 idle;
+<a name="249"><q-n>     249  </q-n></a>								sda_o &lt;= #1 1'b1;
+<a name="250"><q-n>     250  </q-n></a>							<q-w>end</q-w>
+<a name="251"><q-n>     251  </q-n></a>							<q-w>else</q-w>
+<a name="252"><q-n>     252  </q-n></a>							<q-w>begin</q-w>
+<a name="253"><q-n>     253  </q-n></a>								state &lt;= #1 data;
+<a name="254"><q-n>     254  </q-n></a>								sda_o &lt;= #1 mem_do[7];
+<a name="255"><q-n>     255  </q-n></a>							<q-w>end</q-w>
+<a name="256"><q-n>     256  </q-n></a>						<q-w>end</q-w>
+<a name="257"><q-n>     257  </q-n></a>						<q-w>else</q-w>
+<a name="258"><q-n>     258  </q-n></a>							<q-w>begin</q-w>
+<a name="259"><q-n>     259  </q-n></a>								state &lt;= #1 data;
+<a name="260"><q-n>     260  </q-n></a>								sda_o &lt;= #1 1'b1;
+<a name="261"><q-n>     261  </q-n></a>							<q-w>end</q-w>
+<a name="262"><q-n>     262  </q-n></a>					<q-w>end</q-w>
+<a name="263"><q-n>     263  </q-n></a>
+<a name="264"><q-n>     264  </q-n></a>				<q-w>endcase</q-w>
+<a name="265"><q-n>     265  </q-n></a>			<q-w>end</q-w>
+<a name="266"><q-n>     266  </q-n></a>
+<a name="267"><q-n>     267  </q-n></a>	<q-m>// read data from memory</q-m>
+<a name="268"><q-n>     268  </q-n></a>	<q-w>always</q-w> @(<q-a>posedge</q-w> scl)
+<a name="269"><q-n>     269  </q-n></a>	  <q-w>if</q-w>(!acc_done &amp;&amp; rw)
+<a name="270"><q-n>     270  </q-n></a>	    mem_do &lt;= #1 {mem_do[6:0], 1'b1}; <q-m>// insert 1'b1 for host ack generation</q-m>
+<a name="271"><q-n>     271  </q-n></a>
+<a name="272"><q-n>     272  </q-n></a>	<q-m>// generate tri-states</q-m>
+<a name="273"><q-n>     273  </q-n></a>	<q-w>assign</q-w> sda = sda_o ? 1'bz : 1'b0;
+<a name="274"><q-n>     274  </q-n></a>
+<a name="275"><q-n>     275  </q-n></a><q-w>endmodule</q-w>
+<a name="276"><q-n>     276  </q-n></a>
+<a name="277"><q-n>     277  </q-n></a>
+</pre>
+</tt>
+
+  
+</body>
+</html>
