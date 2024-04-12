@@ -12,18 +12,3 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# Loading project uvm_test
-# coverage read -dataset final_coverage C:/Users/PC/Documents/Chung_training/code/APB-main/work/final_coverage.ucdb
-# C:/Users/PC/Documents/Chung_training/code/APB-main/work/final_coverage.ucdb opened as coverage dataset "final_coverage"
-coverage report -html -htmldir covhtmlreport -source -details -assert -directive -cvg -code bcefst -threshL 50 -threshH 90
-# Report created in covhtmlreport/index.html
-# coverage read -dataset TEST12 C:/Users/PC/Documents/Chung_training/code/APB-main/work/TEST12.ucdb
-# C:/Users/PC/Documents/Chung_training/code/APB-main/work/TEST12.ucdb opened as coverage dataset "TEST12"
-coverage report -html -htmldir covhtmlreport -source -details -assert -directive -cvg -code bcefst -threshL 50 -threshH 90
-# Report created in covhtmlreport/index.html
-# coverage read -dataset TEST121 C:/Users/PC/Documents/Chung_training/code/APB-main/work/TEST12.ucdb
-# C:/Users/PC/Documents/Chung_training/code/APB-main/work/TEST12.ucdb opened as coverage dataset "TEST121"
-coverage report -html -htmldir covhtmlreport -source -details -assert -directive -cvg -code bcefst -threshL 50 -threshH 90
-# Report created in covhtmlreport/index.html
-# coverage read -dataset TEST122 C:/Users/PC/Documents/Chung_training/code/APB-main/work/TEST12.ucdb
-# C:/Users/PC/Documents/Chung_training/code/APB-main/work/TEST12.ucdb opened as coverage dataset "TEST122"

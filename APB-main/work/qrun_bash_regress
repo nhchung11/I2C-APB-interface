@@ -1,0 +1,29 @@
+# seq=TEST1
+#seq=TEST2
+#seq=TEST3
+#seq=TEST4         
+#seq=TEST5
+#seq=TEST6         
+#seq=TEST7
+#seq=TEST8
+#seq=TEST9
+#seq=TEST10
+#seq=TEST11
+#seq=TEST12
+rm -rf *.ucdb;
+
+seq=( TEST0_1 TEST0_2 TEST1 TEST2 TEST3 TEST4 TEST5 TEST6 TEST7 TEST8 TEST9 TEST10 TEST11 TEST12 )
+for seq_ins in "${seq[@]}"
+do
+	echo " Running $seq_ins ..................."
+	rm -rf work; 
+	vlib work; 
+	vlog  -timescale=1ns/1ns -sv +acc -incr -f filelist_tb.f -assertdebug +define+$seq_ins -l vlog_tb.log;
+	vlog  -sv +acc -incr -f filelist_rtl.f -l vlog_rtl.log +cover=sbceft -assertdebug;
+	vsim  -voptargs=+acc -sva -assertdebug -coverage top -c -do "set WildcardFilter None;add wave -r top/*; coverage save -onexit $seq_ins.ucdb; run -all; quit;"
+done
+
+
+
+# vcover merge final_coverage.ucdb  *.ucdb;
+# vsim -viewcov $seq.ucdb ;

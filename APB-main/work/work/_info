@@ -9,17 +9,17 @@ z2
 cModel Technology
 Z0 dC:/Users/PC/Documents/Chung_training/code/APB-main/work
 T_opt
-!s110 1712820930
-VQ<c`_dl<DVV`VK[5_ZgDA0
+!s110 1712914875
+VPUnDWoN6jXl7m=W38OT<K1
 04 3 4 work top fast 0
-=1-18c04dc4ceb4-661792c2-23f-1f24
+=1-18c04dc4ceb4-661901bb-319-2aa0
 o-quiet -auto_acc_if_foreign -work work +acc
 Z1 tCvgOpt 0
 n@_opt
 OL;O;10.7c;67
 vapb_slave
 Z2 DXx6 sv_std 3 std 0 22 d=_JfHTnXCN[H5FjiaJJc0
-Z3 !s110 1712820929
+Z3 !s110 1712914874
 !i10b 1
 !s100 ^G?b=EEY0WQgDXU[cE;0T2
 IMBL:`0_MenBA[_LTWe<0E3
@@ -35,9 +35,9 @@ Z5 OL;L;10.7c;67
 r1
 !s85 0
 31
-Z6 !s108 1712820929.000000
+Z6 !s108 1712914874.000000
 Z7 !s107 ../rtl/test_fifo.sv|../rtl/fifo.sv|../rtl/top.v|../rtl/i2c_testbench.v|../rtl/i2c_slave_model.v|../rtl/i2c.v|../rtl/apb_test_top.v|../rtl/apb_testbench.v|../rtl/apb_slave.v|
-Z8 !s90 -64|-sv|+acc|-incr|-f|filelist_rtl.f|-l|vlog_rtl.log|+cover=sbceft|-assertdebug|
+Z8 !s90 -sv|+acc|-incr|-f|filelist_rtl.f|-l|vlog_rtl.log|+cover=sbceft|-assertdebug|
 !i113 0
 Z9 !s102 +cover=sbceft
 Z10 o-sv +acc +libext+.svh+.vh+.v+.sv +cover=sbceft -assertdebug -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
@@ -123,7 +123,7 @@ R11
 R1
 vassertion_cov
 R2
-Z13 DXx4 work 15 top_dut_sv_unit 0 22 [9M^I7g>gI[U5_God62RX2
+Z13 DXx4 work 15 top_dut_sv_unit 0 22 j>NPm=5;c0UG8f<m@T0L92
 R4
 r1
 !s85 0
@@ -141,7 +141,7 @@ R5
 31
 R6
 Z16 !s107 ../sim/TEST12.sv|../sim/assertion.sv|../sim/monitor.sv|../sim/env.sv|../sim/scoreboard.sv|../sim/driver.sv|../sim/interface.sv|../sim/stimulus.sv|../sim/top_dut.sv|
-Z17 !s90 -64|-timescale=1ns/1ns|-sv|+acc|-incr|-f|filelist_tb.f|-assertdebug|+define+TEST12|-l|vlog_tb.log|
+Z17 !s90 -timescale=1ns/1ns|-sv|+acc|-incr|-f|filelist_tb.f|-assertdebug|+define+TEST12|-l|vlog_tb.log|
 !i113 0
 Z18 o-timescale=1ns/1ns -sv +acc +libext+.svh+.vh+.v+.sv -assertdebug -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 Z19 !s92 -timescale=1ns/1ns -sv +acc +libext+.svh+.vh+.v+.sv +incdir+../sim -y ../sim -assertdebug +define+TEST12 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
@@ -260,7 +260,7 @@ R4
 !s105 i2c_slave_model_v_unit
 S1
 R0
-w1712653297
+w1712906957
 8../rtl/i2c_slave_model.v
 F../rtl/i2c_slave_model.v
 L0 3
@@ -442,9 +442,9 @@ IzZhoUXn3afK<nEPLoRb><0
 R14
 S1
 R0
-Z25 w1712820378
-Z26 8../sim/top_dut.sv
-Z27 F../sim/top_dut.sv
+w1712820378
+Z25 8../sim/top_dut.sv
+Z26 F../sim/top_dut.sv
 L0 39
 R5
 31
@@ -458,18 +458,18 @@ R1
 Xtop_dut_sv_unit
 !s115 intf_i2c
 R2
-V[9M^I7g>gI[U5_God62RX2
+Vj>NPm=5;c0UG8f<m@T0L92
 r1
 !s85 0
 !i10b 1
-!s100 aAa2<:EJNhP53UlnGmjOP3
-I[9M^I7g>gI[U5_God62RX2
+!s100 4CWRhFd0ESTzjW_goiB0i0
+Ij>NPm=5;c0UG8f<m@T0L92
 !i103 1
 S1
 R0
+w1712914817
 R25
 R26
-R27
 F../sim/stimulus.sv
 R23
 F../sim/driver.sv

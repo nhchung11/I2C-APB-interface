@@ -1,10 +1,12 @@
 var g_data = {
-c20:[4,'reg_addr',[],,'19',1,1,'cov','18','work.top_dut_sv_unit::driver',[[],[0,'1','102701',,'write'],[0,'1','1045',,'read']],[]],
-c21:[4,'rw',[],,'19',1,1,'cov','18','work.top_dut_sv_unit::driver',[[],[0,'1','1274',,'auto[0]'],[0,'1','102604',,'auto[1]']],[]],
-c22:[5,'rw_reg',['reg_addr','rw'],,'19',1,1,'cov','18','work.top_dut_sv_unit::driver',[[],[4,'1','102595',,'write','auto[1]'],[4,'1','9',,'read','auto[1]'],[4,'1','106',,'write','auto[0]'],[4,'1','1036',,'read','auto[0]']],[[]]],
-c1167:[4,'reg_addr',[],,'1166',1,1,'cov','1165','/top_dut_sv_unit/driver',[[],[0,'1','102701',,'write'],[0,'1','1045',,'read']],[]],
-c1168:[4,'rw',[],,'1166',1,1,'cov','1165','/top_dut_sv_unit/driver',[[],[0,'1','1274',,'auto[0]'],[0,'1','102604',,'auto[1]']],[]],
-c1169:[5,'rw_reg',['reg_addr','rw'],,'1166',1,1,'cov','1165','/top_dut_sv_unit/driver',[[],[4,'1','102595',,'write','auto[1]'],[4,'1','9',,'read','auto[1]'],[4,'1','106',,'write','auto[0]'],[4,'1','1036',,'read','auto[0]']],[[]]],
+c20:[4,'reg_addr',[],,'19',1,1,'cov','18','work.top_dut_sv_unit::driver',[[],[0,'1','31722',,'bin2'],[0,'1','306',,'bin4'],[0,'1','1680',,'bin6'],[0,'1','6',,'bin3'],[0,'1','1039',,'bin5']],[]],
+c21:[4,'rw',[],,'19',1,1,'cov','18','work.top_dut_sv_unit::driver',[[],[0,'1','33611',,'write'],[0,'1','1280',,'read']],[]],
+c22:[5,'rw_reg',['reg_addr','rw'],,'19',1,1,'cov','18','work.top_dut_sv_unit::driver',[[],[4,'1','31716',,'bin2','write'],[4,'1','300',,'bin4','write'],[4,'1','1586',,'bin6','write'],[4,'1','6',,'bin3','read'],[4,'1','1030',,'bin5','read'],[0,'1','0',1,'read_status'],[0,'1','9',,'read_receive'],[0,'1','6',,'write_command'],[0,'1','94',,'write_address'],[0,'1','6',,'write_transmit']
+],[]],
+c1167:[4,'reg_addr',[],,'1166',1,1,'cov','1165','/top_dut_sv_unit/driver',[[],[0,'1','31722',,'bin2'],[0,'1','306',,'bin4'],[0,'1','1680',,'bin6'],[0,'1','6',,'bin3'],[0,'1','1039',,'bin5']],[]],
+c1168:[4,'rw',[],,'1166',1,1,'cov','1165','/top_dut_sv_unit/driver',[[],[0,'1','33611',,'write'],[0,'1','1280',,'read']],[]],
+c1169:[5,'rw_reg',['reg_addr','rw'],,'1166',1,1,'cov','1165','/top_dut_sv_unit/driver',[[],[4,'1','31716',,'bin2','write'],[4,'1','300',,'bin4','write'],[4,'1','1586',,'bin6','write'],[4,'1','6',,'bin3','read'],[4,'1','1030',,'bin5','read'],[0,'1','0',1,'read_status'],[0,'1','9',,'read_receive'],[0,'1','6',,'write_command'],[0,'1','94',,'write_address'],[0,'1','6',,'write_transmit']
+],[]],
 dummyEnd:0
 };
 processCovergroupsData(g_data);

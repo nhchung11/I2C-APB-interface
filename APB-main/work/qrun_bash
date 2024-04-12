@@ -5,19 +5,19 @@
 # seq=TEST3
 # seq=TEST4         
 # seq=TEST5         # Reset
-# seq=TEST6         # Repeated Start
-# seq=TEST7         # Many bytes
+ seq=TEST6         # Repeated Start
+#seq=TEST7         # Many bytes
 # seq=TEST8
 # seq=TEST9
 # seq=TEST10
 # seq=TEST11
-seq=TEST12
+# seq=TEST12
 
 rm -rf work; 
 vlib work; 
-vlog -64 -timescale=1ns/1ns -sv +acc -incr -f filelist_tb.f -assertdebug +define+$seq -l vlog_tb.log;
-vlog -64 -sv +acc -incr -f filelist_rtl.f -l vlog_rtl.log +cover=sbceft -assertdebug;
-vsim -64 -voptargs=+acc -sva -assertdebug -coverage top -c -do "set WildcardFilter None;add wave -r top/*; coverage save -onexit $seq.ucdb; run -all; quit;"
+vlog  -timescale=1ns/1ns -sv +acc -incr -f filelist_tb.f -assertdebug +define+$seq -l vlog_tb.log;
+vlog  -sv +acc -incr -f filelist_rtl.f -l vlog_rtl.log +cover=sbceft -assertdebug;
+vsim  -voptargs=+acc -sva -assertdebug -coverage top -c -do "set WildcardFilter None;add wave -r top/*; coverage save -onexit $seq.ucdb; run -all; quit;"
 
 # vsim -viewcov $seq.ucdb ;
 # vcover merge final_coverage.ucdb  *.ucdb;
