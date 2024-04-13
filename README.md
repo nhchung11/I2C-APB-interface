@@ -1,11 +1,17 @@
-## Implimenting Asynchronous FIFO 
-1. Mem
-2. Empty
-3. Full
-4. Sync write to read
-5. Sync read to write
+## I2C FSM
+![FSM Image](https://github.com/nhchung11/verilog-code/blob/master/rtl/Images/FSM.PNG)
 
-## Implimenting APB interface with I2C
-1. APB interface
-2. Async FIFO
-3. I2C Master
+## APB interface block diagram
+![APB interface](https://github.com/nhchung11/verilog-code/blob/master/rtl/Images/Block_diagram.png)
+
+## User guide
+### Write
+1. Config register map in order
+2. Enable in commands register connect to I2C master enable
+3. W_enable connects to FIFO TX write enable
+4. I2C master enables FIFO TX read enable based on FSM
+### Read
+1. Config register map in order
+2. Enable in command register connect to I2C master enable
+3. I2C_master enalbes FIFO RX write enable based on FSM
+4. R_enable in command register connect to FIFO RX read enable
