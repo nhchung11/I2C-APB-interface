@@ -1,8 +1,8 @@
 ## I2C FSM
-![FSM Image](https://github.com/nhchung11/verilog-code/blob/master/rtl/Images/FSM.PNG)
+![FSM Image](https://github.com/nhchung11/verilog-code/blob/master/Images/FSM.PNG)
 
 ## APB interface block diagram
-![APB interface](https://github.com/nhchung11/verilog-code/blob/master/rtl/Images/Block_diagram.png)
+![APB interface](https://github.com/nhchung11/verilog-code/blob/master/Images/Block_diagram.png)
 
 ## User guide
 ### Write
