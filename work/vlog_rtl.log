@@ -1,0 +1,21 @@
+QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 18 2018
+Start time: 23:12:13 on Aug 23,2024
+vlog -sv "+acc" -incr -f filelist_rtl.f -l vlog_rtl.log "+cover=sbceft" -assertdebug 
+-- Compiling module BitToByteConverter
+-- Compiling module apb
+-- Compiling module ClockGenerator
+-- Compiling module FIFO_memory
+-- Compiling module write_pointer_full
+-- Compiling module read_pointer_empty
+-- Compiling module sync_read_to_write
+-- Compiling module sync_write_to_read
+-- Compiling module FIFO_top
+-- Compiling module i2c_controller
+-- Compiling module i2c_slave_model
+-- Compiling module top_level
+
+Top level modules:
+	i2c_slave_model
+	top_level
+End time: 23:12:13 on Aug 23,2024, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0

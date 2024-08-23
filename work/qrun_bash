@@ -1,0 +1,22 @@
+# seq=WRITE_TO_ALL_REG              # PASSED
+# seq=READ_DEFAULT_VALUE            # PASSED
+# seq=ADDRESS_NACK                  # PASSED
+seq=TRANSMIT_1_DATA               # PASSED
+# seq=WRITE_FULL_TX_FIFO            # PASSED
+# seq=DATA_NACK                     # PASSED
+# seq=WRITE_THEN_RESET              # PASSED        
+# seq=WRITE_WITH_SR                 # FAILED
+# seq=WRITE_MANY_DATA               # PASSED    
+# seq=READ_1_DATA                   # PASSED
+# seq=READ_TO_FIFORX_EMPTY          # PASSED
+# seq=WRITE_READ_COMB               # PASSED
+# seq=READ_RESET_VALUE              # PASSED
+# seq=RESET_STATE                   # PASSED   
+
+rm -rf work; 
+vlib work;  
+UVM_FLAGS=+incdir+${UVM_HOME}/src ${UVM_HOME}/src/uvm_pkg.sv
+
+vlog -timescale=1ns/1ns -sv +acc ${UVM_FLAGS} -incr -f filelist_tb.f -assertdebug +define+SEQ_TEST=$seq -l vlog_tb.log;
+vlog -sv +acc -incr -f filelist_rtl.f -l vlog_rtl.log +cover=sbceft -assertdebug;
+vsim -voptargs=+acc -sva -assertdebug -coverage top_sim -c -do "set WildcardFilter None;add wave -r top_sim/*; coverage save -onexit $seq.ucdb; run -all; quit;"

@@ -1,0 +1,25 @@
+QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 18 2018
+Start time: 23:12:12 on Aug 23,2024
+vlog -timescale=1ns/1ns -sv "+acc" -incr -f filelist_tb.f -assertdebug "+define+SEQ_TEST=TRANSMIT_1_DATA" -l vlog_tb.log 
+** Note: (vlog-2286) ../uvm/top_sim.sv(3): Using implicit +incdir+D:/questasim64_10.7c/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+-- Compiling package top_sim_sv_unit
+** Warning: ../uvm/scoreboard.sv(142): (vlog-2240) Treating stand-alone use of function 'pop_back' as an implicit VOID cast.
+** Warning: ../uvm/scoreboard.sv(151): (vlog-2240) Treating stand-alone use of function 'pop_back' as an implicit VOID cast.
+** Warning: ../testcases/base_sequence.sv(221): (vlog-2961) Argument #1 for std::randomize() function is non-LRM compliant.
+** Warning: ../testcases/base_sequence.sv(247): (vlog-2961) Argument #1 for std::randomize() function is non-LRM compliant.
+** Warning: ../testcases/base_sequence.sv(259): (vlog-2961) Argument #1 for std::randomize() function is non-LRM compliant.
+** Warning: ../testcases/base_sequence.sv(271): (vlog-2961) Argument #1 for std::randomize() function is non-LRM compliant.
+** Warning: ../testcases/base_sequence.sv(328): (vlog-2961) Argument #1 for std::randomize() function is non-LRM compliant.
+-- Compiling interface intf
+-- Compiling module top_sim
+-- Scanning library directory '../uvm'
+-- Scanning library directory '../testcases'
+
+Referenced (but uncompiled) modules or primitives:
+	top_level
+	i2c_slave_model
+
+Top level modules:
+	top_sim
+End time: 23:12:13 on Aug 23,2024, Elapsed time: 0:00:01
+Errors: 0, Warnings: 7

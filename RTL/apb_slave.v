@@ -36,21 +36,9 @@ module apb
         RX_empty            = status_reg[4];
     end
 
-    // always @(posedge PCLK, negedge PRESETn) begin
-    //     if (!PRESETn)
-    //         reg_map <= 3'b0;
-    //     else
-    //         reg_map <= PADDR[7:5];
-    // end
-    
     // READY
     assign PREADY = ((PENABLE == 1'b1) & (PSELx == 1'b1)) ? 1'b1 : 1'b0;
     
-    // DATA READ FROM FIFO
-    // assign PRDATA = ((RX_empty == 0) & (PENABLE == 1'b1) & (PWRITE == 1'b0) & (PSELx == 1'b1)) ? receive_reg : 8'b0;
-
-    
-
     always @(posedge PCLK, negedge PRESETn) begin
         if (!PRESETn) begin
             command_reg                 <= 8'b00000000;

@@ -9,15 +9,13 @@ module top_level
         input                           PWRITE,
         input [7:0]                     PADDR,
         input [data_size - 1:0]         PWDATA,
-        
-        // input                           scl_in,
-        // input                           sda_in,
         input                           core_clk,
 
+        // Outputs
         output [data_size - 1:0]        PRDATA,
         output                          PREADY,
-        // output                          scl_out,
-        // output                          sda_out
+
+        // Tristate
         inout                           sda,
         inout                           scl
     );
@@ -138,11 +136,5 @@ module top_level
         .prescale                       (prescale_reg),
         .rst_n                          (command_reg[4]),
         .i2c_clk                        (i2c_clk_gen)
-    );
-
-    i2c_slave_model slave
-    (
-        .scl(scl),
-        .sda(sda)
     );
 endmodule
