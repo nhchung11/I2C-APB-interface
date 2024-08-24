@@ -94,11 +94,9 @@ class TRANSMIT_1_DATA extends base_sequence;
         `uvm_info(get_name(), "=======================================================", UVM_MEDIUM)
         `uvm_info(get_name(), "==================== TRANSMIT 1 DATA ==================", UVM_MEDIUM)
         `uvm_info(get_name(), "=======================================================", UVM_MEDIUM)
-        my_regmodel.reg_command.write(status, 8'b11110110);
-        my_regmodel.reg_address.write(status, 8'b0010_0000);
-        my_regmodel.reg_transmit.write(status, 0);
-        my_regmodel.reg_transmit.write(status, 1);
-        my_regmodel.reg_command.write(status, 8'b11111110);
+        this.my_regmodel.reg_address.write(status, 8'b0010_0000);
+        this.my_regmodel.reg_transmit.write(status, 0);
+        this.my_regmodel.reg_command.write(status, 8'b1001_0000);
         `uvm_delay(10000ns)
 
     endtask
@@ -116,9 +114,9 @@ class WRITE_FULL_TX_FIFO extends base_sequence;
         `uvm_info(get_name(), "=======================================================", UVM_MEDIUM)
         `uvm_info(get_name(), "=================== WRITE FULL TX FIFO ================", UVM_MEDIUM)
         `uvm_info(get_name(), "=======================================================", UVM_MEDIUM)
-        this.my_regmodel.reg_command.write(status, 8'b11110110);
         this.my_regmodel.reg_address.write(status, 8'b0010_0000);
         this.my_regmodel.reg_transmit.write(status, 0);
+        this.my_regmodel.reg_command.write(status, 8'b1001_0000);
         this.my_regmodel.reg_transmit.write(status, 1);
         this.my_regmodel.reg_transmit.write(status, 2);
         this.my_regmodel.reg_transmit.write(status, 3);
@@ -132,8 +130,7 @@ class WRITE_FULL_TX_FIFO extends base_sequence;
         this.my_regmodel.reg_transmit.write(status, 11);
         this.my_regmodel.reg_transmit.write(status, 12);
         this.my_regmodel.reg_transmit.write(status, 13);
-        this.my_regmodel.reg_command.write(status, 8'b11111110);
-        `uvm_delay(20000ns)
+        `uvm_delay(30000ns)
     endtask
 endclass
 
@@ -291,17 +288,15 @@ class READ_1_DATA extends base_sequence;
         `uvm_info(get_name(), "=======================================================", UVM_MEDIUM)
         `uvm_info(get_name(), "====================== READ 1 DATA ====================", UVM_MEDIUM)
         `uvm_info(get_name(), "=======================================================", UVM_MEDIUM)
-        my_regmodel.reg_command.write(status, 8'b11110110);
-        my_regmodel.reg_address.write(status, 8'b0010_0000);
-        my_regmodel.reg_transmit.write(status, 0);
-        my_regmodel.reg_transmit.write(status, 1);
-        my_regmodel.reg_command.write(status, 8'b11111100);
-        `uvm_delay(5000ns)
+        this.my_regmodel.reg_address.write(status, 8'b0010_0000);
+        this.my_regmodel.reg_transmit.write(status, 0);
+        this.my_regmodel.reg_transmit.write(status, 1);
+        `uvm_delay(10000ns)
 
-        my_regmodel.reg_address.write(status, 8'b0010_0001);
-        my_regmodel.reg_command.write(status, 8'b11111100);
-        `uvm_delay(5000ns)
-        my_regmodel.reg_receive.read(status, data);
+        this.my_regmodel.reg_address.write(status, 8'b0010_0001);
+        this.my_regmodel.reg_command.write(status, 8'b1001_0000);
+        `uvm_delay(8000ns)
+        this.my_regmodel.reg_receive.read(status, data);
         `uvm_delay(1000ns)
 
         // PASS //

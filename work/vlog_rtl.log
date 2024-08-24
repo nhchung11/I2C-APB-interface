@@ -1,5 +1,5 @@
 QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 18 2018
-Start time: 23:12:13 on Aug 23,2024
+Start time: 22:31:25 on Aug 24,2024
 vlog -sv "+acc" -incr -f filelist_rtl.f -l vlog_rtl.log "+cover=sbceft" -assertdebug 
 -- Compiling module BitToByteConverter
 -- Compiling module apb
@@ -17,5 +17,5 @@ vlog -sv "+acc" -incr -f filelist_rtl.f -l vlog_rtl.log "+cover=sbceft" -assertd
 Top level modules:
 	i2c_slave_model
 	top_level
-End time: 23:12:13 on Aug 23,2024, Elapsed time: 0:00:00
+End time: 22:31:25 on Aug 24,2024, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0

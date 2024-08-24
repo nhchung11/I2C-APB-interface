@@ -15,9 +15,4 @@
 # vsim.wlf opened as dataset "vsim"
 add wave -position insertpoint vsim:/top_sim/DUT/i2c/*
 add wave -position insertpoint  \
-vsim:/top_sim/DUT/apb/transmit_reg
-add wave -position insertpoint  \
-vsim:/top_sim/DUT/apb/PADDR \
-vsim:/top_sim/DUT/apb/PWDATA
-add wave -position insertpoint  \
-vsim:/top_sim/DUT/fifo_tx/fifomem/mem
+vsim:/top_sim/DUT/fifo_rx/fifomem/mem
