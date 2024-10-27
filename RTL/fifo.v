@@ -1,209 +1,210 @@
-module FIFO_memory 
-#(parameter data_size = 8, parameter address_size = 3)
+// `include "./../define/define.sv"
+// TOP
+module top #(parameter data_size = 8, address_size = 3)
+(
+        input pclk, core_clk, presetn, psel, penable, pwrite,
+        input [data_size-1:0] pwdata, paddr,
+
+        output [data_size-1:0] prdata,
+        output pready
+);
+
+wire full, empty, almost_full, almost_empty, new_data;
+wire [data_size-1:0] cfg, control, wdata;
+wire [data_size-1:0] rdata;
+
+apb #(.data_size(data_size)) apb_ins
+(
+        .pclk(pclk),
+        .presetn(presetn),
+        .pwdata(pwdata),
+        .paddr(paddr),
+        .psel(psel),
+        .penable(penable),
+        .pwrite(pwrite),
+        .rdata(rdata),
+        .pready(pready),
+        .prdata(prdata),
+        .full(full),
+        .empty(empty),
+        .almost_full(almost_full),
+        .almost_empty(almost_empty),
+        .wdata(wdata),
+        .config_reg(cfg),
+        .control_reg(control),
+        .new_data(new_data)
+);
+
+fifo_top_syn #(.data_size(data_size), .address_size(address_size)) fifo_ins
+(
+        .wclk(pclk),
+        .rclk(core_clk),
+        .wrst_n(control[0]),
+        .rrst_n(control[1]),
+        .winc(control[2] & new_data),
+        .rinc(control[3]),
+        .wdata(wdata),
+        .rdata(rdata),
+        .wfull(full),
+        .rempty(empty),
+        .almost_full(almost_full),
+        .almost_empty(almost_empty),
+        .cfg(cfg)
+);
+endmodule
+
+// FULL
+module fifo_full #(parameter address_size = 3)
     (
-        input   [data_size-1:0]     write_data,
-        input   [address_size-1:0]  write_address,
-        input   [address_size-1:0]  read_address,
-        input                       write_enable,
-        input                       write_full,
-        input                       write_clk,
-        output  [data_size-1:0]     read_data
+        input winc, wclk, wrst_n,
+        input [address_size:0] wq2_rptr,
+        input [3:0] full_level,
+
+        output logic wfull, 
+        output logic almost_full,
+        output logic [address_size-1:0] waddr,
+        output logic [address_size:0] wptr
     );
-    
-    localparam  FIFO_depth = 1<<address_size;
-    reg [data_size-1:0] mem [0:FIFO_depth-1];
-    
-    // read the data at the output of memory
-    assign read_data = mem[read_address];
-    //Write a data on rising edge of write clock at specific address location 
-    
-    always @(posedge write_clk) begin
-        if (write_enable && !write_full)
-            mem[write_address] <= write_data;
+
+    logic a_full;
+    logic [address_size:0] bin;
+    logic [address_size:0] bnext, gnext, bnext2, gnext2;
+
+    assign bnext = bin + (winc & ~wfull);
+    assign bnext2 = (winc & ~almost_full) ?  bnext + full_level : bnext;    
+
+    always_ff @(posedge wclk or negedge wrst_n) begin
+        if (~wrst_n)    bin <= 0;
+        else            bin <= bnext;
+    end
+
+    assign gnext = (bnext>>1) ^ bnext;
+    assign gnext2 = (bnext2 >> 1) ^ bnext2;
+    assign waddr = bin[address_size-1:0];
+
+    always_ff @(posedge wclk or negedge wrst_n) begin
+        if (~wrst_n)    wptr <= 0;
+        else            wptr <= gnext[address_size-1:0];
+    end
+
+    always_ff @(posedge wclk or negedge wrst_n) begin
+        if (~wrst_n)    wfull <= 0;
+        else            wfull <= (gnext == {~wq2_rptr[address_size:address_size-1], wq2_rptr[address_size-2:0]});
+    end
+
+    always_ff @(posedge wclk or negedge wrst_n) begin
+      if (~wrst_n)    a_full <= 0;
+      else            a_full <= (~wfull) & (gnext2 == {~wq2_rptr[address_size:address_size-1], wq2_rptr[address_size-2:0]});
+    end
+
+    always_comb begin
+        if (!wfull) begin
+            if (a_full) almost_full = 1;
+        end else begin
+            almost_full = 0;
+        end
     end
 endmodule
 
-module write_pointer_full #(parameter address_size = 4)
-    (
-        input                           write_reset_n,
-        input                           write_clk,
-        input                           write_enable,
-        input       [address_size :0]   write_to_read_pointer,
-        output reg  [address_size-1:0]  write_address,
-        output reg  [address_size :0]   write_pointer,
-        output reg                      write_full
-    );
-    reg [address_size:0] write_gray_next;
-    reg [address_size:0] write_binary_next;
-    reg [address_size:0] write_binary;
+// EMPTY
+module fifo_empty #(parameter address_size = 3)
+  (
+      input rinc, rclk, rrst_n,
+      input [address_size:0] rq2_wptr,
+      input [3:0] empty_level,
+      output logic rempty, almost_empty,
+      output logic [address_size-1:0] raddr,
+      output logic [address_size:0] rptr
+  );
+  logic a_empty;
+  logic [address_size:0] bin;
+  logic [address_size:0]  bnext, gnext;
+  logic [address_size:0] bnext2, gnext2;
 
-    // Binary pointers to the memory buffer
-    always@* begin
-        write_address = write_binary[address_size-1:0];
-        write_binary_next = write_binary + (write_enable & ~write_full); 
-        write_gray_next = (write_binary_next>>1) ^ write_binary_next;
+  always_ff @(posedge rclk or negedge rrst_n) begin
+    if (~rrst_n)    bin <= 0;
+    else            bin <= bnext;
+  end
+
+  assign bnext = bin + (rinc & ~rempty);
+  assign bnext2 = (rinc & ~almost_empty) ? bnext + empty_level : bnext;
+
+  assign gnext = (bnext>>1) ^ bnext;
+  assign gnext2 = (bnext2>>1) ^ bnext2;
+  assign raddr = bin[address_size-1:0];
+
+  always_ff @(posedge rclk or negedge rrst_n) begin
+      if (~rrst_n)    rempty <= 1'b1;
+      else            rempty <= (gnext == rq2_wptr);
+  end
+  always_ff @(posedge rclk or negedge rrst_n) begin
+      if (~rrst_n)    rptr <= 0;
+      else            rptr <= gnext;
+  end
+  always_ff @(posedge rclk or negedge rrst_n) begin
+    if (~rrst_n)    a_empty <= 1'b0;
+    else            a_empty <= (~rempty) & (gnext2 == rq2_wptr);
+  end
+
+  always_comb begin
+    if (!rempty) begin
+      if (a_empty) almost_empty = 1;
+    end else begin
+      almost_empty = 0;
     end
-    // let us use the gray pointers
-    always @(posedge write_clk , negedge write_reset_n) begin
-        if (~write_reset_n)
-            {write_binary, write_pointer} <= 0;
-        else
-            {write_binary, write_pointer} <= {write_binary_next, write_gray_next};
-    end
-    always @(posedge write_clk , negedge write_reset_n) begin
-        if (!write_reset_n) 
-            write_full <= 1'b0;
-        else
-            write_full <= (write_gray_next=={~write_to_read_pointer[address_size:address_size-1], write_to_read_pointer[address_size-2:0]});
-    end
+  end
 endmodule
 
-module read_pointer_empty #(parameter address_size = 3)
-    (
-        input                           read_reset_n,
-        input                           read_enable,
-        input                           read_clk,
-        input       [address_size :0]   read_to_write_pointer,
-        output reg  [address_size-1:0]  read_address,
-        output reg  [address_size :0]   read_pointer,
-        output reg                      read_empty 
-    );
+// SYNC_W2R
+module sync_w2r #(parameter address_size)
+  (
+    input rclk, rrst_n,
+    input [address_size:0] wptr,
 
-    reg [address_size:0] read_binary;
-    reg [address_size:0] read_gray_next;
-    reg [address_size:0] read_binary_next;
-    
+    output logic [address_size:0] rq2_wptr
+  );
 
-    always@*
-        begin
-            read_address = read_binary[address_size-1:0];
-            read_binary_next = read_binary + (read_enable & ~read_empty); 
-            read_gray_next = (read_binary_next>>1) ^ read_binary_next;
-            
-    end
+  logic [address_size:0] rq2_wptr_tmp;
 
-    always @(posedge read_clk , negedge read_reset_n) begin
-        if (~read_reset_n)
-            {read_binary, read_pointer} <= 0;
-        else
-            {read_binary, read_pointer} <= {read_binary_next, read_gray_next};
-    end
-
-    // FIFO empty logic
-    always @(posedge read_clk , negedge read_reset_n) begin
-        if (~read_reset_n)
-            read_empty <= 1'b1;
-        else
-            read_empty <= (read_gray_next == read_to_write_pointer);
-    end
+  always_ff @(posedge rclk or negedge rrst_n) begin
+    if (~rrst_n) {rq2_wptr, rq2_wptr_tmp} <= 0;
+    else {rq2_wptr, rq2_wptr_tmp} <= {rq2_wptr_tmp, wptr};
+  end
 endmodule
 
-module sync_read_to_write #(parameter address_size = 3)
-    (
-    input                           write_reset_n,
-    input                           write_clk,
-    input       [address_size:0]    read_pointer,
-    output reg  [address_size:0]    write_to_read_pointer
-    );
+// SYNC_R2W
+module sync_r2w #(parameter address_size)
+  (
+    input wclk, wrst_n,
+    input [address_size:0] rptr,
 
-    reg [address_size:0] tmp1_read_pointer;
-    //Multi-flop synchronizer logic for passing the control signals and pointers
-    always @(posedge write_clk , negedge write_reset_n) begin
-        if (~write_reset_n)
-            {write_to_read_pointer,tmp1_read_pointer} <= 0;
-        else
-            {write_to_read_pointer,tmp1_read_pointer} <= {tmp1_read_pointer,read_pointer};
-    end
+    output logic [address_size:0] wq2_rptr
+  );
+
+  logic [address_size:0] wq2_rptr_tmp;
+
+  always_ff @(posedge wclk or negedge wrst_n) begin
+    if (~wrst_n) {wq2_rptr, wq2_rptr_tmp} <= 0;
+    else {wq2_rptr, wq2_rptr_tmp} <= {wq2_rptr_tmp, rptr};
+  end
 endmodule
 
-module sync_write_to_read #(parameter address_size = 3)
+// MEM
+module fifo_mem #(parameter data_size, address_size)
     (
-        input       [address_size:0]    write_pointer,
-        input                           read_reset_n,
-        input                           read_clk,
-        output reg  [address_size:0]    read_to_write_pointer
+        input wire wclk, winc, wfull,
+        input wire [data_size-1:0] wdata,
+        input wire [address_size-1:0] waddr, raddr,
+
+        output wire [data_size-1:0] rdata
     );
+    localparam fifo_depth = 1<<address_size;
+    logic [data_size-1:0] mem [0:fifo_depth-1];
 
-    reg [address_size:0] tmp1_write_pointer;
-    
-    always @(posedge read_clk , negedge read_reset_n) begin
-        if (~read_reset_n)
-            {read_to_write_pointer,tmp1_write_pointer} <= 0;
-        else
-            {read_to_write_pointer,tmp1_write_pointer} <= {tmp1_write_pointer,write_pointer};
+    assign rdata = mem[raddr];
+    always_ff @(posedge wclk) begin
+        if (winc && ~wfull) begin
+            mem[waddr] <= wdata;
+        end
     end
-endmodule
-
-module FIFO_top 
-#(parameter data_size = 8,parameter address_size = 3)
-(
-    input [data_size-1:0]   write_data,
-    input                   write_enable,
-    input                   write_clk,
-    input                   write_reset_n,
-
-    input                   read_enable,
-    input                   read_clk,
-    input                   read_reset_n,
-
-    output [data_size-1:0]  read_data,
-    output                  write_full,
-    output                  read_empty
-);
-
-wire [address_size-1:0]     write_address;
-wire [address_size-1:0]     read_address;
-wire [address_size:0]       write_pointer;
-wire [address_size:0]       read_pointer;
-wire [address_size:0]       write_to_read_pointer;
-wire [address_size:0]       read_to_write_pointer;
-
-FIFO_memory #(data_size, address_size) fifomem
-(
-    .write_clk              (write_clk),
-    .write_enable           (write_enable),
-    .write_data             (write_data),
-    .write_address          (write_address),
-    .read_data              (read_data),
-    .read_address           (read_address),
-    .write_full             (write_full)
-);
-
-read_pointer_empty #(address_size) read_pointer_empty
-(
-    .read_clk               (read_clk),
-    .read_reset_n           (read_reset_n),
-    .read_enable            (read_enable) ,
-    .read_address           (read_address),
-    .read_pointer           (read_pointer),
-    .read_empty             (read_empty),
-    .read_to_write_pointer  (read_to_write_pointer)
-);
-
-write_pointer_full #(address_size) write_pointer_full
-(
-    .write_clk              (write_clk),
-    .write_reset_n          (write_reset_n),
-    .write_enable           (write_enable),
-    .write_address          (write_address),
-    .write_pointer          (write_pointer),
-    .write_full             (write_full),
-    .write_to_read_pointer  (write_to_read_pointer)
-);
-
-sync_read_to_write sync_read_to_write
-(
-    .write_clk              (write_clk),
-    .write_reset_n          (write_reset_n),
-    .read_pointer           (read_pointer),
-    .write_to_read_pointer  (write_to_read_pointer)
-);
-
-sync_write_to_read sync_write_to_read
-(
-    .read_clk               (read_clk),
-    .read_reset_n           (read_reset_n),
-    .write_pointer          (write_pointer),
-    .read_to_write_pointer  (read_to_write_pointer)
-);
 endmodule
